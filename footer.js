@@ -77,7 +77,7 @@ head.load("../reveal.js/js/reveal.js", function() {
 	window.print();
 })
 
-head.load("../js/jquery/dist/jquery.min.js")
+head.load("../js/jquery-dist/dist/jquery.min.js")
 head.load("../js/slick/slick/slick.min.js", function() {
     $('.slider').slick();
 });
