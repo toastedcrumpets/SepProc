@@ -135,8 +135,8 @@ class Tex2Reveal(object):
 <html lang="en">
     <head>
 	<meta charset="utf-8">
-	<title>Heat, Mass, and Momentum Transfer</title>
-	<meta name="description" content="Heat Mass and Momentum Transfer notes">
+	<title>Separation Processes 1</title>
+	<meta name="description" content="Separation processes 1 notes">
 	<meta name="author" content="Marcus Bannerman <m.bannerman@gmail.com">
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
