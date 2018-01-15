@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Separation Processes 1
+  </title>
+  <meta content="Separation processes 1 notes" name="description"/>
+  <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
+  <script data-headjs-load="header.js" src="../reveal.js/lib/js/head.min.js">
+  </script>
+ </head>
+ <body>
+  <div class="reveal">
+   <div class="slides">
+    <section>
+     <section>
+      <h2>
+       Evaporators
+      </h2>
+      <div class="center">
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Evaporators">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.81);">
+        <ul>
+         <li>
+          Evaporators are a common process whenever large
+        amounts of water or another solvent are to be separated from
+        relatively
+          <b>non-volatile components</b>.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          They function by simply
+          <b>boiling</b>
+          the volatile
+        component away.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          They are often seen when large amounts of fresh water
+        are required. For example, drinking water on ships or for
+        steam ship boilers (
+          <b>top product</b>).
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Evaporators are also used to concentrate aqueous solutions
+        such as fruit juice or orange juice (<b>bottom product</b>).
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          They are common when the process fluid contains
+        precipitates that need to be
+          <b>crystallised</b>.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.21);">
+        <figure>
+         <img src="img/evap_advert.jpg" style="width:100%"/>
+         <figcaption>
+          Advert for evaporators (circa 1900).
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.81);">
+        <ul>
+         <li>
+          We study evaporators first in this course as they are
+          essentially an ideal flash-distillation step (there is a
+          perfect separation of the components). No need to worry
+          about the phase equilibria part of thermodynamics (yet).
+         </li>
+         <li class="fragment" data-fragment-index="1">
+           Later on, we will have to calculate how much of the
+           two (or more) species is present in the top and bottom product
+           using vapour-liquid equilibrium data, or solubility data.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+           However, in this course, the defining characteristic
+           <b>for evaporators</b>
+           is that we will assume
+           <b>all of the
+             involatile components (e.g., salt, solids) are recovered in
+             the bottoms product</b>.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.41);">
+        <figure>
+         <img src="img/evap_advert.jpg" style="width:100%"/>
+         <figcaption>
+          Advert for evaporators (circa 1900).
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <ul>
+       <li>
+        There are many designs of evaporator, but there are some
+    fundamental operational classifications.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        Evaporators may be
+        <b>single-pass</b>, where the fluid is
+    heated only once, or
+        <b>recirculating</b>, with a long
+        <b>residence time</b>
+        of the treated fluid.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        Evaporators may also operate in
+        <b>convective</b>
+        or
+        <b>boiling</b>
+        regimes depending on the state of the fluid at the heat
+    source.
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        The flow around the heat source may be
+        <b>natural</b>
+        or
+        <b>forced</b>.
+       </li>
+       <li class="fragment" data-fragment-index="4">
+         We'll look at some common designs now to get a feel for the
+	 evaporator process equipment. While looking, try to see why
+	 the vapour and liquid outlets might be considered
+	 "well-mixed" and in equilibrium.
+       </li>
+      </ul>
+     </section>
+     <section data-menu-title="Designs">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        There are many designs of evaporator:
+        <ul>
+         <li>
+          There is the
+          <b>open-kettle</b>
+          or
+          <b>pan</b>
+          which is a
+        simple evaporator.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          It is usually heated through a jacket or coil, and may
+        be directly fired.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          They are inexpensive and simple to operate, but the
+        efficiency is poor.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          They are common for small scale or old/traditional
+        process designs.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          For example, old salt pans used in salt mines or
+        traditional maple syrup refiners (see right).
+         </li>
+	 <li class="fragment">
+	   No longer used except for "traditional" (i.e., inefficient)
+	   production.
+	 </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <img src="img/our-evap.png" style="width:100%;"/>
+         <figcaption>
+          Pan evaporator used in small-scale maple syrup
+          production. Note the efficient covered evaporator stages to
+          the right, and the final "finishing" stage which is open to
+          be hand operated on the left.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        There are many designs of evaporator:
+        <ul>
+         <li>
+          A common and simple design is the
+          <b>horizontal-tube
+          natural circulation evaporator</b>.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The heating steam is condensing on the tube side and
+        the tube bundle is completely submerged in the liquid.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          They are simple designs which are relatively easy to
+          clean.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          These evaporators are good for low-viscosity fluids
+          with high heat transfer coefficients, as it relies on
+          <b>natural convection</b>.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <div>
+         <figure>
+           <object data="img/horiz_evap.svg" type="image/svg+xml" width="50%"></object>
+           <figcaption>
+             Horizontal-tube type evaporator.
+           </figcaption>
+         </figure>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section style="width:100%">
+       <div style="width:49%;display:inline-block;">
+         There are many designs of evaporator:
+         <ul>
+           <li>
+             There is the
+             <b>vertical-tube natural circulation
+               evaporator</b>.
+           </li>
+           <li class="fragment" data-fragment-index="1">
+             In this evaporator, the boiling liquid is on the tube
+             side, but also flows around the tube bundle in a
+             <b>downcomer</b> (multiple pass).
+           </li>
+           <li class="fragment" data-fragment-index="2">
+             The heating of the fluid in the tubes causes natural
+             convection to occur.
+           </li>
+           <li class="fragment" data-fragment-index="3">
+             This pumps the liquid up the tubes increasing the
+             liquid velocity and the heat transfer coefficient.
+           </li>
+           <li class="fragment" data-fragment-index="4">
+             As such, this design cannot be used with viscous
+             liquids, but it is more efficient than the kettle type
+             evaporator.
+           </li>
+           <li class="fragment" data-fragment-index="5">
+             The lower portion of the evaporator is known as the
+             <b>calandria</b>.
+           </li>
+         </ul>
+       </div>
+       <div class="slider" style="width:49%;display:inline-block;">
+	 <div>
+	   <object data="img/vert-evaporator.svg" type="image/svg+xml">
+	   </object>
+	 </div>
+	 <div>
+	   <object data="img/conv-vert.svg" type="image/svg+xml">
+	   </object>
+	 </div>
+	 <div>
+	   <object data="img/basket-evap.svg" type="image/svg+xml">
+	   </object>
+	 </div>
+       </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        There are many designs of evaporator:
+        <ul>
+         <li>
+          There is the
+          <b>long-tube vertical-type evaporator</b>.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The tubes can be 3 to 10m high and the liquid may only
+        pass through the evaporator once (
+          <b>single-pass</b>).
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Boiling causes vapour bubbles to form which pump the
+        liquid at high velocities through the tubes.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          <b>Contact times</b>
+          can be low, which is useful in the
+        food industry (no burning of the product).
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <object data="img/vert-long-evaporator.svg" type="image/svg+xml">
+         </object>
+         <figcaption>
+          Long-tube vertical type evaporator.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.61);">
+        There are many designs of evaporator:
+        <ul>
+         <li>
+          A variation on the long-tube vertical-type evaporator
+        is the vertically fed
+          <b>falling film type evaporator</b>.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Gravity and expansion of the fluid greatly increase
+        the fluid velocities.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          These can be designed with very short contact times.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          This is an advantage as damage to sensitive
+        heat-treated fluids is a function of temperature and contact
+        time.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.331);">
+        <figure>
+         <div class="center">
+          <object data="img/falling_film.svg" type="image/svg+xml" width="100%">
+          </object>
+          <figcaption>
+           Falling film type evaporator.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        There are many designs of evaporator:
+        <ul>
+         <li>
+          There are also
+          <b>forced-flow evaporators</b>.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          These may exploit the pressure of a liquid head to
+        prevent boiling in the exchanger.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          They may also have a circulating pump to force the
+        flow, or they may rely on the
+          <b>thermosyphon</b>
+          effect.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          This is an analogue of the chimney effect, where a
+        strong form of natural convection is used to pump a fluid.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          Despite the
+          <i>“natural”</i>
+          origins of the
+        thermosyphon flow, the fluid is being strongly forced through
+        the heat exchanger.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <object data="img/forced_evap.svg" type="image/svg+xml" width="100%">
+         </object>
+         <figcaption>
+          Forced evaporator.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        There are many designs of evaporator:
+        <ul>
+         <li>
+          Finally, for viscous fluids, there are evaporators
+        which mechanically coat the heated surface with the fluid
+        (
+          <b>agitated-film</b>).
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          This ensures good heat transfer regardless of the
+        viscosity and can be used for the drying of very thick pastes.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Deciding which evaporator to use strongly depends on
+        the cost of materials, energy and fluid properties.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Luckily, there are many case studies in the literature
+        which have been collated into tables to aid you in the
+        selection of your evaporator…
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <object data="img/wiped_evaporator.svg" type="image/svg+xml">
+         </object>
+         <figcaption>
+          Mechanically-wiped evaporator.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Selection">
+      <figure>
+       <object data="img/evap_selection_table.svg" type="image/svg+xml" width="100%">
+       </object>
+       <figcaption>
+        Evaporator selection table, taken from C&amp;R vol. 2, pg. 806.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.71);">
+        <ul>
+         <li>
+           A common feature of all types of evaporators are
+           deentraining devices such as
+           <b>baffles</b>.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+           These reduce or prevent entrained droplets of liquid
+           exiting in the top stream.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Evaporators are also typically operated as
+          <b>total-condensers</b> on the steam side (only
+          condensate/water is removed from the steam side). This
+          greatly simplifies the heat balance on the steam side, as
+          its the latent heat of steam vapourisation/condensation.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.31);">
+        <figure>
+         <object data="img/horiz-evaporator.svg" type="image/svg+xml" width="100%">
+         </object>
+         <figcaption>
+          horizontal-tube type evaporator.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Evaporator Design">
+      <ul>
+       <li>
+        When designing your evaporator, you start with a
+        <b>feed
+      stream</b>, and you have to achieve an
+        <b>output specification</b>.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        For example, you have a feed stream of 1000 kg/hr of
+    orange juice with a solids concentration of $7.08%$
+        w/w.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        You need to concentrate it to $50%$
+        w/w solids content before
+    it is economical to ship it overseas.
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        How big should our exchanger be to achieve this? What is
+    the heat transfer area required? What utilities (steam) will be
+    used? What is the overall
+        <b>duty</b>
+        of the evaporator?
+       </li>
+      </ul>
+     </section>
+     <section>
+      <ul>
+       <li>
+        Single-stage evaporators are, essentially, a heat
+    exchanger and we roughly size heat exchanges using their
+        <b>area</b>.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        To find the size of the evaporator, we need to solve the
+    heat transfer equation for the heat transfer area, $A$
+        :
+        \begin{align*}
+        Q = U  A  \left(T_{steam} - T_{fluid}\right)
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        We need to find the duty, $Q$, the heat transfer
+    coefficient
+        $U$, the boiling temperature of the evaporator
+        $T_{steam}$, and
+    the steam temperature.
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        The steam temperature is set by the available utilities,
+    and the heat transfer coefficient/area can be calculated together
+    from our EX3030 knowledge once the duty is known.
+       </li>
+       <li class="fragment" data-fragment-index="4">
+        So we must first compute the duty, $Q$, and we need a
+    simple model of our evaporator to do this…
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <object data="img/simple_evaporator1.svg" type="image/svg+xml">
+        </object>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        Our simple model for the evaporator is that it has one
+    input stream, and two output streams.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        All of the solids entering in the feed stream $F$, is
+    recovered in the liquid stream
+        $C$.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        No heat is lost or gained during this process, except by
+    that removed or supplied by the duty $Q$.
+       </li>
+      </ul>
+     </section>
+     <section data-menu-title="Flowrates">
+      <figure>
+       <div class="center">
+        <object data="img/simple_evaporator1.svg" type="image/svg+xml">
+        </object>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        With the initial design data, we can see that there are
+    two unknown flowrates of streams we need to solve, $L$
+        and
+        $V$.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        We need the fundamental equation of process engineering,
+    the
+        <b>balance equation</b>
+        :
+        \begin{align*}
+        \textrm{INPUT}-\textrm{OUTPUT}+\textrm{GENERATION}=\textrm{ACCUMULATION}
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        Taking a total mass balance and a mass balance in the
+    solids content we have
+        \begin{align*}
+        F &amp;= L + V &amp; x_{s,F} F &amp;= x_{s,L} L
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        These equations are our general balance equations for an
+    evaporator.
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <object data="img/simple_evaporator1.svg" type="image/svg+xml">
+        </object>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        Taking the solids balance, we have
+        \begin{align*}
+        x_{s,F} F &amp;= x_{s,L} L\\
+      0.0708\times1000 &amp;= 0.50 \times L\\
+      L &amp;= 0.0708\times1000 / 0.5 = 141.6 \textrm{kg/hr}
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        Using the total balance, we have
+        \begin{align*}
+        F &amp;= L + V\\
+      1000 &amp;= 141.6 + V\\
+      V &amp;= 1000 - 141.6 = 858.4 \textrm{kg/hr}
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        We'll now update our diagram…
+       </li>
+      </ul>
+     </section>
+     <section data-menu-title="Duty">
+      <figure>
+       <div class="center">
+        <object data="img/simple_evaporator2.svg" type="image/svg+xml">
+        </object>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        To calculate the duty, $Q$, we need to perform an energy
+    balance to obtain…
+        \begin{align*}
+        \textrm{Energy In} + \textrm{Duty} &amp;= \textrm{Energy Out}\\
+      F h_F + Q &amp;= L h_L + V h_V
+        \end{align*}
+        where
+        $h_F$
+        is the
+        <b>enthalpy</b>
+        per mass for the feed stream,
+        $F$.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        The enthalpies, $h$, for each stream depend on temperature
+    AND composition!
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        The most difficult part of evaporator design may be
+    tracking down accurate values for the stream enthalpies.
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        The difficulty is that there is an infinite selection of
+    mixtures and a very limited amount of experimental data.
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <object data="img/simple_evaporator2.svg" type="image/svg+xml">
+        </object>
+        \begin{align*}
+        \textrm{Energy In} + \textrm{Duty} &amp;= \textrm{Energy Out}\\
+        F h_F + Q &amp;= L h_L + V h_V
+        \end{align*}
+       </div>
+      </figure>
+      <ul>
+       <li>
+        We will look at enthalpy and boiling point data in a later
+    lecture, and will make some simplifying assumptions for now…
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        Let's assume that the inlet stream is at its boiling point
+    ($100^{\circ}C$
+        @ 1atm) and the solids
+        <b>concentration does not
+      affect the boiling temperature</b>.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        We also assume that there is no enthalpy of mixing (
+        <b>concentration does not affect the enthalpy</b>,
+        $h_F=h_L$).
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        Then the only enthalpy difference will come about due to
+    the boiling of the water content.
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <object data="img/simple_evaporator2.svg" type="image/svg+xml">
+        </object>
+        \begin{align*}
+        F h_F + Q &amp;= L h_L + V h_V
+        \end{align*}
+       </div>
+      </figure>
+      <ul>
+       <li>
+        Using $h_F=h_L$
+        and
+        $F-L=V$, the energy balance yields:
+        \begin{align*}
+        Q &amp;= V \left(h_V - h_L\right)
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        We have from the steam tables $h_V-h_L=2260$
+        kJ/kg at
+    100
+        ${}^\circ$
+        C, therefore
+        \begin{align*}
+        Q &amp;= 858.4\times2260\approx1.9 \textrm{MW}
+        \end{align*}
+       </li>
+      </ul>
+     </section>
+     <section data-menu-title="Sizing">
+      <figure>
+       <div class="center">
+        <object data="img/simple_evaporator3.svg" type="image/svg+xml">
+        </object>
+        \begin{align*}
+        Q &amp;= U  A  \left(T_{steam} - T_{fluid}\right)
+        \end{align*}
+       </div>
+      </figure>
+      <ul>
+       <li>
+        To calculate the evaporator size, we need the overall heat
+    transfer coefficient, and the temperature difference.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        The overall heat transfer coefficient depends on the
+    evaporator type, operating method and flow velocities (see
+        <b>EX3030, Heat, Mass, and Momentum Transfer.</b>).
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        You will probably have to iterate to a solution to $U$
+        in
+    a detailed design (just like your design project).
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        But there are typical values available in the literature…
+       </li>
+      </ul>
+     </section>
+     <section data-menu-title="Typical $U$ Values">
+      <figure>
+       <div class="center">
+        <table style="border-collapse:collapse;">
+         <tr>
+          <td>
+           Type
+          </td>
+          <td>
+           Overall U (W/m
+           ${}^2 $
+           K)
+          </td>
+         </tr>
+         <tr style="border-top:thick solid black;">
+          <td>
+           Short-tube vertical, natural
+          </td>
+          <td>
+           1100–2800
+          </td>
+         </tr>
+         <tr>
+          <td>
+           Horizontal-tube, natural
+          </td>
+          <td>
+           1100–2800
+          </td>
+         </tr>
+         <tr>
+          <td>
+           long-tube vertical, natural
+          </td>
+          <td>
+           1100–2800
+          </td>
+         </tr>
+         <tr>
+          <td>
+           long-tube vertical, forced
+          </td>
+          <td>
+           2300–11000
+          </td>
+         </tr>
+         <tr>
+          <td>
+           Agitated film
+          </td>
+          <td>
+           680–2300
+          </td>
+         </tr>
+        </table>
+        <figcaption>
+         Typical values for the evaporator heat transfer
+        coefficient,
+         $U$, taken from “Transport Processes and Unit
+        Operations,” by C. J. Geankoplis.
+        </figcaption>
+       </div>
+      </figure>
+     </section>
+     <section data-menu-title="Temperatures">
+      <figure>
+       <div class="center">
+        <object data="img/simple_evaporator3.svg" type="image/svg+xml">
+        </object>
+        \begin{align*}
+        Q &amp;= U  A  \left(T_{steam} - T_{fluid}\right)
+        \end{align*}
+       </div>
+      </figure>
+      <ul>
+       <li>
+        Finally, we need the temperatures of the evaporator.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        The temperature of the evaporator fluid depends on the
+    solvent boiling point and an effect called
+        <b>boiling point
+      rise</b>.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        For simplicity, we can assume at low concentrations the
+    boiling point is the same as for the pure solvent.
+        \begin{align*}
+        T_{fluid} = T_{sat.,solvent} = 100^\circ\textrm{C}
+        \end{align*}
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <object data="img/simple_evaporator3.svg" type="image/svg+xml">
+        </object>
+        \begin{align*}
+        Q &amp;= U  A  \left(T_{steam} - T_{fluid}\right)
+        \end{align*}
+       </div>
+      </figure>
+      <ul>
+       <li>
+        The temperature of the steam depends on its saturation
+    temperature.
+        \begin{align*}
+        T_{steam} = T_{sat.,steam}
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        This is because the latent heat of condensation of the
+    steam is used to heat the evaporator (the condenser is a total
+    steam condenser).
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        The saturation temperature depends on the pressure of the
+    available steam, and can be looked up in your steam tables.
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <object data="img/simple_evaporator3.svg" type="image/svg+xml">
+        </object>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        To calculate how much steam, $S$, the evaporator will use,
+    we will need another heat balance:
+        \begin{align*}
+        Q &amp;= S \left(h_{steam,vapour} - h_{steam,liquid}\right)
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        However, if we assume that steam has a latent heat of
+    vaporisation with only a weak temperature and concentration
+    dependence, the amount of steam condensed will be the same amount
+    of water evaporated!
+        \begin{align*}
+        S \approx V
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        This concludes our roughest design of an evaporator, we
+    will improve this calculation in the coming lectures.
+       </li>
+      </ul>
+     </section>
+    </section>
+   </div>
+   <div class="slide-menu-button" style="left:170px;cursor:pointer;">
+    <a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
+     <i class="fa fa-print"></i>
+    </a>
+   </div>
+   <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+   </script>
+   <script src="footer.js">
+   </script>
+  </div>
+ </body>
+</html>

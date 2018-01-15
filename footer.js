@@ -77,6 +77,11 @@ head.load("../reveal.js/js/reveal.js", function() {
 	window.print();
 })
 
+head.load("../js/jquery/dist/jquery.min.js")
+head.load("../js/slick/slick/slick.min.js", function() {
+    $('.slider').slick();
+});
+
 //var toc = $('.tableofcontents');
 //if (toc.length) {
 //    toc = toc[0];
