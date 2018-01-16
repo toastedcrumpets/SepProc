@@ -36,6 +36,8 @@ class Tex2Reveal(object):
         code = code.replace("\\copyright", u"\u00A9")
         code = code.replace("\\'a", u"\u00E1")
         code = code.replace("\\centering", '')
+        code = code.replace('\\"a', u"\u00E4")
+        code = code.replace('\\"u', u"\u00FC")
         #Replace \% provided its not \\%
         code = re.sub("(?<=[^\\\\])\\\\%", "%", code, flags=re.M)
         code = code.replace("\\,", u"\u202F")#Replace the half space with a

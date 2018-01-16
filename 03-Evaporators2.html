@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Separation Processes 1
+  </title>
+  <meta content="Separation processes 1 notes" name="description"/>
+  <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
+  <script data-headjs-load="header.js" src="../reveal.js/lib/js/head.min.js">
+  </script>
+ </head>
+ <body>
+  <div class="reveal">
+   <div class="slides">
+    <section>
+     <section>
+      <h2>
+       Evaporators 2
+      </h2>
+      <div class="center">
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Review">
+      <figure>
+       <div class="center">
+        <object data="img/simple_evaporator1.svg" type="image/svg+xml">
+        </object>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        In the last lecture we studied an evaporator.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        Given the feed stream and outlet specification, we used a
+    total and solids mass balance to determine the outlet vapour and
+    liquid flowrates:
+        \begin{align*}
+        F &amp;= L + V &amp; x_{s,F} F &amp;= x_{s,L} L
+        \end{align*}
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <object data="img/simple_evaporator2.svg" type="image/svg+xml">
+        </object>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        We then needed the duty of the evaporator which we performed an
+    energy balance to find:
+        \begin{align*}
+        Q &amp;= L h_L + V h_V - F h_F
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        Here, we used some heavy approximation to estimate the
+    enthalpies ($h_X$) of the streams, but we must improve upon this
+    calculation.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        The first question is at what temperature do we evaluate
+    the
+        <b>outlet</b>
+        stream properties? (the inlet temperatures will
+    be specified)
+       </li>
+      </ul>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.61);">
+        <ul>
+         <li>
+          In long-tube evaporators (right), the fluid
+        temperature will vary along the tube.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          This is because the liquid phase concentration
+        increases along the pipe length.
+          <br/>
+          (Note: the steam temperature will remain constant as it is
+        relatively pure)
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          However, at the end of the tube we can assume the
+        liquid and vapour phases are in equilibrium.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Therefore, we can say the
+          <b>outlet temperature is
+          the boiling point of the outlet stream</b>.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.41);">
+        <figure>
+         <object data="img/vert-long-evaporator.svg" type="image/svg+xml" width="100%">
+         </object>
+         <figcaption>
+          Long tube vertical evaporator.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.61);">
+        <ul>
+         <li>
+          In short-tube type evaporators, the temperature will
+        vary inside the fluid to facilitate convection.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          But this temperature difference will not be very large.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          It is not unreasonable to assume the fluid is
+          <b>well-mixed</b>.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Well-mixed then implies
+          <b>the concentration inside
+          the evaporator is the same as the outlet stream</b>.
+          <br/>
+          (Note: You will reuse the well-mixed assumption when you
+        encounter CSTR reactors)
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          This implies again that the
+          <b>outlet temperature is
+          the boiling point of the outlet stream</b>.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.41);">
+        <figure>
+         <object data="img/conv-vert.svg" type="image/svg+xml" width="100%">
+         </object>
+         <figcaption>
+          Standard configuration vertical-tube type evaporator.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <object data="img/simple_evaporator2.svg" type="image/svg+xml">
+        </object>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        So in all cases we evaluate the outlet stream enthalpies
+    at the outlet concentration boiling temperature.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        We need information on the boiling point of mixtures…
+       </li>
+      </ul>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Boiling Point Rise/Elevation">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+          <img src="img/pot.jpg"/>
+         </div>
+        </figure>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <ul>
+         <li>
+          Whenever a non-volatile solute is added to a solvent
+        the boiling point is elevated.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          This
+          <b>boiling-point elevation</b>
+          is analogous to the
+          <b>freezing-point depression</b>.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          If we add salt to ice, the ice begins to melt as its
+        freezing temperature is lowered below the ambient temperature.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          If salt is added to water, its boiling point is
+        increased.
+         </li>
+        </ul>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <ul>
+         <li>
+          You may feel this runs contrary to your own
+        experiences of boiling in the kitchen (think pasta).
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          But for NaCl (table salt), you would need to add
+        around $\sim0.25$
+          kg of salt to a litre of water to increase
+        its boiling point by
+          $\sim2^\circ$
+          C, so this effect is not
+        visible in the kitchen.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          If the water in the pan boils when you add salt, it
+        may be that you have clean and smooth pans.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          The liquid in the pan could then superheat, and the
+        addition of grains of salt provides excellent bubble
+        nucleation sites.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+          <img src="img/pot.jpg"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <ul>
+       <li>
+        Back to the estimation of boiling points…
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        The boiling point varies as a function of pressure,
+    solvent, solute and concentration.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        In the literature, the boiling temperature of the pure
+    fluid is used instead of the pressure (they are directly related).
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        Let us take a look at some boiling point data for salt
+    solutions…
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+         <img src="img/duhring_NaCl.svg" style="width:50%">
+        <figcaption>
+         Boiling points for NaCl solutions, taken from
+        Fig. 14.1, pg. 772 C&amp;R Vol. 2.
+        </figcaption>
+       </div>
+      </figure>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <ul>
+         <li>
+          The lines of constant concentration in the plot to the
+        right are almost parallel.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          This is because in dilute ideal solutions, the
+        increase in the boiling point is directly proportional to the
+        concentration.
+          \begin{align*}
+          \Delta T_{sat.} \propto C
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          This means that we can assume the
+          <b>Boiling point
+          rise (BPR) is independent of pressure</b>
+          ! This is what makes
+        the boiling point rise such a convenient quantity to work
+        with…
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+           <img src="img/duhring_NaCl.svg" style="width:100%">
+          </object>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <ul>
+         <li>
+          The linearity of the plot lines gives rise to an
+        empirical rule known as
+          <i>Dühring's rule</i>
+          which states
+        that
+          <i>“a linear relationship exists between the
+          temperatures at which two solutions exert the same vapor
+          pressure”</i>.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The temperature at which the vapour pressure of a
+        fluid equals the surrounding pressure is, by definition, the
+        boiling temperature.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Therefore, if the boiling point of a solution is known
+        at two pressures, the boiling point can, in theory, be
+        extrapolated to other pressures.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Despite these relations, there are exceptions to these
+        rules…
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+           <img src="img/duhring_NaCl.svg" style="width:100%">
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+         <img src="img/duhring_NaOH.svg" style="width:50%;">
+         <figcaption>
+           Boiling points for NaOH solutions, taken from
+           Fig. 8.4-2, pg. 500 “Transport Processes and Unit
+           Operations,” C. J. Geankoplis.
+         </figcaption>
+       </div>
+      </figure>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <ul>
+         <li>
+          The low pressure values for the boiling point deviates
+        from the linear rule.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          This may be due to changes in the solubility of the various
+          concentrations (i.e., the NaOH precipitates at that
+          temperature and concentration).
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          At low temperatures the maximum saturation
+        concentration drops.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+           <img src="img/duhring_NaOH.svg" style="width:100%;">
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Boiling Point Estimation: Example">
+      <ul>
+       <li>
+        As an example of use of the Dühring chart, the pressure
+    in an evaporator is given as 25.6 kPa and a solution of 30% w/w
+    NaOH is being boiled. Determine the boiling temperature of the
+    NaOH solution and the boiling-point rise BPR of the solution over
+    that of water at the same pressure.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        According to the steam tables, water at 25.6 kPa (0.256
+    bar) boils at $65.9^\circ$
+        C.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        Looking this up on the previous graph we have a boiling
+    point for 30% NaOH as $81^\circ$
+        C.
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        The
+        <b>boiling point rise</b>
+        is
+        $BPR=81-66\approx15^\circ$
+        C.
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+         <img src="img/duhring_NaOH_solution2.svg" style="width:50%;">
+       </div>
+      </figure>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Stream Enthalpies">
+      <figure>
+       <div class="center">
+        <img src="img/simple_evaporator2.svg" style="width:50%">
+       </div>
+      </figure>
+      <ul>
+       <li>
+        Now that we know the temperatures of the inlet and outlet
+    streams, we can determine the stream enthalpies, $h_X$.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        These are then used in our energy balance to calculate the
+    duty:
+        \begin{align*}
+        Q &amp;= L h_L + V h_V - F h_F
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        We will revise enthalpy calculations now (<b>see C&amp;R vol.6
+      Sec. 3</b>).
+       </li>
+      </ul>
+     </section>
+     <section>
+      <ul>
+       <li>
+        To determine the enthalpy of a stream, we need to choose a
+    reference temperature (e.g., $T_{ref}=25^\circ$
+        C) at which all
+    fluids have a known relative enthalpy,
+        $h_{ref}$.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        We often don't need to know this enthalpy, as it cancels
+    out in the end, but we need the concept of a
+        <b>reference
+      state</b>.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        The enthalpy of each stream can be calculated from those
+    reference states. For example, the enthalpy of water at
+    $76^\circ$
+        C is given by
+        \begin{align*}
+        h_{water}(76^\circ\textrm{C}) =
+      h_{water}(25^\circ\textrm{C}) + \int_{25}^{76}
+      C_p^{(water)}(T') {\rm d}T'
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        If we assume water has a constant heat capacity, we have
+        \begin{align*}
+        h_{water}(76^\circ\textrm{C}) =
+      h_{water}(25^\circ\textrm{C}) + C_p^{(water)}\left(76-25\right)
+        \end{align*}
+       </li>
+      </ul>
+     </section>
+     <section>
+      <ul>
+       <li>
+        But what happens if the fluid undergoes a phase change?
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        Here we need to add on the enthalpy of vapourisation,
+    $h_{fg,water}(T)$.
+        \begin{align*}
+        h_{steam}(76^\circ\textrm{C}) =
+      h_{water}(25^\circ\textrm{C}) + \int_{25}^{76}
+      C_p^{(water)}(T') {\rm d}T' + h_{fg,water}(76^\circ\textrm{C})
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        But usually the latent heat of vaporisation is only
+    available at a reference temperature.
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        In this case we have to “perform” the vaporisation at
+    the reference temperature and instead use the gas heat capacity.
+        \begin{align*}
+        h_{steam}(76^\circ\textrm{C}) = h_{water}(25^\circ\textrm{C}) +
+      h_{fg,water}(25^\circ\textrm{C}) + \int_{25}^{76}
+      C_{p,steam}(T') {\rm d}T'
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="4">
+        For water, you are lucky in that the steam tables actually
+    give you the stream enthalpy for both phases ($h_f$
+        &amp;
+        $h_g$), and
+    for a wide selection of temperatures.
+       </li>
+      </ul>
+     </section>
+     <section>
+      <ul>
+       <li>
+        When we consider solutions, if there is a negligible
+    “heat of solution” we can proceed just as before.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        But this is not always the case, take for example NaOH.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        As pellets of NaOH are added to water, the temperature of
+    the solution rises considerably.
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        In this case, we need to add on enthalpy of solution to
+    the calculation:
+        \begin{align*}
+        h_{NaOH}(76^\circ\textrm{C})
+      &amp;= x_{water}\left(h_{water}(25^\circ\textrm{C}) + \int_{25}^{76}
+        C_{p,water}(T') {\rm d}T'\right)\\
+      &amp;\quad+\left(1-x_{water}\right)\left(h_{NaOH}(25^\circ\textrm{C})
+        + \int_{25}^{76}
+        C_{p,NaOH}(T') {\rm d}T'\right)\\
+      &amp;\quad+h_{soln.}(76^\circ\textrm{C},x_{water})
+        \end{align*}
+        where
+        $x_{water}$
+        is the weight fraction of water.
+       </li>
+       <li class="fragment" data-fragment-index="4">
+        This can be non-trivial to determine, sometimes we need to
+    use values at infinite dilution (but these are limited to low
+    concentrations).
+       </li>
+       <li class="fragment" data-fragment-index="5">
+        For fluids with significant latent heats of solution there
+    are sometimes charts for the enthalpy:
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+         <img src="img/enthalpy_NaOH.svg" style="width:50%">
+        <figcaption>
+         Enthalpy of NaOH solutions, taken from Fig. 8.4-2,
+        pg. 501 “Transport Processes and Unit Operations,”
+        C. J. Geankoplis.
+        </figcaption>
+       </div>
+      </figure>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Example: Energy Balance Across NaOH Absorber">
+      <figure>
+	<div class="center">
+	  <img src="img/complex_evaporator1.svg" style="width:40%">
+	</div>
+      </figure>
+      <ul>
+       <li>
+        This is example 8.4-3 from Transport Processes and Unit
+    Operations.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        An evaporator is used to concentrate
+        <b>4536 kg/h</b>
+        of a
+    20% solution of NaOH in water, entering at 60
+        ${}^\circ$
+        C to a
+    product of 50% solids.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        Straight away we can solve the mass balances for all the
+    flow rates in the system. Starting with the solids balance:
+        \begin{align*}
+        x_{s,F} F&amp;=x_{s,L} L\\
+      L&amp;=x_{s,F} F/x_{s,F} = 0.2\times4536/0.5 \approx 1814\text{ kg/hr}
+        \end{align*}
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+	 <img src="img/complex_evaporator2.svg" style="width:40%">
+       </div>
+      </figure>
+      <ul>
+       <li>
+        We can solve the overall balance next:
+        \begin{align*}
+        F&amp;=L+V\\
+      V&amp;=F-L = 4536 - 1814 = 2722\text{ kg/hr}
+        \end{align*}
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+	 <img src="img/complex_evaporator3.svg" style="width:40%">
+       </div>
+      </figure>
+      <ul>
+       <li>
+        So far, so easy. Now we want to find the operating
+    temperature of the evaporator and to solve the energy balance to
+    find $Q$. But with NaOH, we must take into account the
+        <b>boiling point</b>
+        rise of the system.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        Looking in the steam tables, we find that water at a
+    pressure of 11.7 kPa boils at a temperature of $\approx49^\circ$
+        C.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        Lets use the Dühring chart to find the boiling
+    temperature of the outlet liquid…
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+         <img src="img/duhring_NaOH_solution.svg" style="width:50%">
+       </div>
+      </figure>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+         <img src="img/complex_evaporator4.svg" style="width:50%">
+        </object>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        This gives us an output temperature of
+    $\approx90^\circ$
+        C. This is a
+        <b>boiling point rise</b>
+        of
+        $90-49=41^\circ$
+        C.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        Remembering the well-mixed assumption, this output
+    temperature is the
+        <b>operating temperature</b>
+        of the evaporator
+    as well as the
+        <b>vapour temperature</b>
+        !
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        To find the heat flux through the system, we need to find
+    the enthalpy of each stream and perform an energy balance:
+        \begin{align*}
+        h_F F+Q=h_L L+h_V V
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        Fortunately, for the liquid streams we can cheat and use
+    an enthalpy chart…
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+         <img src="img/enthalpy_NaOH_solution.svg" style="width:50%">
+        </object>
+        <figcaption>
+         Enthalpy of NaOH solutions, taken from Fig. 8.4-2,
+        pg. 501 “Transport Processes and Unit Operations,”
+        C. J. Geankoplis.
+        </figcaption>
+       </div>
+      </figure>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+         <img src="img/complex_evaporator4.svg" style="width:50%">
+	<p>
+        \begin{align*}
+        h_F&amp;\approx210\text{ kJ/kg} &amp; h_L&amp;\approx500\text{ kJ/kg}
+        \end{align*}
+	</p>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        But what about the vapour? This is steam, so it should be
+    straightforward to work out.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        You must remember that it is
+        <b>superheated steam</b>! At 11.7 kPa, water boils at
+        49${}^\circ$C but, thanks to the boiling point rise, this
+        steam is at 90 ${}^\circ$ C.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        We need to figure out the enthalpy of the steam using the
+    same reference point as the enthalpy chart (liquid water at
+    $0^\circ$
+        C (the same as the steam tables)).
+       </li>
+       <li class="fragment" data-fragment-index="3">
+         We can look up the enthalpy of steam boiled at 49${}^\circ$
+	 C, and
+        <b>add on</b>
+        the superheat using a rough heat
+    capacity of steam as 1.9 kJ/kg K.
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/complex_evaporator4.svg" style="width:50%">
+	<p>
+        \begin{align*}
+        h_F&amp;\approx210\text{ kJ/kg} &amp; h_L&amp;\approx500\text{ kJ/kg}
+        \end{align*}
+	</p>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        From the steam tables we find the enthalpy of saturated
+    steam at $49^\circ$
+        C to be 2590 kJ/kg.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        With a superheat of 41K, we have an additional
+    $1.9\times41=78$
+        kJ/kg of enthalpy, giving
+        \begin{align*}
+        h_V=2590+78=2668\text{ kJ/kg K}
+        \end{align*}
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/complex_evaporator4.svg" style="width:50%">
+	<p>
+        \begin{align*}
+        h_F&amp;\approx210\text{ kJ/kg} &amp; h_L&amp;\approx500\text{ kJ/kg} &amp;
+        h_V&amp;=2668\text{ kJ/kg K}
+        \end{align*}
+	</p>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        Using the energy balance:
+        \begin{align*}
+        h_F F+Q&amp;=h_L L+h_V V\\
+      210\times4536+Q&amp;=500\times1814+2668\times2722\\
+      Q&amp;=7 200 000\text{ kJ/hr}\\
+      &amp;=2\text{ MW}\\
+        \end{align*}
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/complex_evaporator5.svg" style="width:50%">
+       </div>
+      </figure>
+      <ul>
+       <li>
+        Finally, lets determine the total amount of utility steam
+    used to heat the evaporator, and then determine its area.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        Saturated utility steam is available at 172.4 kPa, from
+    the steam tables this has a temperature of $\approx116^\circ$
+        C and
+    a latent heat of
+        $h_{fg}=2220$
+        kJ/kg.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        This means we need $2000/2220\approx0.9$
+        kg/s of steam, or
+        $3240$
+        kg/hr.
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        This allows us to calculate the
+        <b>steam economy</b>, which
+    is the steam raised over the steam used:
+        \begin{align}
+        2722/3240=84%
+        \end{align}
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/flash_seawater_distillation_diag.jpg" style="width:80%;"/>
+       </div>
+       <figcaption>
+        A diagram of the three pass flash-distillation plant for
+      the desalination of sea water. This diagram highlights one type
+      of re-use (economy) of the raised steam from an evaporation
+      process. It also demonstrates that a steam economy greater than
+      1 can be acheived!
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/complex_evaporator5.svg" style="width:50%">
+       </div>
+      </figure>
+      <ul>
+       <li>
+        The utility steam has a temperature of $\approx116^\circ$
+        C
+    and it directly heats the evaporator, which operates at a
+    temperature of
+        $90^\circ$
+        C.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        If the heat transfer coefficient is $1.56$
+        kW/m
+        ${}^2$
+        K,
+    what is the exchanger area?
+        \begin{align*}
+        Q&amp;=U A\left(T_{steam}-T_{evap}\right)\\
+      2000&amp;=1.56 A\left(116-90\right)\\
+      A&amp;=49.3\text{ m}^2
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        This completes our rough sizing calculations!
+       </li>
+      </ul>
+     </section>
+    </section>
+   </div>
+   <div class="slide-menu-button" style="left:170px;cursor:pointer;">
+    <a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
+     <i class="fa fa-print"></i>
+    </a>
+   </div>
+   <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+   </script>
+   <script src="footer.js">
+   </script>
+  </div>
+ </body>
+</html>
