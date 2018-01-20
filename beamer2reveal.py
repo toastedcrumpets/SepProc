@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 
+SvgAsObject = False
+
 import re
 import os
 from bs4 import BeautifulSoup
@@ -560,12 +562,17 @@ class Tex2Reveal(object):
             root.attrib['preserveAspectRatio']="xMidYMid meet"
             tree.write('img/'+filename+'.svg')
 
-            
-            tag = self.soup.new_tag('object')
-            tag['type'] = "image/svg+xml"
-            tag['data'] = 'img/'+filename+'.svg'
-            if linewidth != None:
-                tag['width'] = str(linewidth)+"%"
+            if SvgAsObject:
+                tag = self.soup.new_tag('object')
+                tag['type'] = "image/svg+xml"
+                tag['data'] = 'img/'+filename+'.svg'
+                if linewidth != None:
+                    tag['width'] = str(linewidth)+"%"
+            else:
+                tag = self.soup.new_tag('img')
+                tag['src'] = 'img/'+filename+'.svg'
+                if linewidth != None:
+                    tag['style'] = "width:"+str(linewidth)+"%"
 
             self.current_tag.append(tag)
             return True
