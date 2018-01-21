@@ -70,10 +70,11 @@
        <div class="center">
         <img src="img/flash_seawater_distillation_diag.jpg" style="width:90%;"/>
         <figcaption>
-         An example of heat integration, where energy recovered
-        from the condensers is used to preheat the feed stream in a
+         An example of heat integration, where energy recovered from
+        the condensers is used to preheat the feed stream in a
         seawater desalination plant. The evaporation in each stage is
-        driven by pressure drops between the stages.
+        driven by pressure drops between the stages (note, this is not
+        a particularly efficient design!).
         </figcaption>
        </div>
       </figure>
@@ -256,17 +257,17 @@
 	 properties.
        </li>
        <li class="fragment" data-fragment-index="1">
-        But to solve for the evaporator areas $A_1$, $A_2\ldots$, we
-	need the evaporator temperatures $\Delta T_1\ldots$ and heat
-	fluxes $Q_1\ldots$ which depend on the operating
-	concentrations/mass balance of each stage! But the mass
-	balance depends on the heat balance to determine the
-	quantities evaporated in each stage!
+         Our system is designed once we know the areas $A_1$,
+	 $A_2\ldots$. But we need temperatures and heat fluxes
+	 ($A_i=Q_i\,U_i^{-1}\,\Delta T_i^{-1}$) and this depends on
+	 the heat balance, which depends on the mass balance, which
+	 depends on the heat balance,&hellip;
        </li>
        <li class="fragment" data-fragment-index="2">
-         A coupled system of heat/mass balance equations is extremely
-         common in all design, here we'll see how it can be solved by
-         hand.
+         This is a implicit set of equations, which is very
+         common. Computers and humans alike solve these the same
+         way. Guess some values, work through all equations to
+         calculate these values again and compare.
        </li>
       </ul>
      </section>
@@ -277,18 +278,23 @@
        </div>
       </figure>
       <ul>
+	<li>
+	  You can think of this problem as a cycle: solve the mass
+	  balance then solve the energy balance. At first, we guess
+	  the heat balance results that are needed in the mass
+	  balance, then use the solved mass balance to carry out the
+	  heat balance and compare.
+	</li>
        <li>
-         We can start our design at the feed but the process is
-	 specified (and controlled) at the final stage. We could guess
-	 values that we need as we move from left to right, and
-	 compare to our achieved output. then we
-         <i>iterate</i> our the solution so that the exit
-         conditions/specifications are met.
+         &ldquo;Shooting&rdquo; methods like this start at one point
+	 in the cycle (i.e. the feed stream mass balance) and "shoot"
+	 to try to meet the end of the cycle (the solved energy
+	 balance/evaporator areas).
        </li>
        <li class="fragment">
-        We will need some approximate expressions to make sure our
-    first guess is close to the optimal solution, then iterate from
-    there.
+	 The better our initial guesses of the heat balance, the
+	 closer our shot will land to the target (and the less shots
+	 we need to take). If we miss, we have to try again.
        </li>
       </ul>
      </section>
@@ -300,7 +306,8 @@
       </figure>
       <ul>
        <li>
-        So what can we do to get a good guesstimation?
+        So what can we do to get good guesstimations of results from
+        the heat balance? Use physically realistic approximations!
        </li>
        <li class="fragment" data-fragment-index="1">
         Let us assume that for this initial estimate, we can
@@ -308,8 +315,8 @@
     concentration effects.
        </li>
        <li class="fragment" data-fragment-index="2">
-        We also neglect any sensible heat (to heat the feed stream
-    to boiling point, or carried in the liquid phase between stages).
+        We also neglect sensible heat (to heat the feed stream to
+    boiling point, or carried in the liquid phase between stages).
        </li>
       </ul>
      </section>
@@ -318,7 +325,7 @@
        <li>
         These assumptions imply that the heat transferred from the
     condensing steam in the first evaporator, is recovered in the
-    latent heat of the vapour stream.
+	latent heat of the vapour stream.
         \begin{align*}
         Q_1\approx Q_2\approx Q_3\approx Q_{effect}
         \end{align*}
@@ -333,21 +340,23 @@
         \end{align*}
        </li>
        <li class="fragment" data-fragment-index="2">
-        These are useful approximate expressions as we can
-    immediately gain an initial estimate of the flows (and therefore
-    concentrations) in each evaporator. We can also generate useful
-    approximate energy balance expressions from these equations…
+         Above are all useful approximate expressions as we can
+	 immediately gain an initial estimate of the flows (and
+	 therefore concentrations) in each evaporator. We can also
+	 generate useful approximate energy balance expressions from
+	 these equations…
        </li>
       </ul>
      </section>
      <section>
       <ul>
        <li>
-        If we assume the duty and area of each effect/stage is
-    equal, using the heat transfer equation we have
-        \begin{align*}
-        \frac{Q_{effect}}{A_{effect}}\approx U_1 \Delta T_1\approx U_2 \Delta T_2 \approx U_3 \Delta T_3
-        \end{align*}
+         If we assume the duty and area of each effect/stage is equal
+	 (actually a deliberate design choice, as building several
+	 exactly the same sized evaporators is economical), using the
+	 heat transfer equation we have \begin{align*}
+	 \frac{Q_{effect}}{A_{effect}}\approx U_1 \Delta T_1\approx
+	 U_2 \Delta T_2 \approx U_3 \Delta T_3 \end{align*}
        </li>
        <li class="fragment" data-fragment-index="1">
         Thus, the temperature difference in each stage is
@@ -383,25 +392,21 @@
      <section>
       <figure>
        <div class="center">
-        <img src="img/forward_feed4.svg" style="width:80%"/>
+        <img src="img/forward_feed4.svg" style="width:70%"/>
        </div>
       </figure>
       <ul>
        <li>
-        In commercially available multi-effect evaporators, the
-    heat transfer areas of each stage are usually identical (they like
-    to stamp-out the same design).
-        \begin{align*}
-        A_1=A_2=A_3=A_{effect}
-        \end{align*}
-        (
-        <b>Note:</b>
-        this expression is not approximate, it is a design constraint)
+         To reiterate, in commercially available multi-effect
+	 evaporators the heat transfer areas of each stage are usually
+	 identical as they like to stamp-out the same design.
+	 \begin{align*} A_1=A_2=A_3=A_{effect} \end{align*} (
+         This expression is not approximate, it is a design constraint)
        </li>
        <li class="fragment" data-fragment-index="1">
-        This is often used as the constraint on the iterative
-    calculations. Once you converge to a single size for all
-    evaporators, you may stop iterating.
+         This is the final constraint on the iterative
+	 calculations. Once you converge to a single size for all
+	 evaporators, you may stop iterating.
        </li>
       </ul>
      </section>
@@ -441,12 +446,12 @@
      <section>
       <figure>
        <div class="center">
-        <img src="img/forward_feed4.svg" style="width:80%"/>
+        <img src="img/forward_feed4.svg" style="width:70%"/>
        </div>
       </figure>
       <ul>
        <li>
-        We add to these approximate equations the exact mass
+         We add to these approximate equations the exact mass
     balance equations, around the whole multi-stage evaporator and
     around each individual stage.
         \begin{align*}
@@ -462,7 +467,7 @@
      <section data-menu-title="Summary">
       <ul>
        <li>
-        Assuming we have three stages/effects…
+         In summary, assuming we have three stages/effects…
        </li>
        <li class="fragment" data-fragment-index="1">
         <b>Approximate equations</b>
