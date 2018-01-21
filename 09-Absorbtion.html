@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Separation Processes 1
+  </title>
+  <meta content="Separation processes 1 notes" name="description"/>
+  <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
+  <script data-headjs-load="header.js" src="../reveal.js/lib/js/head.min.js">
+  </script>
+ </head>
+ <body>
+  <div class="reveal">
+   <div class="slides">
+    <section>
+     <section>
+      <h2>
+       Absorbtion
+      </h2>
+      <div class="center">
+      </div>
+     </section>
+    </section>
+    <section>
+    </section>
+    <section>
+     <section data-menu-title="Phase Rule">
+      <figure>
+       <div class="center">
+        <img src="img/multi_evaporator.svg" style="width:100%"/>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        So far, we have only considered systems where there is a
+    perfect separation.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        This has let us revise mass/energy balances, enthalpy
+    calculations and boiling point rises.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        But we are limited to extremes of volatility and
+    solubility. The sugar/salt/NaOH is not present in the vapour phase
+    and always dissolves in the liquid phase.
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/binary_multi_distillation.svg" style="width:85%"/>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        We will need to consider
+        <b>components</b>
+        that are
+        <b>soluble</b>
+        in both phases of the process streams.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        Consider the simple
+        <b>binary</b>
+        and more complex
+        <b>multi-component</b>
+        distillation above.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        We will need data or expressions that describes the
+    relative distribution of the components of the system between the
+    different phases.
+       </li>
+      </ul>
+     </section>
+     <section data-menu-title="Definition">
+      <ul>
+       <li>
+        The first relation we will discuss is
+        <b>Gibb's phase
+      rule</b>.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        Gibb's phase rule is a function which states the number of
+    independent intensive properties (e.g., Temperature, Pressure),
+    also called
+        <b>degrees of freedom</b>, which are needed to
+    completely specify an equilibrium mixture of fluids.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        It is expressed as follows:
+        \begin{align*}
+        F = C-P+2
+        \end{align*}
+        where
+        $F$
+        is the degrees of freedom,
+        $C$
+        is the number of
+        <b>components</b>
+        in the system, and
+        $P$
+        is the number of phases in the
+    system.
+       </li>
+      </ul>
+     </section>
+     <section data-menu-title="Single Component Examples">
+      <h3>
+       Single Component Systems
+      </h3>
+      \begin{align*}
+      F = C-P+2
+      \end{align*}
+      <ul>
+       <li>
+        For example, in a single phase ($P=1$), single component
+    (
+        $C=1$) system like water, we need
+        $F=2$
+        variables to completely
+    specify its state (e.g. pressure and temperature).
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        If we then start to boil water, the number of phases
+    increases to two ($P=2$), reducing the degree's of freedom to
+        $F=1$
+        !
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        This is because you can either specify the temperature or
+    pressure of a boiling fluid (e.g., steam), but you cannot control
+    each independently.
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        This explains why Dühring charts can have water's
+    boiling temperature as an “effective” pressure axis.
+       </li>
+      </ul>
+     </section>
+     <section data-menu-title="Multi-Component Examples">
+      <h3>
+       Multi-Component Systems
+      </h3>
+      \begin{align*}
+      F = C-P+2
+      \end{align*}
+      <ul>
+       <li>
+        Let's take a fluid with an extra component like our sugar
+    or NaOH solutions ($C=2$).
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        If we are boiling this solution we will have two phases
+    ($P=2$), and the number of degrees of freedom is
+        $F=2$.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        We can now (depending on the BPR) specify the temperature
+    and pressure of the system, even though it is boiling, as this
+    fixes the concentration of the fluid.
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        We may set the temperature and pressure, or the pressure
+    and concentration, or the concentration and temperature, but not
+    all three.
+       </li>
+      </ul>
+     </section>
+     <section>
+      <h3>
+       Multi-Component Systems
+      </h3>
+      \begin{align*}
+      F = C-P+2
+      \end{align*}
+      <ul>
+       <li>
+        Your experience of designing a multi-stage evaporator
+    should give you a feel for this. You specify the temperature and
+    concentration and calculate the pressure.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        Gibb's phase rule is interesting to understand how many
+    variables are required to be solved in a system (similar to a
+    degrees of freedom analysis), but it does not directly help you to
+    solve the separation problem.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        We need more equations (or laws) which describe the
+    distribution of components between the phases.
+       </li>
+      </ul>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="VLE Data, Henry's Law, &amp; Raoult's Law">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <ul>
+         <li>
+          Much of our designs will consider experimental data in
+        the form of Vapour-Liquid Equilibrium (
+          <b>VLE</b>) Data.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          On the right we have a temperature-concentration
+        diagram which can be used to calculate the boiling point and
+        concentrations of Benzene-Tolulene mixtures.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Benzene is more volatile than Tolulene, which we can
+        exploit in a separation process.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.481);">
+        <figure>
+         <div class="center">
+          <img src="img/Benzene_Tolulene.svg" style="width:100%"/>
+          <figcaption>
+           Temperature-Composition diagram for Benzene-Tolulene mixtures.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/VLEvsTC.svg" style="width:80%"/>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        When solving the mass balances of the system, we often
+    discard the temperature data and generate $x$
+        -
+        $y$
+        VLE diagrams as
+    above.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        These are more convenient when using graphical methods to
+    solve the mass balance of a separation process.
+       </li>
+      </ul>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          In the limit of an ideal mixture or high/low
+        concentrations there are useful law's which you may use if
+        appropriate for your system.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          For
+          <b>ideal mixtures</b>
+          (AKA mixtures of
+          <b>homologous</b>
+          compounds), or when you are looking at the
+        vapour pressure of a component at large concentrations,
+          <b>Raoult's law</b>
+          holds…
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/Henry_Raoult.svg" style="width:100%"/>
+          <figcaption>
+           Partial pressure
+           $p_a$
+           versus mole fraction
+           $x_a$
+           of a component,
+           $a$.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Raoult's  Law">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          c
+          Raoult's law was discovered in 1882 by Fran
+          ois-Marie Raoult, and is given by
+          \begin{align*}
+          p_A = P_A x_A
+          \end{align*}
+          where
+          $p_A$
+          is the partial pressure,
+          $P_A$
+          is the vapour
+        pressure, and
+          $x_A$
+          is the mole fraction of component
+          $A$.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          This allows you to estimate the molar concentrations
+        of components in the gas phase if you know the total pressure
+        using Dalton's law:
+          \begin{align*}
+          y_A = \frac{p_A}{P} = \frac{P_A x_A}{P}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          <i>Unmodified</i>
+          Raoult's law is of limited value as
+        it does not have a wide range of application (see right)
+        except for ideal mixtures, where similar compounds are mixed
+        (e.g., hexane-heptane, benzene-toluene) or large
+        concentrations of
+          $A$
+          (
+          $x_A\to1$, region
+          $C\to D$).
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/Henry_Raoult.svg" style="width:100%"/>
+          <figcaption>
+           Partial pressure
+           $p_a$
+           versus mole fraction
+           $x_a$
+           of a component,
+           $a$.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          We can modify Raoult's law to extend it to non-ideal
+        solutions
+          \begin{align*}
+          p_A \phi_A = P_A \gamma_A x_A
+          \end{align*}
+          where
+          $\phi_A$
+          is the fugacity coefficient and
+          $\gamma_A$
+          is
+        the activity coefficient.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The fugacity coefficient corrects for non-ideal gas
+        behaviour, but many gases are effectively ideal for the
+        industrially relevant states $\phi_A=1$.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          The activity coefficient corrects for non-ideal liquid
+        interactions, and will need to be obtained from experimental
+        values or empirical fits.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Its values have meaning at the molecular scale:
+          <ul>
+           <li>
+            $\gamma &lt; 1$
+            : The two molecule types strongly attract
+          each other compared to their own type, decreasing their
+          volatility.
+           </li>
+           <li>
+            $\gamma &gt; 1$
+            : Molecules strongly repel each other
+          compared to their own type, increasing their volatility.
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/Raoult.jpg" style="width:100%;"/>
+          <figcaption>
+           Fran
+           ois-Marie Raoult.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          I expect you to be familiar with calculation of VLE
+        data from activity coefficients (e.g., the
+          <b>van Laar</b>
+          model):
+          \begin{align}
+          \ln \gamma_A = A_{AB} \left(\frac{A_{BA} x_B}{A_{AB} x_A+A_{BA} x_B}\right)^2
+          \end{align}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          And
+          <b>Antoine</b>
+          data:
+          \begin{align}
+          \log_{10} p_A &amp;= A_A - \frac{B_A}{C_A+T}+…
+          \end{align}
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Where $A_A,B_A,C_A$
+          are empirically determined
+        coefficients for a given component
+          $A$, and
+          $A_{AB},A_{BA}$
+          are empirically determined interaction coefficients between
+        component
+          $A$
+          and
+          $B$.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          If this is unfamiliar, please re-read your
+        thermodynamics notes or see “Introduction to Chemical
+        Engineering Thermodynamics” by Smith, van Ness, and Abbott.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/Raoult.jpg" style="width:100%;"/>
+          <figcaption>
+           Fran
+           ois-Marie Raoult.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Henry's Law">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          At the limit of low concentration ($A\to B$), we can
+        use Henry's law.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Henry's law was discovered by William Henry in 1803,
+        and is written as
+          \begin{align*}
+          p_A = \mathcal{H}_A x_a
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          where $\mathcal{H}_A$
+          is the Henry's law constant and
+        is the analog of the vapour pressure in Raoult's law.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          In fact, for ideal mixtures we have:
+          \begin{align*}
+          \mathcal{H}_A &amp; = \mathcal{P}_A &amp; \text{(Ideal mixtures)}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          This is not often true, for example, although gases
+        such as N${}_2$
+          /O
+          ${}_2$
+          /CO
+          ${}_2$
+          have enormous vapour
+        pressures at
+          $25{}^\circ$
+          C, they disolve to a measurable
+        amount in water due to strong interactions (
+          $\mathcal{H}_A \ll
+        P_A$) and Henry's law describes this.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/Henry_Raoult.svg" style="width:100%"/>
+          <figcaption>
+           Partial pressure
+           $p_a$
+           versus mole fraction
+           $x_a$
+           of a component,
+           $a$.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          Henry's law is very useful in systems such as gas
+        absorbers where only a low concentration of the gas is
+        dissolved in the absorbing liquid.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          One example of a gas absorber is the aerator in an
+        aquarium, responsible for absorbing $O_2$
+          and desorbing
+          $CO_2$.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Another example are fizzy-drink carbonators
+        (sodastream for lab scale, coca-cola for industrial scale)
+        where CO${}_2$
+          is absorbed into water.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          But Henry's law cannot be used out of its limiting
+        concentration, it is restricted to approximating the
+        interaction of almost isolated molecules of $A$
+          in a fluid of
+          $B$.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/William_Henry.jpg" style="width:100%;"/>
+          <figcaption>
+           Notable English chemist William Henry
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/henry_SO2.svg" style="width:100%"/>
+        <figcaption>
+         Equilibrium plot for water-SO2 system at
+         $20^\circ$
+         C.
+        </figcaption>
+       </div>
+      </figure>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Example: Oxygen in water">
+      <ul>
+       <li>
+        What will be the concentration of oxygen dissolved in
+    water at 298 K when the solution is in equilibrium with air at
+    1 atm total pressure?
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        The partial pressure of oxygen in air is given by Dalton's
+    law:
+        \begin{align*}
+        p_{O_2} = P y_{O_2} = 1\times0.21 = 0.21 \textrm{atm}
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        Using this in Henry's law with the coefficient of
+    $\mathcal{H}_A=4.259\times10^4$
+        atm at
+        $25{}^\circ$
+        C (note there can be many
+    different units!), we have
+        \begin{align*}
+        p_{O_2} &amp;= \mathcal{H}_A  x_{O_2}\\
+      x_{O_2} &amp;= p_{O_2}/\mathcal{H}_A =  0.21 / 4.259\times10^4 = 4.80\times10^{-6} \text{mol %}
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        This is a remarkably low concentration of oxygen
+    considering the scale of aerobic life within the ocean.
+       </li>
+       <li class="fragment" data-fragment-index="4">
+        Sharks extract up to 80% of the oxygen in the water that
+    passes over their gils, whereas we only extract 25% of the oxygen
+    in the air which passes through our lungs (what about air
+    breathing fish?).
+       </li>
+       <li class="fragment" data-fragment-index="5">
+        Some shark species (great white shark, whale shark) must
+    keep swimming to ensure they process sufficient volumes of water,
+    otherwise they can “drown.”
+       </li>
+       <li class="fragment" data-fragment-index="6">
+        Solubility decreases significantly with temperature,
+    e.g. (14.6 mg/L at 0${}^\circ$
+        C versus 7.6 mg/L at 20
+        ${}^\circ$
+        C),
+    hence the environmental restrictions on the temperature of cooling
+    water dumped into local waterways.
+       </li>
+      </ul>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Gas Absorbers">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <ul>
+         <li>
+          Let's consider a single-stage gas absorber.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          In such a device, two immiscible fluids (a gas and a
+        liquid) are contacted and mixed thoroughly.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          We will consider the absorption of $CO_2$
+          from a
+          $CO_2$
+          -air mixture using pure water as an example.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Within the phases at inlet, the CO${}_2$
+          component of
+        the gas phase is out of equilibrium with the liquid phase, but it is
+        brought into equilibrium within the absorber.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+          <img src="img/absorber.svg" style="width:100%"/>
+         </div>
+         <figcaption>
+          A representation of a packed absorber column.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          An idealised diagram of a single-stage absorber is
+        presented on the right.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We assume the two exit streams are in equilibrium, as
+        the absorber is
+          <b>well-mixed</b>.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Although the numbering scheme for the streams is a
+        little odd, it will make sense when we look at
+          <b>multi-stage absorbtion</b>.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Each stream is numbered according to the stage it was
+        produced from, so we are looking at the first stage of a
+          <b>multi-stage absorber</b>.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/absorber_stage.svg" style="width:100%"/>
+          <figcaption>
+           A flow diagram of a single-stage absorber.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          Performing a total mass balance over the absorber, we
+        have
+          \begin{align*}
+          L_0+V_2 = L_1+V_1=M
+          \end{align*}
+          where
+          $M$
+          is the total mass flow-rate.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Labelling our components A=$CO_2$, B=air and C=water
+        for generality, we can perform mass balances in each component
+          \begin{align*}
+          L_0 x_{A,0}+V_2 y_{A,2}&amp;=L_1 x_{A,1} + V_1 y_{A,1} = M x_{AM}\\
+          L_0 x_{B,0}+V_2 y_{B,2}&amp;=L_1 x_{B,1} + V_1 y_{B,1} = M x_{BM}
+          \end{align*}
+          where
+          $x_{AM}$
+          and
+          $x_{BM}$
+          are the average fractions of air
+        and
+          $CO_2$
+          respectively.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          There is no need to perform a balance in $x_{C}$, as
+        we have the relationships
+          \begin{align*}
+          x_{A,\alpha}+x_{B,\alpha}+x_{C,\alpha} &amp;= 1 &amp; \text{for
+            $\alpha\in0,1 $}\\
+          y_{A,\beta}+y_{B,\beta}+y_{C,\beta} &amp;= 1 &amp; \text{for
+            $\beta\in1,2 $}\\
+          \end{align*}
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/absorber_stage.svg" style="width:100%"/>
+          <figcaption>
+           A single-stage absorber.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          We can make some simplifying assumptions in our
+        system.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We assume that air is essentially insoluble in the
+        water phase and that water does not vaporise to the gas phase.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          This is a massive simplification, but is justified if
+        there is significant pressures of CO${}_2$, and the water was
+        in equilibirum with 100% humidity air before coming into
+        contact.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/absorber_stage.svg" style="width:100%"/>
+          <figcaption>
+           A single-stage absorber.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          This implies that the vapour stream is a binary A-B
+        ($CO_2$
+          -air) stream, and the liquid is a binary A-C
+        (
+          $CO_2$
+          -water) stream.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We can then rewrite our balance for A=$CO_2$, in terms
+        of the inert stream flow-rates, water (
+          $L'$) and air (
+          $V'$).
+          \begin{multline*}
+          L'\frac{x_{A,0}}{1-x_{A,0}}+V'\frac{y_{A,2}}{1-y_{A,2}}\\
+          = L'\frac{x_{A,1}}{1-x_{A,1}}+V'\frac{y_{A,1}}{1-y_{A,1}} \\
+          = M x_{AM}
+          \end{multline*}
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/absorber_stage.svg" style="width:100%"/>
+          <figcaption>
+           A single-stage absorber.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      \begin{align*}
+      L'\frac{x_{A,0}}{1-x_{A,0}}+V'\frac{y_{A,2}}{1-y_{A,2}}
+    = L'\frac{x_{A,1}}{1-x_{A,1}}+V'\frac{y_{A,1}}{1-y_{A,1}}
+    = M x_{AM}
+      \end{align*}
+      <ul>
+       <li>
+        The above equation is our balance equation for a single
+    absorber stage with the assumption that there is only one
+    absorbing/desorping component.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        From the specification of the inlet stream compositions
+    and flow rates, we can calculate the flow-rates of water and air using
+        \begin{align*}
+        L'&amp;=L_0\left(1-x_{A,0}\right) &amp; V'&amp;=V_2\left(1-y_{A,2}\right)
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        Along with Henry's law, we can solve the balance around
+    single absorber stages, as shown in the following example.
+       </li>
+      </ul>
+     </section>
+    </section>
+   </div>
+   <div class="slide-menu-button" style="left:170px;cursor:pointer;">
+    <a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
+     <i class="fa fa-print"></i>
+    </a>
+   </div>
+   <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+   </script>
+   <script src="footer.js">
+   </script>
+  </div>
+ </body>
+</html>
