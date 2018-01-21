@@ -32,22 +32,23 @@
       </h3>
       <ul>
        <li>
-        We are going to cover the example design in section 8.5D
-    of “Transport Processes and Unit Operations,” by
-    C. J. Geankoplis, as this book is not widely available.
+        We are going to cover the example design in section 8.5D of
+    “Transport Processes and Unit Operations,” by C. J. Geankoplis. As
+    the book is not the easiest to get ahold of, it is repeated here.
        </li>
        <li class="fragment" data-fragment-index="1">
-        However, there are another two examples of Multi-Stage
-    Evaporator design available in C&amp;R Volume 2, if you wish to study
-    the topic further.
+         There are another two examples of Multi-Stage Evaporator
+	 design available in C&amp;R Volume 2, if you wish to study
+	 the topic further.
        </li>
        <li class="fragment" data-fragment-index="2">
-        This design concerns a triple-effect evaporator in a
-    white-sugar factory.
+         This design concerns a triple-effect evaporator in a
+	white-sugar factory.
        </li>
        <li class="fragment" data-fragment-index="3">
-        We will look at a rigorous design procedure which, if
-    followed correctly, will yield a valid process design.
+         The design procedure, if followed correctly, will yield a
+	 valid process design in all cases and satisfy the implicit
+	 mass and energy equations.
        </li>
        <li class="fragment" data-fragment-index="4">
         The reason for following the procedure rigorously is to
@@ -72,7 +73,7 @@
       </h3>
       <figure>
        <div class="center">
-        <img src="img/flowsheet2.svg" style="width:85%"/>
+        <img src="img/flowsheet2.svg" style="width:75%"/>
        </div>
       </figure>
       \begin{align*}
@@ -81,18 +82,21 @@
       \end{align*}
       <ul>
        <li>
-        In every problem you will encounter, you will be provided
-    with the
+	 We've started the design by filling out all the given information (see above).
+       </li>
+       <li class="fragment">
+        In most problems you will encounter in this course, you will
+	be provided with the
         <i>steam pressure</i>,
         <i>final stage pressure</i>,
         <i>feed stream specification</i>,
         <i>final concentration</i>,
         <i>overall heat transfer coefficient estimates</i>
         and
-        <i>physical
-      properties</i>.
+        <i>physical properties</i>. Below the diagram we've repeated
+      the physical data for this problem.
        </li>
-       <li class="fragment" data-fragment-index="1">
+       <li class="fragment">
         To this, you will almost certainly need to add the data
     contained in your steam tables.
        </li>
@@ -109,10 +113,10 @@
       </figure>
       <ul>
        <li>
-        The boiling point rise in the third evaporator is
-        \begin{align*}
-        \textrm{BPR}&amp;=1.78\times0.5+6.22\times0.5^2\approx2.45 \textrm{${}^\circ $C/K}
-        \end{align*}
+         As we know the final concentration, the boiling point rise in
+        the third evaporator is \begin{align*}
+        \textrm{BPR}&amp;=1.78\times0.5+6.22\times0.5^2\approx2.45 \textrm{${}^\circ
+        $C/K} \end{align*}
        </li>
        <li class="fragment" data-fragment-index="1">
         We then look up the boiling point of pure water at
@@ -176,11 +180,10 @@
       </figure>
       <ul>
        <li>
-        To start our iterations off, we can assume an equal amount
-    of vapour is generated in each phase:
-        \begin{align*}
-        V_1\approx V_2\approx V_3\approx 18144 / 3 =6048\textrm{ kg/hr}
-        \end{align*}
+         Here is the start of our iterations/shooting: we assume an
+	 equal amount of vapour is generated in each phase:
+	 \begin{align*} V_1\approx V_2\approx V_3\approx 18144 / 3
+	 =6048\textrm{ kg/hr} \end{align*}
        </li>
        <li class="fragment" data-fragment-index="1">
         It is important to remember that this is an estimate, and
@@ -223,7 +226,7 @@
         With the flowrates predicted, we can estimate the
     concentrations using solids mass balances around each stage, and
     validate our calculations by checking the last stage's solids
-    balance.
+    balance. (Remember to check your calculations!)
         \begin{align*}
         x_1 &amp;= x_F F/L_1 = 0.1\times22680/16632 &amp;&amp;\approx 0.136\\
       x_2 &amp;= x_1 L_1/L_2 = 0.136\times16632/10584 &amp;&amp;\approx 0.214\\
@@ -262,7 +265,7 @@
        Step 4: Calculate the Operating Temperatures
       </h3>
       <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.651);">
+       <div style="flex: 1 1 calc(100% * 0.7);">
         <ul>
          <li>
           There is a difficulty when using this equation when a
@@ -288,7 +291,7 @@
          </li>
         </ul>
        </div>
-       <div style="flex: 1 1 calc(100% * 0.351);">
+       <div style="flex: 1 1 calc(100% * 0.3);">
         <figure>
          <div class="center">
           <img src="img/BPR-evaporator.svg" style="width:100%"/>
@@ -302,7 +305,7 @@
        Step 4: Calculate the Operating Temperatures
       </h3>
       <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.651);">
+       <div style="flex: 1 1 calc(100% * 0.7);">
         <ul>
          <li>
           We must also be careful to note that each temperature
@@ -319,7 +322,7 @@
          </li>
         </ul>
        </div>
-       <div style="flex: 1 1 calc(100% * 0.351);">
+       <div style="flex: 1 1 calc(100% * 0.3);">
         <figure>
          <div class="center">
           <img src="img/BPR-evaporator.svg" style="width:100%"/>
@@ -658,11 +661,8 @@
         \end{align*}
        </li>
        <li class="fragment" data-fragment-index="1">
-        The average area is $A_m=104.4$
-        m
-        ${}^2$
-        and, as all values
-    are within 10%, our design is complete.
+        The average area is $A_m=104.4\,\text{m}^2$ and, as all values
+        are within 10% of this average, our design is complete.
        </li>
       </ul>
      </section>
@@ -695,6 +695,7 @@
      </section>
     </section>
     <section>
+      See the PDF notes on MyAberdeen for the rest of the solution (nothing new appears there).
     </section>
    </div>
    <div class="slide-menu-button" style="left:170px;cursor:pointer;">
