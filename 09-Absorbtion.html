@@ -48,8 +48,8 @@
        </li>
        <li class="fragment" data-fragment-index="2">
         But we are limited to extremes of volatility and
-    solubility. The sugar/salt/NaOH is not present in the vapour phase
-    and always dissolves in the liquid phase.
+	solubility. (We always assume the sugar/salt/NaOH is not present in the
+	vapour phase and always dissolves in the liquid phase).
        </li>
       </ul>
      </section>
@@ -75,9 +75,9 @@
         distillation above.
        </li>
        <li class="fragment" data-fragment-index="2">
-        We will need data or expressions that describes the
-    relative distribution of the components of the system between the
-    different phases.
+         We will need data or expressions that describes the
+	 relative distribution of the components of the system between the
+	 different phases. Let's start from the beginning...
        </li>
       </ul>
      </section>
@@ -85,15 +85,14 @@
       <ul>
        <li>
         The first relation we will discuss is
-        <b>Gibb's phase
-      rule</b>.
+        <b>Gibb's phase rule</b>.
        </li>
        <li class="fragment" data-fragment-index="1">
         Gibb's phase rule is a function which states the number of
-    independent intensive properties (e.g., Temperature, Pressure),
-    also called
-        <b>degrees of freedom</b>, which are needed to
-    completely specify an equilibrium mixture of fluids.
+	independent intensive properties (e.g., Temperature, Pressure), 
+	also called
+        <b>degrees of freedom</b>, which are needed to completely
+    specify an equilibrium mixture of fluids.
        </li>
        <li class="fragment" data-fragment-index="2">
         It is expressed as follows:
@@ -105,11 +104,15 @@
         is the degrees of freedom,
         $C$
         is the number of
-        <b>components</b>
-        in the system, and
-        $P$
-        is the number of phases in the
-    system.
+        <b>components</b> in the system, and $P$ is the number of
+        phases in the system.
+       </li>
+       <li class="fragment"> Taken from wikipedia: <i>
+	The number of components is equal to the
+        number of distinct chemical species (constituents), minus the
+        number of chemical reactions between them, minus the number of
+        any constraints (like charge neutrality or balance of molar
+        quantities).</i>
        </li>
       </ul>
      </section>
@@ -184,9 +187,9 @@
       \end{align*}
       <ul>
        <li>
-        Your experience of designing a multi-stage evaporator
-    should give you a feel for this. You specify the temperature and
-    concentration and calculate the pressure.
+        Your experience of designing a multi-stage evaporator should
+	give you a feel for this. You specify the pressure and
+	concentration (of the final stage) and calculate the temperature.
        </li>
        <li class="fragment" data-fragment-index="1">
         Gibb's phase rule is interesting to understand how many
@@ -207,17 +210,21 @@
        <div style="flex: 1 1 calc(100% * 0.51);">
         <ul>
          <li>
-          Much of our designs will consider experimental data in
-          the form of Vapour-Liquid Equilibrium (<b>VLE</b>) Data.
+           We need Vapour-Liquid Equilibrium (<b>VLE</b>) Data. This
+           is a limited subset of thermodynamic data (no enthalpy or
+           density data) just focussed on the distribution of
+           components between phases in equilibrium.
          </li>
          <li class="fragment" data-fragment-index="1">
-          On the right we have a temperature-concentration
-        diagram which can be used to calculate the boiling point and
-        concentrations of Benzene-Tolulene mixtures.
+           On the right we have a temperature-concentration diagram
+           which can be used to calculate the boiling point and
+           concentrations of Benzene-Tolulene mixtures.
          </li>
          <li class="fragment" data-fragment-index="2">
-          Benzene is more volatile than Tolulene, which we can
-        exploit in a separation process.
+           Knowing benzene is more volatile than Tolulene (which is
+           obvious from the graph's lower boiling temperature for pure
+           benzene), which we can exploit its preference to be in the
+           vapour phase in a separation process.
          </li>
         </ul>
        </div>
@@ -236,7 +243,7 @@
      <section>
       <figure>
        <div class="center">
-        <img src="img/VLEvsTC.svg" style="width:70%"/>
+        <img src="img/VLEvsTC.svg" style="width:60%"/>
        </div>
       </figure>
       <ul>
@@ -244,13 +251,15 @@
         When solving the mass balances of the system, we often discard
 	the temperature data and generate $x$-$y$ VLE diagrams as above.
        </li>
-       <li class="fragment" data-fragment-index="1">
+       <li class="fragment">
          These are more convenient when using graphical methods to
 	 solve the mass balance of a separation process.
        </li>
        <li class="fragment">
 	 Note these demonstrate (a) ideal, (b) non-ideal minimum
-	 boiling azeotrope, and (c) maximum boiling azeotrope.
+	 boiling azeotrope, and (c) maximum boiling azeotrope. Also
+	 note, the Most Volatile Compound (MVC) often swaps when
+	 passing through an azeotrope.
        </li>
       </ul>
      </section>
@@ -259,17 +268,23 @@
        <div style="flex: 1 1 calc(100% * 0.651);">
         <ul>
          <li>
-          In the limit of an ideal mixture or high/low
-        concentrations there are useful law's which you may use if
-        appropriate for your system.
+           Graphs are very useful (as we'll see later with the
+           McCabe-Thiele method) but we also want/need mathematical
+           models, either to create the graphs or to interpolate
+           between experimental data.
+	 </li>
+	 <li class="fragment">
+	   In the limit of an ideal mixture or high/low concentrations
+           there are several useful law's which you may use if
+           appropriate for your system.
          </li>
-         <li class="fragment" data-fragment-index="1">
+         <li class="fragment">
           For
           <b>ideal mixtures</b>
           (AKA mixtures of
-          <b>homologous</b>
-          compounds), or when you are looking at the
-        vapour pressure of a component at large concentrations,
+          <b>homologous</b> compounds), or when you are looking at the
+          vapour pressure of a component at large concentrations
+          ($C\to D$),
           <b>Raoult's law</b>
           holds…
          </li>
@@ -280,12 +295,9 @@
          <div class="center">
           <img src="img/Henry_Raoult.svg" style="width:100%"/>
           <figcaption>
-           Partial pressure
-           $p_a$
-           versus mole fraction
-           $x_a$
-           of a component,
-           $a$.
+           Partial pressure $p_a$ versus mole fraction $x_a$ of a
+           component, $a$ displaying non-ideal behaviour, with
+           indications of where various laws hold.
           </figcaption>
          </div>
         </figure>
@@ -313,9 +325,10 @@
          </li>
          <li class="fragment" data-fragment-index="2">
            <i>Unmodified</i> Raoult's law is of limited value as it
-           does not have a wide range of application (see right)
+           does not have a wide range of application (from $C\to D$)
            except for ideal mixtures, where similar compounds are
-           mixed (e.g., hexane-heptane, benzene-toluene).
+           mixed (e.g., hexane-heptane, benzene-toluene), where it
+           holds over the whole range.
          </li>
         </ul>
        </div>
@@ -352,17 +365,19 @@
         the activity coefficient.
          </li>
          <li class="fragment" data-fragment-index="1">
-          The fugacity coefficient corrects for non-ideal gas
-        behaviour, but many gases are effectively ideal for the
-        industrially relevant states $\phi_A=1$.
+           The fugacity coefficient is used to correct for non-ideal
+           gas behaviour, but many gases are effectively ideal for the
+           industrially relevant states $\phi_A=1.$
          </li>
          <li class="fragment" data-fragment-index="2">
-          The activity coefficient corrects for non-ideal liquid
-        interactions, and will need to be obtained from experimental
-        values or empirical fits.
+           The activity coefficient is used to correct for non-ideal
+           liquid interactions, and will need to be obtained from
+           experimental values or empirical fits.
          </li>
          <li class="fragment" data-fragment-index="3">
-          Its values have meaning at the molecular scale:
+           Although its values/functions are simply fitted to
+           experimental data, its values do have meaning at the
+           molecular scale:
           <ul>
            <li>
             $\gamma &lt; 1$
@@ -396,8 +411,9 @@
        <div style="flex: 1 1 calc(100% * 0.651);">
         <ul>
          <li>
-          I expect you to be familiar with calculation of VLE
-        data from activity coefficients (e.g., the
+           I expect you to be(come) familiar with calculation of
+           activity coefficients (thus VLE data) from activity
+           coefficients (e.g., the
           <b>van Laar</b>
           model):
           \begin{align}
@@ -406,10 +422,10 @@
          </li>
          <li class="fragment" data-fragment-index="1">
           And
-          <b>Antoine</b>
-          data:
+          <b>Antoine</b>-type data for the pure vapour pressure:
+	  
           \begin{align}
-          \log_{10} p_A &amp;= A_A - \frac{B_A}{C_A+T}+…
+          \log_{10} P_A &amp;= A_A - \frac{B_A}{C_A+T}+…
           \end{align}
          </li>
          <li class="fragment" data-fragment-index="2">
@@ -429,6 +445,10 @@
         thermodynamics notes or see “Introduction to Chemical
         Engineering Thermodynamics” by Smith, van Ness, and Abbott.
          </li>
+	 <li class="fragment">
+	   This is coming in two weeks, so please revise in advance,
+	   but for now we only need a simpler model...
+	 </li>
         </ul>
        </div>
        <div style="flex: 1 1 calc(100% * 0.351);">
@@ -460,9 +480,9 @@
           \end{align*}
          </li>
          <li class="fragment" data-fragment-index="2">
-          where $\mathcal{H}_A$
-          is the Henry's law constant and
-          is the analog of the vapour pressure in Raoult's law.
+           where $\mathcal{H}_A$ is the Henry's law constant which is
+           the analog of the pure vapour pressure $P_A$ in Raoult's
+           law.
          </li>
          <li class="fragment" data-fragment-index="3">
           In fact, for ideal mixtures we have:
@@ -473,10 +493,15 @@
          <li class="fragment" data-fragment-index="4">
           This is not often true, for example, although gases such as
           N${}_2$/O${}_2$/CO${}_2$ have enormous vapour pressures at
-          $25{}^\circ$C, they disolve to a measurable amount in water
-          due to strong interactions ($\mathcal{H}_A \ll P_A$) and
-          Henry's law describes this.
+          $25{}^\circ$C; however, they disolve to a measurable amount
+          in water due to strong interactions ($\mathcal{H}_A \ll
+          P_A$) and Henry's law describes this.
          </li>
+	 <li class="fragment">
+	   Just like $P_A$, $\mathcal{H}_A$ is strongly temperature
+	   dependent, but we often use constant values if the
+	   temperature is approximately constant.
+	 </li>
         </ul>
        </div>
        <div style="flex: 1 1 calc(100% * 0.351);">
@@ -543,8 +568,9 @@
        <div class="center">
         <img src="img/henry_SO2.svg" style="width:80%"/>
         <figcaption>
-         Equilibrium plot for water-SO2 system at
-         $20^\circ$C.
+         Equilibrium plot for water-SO2 system at $20^\circ$C, which
+         highlights how Henry's law is deviated from at around 0.5%
+         liquid concentration.
         </figcaption>
        </div>
       </figure>
@@ -558,48 +584,50 @@
     water at 298 K when the solution is in equilibrium with air at
     1 atm total pressure?
        </li>
-       <li class="fragment" data-fragment-index="1">
+       <li class="fragment">
         The partial pressure of oxygen in air is given by Dalton's
     law:
         \begin{align*}
         p_{O_2} = P y_{O_2} = 1\times0.21 = 0.21 \textrm{atm}
         \end{align*}
        </li>
-       <li class="fragment" data-fragment-index="2">
+       <li class="fragment">
         Using this in Henry's law with the coefficient of
-    $\mathcal{H}_A=4.259\times10^4$
-        atm at
-        $25{}^\circ$
-        C (note there can be many
-    different units!), we have
-        \begin{align*}
-        p_{O_2} &amp;= \mathcal{H}_A  x_{O_2}\\
-      x_{O_2} &amp;= p_{O_2}/\mathcal{H}_A =  0.21 / 4.259\times10^4 = 4.80\times10^{-6} \text{mol %}
-        \end{align*}
+	$\mathcal{H}_A=4.259\times10^4$ atm at $25{}^\circ$ C (note there
+	can be many different units of pressure and concentration), we
+	have \begin{align*} p_{O_2} &amp;= \mathcal{H}_A  x_{O_2}\\
+	x_{O_2} &amp;= p_{O_2}/\mathcal{H}_A = 0.21 / 4.259\times10^4 =
+	4.80\times10^{-6} \text{mol/mol} \end{align*}
        </li>
-       <li class="fragment" data-fragment-index="3">
+       <li class="fragment">
         This is a remarkably low concentration of oxygen
-    considering the scale of aerobic life within the ocean.
+	considering the scale of aerobic life within the ocean.
        </li>
-       <li class="fragment" data-fragment-index="4">
-        Sharks extract up to 80% of the oxygen in the water that
-    passes over their gils, whereas we only extract 25% of the oxygen
-    in the air which passes through our lungs (what about air
-    breathing fish?).
+       <li class="fragment">
+	 Looking by volume, there is $2.67\times10^{-4}\text{ mol
+	 m}^{-3}$ in water and $9.38\times10^{-3}\text{ mol m}^{-3}$
+	 in air (oxygen is more than $35\times$ concentrated by volume
+	 in air compared to water!).
        </li>
-       <li class="fragment" data-fragment-index="5">
-        Some shark species (great white shark, whale shark) must
-    keep swimming to ensure they process sufficient volumes of water,
-    otherwise they can “drown.”
+       <li class="fragment">
+         Sharks extract up to 80% of the oxygen in the water that
+	 passes over their gils, whereas we only extract 25% of the
+	 oxygen in the air which passes through our lungs.
        </li>
-       <li class="fragment" data-fragment-index="6">
+       <li class="fragment">
+        Some shark species (great white shark, whale shark) must keep
+	swimming to ensure they process sufficient volumes of water,
+	otherwise they can “drown.” Air breathing fish such as
+	dolphins and whales don't sound so ridiculous now.
+       </li>
+       <li class="fragment">
         Solubility decreases significantly with temperature,
     e.g. (14.6 mg/L at 0${}^\circ$
         C versus 7.6 mg/L at 20
         ${}^\circ$
         C),
     hence the environmental restrictions on the temperature of cooling
-    water dumped into local waterways.
+	water dumped into local waterways.
        </li>
       </ul>
      </section>
