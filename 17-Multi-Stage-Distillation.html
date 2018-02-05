@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Separation Processes 1
+  </title>
+  <meta content="Separation processes 1 notes" name="description"/>
+  <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
+  <script data-headjs-load="header.js" src="../reveal.js/lib/js/head.min.js">
+  </script>
+ </head>
+ <body>
+  <div class="reveal">
+   <div class="slides">
+    <section>
+     <section>
+      <h2>
+       Multi-Stage Distillation: Part 01
+      </h2>
+      <div class="center">
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Multi-Stage Distillation">
+      <figure>
+       <div class="center">
+        <img src="img/flash_drum.svg" style="width:50%"/>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        From the previous lectures and tutorials, we have
+    discovered that
+        <b>flash drums</b>
+        and
+        <b>batch distillation
+      stills</b>
+        did not achieve a high degree of separation for
+    Benzene-Tolulene mixtures.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        This is because the relative volatility of these
+    components ($\alpha\approx2.5$) is not high enough to make
+        <b>single-stage</b>
+        distillation particulary effective.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        Economical use of flash drums is usually limited to
+    systems where a very high relative volatility is possible (e.g.,
+    flash separation of seawater).
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        We need to use
+        <b>multi-stage distillation</b>
+        to increase
+    the degree of separation achieved, and to obtain higher flow-rates
+    of the purified products.
+       </li>
+       <li class="fragment" data-fragment-index="4">
+        But how do we actually carry out
+        <b>multi-stage</b>
+        distillation?
+       </li>
+      </ul>
+     </section>
+     <section data-menu-title="Implementation">
+      <figure>
+       <div class="center">
+        <img src="img/forward_feed3.svg" style="width:60%"/>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        We could try and implement something along the lines of
+    multi-stage evaporation, where we chain multiple flash stages to
+    create more vapour.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        But, similar to batch distillation, the average vapour
+    concentration will drop as more and more vapour is generated.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        We need to condense and partly re-boil the vapour produced
+    from each stage to increase the purity of the vapour phase, while
+    recycling the liquid phase to increase the recovery.
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        Can we take a hint from the multi-stage
+    absorption/stripping approach?
+       </li>
+      </ul>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          In a multi-stage
+          <b>stripper</b>
+          (see right), a vapour
+        phase becomes richer in a component as it is stripped from the
+        liquid phase.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The partly stripped liquid is then recycled by passing
+        down the column while the vapour continues to rise.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          But consider if the liquid and vapour phases are not
+        inert gas, inert liquid, and absorbent, but two phases of a
+          <b>binary mixture at its boiling point</b>.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          At each stage, the
+          <b>rising vapour condenses</b>
+          and
+        mixes with the falling liquid phase.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          The heat released from condensing the rising vapour
+        causes more vapour in equilibrium with the mixture to boil
+        from the stage.
+         </li>
+         <li class="fragment" data-fragment-index="5">
+          This vapour will rise to the next stage and the mixed
+        liquid will overflow to the lower stage.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.31);">
+        <figure>
+         <div class="center">
+          <img src="img/stripping_column.svg"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          The result is that we have multiple stages of
+        distillation allowing a high degree of separation.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We know this scheme will work (at least in the limit
+        of low concentration) as multi-stage stripping/absorption
+        works.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          But binary distillation has a major difference to gas
+        stripping/absorption:
+          <ul>
+           <li>
+            We have only
+            <b>one feed stream</b>
+            (which may be liquid,
+          vapour, or multiphase) with one overall concentration.
+           </li>
+          </ul>
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          We cannot
+          <b>directly</b>
+          create counter-flowing liquid
+        and gas phases with differing concentrations from the feed
+        stream.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          But if we can
+          <b>generate contacting counter-current
+          vapour and liquid streams from the one inlet stream</b>, we can
+        create multiple stages of distillation.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.31);">
+        <figure>
+         <div class="center">
+          <img src="img/stripping_column.svg"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Auxiliary Column Equipment">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.7);">
+        <ul>
+         <li>
+          To create these counter-flowing phases, we use
+          <b>condensers</b>
+          and
+          <b>re-boilers</b>.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The
+          <b>re-boiler</b>
+          at the bottom of the column
+        generates a vapour phase, which then flows up through the
+        column.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          At the top of the column, a condenser converts the
+        vapour phase back into a liquid phase which is returned to the
+        column (known as the
+          <b>reflux</b>).
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Together, these units generate a continually
+        circulating flow of vapour and liquid.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          The feed stream will enter the column at a tray which
+        matches its concentration, and this may be the condenser or
+        the re-boiler.
+         </li>
+         <li class="fragment" data-fragment-index="5">
+          The liquid products are then collected from the
+        condensate (
+          <b>top product</b>) and the re-boiler (
+          <b>bottom
+          product</b>).
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.3);">
+        <figure>
+         <div class="center">
+          <img src="img/distillation_column.svg" style="width:100%"/>
+          <figcaption>
+           Distillation column, displaying the equipment
+            attached to the column.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.7);">
+        <ul>
+         <li>
+          We have described a
+          <b>distillation column</b>
+          along
+        with its auxiliary equipment (condenser, pumps, re-boiler).
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          This separation process is known as
+          <b>Fractionation</b>,
+          <b>Rectification</b>
+          or
+          <b>Stage-Distillation with Reflux</b>.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          This process is used to separate a wide range of
+        liquid products, but is most well known for its use in the
+        fractional distillation unit of oil refineries.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          We will now examine how to design distillation columns
+        for binary fluids.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.3);">
+        <figure>
+         <div class="center">
+          <img src="img/distillation_column.svg" style="width:100%"/>
+          <figcaption>
+           Distillation column, displaying the equipment
+            attached to the column.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.65);">
+        <ul>
+         <li>
+          This similarity with absorption towers is convenient
+        as it implies similarity between the design methods.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We need to generate
+          <span style="color:teal">
+           operating line</span>
+          equations, linking the concentrations of the phases between
+        the stages in the column.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          When combined with the
+          <span style="color:blue">
+           VLE data</span>
+          we
+        can estimate the number of trays to achieve a given separation.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          But we have some additional complexities to the
+        absorbtion tower.
+          <ul>
+           <li class="fragment" data-fragment-index="4">
+            We must account for the location of the
+            <b>feed
+            tray</b>
+            (where the feed is added to the system) and its
+          effect on the flow within the column.
+           </li>
+           <li class="fragment" data-fragment-index="5">
+            We also need to optimise how much of the condensed
+          vapour is returned to the column versus how much is removed
+            <br/>
+            (the
+            <b>reflux ratio</b>).
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.35);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column.svg" style="width:75%"/>
+          <figcaption>
+           Distillation column, displaying the trays/stages
+            and the counter-current flows of vapour and liquid.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Constant Molar Overflow">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.75);">
+        <ul>
+         <li>
+          To generate our
+          <span style="color:teal">
+           operating line</span>
+          equations we need to perform a mass balance over the stages
+        within a column.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          In distillation this is complicated as, conceptually
+        at least, the vapour entering a phase supplies the energy for
+        new vapour to boil.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          We will then need to perform an energy balance, to
+        take into account boiling point rise, heats of solution, and
+        sensible heat changes to solve for the change in vapour and
+        liquid flow-rates through the column.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.25);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column.svg" style="width:90%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          However, if the two components are alike, we can
+        neglect heats of solution.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We can also neglect sensible heat change provided the
+        change in boiling temperature between stages is not too large.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          If we then also assume that the latent heat of
+        vapourisation is roughly constant as a function of
+        concentration and temperature, we arrive at the
+          <b>constant
+          molar overflow</b>
+          assumption.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          This assumes that for every mole of vapour condensed
+        on a stage, another mole of vapour is produced.
+          \begin{align*}
+          V_{n-1}=V_n
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          This also means that the liquid flow-rates in the
+        column are constant!
+          \begin{align*}
+          L_{n+1}=L_n
+          \end{align*}
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.31);">
+        <figure>
+         <div class="center">
+          <img src="img/tray_balance.svg" style="width:100%"/>
+          <figcaption>
+           Balance over a single tray.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+    </section>
+   </div>
+   <div class="slide-menu-button" style="left:170px;cursor:pointer;">
+    <a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
+     <i class="fa fa-print"></i>
+    </a>
+   </div>
+   <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+   </script>
+   <script src="footer.js">
+   </script>
+  </div>
+ </body>
+</html>
