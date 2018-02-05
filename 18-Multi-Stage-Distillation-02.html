@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Separation Processes 1
+  </title>
+  <meta content="Separation processes 1 notes" name="description"/>
+  <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
+  <script data-headjs-load="header.js" src="../reveal.js/lib/js/head.min.js">
+  </script>
+ </head>
+ <body>
+  <div class="reveal">
+   <div class="slides">
+    <section>
+     <section>
+      <h2>
+       Multi-Stage Distillation: Part 02
+      </h2>
+      <div class="center">
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Multi-Stage Distillation">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.8);">
+        <ul>
+         <li>
+          We need to derive some
+          <span style="color:teal">
+           operating
+          line</span>
+          equations for a multi-stage distillation column so
+        that we may design one.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The
+          <span style="color:teal">
+           operating line</span>
+          equations are
+        just mass balances of the most volatile component.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          We can split the column into three areas
+          <ul>
+           <li class="fragment" data-fragment-index="3">
+            The stages/trays above the feed tray, known as the
+            <b>enrichment</b>
+            or
+            <b>rectification</b>
+            section.
+           </li>
+           <li class="fragment" data-fragment-index="4">
+            The stages/trays below the feed tray, known as the
+            <b>stripping</b>
+            section.
+           </li>
+           <li class="fragment" data-fragment-index="5">
+            The
+            <b>feed tray</b>
+            (or
+            <b>flashing section</b>).
+           </li>
+          </ul>
+         </li>
+         <li class="fragment" data-fragment-index="6">
+          Each of these areas will have a different
+          <span style="color:teal">
+           operating line</span>, due to the changes in column
+        vapour and liquid flow-rates caused by the feed stream
+        entering the column.
+         </li>
+         <li class="fragment" data-fragment-index="7">
+          We will first consider the
+          <b>rectification
+          section</b>
+          (upper section)…
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.2);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01.svg" style="width:90%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Enrichment Section">
+      <figure>
+       <div class="center">
+        <img src="img/fractionation_column_01_top.svg" style="width:30%"/>
+       </div>
+       <figcaption>
+        Definition of variables in the rectification section of a
+      column.
+        <b>Note:</b>
+        The condenser is a
+        <b>total condenser</b>, so
+      it does not act as a distillation stage.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.71);">
+        <ul>
+         <li>
+          Let's consider some arbitrary plate, $n$, within the
+        enrichment (upper) section of the column.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We can perform a mass balance from this plate to the
+          <b>top product</b>
+          to give
+          \begin{align*}
+          y_n V_n &amp;= x_{n+1} L_{n+1} + x_D D
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          We can rearrange this so it looks like an
+          <span style="color:teal">
+           operating equation</span>
+          for the top of the column
+          \begin{align*}
+          y_n &amp;= x_{n+1}\frac{L_{n+1}}{V_n} + x_D\frac{D}{V_n}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Assuming
+          <b>constant molar overflow</b>
+          (discussed in
+        the last lecture) is true, we have
+          $L_{n+1}=L_{n}$.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          We now have our
+          <span style="color:teal">
+           operating equation</span>
+          for the enrichment section of the column.
+          \begin{align*}
+          y_n &amp;= x_{n+1}\frac{L_{n}}{V_n} + x_D\frac{D}{V_n}
+          \end{align*}
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.31);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01_top.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Stripping Section">
+      <figure>
+       <div class="center">
+        <img src="img/fractionation_column_01_bottom.svg" style="width:28%"/>
+       </div>
+       <figcaption>
+        Definition of variables in the stripping section of a
+      column.
+        <b>Note:</b>
+        The reboiler is only partially reboiling the
+      liquid entering it, and so it effects a stage of distillation!
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.7);">
+        <ul>
+         <li>
+          Considering the bottom section of the column, we can
+        perform a mass balance over some tray $m$, and the
+          <b>bottom
+          product</b>
+          $W$.
+          \begin{align*}
+          x_{m+1} L_{m+1} = y_{m} V_m + x_{W} W
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Again, we can use
+          <b>constant molar overflow</b>
+          (
+          <b>CMO</b>)  and
+        some rearranging to give
+          \begin{align*}
+          y_{m} = x_{m+1}\frac{L_m}{V_m} - x_{W}\frac{W}{V_m}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          We have our two
+          <span style="color:teal">
+           operating equations</span>
+          for the enrichment and stripping section of the column.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          But the flow-rates, $L_{n/m}$
+          and
+          $V_{n/m}$
+          within the
+        two sections of the column are not immediately available when
+        starting a design.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          Can we express these same equations in a more
+        convenient design variable?
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.3);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01_bottom.svg" style="width:90%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Reflux Ratio">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.7);">
+        <ul>
+         <li>
+          An important design variable in distillation is the
+          <b>reflux ratio</b>,
+          $R=L_{N+1}/D$.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          This is the amount of liquid returned to the column
+        versus to the distillate collected (top product).
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          It is a free parameter we can alter to optimise our
+        design and it controls the absolute flow-rates within the column.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          The reflux ratio must be greater than $R&gt;0$
+          as some
+        liquid must flow down the column to effect a separation.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          In the limit of $R\to\infty$, all of the vapour is
+        returned to the column (known as
+          <b>total reflux</b>).
+         </li>
+         <li class="fragment" data-fragment-index="5">
+          We can write the reflux ratio in terms of the
+        flow-rates within the stripping section if we use the
+          <b>constant molar overflow</b>
+          assumption again.
+          \begin{align*}
+          R&amp;=\frac{L_{n}}{D}
+          \end{align*}
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.3);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01_top.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.7);">
+        <ul>
+         <li>
+          Taking the
+          <span style="color:teal">
+           operating equation</span>
+          in the
+        enrichment section, we have
+          \begin{align*}
+          y_n &amp;= x_{n+1}\frac{L_{n}}{V_n} + x_D\frac{D}{V_n}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Using the mass balance at the top of the column
+          \begin{align*}
+          V_N&amp;=L_{N+1}+D\\
+          V_n&amp;=L_n+D&amp;\text{(Constant Molar Overflow)}
+          \end{align*}
+          and the definition of the reflux ratio
+          $R=L_n/D$.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          We can then simplify the
+          <span style="color:teal">
+           operating equation</span>
+          :
+          \begin{align*}
+          y_n &amp;= x_{n+1}\frac{R}{R+1} + \frac{x_D}{R+1}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          This form is very convenient as we have an
+          <span style="color:teal">
+           operating equation</span>
+          in terms of the design
+        variables (the reflux ratio and the distillate concentration).
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.3);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01_top.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.7);">
+        <ul>
+         <li>
+          Can we do something similar for the stripping
+          <span style="color:teal">
+           operating equation</span>?
+          \begin{align*}
+          y_{m} = x_{m+1}\frac{L_m}{V_m} - x_{W}\frac{W}{V_m}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We cannot relate the flow-rates in the stripping
+        section of the column to the reflux ratio, as the feed stage
+        alters the flow-rates in the column.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          To define this
+          <span style="color:teal">
+           operating equation</span>
+          in
+        more convenient terms, we need to look at how the
+          <b>feed
+          tray</b>
+          affects the vapour and liquid flow-rates in the
+        column.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.3);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01_bottom.svg" style="width:90%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Feed/Flash Tray">
+      <figure>
+       <div class="center">
+        <img src="img/fractionation_column_01_feed.svg" style="width:50%"/>
+       </div>
+       <figcaption>
+        Definition of variables around the feed tray of the column.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          When the feed enters the column it will
+          <b>flash</b>
+          to
+        its equilibrium state at the
+          <b>operating pressure</b>
+          of the
+        column.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The liquid fraction of the flashed feed is denoted $q$
+          and we can control this value by altering the feed
+        temperature.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          The quantity of liquid produced by the feed on the
+        feed tray is therefore $q F$, and the quantity of vapour
+        produced is
+          $(1-q)F$.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01_feed.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          Performing a mass balance around the feed tray, we can
+        generate a relationship between the column flow-rates in the
+        enriching and stripping sections of the column.
+          \begin{align*}
+          L_F &amp;= L_{F+1} + q F \\ V_F &amp;= V_{F-1}+(1-q)F
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Assuming constant molar overflow, we can write
+          \begin{align*}
+          L_m &amp;= L_{n} + q F \\ V_n &amp;= V_m+(1-q)F
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Now that we have a relationship between the flow rates
+        in the two sections of the column, we can try to find the
+        stripping section's
+          <span style="color:teal">
+           operating line</span>.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01_feed.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="$q$-line">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          Taking the original
+          <span style="color:teal">
+           operating
+          equations</span>, we have
+          \begin{align*}
+          y_{m} V_m &amp;= x_{m+1} L_m - x_{W} W\\
+          y_n V_n &amp;= x_{n+1} L_{n} + x_D D
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          These operating lines must meet at the feed tray
+        ($y=y_m=y_n$,
+          $x=x_{m+1}=x_{n+1}$), as the feed tray is in
+          <b>both</b>
+          sections of the column.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Subtracting one
+          <span style="color:teal">
+           operating equation</span>
+          from the other to obtain
+          \begin{align*}
+          y(V_m-V_n) &amp;= x (L_m-L_n) - x_{W} W - x_D D
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Using the result from the previous slide
+          \begin{align*}
+          L_m &amp;= L_{n} + q F &amp; V_n &amp;= V_m+(1-q)F
+          \end{align*}
+          we have
+          \begin{align*}
+          y &amp;= x\frac{q}{q-1} - \frac{x_{W} W + x_D D}{F (q-1)}
+          \end{align*}
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01_feed.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.8);">
+        \begin{align*}
+        y &amp;= x\frac{q}{q-1} - \frac{x_{W} W + x_D D}{F (q-1)}
+        \end{align*}
+        <ul>
+         <li>
+          From a total mole balance we have
+          \begin{align*}
+          x_F F = x_{W} W + x_D D
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Inserting this into the above equation, we obtain
+          \begin{align*}
+          y &amp;= x\frac{q}{q-1} - \frac{x_F}{q-1}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          This is known as the
+          <span style="color:red">
+           $q$
+           -line</span>.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          It is similar to a flash distillation
+          <span style="color:teal">
+           operating line</span>
+          for the feed.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          But its real power is that at the point where it
+        intersects with the enrichment
+          <span style="color:teal">
+           operating
+          line</span>, this point is also a point on the stripping
+          <span style="color:teal">
+           operating line</span>.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.2);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.8);">
+        <ul>
+         <li>
+          So, if we plot the enrichment
+          <span style="color:teal">
+           operating line</span>
+          \begin{align*}
+          y_n &amp;= x_{n+1}\frac{R}{R+1} + \frac{x_D}{R+1}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          And the
+          <span style="color:red">
+           $q$
+           -line</span>
+          \begin{align*}
+          y &amp;= x\frac{q}{q-1} - \frac{x_F}{q-1}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Then the intersection of these two lines is one point
+        on the stripping
+          <span style="color:teal">
+           operating line</span>.
+          \begin{align*}
+          y_{m} = x_{m+1}\frac{L_m}{V_m} - x_{W}\frac{W}{V_m}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          We only need one more point to plot the stripping
+          <span style="color:teal">
+           operating line</span>!
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.2);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Stripping Line Revisited">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          We'll try to generate this second point without using
+        the flow-rates in the column. The stripping
+          <span style="color:teal">
+           operating line</span>
+          is
+          \begin{align*}
+          y_{m} = x_{m+1}\frac{L_m}{V_m} - x_{W}\frac{W}{V_m}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Lets try to generate a point at $x_{m+1}=x_W$, we find
+          \begin{align*}
+          y = x_{W}\frac{L_m -W}{V_m}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          But from a mass balance we can see that $L_m -W=V_m$.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Thus, another point on the stripping
+          <span style="color:teal">
+           operating line</span>
+          is (
+          $x_W$,
+          $x_W$)!
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          We can now can plot all of our
+          <span style="color:teal">
+           operating lines</span>
+          using just the design
+        variables
+          $R$,
+          $x_D$,
+          $x_W$,
+          $q$, and the
+          <span style="color:red">
+           $q$
+           -line</span>.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.31);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01_bottom.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Example: Multi-Stage Distillation of Benzene-Toluene">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          Lets consider our old faithful mixture of Benzene and
+        Toluene.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We want to distill a equimolar mixture of these two
+        components to a purity of $x_D=0.9$
+          and
+          $x_W=0.1$.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          When the feed stream enters the column, it flashes and
+        produces an equal quantity of vapour and liquid, so that
+        $q=0.5$.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          We also decide to use a reflux ratio of $R=3$.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          How many stages above and below the feed are needed to
+        achieve this separation?
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+          <div class="center">
+	    <img src="img/Benzene_Tolulene_xy.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          Starting with the enrichment section, the
+          <span style="color:teal">
+           operating line</span>
+          is given by
+          \begin{align*}
+          y_n &amp;= x_{n+1}\frac{R}{R+1} + \frac{x_D}{R+1}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Setting $x_{n+1}=0$, we have one point at
+          $y_n=x_D/(R+1)=0.9/(3+1)=0.225$
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Setting $x_{n+1}=x_D$, we have
+          $y_n=x_D$.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          These are our two points on the enrichment
+          <span style="color:teal">
+           operating line</span>, we can now plot it on the
+          <span style="color:blue">
+           VLE</span>
+          chart.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+	   <img src="img/Benzene_Tolulene_xy.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/Benzene_Tolulene_McCabe_Thiele_01.svg" style="width:50%"/>
+       </div>
+       <figcaption>
+        Drawing of the enrichment operating line, the equations
+      for the two points used to plot it are not specific to this
+      mixture.
+       </figcaption>
+      </figure>
+     </section>
+     <section data-menu-title="$q$ Line">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          We next draw the
+          <span style="color:red">
+           $q$
+           -line</span>, to solve
+        for the first point on the stripping operating line.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The $q$
+          -line is given by
+          \begin{align*}
+          y &amp;= x\frac{q}{q-1} - \frac{x_F}{q-1}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          The first point on the $q$
+          -line is given by
+          $x=x_F$,
+        which gives
+          $y=x_F$!
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          The second point is arbitrary, we can try $x=0.4$, to obtain
+          \begin{align*}
+          y &amp;= 0.4\frac{0.5}{0.5-1} - \frac{0.5}{0.5-1}\\
+          &amp;= 0.6
+          \end{align*}
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/Benzene_Tolulene_McCabe_Thiele_01.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/Benzene_Tolulene_McCabe_Thiele_03.svg" style="width:50%"/>
+       </div>
+       <figcaption>
+        Drawing of the
+        <span style="color:red">
+         $q$
+         -line</span>. The
+      intersection of the
+        <span style="color:red">
+         $q$
+         -line</span>
+        and the enrichment
+        <span style="color:teal">
+         operating line</span>
+        is the first point on the
+      stripping
+        <span style="color:teal">
+         operating line</span>.
+       </figcaption>
+      </figure>
+     </section>
+     <section data-menu-title="Stripping Section">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          Finally, we draw the stripping
+          <span style="color:teal">
+           operating line</span>.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We already have one point on the line, we just need to
+        find another.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          We discovered before that the point $y=x=x_W$
+          lies on
+        the stripping
+          <span style="color:teal">
+           operating line</span>, so we can just
+        add this point and we have both our operating lines drawn!
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/Benzene_Tolulene_McCabe_Thiele_03.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/Benzene_Tolulene_McCabe_Thiele_04.svg" style="width:50%"/>
+       </div>
+       <figcaption>
+        Drawing of the stripping
+        <span style="color:teal">
+         operating
+        line</span>.
+       </figcaption>
+      </figure>
+     </section>
+     <section data-menu-title="Solving for the number of trays">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          We have the two
+          <span style="color:teal">
+           operating lines</span>
+          for
+        the distillation column plotted on our
+          <span style="color:blue">
+           VLE</span>
+          graph.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          These function graphically just as the
+        absorber/stripper
+          <span style="color:teal">
+           operating lines</span>
+          we used
+        previously.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          To determine the number of stages needed to perform
+        the separation, we just need to “step” from either the
+        top-product concentration, or the bottom product concentration.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          We'll start from the top in this case, but this choice
+        is somewhat arbitrary as it is the theoretical design
+        (starting from the feed stage may give the smallest number of
+        theoretical stages) …
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/Benzene_Tolulene_McCabe_Thiele_04.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/Benzene_Tolulene_McCabe_Thiele_05.svg" style="width:50%"/>
+       </div>
+       <figcaption>
+        Stepping for the number of stages. This separation
+      requires just under 7 ideal stages in total, we stop the
+      stepping once we cross the bottoms concentration
+        $x_W$.
+       </figcaption>
+      </figure>
+     </section>
+     <section data-menu-title="Feed Tray and Reboiler">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          The tray on which the feed enters the column is the
+        tray crossing the feed concentration $x_F$.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The feed tray is where you cross from the stripping to
+        the rectification part of the column (so you change operating
+        lines).
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          In this case, the feed tray is stage 4.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          We should also note that the first stage, $1$, is not
+        actually a tray in the distillation column but is the reboiler
+        (we will discuss this next week).
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          Finally, this entire design procedure is quite famous
+        in the process engineering community, and is known as the
+          <b>McCabe-Theile</b>
+          method.
+         </li>
+         <li class="fragment" data-fragment-index="5">
+          If you would like more information on the method, C&amp;R
+        Vol. 2 has an extensive section on it (Sec. 11.4).
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/Benzene_Tolulene_McCabe_Thiele_05.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+    </section>
+   </div>
+   <div class="slide-menu-button" style="left:170px;cursor:pointer;">
+    <a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
+     <i class="fa fa-print"></i>
+    </a>
+   </div>
+   <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+   </script>
+   <script src="footer.js">
+   </script>
+  </div>
+ </body>
+</html>
