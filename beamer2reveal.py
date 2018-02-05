@@ -339,8 +339,12 @@ class Tex2Reveal(object):
     def _handle_href(self, node, starred=False, fragment=False):
         a = self.push('a')
         args = list(node.args)
-        a['src'] = args[0]
-        self._walk(args[1])
+        print(args)
+        a['href'] = args[0]
+        if len(args) == 2:
+            self._walk(args[1])
+        else:
+            self._walk(args[0])
         self.pop('a')
         return True
 

@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Separation Processes 1
+  </title>
+  <meta content="Separation processes 1 notes" name="description"/>
+  <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
+  <script data-headjs-load="header.js" src="../reveal.js/lib/js/head.min.js">
+  </script>
+ </head>
+ <body>
+  <div class="reveal">
+   <div class="slides">
+    <section>
+     <section>
+      <h2>
+       Distillation: Part 1
+      </h2>
+      <div class="center">
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="VLE Data">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.65);">
+        <ul>
+         <li>
+          So far, we've relied on Henry's law, or experimental
+        solubility charts to calculate the distribution of material
+        between two phases.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          This data is limited to low liquid concentrations of
+        the solute (see right).
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          This low concentration limitation is not a problem
+        when considering absorption
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          But at higher liquid concentrations, the dissolved
+        component's vapour pressure changes, influencing the overall
+        pressure (or temperature).
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.35);">
+        <figure>
+         <div class="center">
+          <img src="img/VLE.svg" style="width:100%"/>
+          <figcaption>
+           Partial pressure
+           $p_a$
+           versus mole fraction
+           $x_a$
+           of a component,
+           $a$.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          In distillation processes, the separated compounds are
+        both volatile and separations are usually carried out over the
+        whole range of liquid concentrations ($A\to D$).
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We will need to obtain full Vapour-Liquid Equilibrium
+        (VLE) data from $x=0$
+          to
+          $x=1$
+          for distillation design.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          But the amount of experimental data available on mixtures is
+          limited (we cannot look up curves for all mixtures,
+          pressures, and temperatures in a book). What experimental
+          data we have also needs interpolation.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          We will need to look at methods of generating $x$-$y$ charts
+          from theoretical relationships based on the properties of
+          pure liquids, or using advanced equations of state before we
+          can do distillation design.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          We need ($T$-)$x$-$y$
+          diagrams at a
+          <b>fixed
+          pressure</b>
+          as we usually assume an isobaric process for the
+        stage calculations.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/Henry_Raoult.svg" style="width:100%"/>
+          <figcaption>
+           Partial pressure
+           $p_a$
+           versus mole fraction
+           $x_a$
+           of a component,
+           $a$.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/Benzene_Tolulene.svg" style="width:50%;"/>
+        <figcaption>
+         $T$
+         -
+         $x$
+         -
+         $y$
+         diagram for a Benzene-Tolulene mixture at a
+        fixed pressure of
+         $P=1$
+         bar.
+        </figcaption>
+       </div>
+      </figure>
+     </section>
+     <section data-menu-title="Raoult's Law">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.7);">
+        <ul>
+         <li>
+          When we begin to design a separation column, we
+        usually assume a fixed
+          <i>operating pressure</i>
+          as the system
+        is relatively well-connected.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          These columns are essentially pipes with a
+        counter-current multiphase flow, so there will be a pressure
+        drop causing a variation in the overall pressure. We must
+        neglect this at first to perform a rough sizing.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Given a pressure and a range of liquid concentrations,
+        we need to work out the vapour concentrations AND boiling
+        point.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Can we create $T$
+          -
+          $x$
+          -
+          $y$
+          diagrams from Raoult's law?
+          \begin{align*}
+          p_A(T, x_A) = P_A(T) x_A
+          \end{align*}
+          where
+          $p_A$
+          is the partial pressure,
+          $P_A$
+          is the vapour
+        pressure, and
+          $x_A$
+          is the mole fraction of component
+          $A$.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.3);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <ul>
+       <li>
+        The pressure of a boiling ideal mixture is given by a
+    combination of Dalton's law and Raoult's law:
+        \begin{align}
+        \label{eq:pressure}
+      P(T, x_A, x_B,…) = \sum_i p_i(T, x_i)=\sum_i P_i(T) x_i
+        \end{align}
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        Literature data for vapour pressures are often correlated
+    using the Antoine equation
+        \begin{align}
+        \label{eq:antione}
+      \log_{10} P_A(T) = k_1 - \frac{k_2}{k_3+T}+…
+        \end{align}
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        So, if we specify mixture concentrations at a fixed
+    pressure, we must solve the above equations for the boiling
+    temperature before we can find the partial pressures!
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        If we had an isothermal process, it would be a lot easier
+    to create P-x-y diagrams, but unfortunately this is a rare case.
+       </li>
+      </ul>
+     </section>
+     <section>
+      <ul>
+       <li>
+        Once the boiling pressure is known, we can write:
+        \begin{align*}
+        y_A(T,x_A,x_B,…) = \frac{p_A(T,x_A)}{P(T,x_A,x_B,…)} =
+      \frac{P_A(T) x_A}{\sum_i P_i(T) x_i}
+        \end{align*}
+       </li>
+       <li>
+        This is a useful expression, as the vapour pressures $P_A$
+        of pure components are widely available in literature and
+    straightforward to measure in experiment.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+         We can generate $T$-$x$-$y$
+         graphs, and we even have an
+	 expression which is valid for
+         <i>multicomponent</i>
+        ideal mixtures!
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        There are many cases where we have
+        <i>close-to-</i>
+        ideal
+    mixtures, such as
+        <b>benzene-tolulene</b>, or hexane-heptane, and
+    we can use the above equation.
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        But this equation requires solving for the pressure, which
+    is not trivial without the use of a computer. Are there any
+    simpler approaches available?
+       </li>
+      </ul>
+     </section>
+     <section data-menu-title="Relative Volatility">
+      \begin{align*}
+      y_A = \frac{P_A x_A}{\sum_i P_i x_i}
+      \end{align*}
+      <ul>
+       <li>
+        Is there a way to simplify the above equation so that we
+    don't have to solve for the temperature to generate the $x$
+        -
+        $y$
+        VLE data?
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        In a binary system, we can expand the sum in the equation
+    above, replace $x_B=1-x_A$, and divide the top and bottom by
+        $P_B$
+        to give
+        \begin{align*}
+        y_A &amp;= \frac{P_A x_A}{P_A x_A + P_B x_B}\\
+      &amp;= \frac{\frac{P_A}{P_B} x_A}{\frac{P_A}{P_B} x_A +1 - x_A}\\
+      &amp;= \frac{\alpha x_A}{1 + x_A (\alpha - 1)}
+        \end{align*}
+        where
+        $\alpha=P_A/P_B$
+        is the
+        <b>relative volatility</b>
+        !
+       </li>
+      </ul>
+     </section>
+     <section>
+      \begin{align*}
+      y_A &amp;= \frac{\alpha x_A}{1 + x_A (\alpha - 1)}
+      \end{align*}
+      <ul>
+       <li>
+        The advantage of using the relative volatility, $\alpha$,
+    over the partial pressures
+        $P_A/P_B$
+        is that it remains remarkably
+    steady for many systems.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        For example, values are given below for benzene-tolulene
+    mixtures
+        <figure>
+         <div class="center">
+          <table style="border-collapse:collapse;">
+           <tr style="border-top:thick solid black;">
+            <td>
+             Temperature ($K$)
+            </td>
+            <td>
+             353
+            </td>
+            <td>
+             363
+            </td>
+            <td>
+             373
+            </td>
+            <td>
+             383
+            </td>
+           </tr>
+           <tr style="border-top:thin solid black;">
+            <td>
+             $\alpha$
+            </td>
+            <td>
+             2.62
+            </td>
+            <td>
+             2.44
+            </td>
+            <td>
+             2.40
+            </td>
+            <td>
+             2.39
+            </td>
+           </tr>
+           <tr style="border-top:thick solid black;">
+            <td>
+            </td>
+           </tr>
+          </table>
+         </div>
+        </figure>
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        Although the relative volatility varies over the range,
+    provided the values at the top and bottom of the column differ
+    less than 15%, we can use this for our rough initial design.
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        When drawing the equilibrium line, we would use the
+    average relative volatility over the whole column.
+       </li>
+      </ul>
+     </section>
+     <section>
+      <ul>
+       <li>
+        A high ($\alpha\gg 1$) or low (
+        $\alpha\to0$) value of the
+    relative volatility is desirable, as this makes separation easier
+    (higher concentrations of the volatile component in the vapour
+    phase).
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        If $\alpha\approx1$, we cannot use distillation to
+    separate these components, as the vapour and liquid phases would
+    have equal concentrations.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        For Benzene-Tolulene, $\alpha$
+        increases as the boiling
+    temperature decreases.
+        <figure>
+         <div class="center">
+          <table style="border-collapse:collapse;">
+           <tr style="border-top:thick solid black;">
+            <td>
+             Temperature ($K$)
+            </td>
+            <td>
+             353
+            </td>
+            <td>
+             363
+            </td>
+            <td>
+             373
+            </td>
+            <td>
+             383
+            </td>
+           </tr>
+           <tr style="border-top:thin solid black;">
+            <td>
+             $\alpha$
+            </td>
+            <td>
+             2.62
+            </td>
+            <td>
+             2.44
+            </td>
+            <td>
+             2.40
+            </td>
+            <td>
+             2.39
+            </td>
+           </tr>
+           <tr style="border-top:thick solid black;">
+            <td>
+            </td>
+           </tr>
+          </table>
+         </div>
+        </figure>
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        Lower boiling temperatures usually implies lower
+    pressures. This shows that it can be more efficient to distill
+    Benzene-Tolulene at reduced pressures (also known as
+        <b>vacuum
+      distillation</b>).
+       </li>
+       <li class="fragment" data-fragment-index="4">
+        In summary, we can use Raoult's law for ideal mixtures to
+    generate $x$
+        -
+        $y$
+        diagrams. Some ideal mixtures have roughly
+    constant relative volatility, making it even simpler to
+    solve. Mixtures with a relative volatility approaching one are
+    difficult to separate using distillation.
+       </li>
+      </ul>
+     </section>
+     <section data-menu-title="Non-Ideal Mixtures">
+      <ul>
+       <li>
+        But what about non-ideal systems?
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        In this case we need to use something like modified
+	Raoult's law:
+	
+        \begin{align}
+	p_A(T, x_A)=\gamma_A(x_A, x_B) P_A(T) x_A
+        \end{align}
+	
+        (I've assumed the fugacity coefficient is zero)
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        To calculate the activity coefficient we need a
+    semi-empirical relationship, such as the van-Laar or Margules
+    expressions:
+        \begin{align*}
+        \gamma_A &amp;= \exp\left[x^2_B\left(\mathcal{A}_{AB} +
+          2 x_A\left[\mathcal{A}_{BA}
+            -\mathcal{A}_{AB}\right]\right)\right] &amp; \text{Margules-3}
+      \\
+      \gamma_A &amp;=\exp\left[\frac{\mathcal{A}_{AB}}{1 +
+          \left(\mathcal{A}_{AB} x_A /
+            \mathcal{A}_{BA} x_B\right)}\right]
+      &amp; \text{van-Laar-2}
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        Although these expressions look complicated, they are just
+    functions of the mixture concentrations $x_A$
+        and a set of
+    interaction constants (
+        $\mathcal{A}_{AB}$) which you look up for
+    each fluid pairing.
+       </li>
+       <li class="fragment" data-fragment-index="4">
+        Now that we can generate VLE ($T$-)$x$-$y$
+        diagrams and
+    data, we can look at designing various distillation processes.
+       </li>
+      </ul>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Flash Distillation">
+      <figure>
+       <div class="center">
+        <img src="img/flash_drum.svg" style="width:50%"/>
+       </div>
+      </figure>
+      <ul>
+       <li>
+         The simplest piece of distillation equipment to design
+	 (if we ignore the heat balance) is the
+        <b>flash drum</b> (also called a
+        <b>knockout drum</b>).
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        A feed liquid is typically boiled by a sudden pressure
+    drop through a pressure valve or through a nozzle.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        This may be preceded by a preheater to increase the amount
+    of vapour produced.
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        A liquid stream may
+        <i>“flash”</i>
+        whenever a pressure
+    drop occurs (See
+        <a href="http://www.youtube.com/watch?v=UM0jtD_OWLU&amp;feature=related">
+          <b>BLEVE-vid1</b></a>,
+        <a href="https://www.youtube.com/watch?v=K-tUQTw_Vtk">
+	  <b>BLEVE-vid2</b></a>,
+        <a href="https://www.youtube.com/watch?v=tLGM_2l0zok">
+	  <b>BLEVE-vid3</b></a>,
+        <a href="https://en.wikipedia.org/wiki/Los_Alfaques_disaster">
+          <b>Los Alfaques disaster</b></a>), but a
+         <b>flash drum</b>
+         is a specific piece
+	 of equipment in which the flash boiling is designed to occur, and
+	 the liquid is allowed to settle out of the vapour stream.
+       </li>
+      </ul>
+     </section>
+     <section data-menu-title="Operating Equation">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.75);">
+        <ul>
+         <li>
+          We need an
+          <span style="color:teal">
+            operating line</span>
+          equation
+          for this system.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We can perform a total mass balance, but this equation
+        doesn't tell us anything about the concentrations in the
+        system.
+          \begin{align*}
+          F=L+V
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          A mass balance in a single component is much more
+        useful, and when taken over the volatile component $A$, it
+        forms the
+          <span style="color:teal">
+           operating line</span>
+          equation.
+          \begin{align*}
+          x_{A,F} F=x_A L+y_A V
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          As in absorbers, we assume that the outlet vapour and
+        gas streams are in equilibrium.
+          \begin{align*}
+          y_A = f^{(VLE)}(x_A)
+          \end{align*}
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.25);">
+        <figure>
+         <img src="img/flash_drum_01.svg" style="width:100%"/>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.75);">
+        \begin{align*}
+        F&amp;=L+V\\
+        x_{A,F} F&amp;=x_A L+y_A V\\
+        y_A &amp;= f^{(VLE)}(x_A)
+        \end{align*}
+        <ul>
+         <li>
+          Given the design of the flash drum, the pressure and
+        inlet fluid temperature (pre-pressure drop) are the
+        controlled/input variables of the design.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We will need an enthalpy balance to actually close
+        this equation (to calculate how much vapour is produced).
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          However, to simplify this system at first we will
+        assume we know the fraction of vapour produced.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.25);">
+        <figure>
+         <img src="img/flash_drum_01.svg" style="width:100%"/>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Example: Benzene-Tolulene Flash Drum">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.75);">
+        <ul>
+         <li>
+          A high-pressure liquid of 73 kmol/hr Benzene ($A$) and
+        137 kmol/hr Toluene (
+          $B$) is separated in a flash drum. The
+        operating pressure is controlled so that the outlet vapour
+        flow-rate is 100 kmol/hr. Calculate the outlet concentrations
+        and flow-rates.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The total flow rate is $F=73+137=210$
+          kmol/hr. The
+        liquid flow rate is then given by
+          $L=F-V=210-100=110$
+          kmol/hr.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          The volatile component is Benzene. The
+          <span style="color:teal">
+           operating line</span>
+          equation is given by the
+        Benzene mass balance.
+          \begin{align*}
+          x_{A,F} F&amp;=x_A L+y_A V\\
+          73 &amp;= 110 x_A+100 y_A\\
+          y_A &amp;= 0.73 - 1.1 x_A
+          \end{align*}
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.25);">
+        <figure>
+         <img src="img/flash_drum_01.svg" style="width:100%"/>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.451);">
+        <ul>
+         <li>
+          Plotting the
+          <span style="color:teal">
+           operating line</span>, we find the solution for the outlet
+          concentrations: $x_A=0.26$, $y_A=0.45$.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We can also solve this problem using our new relative
+        volatility VLE equation…
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.551);">
+        <figure>
+          <img src="img/Benzene_Tolulene_xy_flash.svg" style="width:100%"/>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <table style="border-collapse:collapse;">
+         <tr style="border-top:thick solid black;">
+          <td>
+           Temperature ($K$)
+          </td>
+          <td>
+           353
+          </td>
+          <td>
+           363
+          </td>
+          <td>
+           373
+          </td>
+          <td>
+           383
+          </td>
+         </tr>
+         <tr style="border-top:thin solid black;">
+          <td>
+           $\alpha$
+          </td>
+          <td>
+           2.62
+          </td>
+          <td>
+           2.44
+          </td>
+          <td>
+           2.40
+          </td>
+          <td>
+           2.39
+          </td>
+         </tr>
+         <tr style="border-top:thick solid black;">
+          <td>
+          </td>
+         </tr>
+        </table>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        We don't know the operating temperature of the flash drum
+    as we've ignored the enthalpy balance for now, so we will just
+    guess at a relative volatility of $\alpha=2.4$.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        We then solve two equations, the
+        <span style="color:teal">
+         operating line</span>
+        equation, and the constant
+    relative volatility
+        <span style="color:blue">
+         VLE data</span>
+        equation:
+        \begin{align*}
+        y_A &amp;= \frac{\alpha x_A}{1 + x_A (\alpha - 1)} &amp; 
+      y_A &amp;= 0.73 - 1.1 x_A
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        We obtain a quadratic, where one root is
+	($x_A=-1.86$,
+        $y_A=2.78$) and the other root is
+	(
+        $x_A=0.25$,
+        $y_A=0.45$)
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        The first root is obviously unphysical, but the second
+    root is very close to the graphical solution ($x_A=0.26$,
+        $y_A=0.45$).
+       </li>
+      </ul>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <table style="border-collapse:collapse;">
+         <tr style="border-top:thick solid black;">
+          <td>
+           Temperature ($K$)
+          </td>
+          <td>
+           353
+          </td>
+          <td>
+           363
+          </td>
+          <td>
+           373
+          </td>
+          <td>
+           383
+          </td>
+         </tr>
+         <tr style="border-top:thin solid black;">
+          <td>
+           $\alpha$
+          </td>
+          <td>
+           2.62
+          </td>
+          <td>
+           2.44
+          </td>
+          <td>
+           2.40
+          </td>
+          <td>
+           2.39
+          </td>
+         </tr>
+         <tr style="border-top:thick solid black;">
+          <td>
+          </td>
+         </tr>
+        </table>
+       </div>
+      </figure>
+      <ul>
+       <li>
+        What is the magnitude of the error of assuming a constant
+    value of $\alpha=2.4$
+        for the relative volatility in this process?
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        We can do a sensitivity analysis and test how $x_A$
+        and
+        $y_A$
+        depend on the value of
+        $\alpha$.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        For $\alpha=2.6$, solving the previous two equations
+    yields (
+        $y_A=0.46$,
+        $x_A=0.25$).
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        For $\alpha=2.2$, solving the previous two equations
+    yields (
+        $y_A=0.44$,
+        $x_A=0.26$).
+       </li>
+       <li class="fragment" data-fragment-index="4">
+        This illustrates that small variations of the relative
+	volatility are acceptable when assuming a constant relative
+	volatility.
+       </li>
+      </ul>
+     </section>
+    </section>
+   </div>
+   <div class="slide-menu-button" style="left:170px;cursor:pointer;">
+    <a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
+     <i class="fa fa-print"></i>
+    </a>
+   </div>
+   <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+   </script>
+   <script src="footer.js">
+   </script>
+  </div>
+ </body>
+</html>
