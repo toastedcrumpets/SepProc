@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Separation Processes 1
+  </title>
+  <meta content="Separation processes 1 notes" name="description"/>
+  <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
+  <script data-headjs-load="header.js" src="../reveal.js/lib/js/head.min.js">
+  </script>
+ </head>
+ <body>
+  <div class="reveal">
+   <div class="slides">
+    <section>
+     <section>
+      <h2>
+       Multi-Stage Distillation: Part 04
+      </h2>
+      <div class="center">
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Reflux Ratio">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          When designing a distillation column from scratch, the
+        only design specifications we will have are the feed and
+        outlet concentrations.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We will need to decide upon a
+          <b>column operating
+          pressure</b>
+          and use this to calculate the
+          $q$
+          -value of the
+        feed stream (see the last lecture's slides).
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          We will also need to choose a
+          <b>reflux ratio</b>.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Selecting the
+          <b>reflux ratio</b>
+          and the
+          <b>column
+          operating pressure</b>
+          requires examining the economic
+        trade-off between
+          <b>capital</b>
+          and
+          <b>operating costs</b>.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          The
+          <b>column operating pressure</b>
+          will require a
+        full optimisation study. However, we can make some educated
+        estimates when it comes to the
+          <b>reflux ratio</b>
+          …
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/Benzene_Tolulene_McCabe_Thiele_05.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Total Reflux/Minimum Number of Trays">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          To understand the values of the reflux ratio, we need
+        to understand its limits and what they physically correspond
+        to.
+          \begin{align*}
+          R&amp;=\frac{L_{n}}{D}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The first limit to consider is when we have the
+        maximum reflux ratio $R\to\infty$.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          This condition is known as
+          <b>total reflux</b>, and
+        occurs when
+          <b>no distillate is collected</b>
+          (
+          $D=0$), but all
+        rising vapour is refluxed back down the column
+        (
+          $L_{N+1}=V_N$).
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          But what effect does this have on the column design?
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          The intercept of the enrichment
+          <span style="color:teal">
+           operating line</span>
+          with the
+          $y$
+          -axis (
+          $x=0$)
+        goes to zero!
+          \begin{align*}
+          y(x=0)=\lim_{R\to\infty}\left(\frac{x_D}{R+1}\right)=0
+          \end{align*}
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01_top.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/partial_reflux.svg"/>
+       </div>
+       <figcaption>
+        The last class example on the McCabe-Thiele method for a
+      Benzene-Toluene mixture. Here we have a typical value of
+        $R=3$
+        for the operating reflux ratio.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/total_reflux.svg"/>
+       </div>
+       <figcaption>
+        At a reflux ratio of
+        $R\to\infty$, the enrichment
+      operating line coincides with the
+        $45^\circ$
+        line.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/total_reflux_stepped.svg"/>
+       </div>
+       <figcaption>
+        When performing distillation at total reflux, the number
+      of trays required to reach a certain separation is at a
+      minimum! (compare
+        <span style="color:green!40!black">
+         $R=3$</span>
+        and
+        <span style="color:teal">
+         $R=\infty$</span>).
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          We cannot actually operate at a total reflux ratio.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Without producing any distillate, if any feed is added
+        it must leave in the bottoms product.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          What goes in, must come out, so we achieve nothing in
+        this case.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          However, we can use this to estimate the minimum
+        number of trays needed for a given separation!
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          Also, during the start-up of a column, it is operated
+        under total reflux until sufficient column vapour and liquid
+        flow-rates have been obtained.
+         </li>
+         <li class="fragment" data-fragment-index="5">
+          Thus total reflux helps us understand what is
+        achievable, and is industrially relevant during
+          <b>plant
+          startup</b>.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01_top.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Minimum Reflux Ratio">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          Just as we had a maximum reflux ratio, we can also
+        have a
+          <b>minimum reflux ratio</b>.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          <b>The reflux ratio should not reach zero</b>, as some
+        liquid must be returned to the column to allow a multi-stage
+        separation to take place. For
+          $R=0$, we will have only one
+        (partial reboiler) or zero (total reboiler) stages.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          So what actually is the minimum (but non-zero) reflux
+        ratio to perform a distillation at?
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Lets consider a distillation of an equimolar
+        ($x_F=0.5$) Benzene-Toluene feed stream which, upon entering
+        the column, flashes to equal amounts of vapour and liquid
+        (
+          $q=0.5$).
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          If the top and bottoms product have concentrations of
+        90% ($x_D=0.9$) and 10% (
+          $x_W=0.1$) benzene respectively,
+        what is the minimum possible reflux ratio?
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01_top.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/min_reflux_01.svg"/>
+       </div>
+       <figcaption>
+        From the data given already, we can draw most of the
+      McCabe-Thiele constructs including the
+        <span style="color:red">
+         $q$
+         -line</span>. We're only missing the
+        <span style="color:teal">
+         operating lines</span>.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/min_reflux_02.svg"/>
+       </div>
+       <figcaption>
+        The only restriction on the placement of the enrichment
+        <span style="color:teal">
+         operating line</span>
+        is that it must intersect the
+        <span style="color:red">
+         $q$
+         -line</span>
+        somewhere below the
+        <span style="color:blue">
+         VLE</span>
+        line.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/min_reflux_03.svg"/>
+       </div>
+       <figcaption>
+        The higher the interception of the enrichment
+        <span style="color:teal">
+         operating line</span>
+        with the
+        $y$
+        -axis, the lower
+      the reflux ratio. So the minimum reflux ratio is where the
+        <span style="color:red">
+         $q$
+         -line</span>,
+        <span style="color:blue">
+         VLE</span>
+        line, and the
+        <span style="color:teal">
+         operating line</span>
+        coincide (
+        $R_{min}\approx1.31$)!
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/min_reflux_04.svg"/>
+       </div>
+       <figcaption>
+        At
+        $R=R_{min}\approx1.31$, it is still theoretically
+      possible to achieve a separation. However, it will take
+        <b>an
+        infinite number of plates to overcome the pinch</b>.
+       </figcaption>
+      </figure>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Pinches">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.71);">
+        <ul>
+         <li>
+          The minimum reflux ratio corresponds to the first
+        (highest) $R$
+          where a
+          <b>pinch</b>
+          is formed.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We can then just read off the $y$
+          -intercept of the
+        enrichment
+          <span style="color:teal">
+           operating line</span>
+          to find the
+        minimum reflux ratio.
+          \begin{align*}
+          R_{min}=\frac{x_D}{y(x=0)}-1
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          The
+          <b>optimum reflux ratio</b>
+          (see C&amp;R vol. 2,
+        pg. 575 for details) is generally around 1.1–1.5 times the
+          <b>minimum reflux ratio</b>.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          This is where the running costs of the column (heating
+        steam for the boiler, cooling water for the condenser, pumps)
+        roughly balance with the capital costs of the column (number
+        of trays, cost of reboiler and condenser).
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          So we can now calculate a rough reflux ratio, given
+        just the outlet conditions and the $q$
+          value! We can design
+        binary distillation columns…
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.251);">
+        <figure>
+         <div class="center">
+          <img src="img/min_reflux_04.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Non-Ideal liquids">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.71);">
+        <ul>
+         <li>
+          <b>Pinches</b>
+          don't just appear at the intersection of
+        the
+          <span style="color:red">
+           $q$
+           -line</span>,
+          <span style="color:blue">
+           VLE</span>
+          line, and
+        the
+          <span style="color:teal">
+           operating line</span>.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          If the fluid is a non-ideal mixture, the pinch can
+        occur at some other point along the
+          <i>enrichment</i>
+          <span style="color:teal">
+           operating line</span>
+          and the
+          <span style="color:blue">
+           VLE</span>
+          line.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          A pinch can also occur somewhere along the
+          <i>stripping</i>
+          <span style="color:teal">
+           operating line</span>
+          and the
+          <span style="color:blue">
+           VLE</span>
+          line.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Lets take a look at two examples…
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.251);">
+        <figure>
+         <div class="center">
+          <img src="img/min_reflux_04.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/enrichment_pinch.svg"/>
+       </div>
+       <figcaption>
+        This graph illustrates a pinch occurring on the
+      enrichment
+        <span style="color:teal">
+         operating line</span>
+        for a fictitious non-ideal
+      mixture's VLE curve.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/stripping_pinch.svg"/>
+       </div>
+       <figcaption>
+        This graph illustrates a pinch occurring on the
+      stripping
+        <span style="color:teal">
+         operating line</span>
+        for a fictitious non-ideal
+      mixture's VLE curve.
+       </figcaption>
+      </figure>
+     </section>
+     <section data-menu-title="Azeotropes">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.71);">
+        <ul>
+         <li>
+          There is a particular form of pinch which cannot be
+        overcome by changing the reflux ratio.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          This type of pinch was introduced to you in EG3029
+        Chemical Thermodynamics, and is called an
+          <b>azeotrope</b>.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          The most famous azeotrope exists in Ethanol-Water
+        mixtures, and prevents the distillation of more than 95.6% at
+        atmospheric pressure.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          We cannot place the top and bottoms product
+        concentrations on different sides of the
+          <b>azeotrope</b>, and
+        enrichment beyond the
+          <b>azeotrope</b>
+          concentration in a
+        single column is impossible.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.251);">
+        <figure>
+         <div class="center">
+          <img src="img/min_reflux_04.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/azeotrope_pinch.svg"/>
+       </div>
+       <figcaption>
+        This graph illustrates the limitations placed on
+      distillation by the occurrence of an azeotrope. The top product
+      concentration cannot be moved above the azeotrope
+      concentration.
+       </figcaption>
+      </figure>
+     </section>
+     <section data-menu-title="Pressure-Swing Distillation">
+      <figure>
+       <div class="center">
+        <img src="img/azeotrope_swing.svg"/>
+       </div>
+       <figcaption>
+        One way of overcoming this azeotrope is to utilise
+        <b>pressure swing distillation</b>. At different pressures the
+      position of the azeotrope shifts (dotted blue line).
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/azeotrope_swing_distill.svg"/>
+       </div>
+       <figcaption>
+        If we first distill using the high pressure, we can use
+      this top product as the feed into a low-pressure distillation
+      column. Then we can concentrate up to arbitrary strength.
+       </figcaption>
+      </figure>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Tray Efficiencies">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          The next subject on distillation design is
+          <b>plate
+          efficiencies</b>.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          So far we've only concerned ourselves with an
+          <b>overall plate efficiency</b>,
+          $E_O$.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          We can convert from theoretical stages ($N$) to real
+        stages (
+          $N_{real}$) by just dividing by the efficiency.
+          \begin{align*}
+          N_{real} = N / E_O
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          There are expressions for the overall efficiency
+        available in the literature for certain types of distillations
+        (See C&amp;R Vol. 2, Eq. 11.126).
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          However, in general an overall efficiency is a very
+        crude approximation and can only be used for rough
+        calculations.
+         </li>
+         <li class="fragment" data-fragment-index="5">
+          But there are better definitions of the efficiency
+        available…
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01_top.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Murphree Tray Efficiency">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          The
+          <b>Murphree
+           <u>Tray</u>
+           Efficiency</b>
+          is a
+        parameter that appears to fit reality a little better.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The expression for the Murphree tray efficiency is
+          \begin{align*}
+          E_M = \frac{y_n-y_{n-1}}{y_{n}^{*}-y_{n-1}}
+          \end{align*}
+          where
+          $y_n$
+          is the real concentration of vapour coming off a
+        stage, and
+          $y_{n}^{*}$
+          is the equilibrium vapour
+        concentration.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          If the tray efficiency is one, these two values are
+        the same. At efficiencies less than one, the outlet vapour
+        will not reach equilibrium with the average tray
+        concentration.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          The easiest way to use such an efficiency is to plot
+        it as a second,
+          <i>curved</i>
+          <span style="color:green!40!black">
+           Murphree line</span>
+          on
+        the almost complete McCabe-Thiele chart.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01_top.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/murphy_tray_efficiency.svg"/>
+       </div>
+       <figcaption>
+        To plot the
+        <span style="color:green!40!black">
+         Murphree line</span>, we
+      just put points at a fraction of the distance between the
+        <span style="color:teal">
+         operating line</span>
+        and the
+        <span style="color:blue">
+         VLE
+        line</span>
+        equal to the Murphree tray efficiency. The example above
+      is calculated at
+        $E_M=0.5$.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/murphy_stepping.svg"/>
+       </div>
+       <figcaption>
+        To determine the number of real trays, we just perform
+      the stepping as usual, but use the
+        <span style="color:green!40!black">
+         Murphree line</span>
+        in place of the
+        <span style="color:blue">
+         VLE line</span>.
+        <b>We can also calculate the Murphree
+      line as we step</b>. This distillation requires at least 5 real
+      trays and an ideal reboiler stage.
+       </figcaption>
+      </figure>
+     </section>
+     <section data-menu-title="Murphree Point Efficiency">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          We can extend the Murphree tray efficiency to the
+          <b>Murphree point efficiency</b>.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The expression for the Murphree point efficiency is
+          \begin{align*}
+          E_P = \frac{y'_p-y'_{n-1}}{y_{n}^{*}-y'_{n-1}}
+          \end{align*}
+          where the primes denote the concentration at a certain point
+        on the plate.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          This is used to take into account that the
+        concentration varies along the plate as the tray fluid is not
+        well mixed.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Use of this efficiency requires us to consider the
+        hydrodynamics within a plate, and this is too detailed for
+        this course.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          But, as always, you need to be aware of the
+        approximations of your solutions.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/murphy_point_efficiency.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+    </section>
+   </div>
+   <div class="slide-menu-button" style="left:170px;cursor:pointer;">
+    <a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
+     <i class="fa fa-print"></i>
+    </a>
+   </div>
+   <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+   </script>
+   <script src="footer.js">
+   </script>
+  </div>
+ </body>
+</html>
