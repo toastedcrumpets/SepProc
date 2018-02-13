@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Separation Processes 1
+  </title>
+  <meta content="Separation processes 1 notes" name="description"/>
+  <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
+  <script data-headjs-load="header.js" src="../reveal.js/lib/js/head.min.js">
+  </script>
+ </head>
+ <body>
+  <div class="reveal">
+   <div class="slides">
+    <section>
+     <section>
+      <h2>
+       Varying Stage Efficiencies and Feed Location
+      </h2>
+      <div class="center">
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Review of Distillation Efficiencies">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <ul>
+         <li>
+          In the previous lecture, we discussed
+          <b>column
+          efficiencies</b>
+          and how to use them:
+          <ul>
+           <li class="fragment" data-fragment-index="1">
+            The overall column efficiency, $E_O$, is the ratio of
+            <b>ideal trays</b>
+            to
+            <b>real trays</b>
+            in the column.
+           </li>
+           <li class="fragment" data-fragment-index="2">
+            The Murphree tray efficiency, $E_M$, is the
+          effectiveness of a
+            <b>single real tray</b>
+            when compared to a
+            <b>ideal tray</b>.
+           </li>
+           <li class="fragment" data-fragment-index="3">
+            The Murphree point efficiency, $E_P$, is the
+          efficiency of a single point on a tray. This is only useful
+          when considering the flow on a tray in detail.
+           </li>
+          </ul>
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          A constant Murphree tray efficiency is relatively easy
+        to use, forming an “effective”
+          <span style="color:blue">
+           VLE line</span>
+          below the true
+          <span style="color:blue">
+           VLE line</span>, which we called the
+          <span style="color:green!40!black">
+           Murphree line</span>.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+          <img src="img/murphy_stepping.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/murphy_stepping.svg"/>
+       </div>
+       <figcaption>
+        The previous lectures example on using a Murphree tray
+      efficiency of
+        $E_M=0.5$.
+       </figcaption>
+      </figure>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Varying Stage Efficiencies">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <ul>
+         <li>
+          But what is happening at the bottom of the stepping
+        when using the Murphree efficiency?
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          This is the first example of a case where we have
+        different efficiencies for different parts of the column.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          The bottom stage is usually a
+          <b>re-boiler stage</b>,
+        and it is often assumed to have a Murphree efficiency of
+          $E_M=1.0$
+          !
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          This is because the
+          <b>re-boilers actually generate
+          vapour from the liquid</b>.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          On trays, you are
+          <b>contacting</b>
+          vapour and liquid
+        phases to try to get them to come into equilibrium.
+         </li>
+         <li class="fragment" data-fragment-index="5">
+          Generating vapour will typically be more effective at
+        achieving equilibrium concentrations.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+          <img src="img/murphy_stepping.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/Kettle_reboiler.svg"/>
+       </div>
+       <figcaption>
+        A kettle-type re-boiler. The tube bundle is submerged in
+      a pool of the bottoms product, which is partially boiled to form
+      the vapour phase. The unboiled liquid flows over the top of a
+      weir to form the tower bottoms product.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <ul>
+         <li>
+          So the re-boiler stage shouldn't use the
+          <span style="color:green!40!black">
+           Murphree line</span>, but should instead
+        go to the
+          <span style="color:blue">
+           VLE line</span>
+          !
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          But we must be careful where we start our stepping
+        using the
+          <span style="color:green!40!black">
+           murphree line</span>. We must use whole
+        numbers of stages as they correspond to
+          <b>real</b>
+          trays.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          If we start stepping from the top, we may
+        significantly over-design our column.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+          <img src="img/murphy_stepping.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/murphy_stepping.svg"/>
+       </div>
+       <figcaption>
+        Starting the stepping from the bottom, we need 4 real trays
+      plus the re-boiler.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/murphy_stepping_2.svg"/>
+       </div>
+       <figcaption>
+        But starting the stepping from the top, we need an extra
+      real tray (5+1).
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <ul>
+         <li>
+          Its important to remember that the start point of
+        stepping can effect the final result
+          <b>if the Murphree
+          tray/stage efficiencies vary</b>.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Here we've seen the difference that the re-boiler
+        efficiency can make when using the Murphree tray efficiency.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          How does having a ideal reboiler stage effect overall
+        efficiency calculations?
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+          <img src="img/murphy_stepping.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Re-boiler Efficiency and Overall Efficiency">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <ul>
+         <li>
+          Let's double check how the overall efficiency works
+        when considering the re-boiler as an ideal stage.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We start off by calculating how many ideal stages are
+        required for the design.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Here we need around 2.6 ideal stages to perform the
+        separation.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          But one ideal stage is provided by a re-boiler, so we
+        only need 1.6 ideal trays!
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          Assuming we have an overall efficiency of $E_O=0.4$,
+        this would give us
+          $1.6/0.4=4$
+          real stages and a reboiler
+        stage!
+         </li>
+         <li class="fragment" data-fragment-index="5">
+          Contrast this to our previous design with a Murphree
+        tray efficiency of $E_M=0.5$.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+          <img src="img/ideal_stepping.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Varying Murphree Tray Efficiencies">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <ul>
+         <li>
+          Let's consider the distillation trays in a real
+        distillation column.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The tray's in a column will actually vary in type,
+        from random/structured packing, to sieve/valve/chimney trays.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          They will vary as the viscosity of the column mixture
+        changes with concentration (compare the heavy components of
+        crude to the light paraffin's).
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          This means the efficiency will vary significantly in
+        the column.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          The efficiency will also change due to the difference
+        in vapour and liquid flow rates in the stripping and
+        enrichment sections due to the addition of feed.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+          <img src="img/trays.jpg" style="width:100%;"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/crude_column.jpg"/>
+       </div>
+       <figcaption>
+        Crude column products and boiling temperatures.
+       </figcaption>
+      </figure>
+     </section>
+     <section data-menu-title="Enrichment and Stripping Murphree Efficiency">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <ul>
+         <li>
+          The most complex case we will consider in this course
+        is that we have two Murphree efficiencies.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          In the upper enrichment section, we might have a
+        higher efficiency due to the increased vapour flow-rates, and
+        lower liquid flow-rates resulting in longer liquid tray
+        residency times.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Let's do the previous Murphree example with two
+        different tray efficiencies…
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+          <img src="img/murphy_stepping.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/murphy_stepping_3.svg"/>
+       </div>
+       <figcaption>
+        The new Murphree diagram, where we have
+        $E_M=0.5$
+        in the
+      stripping section and
+        $E_M=0.75$
+        in the enrichment section. We
+      can start the stepping from the top but this results in the
+      lowest efficiency.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/murphy_stepping_4.svg"/>
+       </div>
+       <figcaption>
+        Don't worry about the discontinuity, just make sure the
+      feed tray is on the stripping line and extend it if required
+      (but the plotting here is always sufficient). Starting from the
+      top we greatly over-design the column thanks to the ideal
+      reboiler stage.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/murphy_stepping_5.svg"/>
+       </div>
+       <figcaption>
+        Stepping from the bottom and the over-design is
+      minimised. Remember, you can apply the Murphree line while
+      stepping to be more accurate and (possibly) save some time.
+       </figcaption>
+      </figure>
+     </section>
+     <section data-menu-title="Summary">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <ul>
+         <li>
+          In summary, for efficiencies:
+          <ul>
+           <li>
+            Remember that the re-boiler is nearly ideal, so it
+          should always contact the
+            <span style="color:blue">
+             VLE line</span>.
+           </li>
+           <li class="fragment" data-fragment-index="1">
+            You can have varying tray efficiencies in the
+          column, and the simplest example of this is when the
+          enrichment and stripping efficiencies are different.
+           </li>
+           <li class="fragment" data-fragment-index="2">
+            Always start stepping from the bottom when using the
+          Murphree tray efficiency, as this uses the ideal re-boiler
+          stage to its maximum, and gives the minimum real-tray design.
+           </li>
+          </ul>
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+          <img src="img/murphy_stepping_5.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Feed Tray Location">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <ul>
+         <li>
+          The last bit of ambiguity to clarify in distillation
+        design is
+          <b>which tray is the feed tray?</b>
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The feed tray is defined as the tray below where the
+        feed enters the column.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          The liquid falling down from the feed point will land
+        on this tray, and the feed vapour will join the rising vapour
+        from the tray.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Therefore,
+          <b>the feed tray is the tray which
+          connects the two
+           <span style="color:teal">
+            operating lines</span>.</b>
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+          <img src="img/murphy_stepping_5.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/feed_tray.svg"/>
+       </div>
+       <figcaption>
+        The feed tray is tray 2. The vapour from the feed tray
+      (horizontal black line) connects to the enrichment
+        <span style="color:teal">
+         operating line</span>
+        and the liquid from the tray
+      (vertical black line) falls onto the stripping
+        <span style="color:teal">
+         operating line</span>.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/improper_feed_locations.png"/>
+       </div>
+       <figcaption>
+        Taken from pg. 656 of Transport Processes and Unit
+      Operations, 3rd Ed. An example of an improperly located feed
+      tray. This could occur if you recommissioned an old piece of
+      distillation equipment to perform a new separation.
+       </figcaption>
+      </figure>
+     </section>
+    </section>
+   </div>
+   <div class="slide-menu-button" style="left:170px;cursor:pointer;">
+    <a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
+     <i class="fa fa-print"></i>
+    </a>
+   </div>
+   <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+   </script>
+   <script src="footer.js">
+   </script>
+  </div>
+ </body>
+</html>
