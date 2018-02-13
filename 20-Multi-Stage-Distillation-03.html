@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Separation Processes 1
+  </title>
+  <meta content="Separation processes 1 notes" name="description"/>
+  <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
+  <script data-headjs-load="header.js" src="../reveal.js/lib/js/head.min.js">
+  </script>
+ </head>
+ <body>
+  <div class="reveal">
+   <div class="slides">
+    <section>
+     <section>
+      <h2>
+       Multi-Stage Distillation: Part 03
+      </h2>
+      <div class="center">
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          When performing a design of a binary distillation
+        column we used the graphical
+          <b>McCabe-Thiele</b>
+          method.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          This involved drawing two
+          <span style="color:teal">
+           operating
+          lines</span>
+          and the
+          <span style="color:red">
+           $q$
+           -line</span>.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          In the tutorial, the
+          <span style="color:red">
+           $q$
+           -line</span>
+          had a
+        special value of
+          $q=1$, corresponding to a liquid feed.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Of course there are many features of the
+          <span style="color:blue">
+           VLE data</span>,
+          <span style="color:teal">
+           operating lines</span>,
+        and
+          <span style="color:red">
+           $q$
+           -line</span>
+          which have physical
+        interpretations.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          We will now look at the $q$
+          value and the
+          <span style="color:red">
+           $q$
+           -line</span>
+          in more detail.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/Benzene_Tolulene_McCabe_Thiele_05.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="$q$-line">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          The
+          <span style="color:red">
+           $q$
+           -line</span>
+          results from a mass
+        balance around the feed tray of the column.
+          \begin{align*}
+          y &amp;= x\frac{q}{q-1} - \frac{x_F}{q-1}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          <b>Remember:</b>
+          Constant molar overflow was assumed to
+        derive this.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          When the feed stream enters the column it will
+          <b>flash</b>
+          to its equilibrium state at the
+          <b>operating
+          pressure</b>
+          of the column.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          It is no coincidence then that the
+          <span style="color:red">
+           $q$
+           -line</span>
+          has the appearance of a flash drum
+          <span style="color:teal">
+           operating line</span>.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          But what exactly does the value $q$
+          represent?
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/fractionation_column_01_feed.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          Initially, I described $q$
+          as the fraction of feed
+        stream which remains liquid when entering the column.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Therefore $q F$
+          moles of feed flow down as liquid
+        into the stripping section of the column…
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          …
+          and
+          $(1-q)F$
+          moles of feed vapourise and rise
+        up into the enrichment section of the column (see right).
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          From this we can come up with a more general
+        definition of $q$
+          and
+          $(1-q)$
+          as
+          <i>the change in the
+          liquid and vapour flow-rates in the column relative to the
+          feed stream flow-rate</i>.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          This definition is important as it is possible to
+        have $q$
+          -values greater than one and less than zero!
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/feed_tray_flows.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Super-heated/sub-cooled">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          For example, let us consider the case when the feed
+        stream is a sub-cooled liquid at the column pressure.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The entering feed is below its boiling point and will
+        cause rising vapour to condense until the mixture reaches its
+        boiling point again.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          This will mean that the liquid flowing back down the
+        column will consist of:
+          <ul>
+           <li>
+            All of the liquid from the enrichment section.
+           </li>
+           <li>
+            All of the feed stream.
+           </li>
+           <li>
+            AND some fraction of the rising vapour.
+           </li>
+          </ul>
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          The effective value of $q$
+          in this case must be
+        greater than 1!
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/feed_tray_flows.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          The counter-example is if the feed stream is
+        superheated vapour at the column operating pressure.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          This will cause the saturated liquid on the tray to
+        boil to vapour until the mixture reaches equilibrium.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          This will mean that the vapour flowing up the column
+        will consist of:
+          <ul>
+           <li>
+            All of the vapour from the stripping section.
+           </li>
+           <li>
+            All of the feed stream.
+           </li>
+           <li>
+            AND some fraction of the falling liquid.
+           </li>
+          </ul>
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          The effective value of $q$
+          in this case must be
+        less than 0!
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/feed_tray_flows.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Special Values">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          The appearance of the
+          <span style="color:red">
+           $q$
+           -line</span>
+          can be
+        categorised into:
+          <ul>
+           <li>
+            Sub-cooled liquid feed ($q&gt;1$).
+           </li>
+           <li>
+            Saturated liquid feed ($q=1$).
+           </li>
+           <li>
+            Two-phase feed ($0&lt;q&lt;1$).
+           </li>
+           <li>
+            Saturated vapour feed ($q=0$).
+           </li>
+           <li>
+            Super-heated vapour feed ($q&lt;0$).
+           </li>
+          </ul>
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We can also see that there must be limits to the values
+        of $q$, and these correspond to complete boiling of the falling
+        liquid phase or complete condensation of the rising vapour
+        phase.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Without the counter-flowing vapour and liquid phases
+        the column cannot function and we cannot find a solution for
+        its design.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/qline.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/qline.svg"/>
+       </div>
+       <figcaption>
+        The appearance of the
+        <span style="color:red">
+         $q$
+         -line</span>
+        for
+      various values of
+        $q$.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <ul>
+       <li>
+        In case you had some difficulty plotting $q=1$
+        from the
+        <span style="color:red">
+         $q$
+         -line</span>
+        equation…
+        \begin{align*}
+        y &amp;= x\frac{q}{q-1} - \frac{x_F}{q-1}
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        …
+        it is much more convenient to multiply the
+        <span style="color:red">
+         $q$
+         -line</span>
+        equation by
+        $(q-1)$
+        to give
+        \begin{align*}
+        (q-1)y &amp;= x q - x_F
+        \end{align*}
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        Here it is easy to see that for $q=1$
+        we have
+        \begin{align*}
+        x=x_F
+        \end{align*}
+        regardless of the
+        $y$
+        value, so this is a vertical line!
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        For $q=0$
+        we have
+        \begin{align*}
+        y=x_F
+        \end{align*}
+        which is a horizontal line.
+       </li>
+      </ul>
+     </section>
+     <section data-menu-title="Definition From A Heat Balance">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          To calculate the value of $q$, we need to examine the
+        enthalpy of the feed stream
+          \begin{align*}
+          q = \frac{h_{F,sat. vapour}-h_F}{h_{fg}}
+          \end{align*}
+          where
+          $h_{F,vapour}$
+          is the specific enthalpy of a saturated
+        vapour feed,
+          $h_F$
+          is the actual specific enthalpy of the
+        feed, and
+          $h_{fg}$
+          is the latent heat of vapourisation in the
+        column (assumed constant on a stage (good old constant molar
+        overflow)).
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We can see that $q=1$
+          corresponds to
+          $h_F=h_{F,sat. liquid}$
+          and
+          $q=0$
+          corresponds to
+          $h_F=h_{F,sat. vapour}$.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          But we can even calculate $q$
+          for
+        sub-cooled/super-heated streams.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/qline.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Rough Column Sizing">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.491);">
+        <ul>
+         <li>
+          The hydraulic and mechanical design of a
+          <b>plate</b>
+          distillation column is a balancing act between minimising
+        pressure drop (operating cost), while keeping construction
+        costs low, and avoiding
+          <b>weeping</b>
+          and
+          <b>entraining</b>
+          /
+          <b>flooding</b>.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The construction costs come about from the use of
+        complex tray designs (see right), expensive materials, or
+        large columns, or many trays (inefficient designs).
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Each tray type design is a trade-off between
+          <b>pressure drop</b>,
+          <b>efficiency</b>,
+          <b>cost</b>, and
+          <b>liquid hold-up</b>.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+          <img src="img/trays.jpg" style="width:100%;"/>
+         </div>
+         <figcaption>
+          Some typical plate configurations
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.541);">
+        <ul>
+         <li>
+          <b>Sieve plates</b>
+          (top right) are simple,
+        cheap-to-build designs. They do not retain liquid well at low
+        vapour flow-rates/pressure drops, but facilitate a good
+        contact between the phases.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          <b>Valve cap</b>
+          trays (middle) use small valves to improve
+        liquid hold-up at low pressure drops/vapour flow-rates
+        (
+          $1.5\times$
+          cost of seive plates).
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          <b>Bubble cap</b>
+          trays use more complex valves which
+        can also shape the bubbles to maximise the contact between the
+        phases, resulting in higher efficiencies (
+          $3\times$
+          cost of
+        seive plates).
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Bubble cap trays can support very low vapour
+        flow-rates/pressure drops due to their excellent valves, and
+        so support high
+          <b>turn-down</b>
+          ratios.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.451);">
+        <figure>
+         <div class="center">
+          <img src="img/trays.jpg" style="width:100%;"/>
+         </div>
+         <figcaption>
+          Some typical plate configurations
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.541);">
+        <ul>
+         <li>
+          <b>Chimney trays</b>
+          (bottom-left) are not used for
+        mass-transfer, but are used to increase hold-up times at
+        section of the column (usually to perform a gas-liquid
+        separation).
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          The different tray designs offer different flow
+        characteristics in the column, but the primary concerns are
+        efficiency, pressure drop and liquid hold-up.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Lets take a closer look at the operation of a plate.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.451);">
+        <figure>
+         <div class="center">
+          <img src="img/trays.jpg" style="width:100%;"/>
+         </div>
+         <figcaption>
+          Some typical plate configurations
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Flooding/Weeping">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.491);">
+        <ul>
+         <li>
+          In the “active area” of the plate, there is a layer
+        of liquid which is in contact with the vapour phase.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          If the pressure drop of the vapour phase is not high
+        enough, the hydrodynamic head of this liquid layer will be
+        sufficient to cause liquid to
+          <b>weep</b>
+          through the plate,
+        possibly bypassing the rest of the stage.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          In the downcomer stage, there is a head of liquid from
+        the upper stage ready to flow on to the current plate.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          If the pressure drop is higher than the hydrodynamic
+        head in the downcomer, the liquid in the downcomer will be
+        blown up the column and the column will
+          <b>flood</b>.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+          <img src="img/cross-flow-plate.svg" style="width:100%"/>
+         </div>
+         <figcaption>
+          Cross-flow plate configuration, taken from C&amp;R
+          vol. 6, Fig.11.17.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.491);">
+        <ul>
+         <li>
+          It is possible to plot diagrams similar to the
+        multiphase flow maps introduced in EG3019 for column
+        operation.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          In addition to
+          <b>flooding</b>
+          and
+          <b>weeping</b>, there
+        is
+          <b>entrainment</b>
+          where the liquid is sprayed out of the
+        column.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          <b>Coning</b>
+          is where the vapour blows through the
+        liquid phase as a cone of vapour, significantly reducing the
+        contact time.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          The area of satisfactory operation is strongly
+        affected by the plate design and fluid properties.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          For example, if the fluid foams excessively
+        entrainment will become a major issue.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.51);">
+        <figure>
+         <div class="center">
+          <img src="img/operating-region.svg" style="width:100%"/>
+         </div>
+         <figcaption>
+          Sieve plate performance diagram, taken from C&amp;R
+          vol. 6, Fig.11.17.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Column Height/Diameter">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.641);">
+        <ul>
+         <li>
+          We cannot discuss detailed estimates of the flooding
+        or weeping limits of the column until a column design is
+        chosen.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          But we cannot select a column design without a rough
+        estimate of its operational parameters.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          To provide an initial estimate of
+          <b>column height</b>,
+        the spacing between trays is roughly estimated. Columns over
+        1 m in diameter have a spacing of 0.3–0.6 m (0.5 m/stage is a
+        good initial estimate).
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          The inner column diameter can be estimated by placing
+        a limit on the
+          <b>superficial vapour flow rate</b>
+          inside the
+        column.
+          \begin{align*}
+          D= \sqrt{\frac{4 \dot{V}}{\pi \rho_{vapour} \left\langle
+                v_{vapour}\right\rangle}}
+          \end{align*}
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/operating-region.svg" style="width:100%"/>
+         </div>
+         <figcaption>
+          Sieve plate performance diagram, taken from C&amp;R
+          vol. 6, Fig.11.17.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <ul>
+       <li>
+        An initial estimate for this superficial vapour flow
+    rate can be obtained from empirical relations such as the one below:
+        \begin{align*}
+        \left\langle v_{vapour}\right\rangle^{max} = \left(-0.171 l_t^2+0.27 l_t-0.047\right)\sqrt{\frac{\rho_{liquid}-\rho_{vapour}}{\rho_{vapour}}}
+        \end{align*}
+        where
+        $l_t$
+        is the tray spacing (0.5–1.5 m/stage).
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        Obviously, this is a maximum vapour flow rate, so care
+    must be taken to stay below this in the section of the column with
+    the highest vapour flow rate.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        With these rough design estimates, detailed design
+    calculations may begin.
+       </li>
+       <li class="fragment" data-fragment-index="3">
+        For more detailed design notes for plate columns, see C&amp;R Vol. 2
+    Sec. 11 and Vol. 6 Sec. 11.
+       </li>
+      </ul>
+     </section>
+    </section>
+   </div>
+   <div class="slide-menu-button" style="left:170px;cursor:pointer;">
+    <a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
+     <i class="fa fa-print"></i>
+    </a>
+   </div>
+   <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+   </script>
+   <script src="footer.js">
+   </script>
+  </div>
+ </body>
+</html>
