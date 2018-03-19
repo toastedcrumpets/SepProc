@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <title>
+   Separation Processes 1
+  </title>
+  <meta content="Separation processes 1 notes" name="description"/>
+  <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
+  <meta content="yes" name="apple-mobile-web-app-capable"/>
+  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
+  <script data-headjs-load="header.js" src="../reveal.js/lib/js/head.min.js">
+  </script>
+ </head>
+ <body>
+  <div class="reveal">
+   <div class="slides">
+    <section>
+     <section>
+      <h2>
+       NTU Absorber Design
+      </h2>
+      <div class="center">
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Packed columns: Stage or continuous?">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.7);">
+        <ul>
+         <li>
+          So far, we have treated packed columns with a
+        stage-by-stage design, and used a
+          <b>Height Equivalent to a
+          Theoretical Plate (HETP)</b>
+          for sizing.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Is this appropriate? Within tray columns we can
+        distinguish real stages, therefore the concept of ideal stages
+        is not remote from reality here (its a good approximation), but
+        packed columns are continuous contacting processes…
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          In
+          <b>distillation</b>, the use of HETP in packed
+        columns is appropriate as the phases are typically close to
+          <b>equilibrium</b>/well-mixed (due to partial
+          boiling/condensation driving the mass transfer).
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          For absorbers, the mass transfer is only driven by
+        concentration differences/diffusion, and diffusion is
+          <b>slow</b>…
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.3);">
+        <figure>
+         <div class="center">
+          <img src="img/AnelliRaschig.jpg" style="width:100%;"/>
+          <br/>
+          <img src="img/RiempimentoStrutturato.jpg" style="width:100%;"/>
+          <figcaption>
+           Super Rasching rings (top) and structured packing
+            (bottom). Photos taken by Luigi Chiesa.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.7);">
+        <ul>
+         <li>
+          For example, consider the diffusion of sugar in water
+          $(D=0.52\times10^{-5}\text{cm}^2~\text{s}^{-1})$.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Diffusion is equivalent to a random walk, which grows
+        as:
+          \begin{align*}
+          x^2 = 2 D t
+          \end{align*}
+          (confirm by checking the units)
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Sample calculation 1: After 1 second, sugar molecules
+        will diffuse over a distance of $\approx 3\times10^{-5}$
+          cm
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Sample calculation 2: After 1 year, sugar molecules
+        will diffuse over a distance of $\approx 18$
+          cm.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          Diffusion is very slow, it is usually enhanced by
+        microconvection currents (see EX3030).
+         </li>
+         <li class="fragment" data-fragment-index="5">
+          But close to interfaces, such as a gas-liquid
+        interface, convection must be small and diffusion must be the
+        primary mode of transport in a
+          <b>boundary layer</b>.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.3);">
+        <figure>
+         <div class="center">
+          <img src="img/AnelliRaschig.jpg" style="width:100%;"/>
+          <br/>
+          <img src="img/RiempimentoStrutturato.jpg" style="width:100%;"/>
+          <figcaption>
+           Super Rasching rings (top) and structured packing
+            (bottom). Photos taken by Luigi Chiesa.
+          </figcaption>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Two-film theory">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          Consider the interface between two phases, gas and a
+        liquid, where we are absorbing a component from the gas phase
+        into the liquid phase.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          At the interface, there is no resistance (no distance)
+        to mass transfer, therefore the two phases are in equilibrium.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Provided the diffusing component, $A$, is more soluble
+        in one phase than the other (Henry's coefficient
+          ${\mathcal
+          H}_A\neq1$) there will be a concentration jump across the
+        interface.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          As mass transfer is occurring, there must be a
+        concentration gradient in the liquid and the gas phase.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          The movement of $A$
+          through the boundary layer is then
+          <b>limited</b>
+          or
+          <b>controlled</b>
+          by the diffusion rates
+        through these two layers.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/two-film.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Equimolar counterdiffusion">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          All diffusion systems are governed by the general form
+        of Fick's law, which for two components is:
+          \begin{align*}
+          \boldsymbol{N}_A &amp;=-D_{AB} \nabla C_A + x_A \left(\boldsymbol{N}_A + \boldsymbol{N}_B\right)
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Assuming that the concentration gradient is linear,
+        one dimensional, and that we have
+          <b>equimolar
+          counter-diffusion</b>, we have for the liquid phase:
+          \begin{align*}
+          N_A &amp;=-D_{AB,L} C_{L}\frac{x_{A_i} - x_A}{l_L} +
+          \cancelto{0}{\left(N_A + N_B\right)}
+          \end{align*}
+          where
+          $l_L$
+          is the boundary layer thickness and
+          $C_L$
+          is the
+        total molar concentration in the liquid phase.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/two-film.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          Grouping terms into a transfer coefficient, we have
+          \begin{align*}
+          N_A &amp;= k_L \left(x_{A_i} - x_A\right)
+          \end{align*}
+          where
+          $k_L' = -D_{AB,L} C_{L} / l_L$.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Performing the same analysis for the gas phase, we have
+          \begin{align*}
+          N_A &amp;= k_G \left(y_A - y_{A_i}\right)
+          \end{align*}
+          where
+          $k_G' = -D_{AB,G} C_{G} / l_G$
+          or, writing in terms of
+        pressure,
+          $k_G' = -D_{AB,G} P / (l_G R T)$.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+           At
+           <b>steady state</b>, the two fluxes are equal,
+           therefore we can set the equations equal to give:
+           relationship:
+           \begin{align*}
+           -\frac{k_L'}{k_G'}&amp;=  \frac{y_A - y_{A_i}}{x_{A_i} - x_A}
+           \end{align*}
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/two-film.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Diffusion through a stagnant layer">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          <b>The conditions for equimolar counter-diffusion
+          should be met when performing distillation</b>, if both
+        components have similar latent heats of vaporization.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          But for absorption, typically we're absorbing a
+        quantity of $A$
+          through the stagnant phase of
+          $B$
+          or
+          $C$.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          For stagnant, one-dimensional, two-component liquid
+        layers, we have
+          \begin{align*}
+          N_A &amp;=-D_{AB} \nabla C_A + x_A \left(N_A +
+            \cancelto{0}{N_B}\right)\\
+          &amp;=-D_{AB}C_L\frac{{\rm d} x_A}{{\rm d} x} + x_A N_A
+          \end{align*}
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/two-film.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          We know that the continuity equation in the
+        steady-state case gives that $N_A$
+          is a constant.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We can then perform the integral in $x$
+          with the
+        limits
+          $[x_{A}, x_{A,i}]$
+          and
+          $[0, l_L]$.
+          \begin{align*}
+          N_A &amp;=-\frac{D_{AB}C_L}{1-x_A}\frac{{\rm d} x_A}{{\rm d} x}\\
+          N_A &amp;= \frac{D_{AB}C_L}{l_L}\ln\left(\frac{1-x_{A,i}}{1-x_A}\right)
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          In the majority of industrial processes the film
+        thickness is not known! So we define a new diffusion
+        coefficient, $k_L$, where:
+          \begin{align*}
+          N_A &amp;= k_L \left(x_{A}-x_{A,i}\right)
+          \end{align*}
+          and
+          $k_L = \frac{D_{AB}C_L}{l_L x_{A,M}}$
+          where
+          $x_{A,M}=(x_{A}-x_{A,i})/\ln\left(\frac{1-x_{A,i}}{1-x_A}\right)$.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/two-film.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        \begin{align*}
+        N_A=k_L \left(x_{A}-x_{A,i}\right) = k_G \left(y_{A,i}-y_{A}\right)
+        \end{align*}
+        <ul>
+         <li>
+          This is a blatant attempt to simplify the problem and
+        make it look like equimolar counter-diffusion, otherwise known
+        as Chemical Engineering. Its only useful if $k_L$
+          and
+          $k_G$
+          are roughly constant.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          But, assuming that this is the case: We have enormous
+        difficulty measuring $N_A$,
+          $x_A$, and
+          $x_{A,i}$
+          simultaneously within an experiment; therefore, the gas and
+        liquid phase transfer coefficients
+          $k_L$
+          and
+          $k_G$
+          are
+        indirectly fitted to
+          <b>wetted-wall column experiments</b>.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Still, the variables $x_{A,i}$
+          and
+          $y_{A,i}$
+          are
+        inconvenient to work with, further Chemical Engineering must
+        be applied…
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/wetwallcolumn.svg" style="width:100%"/>
+         </div>
+         <figcaption>
+          Wetted-wall apparatus for determination of the
+          transfer coefficients.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          Consider the concentrations in equilibrium with the
+        bulk concentration of the other phase.
+          \begin{align*}
+          x_{A,e} &amp;= f_{VLE}(y_A) &amp; y_{A,e} &amp;= f_{VLE}(x_A)
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We can then define new transfer coefficients:
+          \begin{align*}
+          N_A=K_L \left(x_{A}-x_{A,e}\right) = K_G \left(y_{A,e}-y_{A}\right)
+          \end{align*}
+          where
+          $K_G$
+          and
+          $K_L$
+          are the overall gas and liquid phase
+        coefficients.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          These are much easier to work with as the
+        concentrations are only functions of the bulk conditions
+        (think about stage-by-stage design).
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          But we must be able to calculate these coefficients,
+          and frame them in terms of the physical coefficients $k_L$
+          and
+          $k_G$.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/two-film.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          From the discussion, we have
+          \begin{align*}
+          N_A&amp;=k_G\left(y_{A,i}-y_{A}\right)=k_L\left(x_{A}-x_{A,i}\right)\\
+          &amp;=K_G\left(y_{A,e}-y_{A}\right) = K_L\left(x_{A}-x_{A,e}\right)
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We can then rearrange to give
+          \begin{align*}
+          K_G^{-1}=k_G^{-1}+k_L^{-1}\frac{y_{A,i}-y_{A,e}}{x_{A,i}-x_{A}}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Interestingly, the second grouping is actually an
+        estimate of the slope of the equilibrium line…
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/two-film.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/gradientapprox.svg" style="width:70%"/>
+       </div>
+       <figcaption>
+        Taken from Fig.12.2 of C&amp;R vol. 2. Please note, that
+      partial pressures are equivalent to molar concentrations for
+      gases.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        \begin{align*}
+        K_G^{-1}=k_G^{-1}+k_L^{-1}\frac{y_{A,i}-y_{A,e}}{x_{A,i}-x_{A}}
+        \end{align*}
+        <ul>
+         <li>
+          If this slope is constant (Henry's law), we can write
+          \begin{align*}
+          K_G^{-1}=k_G^{-1}+{\mathcal H} k_L^{-1}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          In addition, we also have:
+          \begin{align*}
+          K_L^{-1} &amp;=k_L^{-1}+{\mathcal H}^{-1} k_G^{-1}\\
+          K_G^{-1} &amp;= {\mathcal H} K_L^{-1}
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Therefore, we can use empirical correlations for $k_L$
+          and
+          $k_G$
+          from wetted-wall column experiments to calculate the
+        overall coefficients
+          $K_G$
+          and
+          $K_L$
+          (provided Henry's law
+        applies).
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/two-film.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        \begin{align*}
+        K_G^{-1}&amp;=k_G^{-1}+{\mathcal H} k_L^{-1}\\
+          K_L^{-1} &amp;=k_L^{-1}+{\mathcal H}^{-1} k_G^{-1}\\
+          K_G^{-1} &amp;= {\mathcal H} K_L^{-1}
+        \end{align*}
+        <ul>
+         <li>
+          Our analysis only requires either $K_L$
+          or
+          $K_G$, but
+        both require the determination of
+          $k_L$
+          and
+          $k_G$.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          In certain limits, we don't have to calculate both
+        $k_L$
+          and
+          $k_G$.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          If we have a highly soluble gas, then $H\to0$
+          and
+          $K_G\to k_G$.
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          If we have a highly insoluble gas, then $H\to\infty$
+          and
+          $K_L\to k_L$.
+         </li>
+         <li class="fragment" data-fragment-index="4">
+          If we have a moderately soluble gas, then we must
+        calculate both $k_L$
+          and
+          $k_G$.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/two-film.svg" style="width:100%"/>
+         </div>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Empirical correlations">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          The empirical wetted-wall correlations typically appear in
+        forms such as that below:
+          \begin{align*}
+          \frac{k_G d}{D_{AB} C_L} x_{A,M} = 0.023 \text{Re}^{0.83} \text{Sc}^{0.44}
+          \end{align*}
+          where
+          $d$
+          is the wetted wall column diameter,
+          $D_G$
+          is the gas
+        phase diffusion coefficient,  and
+          $\text{Sc}=\mu / (\rho D)$
+          is
+        the Schmidt number.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          This is extremely similar in form to the
+        Dittus-Boelter equation for forced convection in a pipe.
+          \begin{align*}
+          \text{Nu} = 0.0241 \text{Re}^{0.8}\text{Pr}^{n}
+          \end{align*}
+          where
+          $n$
+          is 0.4 for heating and 0.3 for cooling of fluids
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          This is another illustration of the strong analogy
+        between Heat and Mass transfer.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/wetwallcolumn.svg" style="width:100%"/>
+         </div>
+         <figcaption>
+          Wetted-wall apparatus for determination of the
+          transfer coefficients.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/wettedcolumncorrelation.svg" style="width:55%"/>
+       </div>
+       <figcaption>
+         Taken from Fig.12.4 of C&amp;R vol. 2. The collapse of
+	 experimental data to a straight line indicates that the
+	 two-film theory, along with the equimolar counterdiffusion
+	 coefficients $k_G$ and $k_L$ are accurate models of real
+	 systems.
+       </figcaption>
+      </figure>
+     </section>
+    </section>
+    <section>
+     <section data-menu-title="Absorber design">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.651);">
+        <ul>
+         <li>
+          Given the high accuracy of this model, we should be
+        able to use it to accurately size absorber columns.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          We will not use this to determine a HETP, but instead
+        we will directly calculate the height of the column using a
+        differential mass balance.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.351);">
+        <figure>
+         <div class="center">
+          <img src="img/wetwallcolumn.svg" style="width:100%"/>
+         </div>
+         <figcaption>
+          Wetted-wall apparatus for determination of the
+          transfer coefficients.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.8);">
+        <ul>
+         <li>
+          Consider a balance over a slice of the column ${\rm d}Z$
+          thick.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          Whatever leaves the gas phase, must enter the liquid
+        phase, so we have:
+          \begin{align*}
+          V'{\rm d}Y_A = L'{\rm d}X_A
+          \end{align*}
+          (remember that
+          $Y_A=y_A/(1-y_A)$
+          and
+          $y_A=Y_A / (1+Y_A)$)
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          Considering just the gas phase, the rate at which
+        material is transferred in a slice is:
+          \begin{align*}
+          N_A a A {\rm d}Z&amp;=K_G\left(y_{A,e}-y_{A}\right) a A {\rm d}Z\\
+          &amp;=K_G\left(\frac{Y_{A,e}}{1+Y_{A,e}}-\frac{Y_{A}}{1+Y_A}\right) a A {\rm d}Z\\
+          &amp;=K_G\frac{Y_{A,e} - Y_A}{(1+Y_{A,e})(1+Y_A)} a A {\rm d}Z
+          \end{align*}
+          where
+          $a$
+          is the interfacial area per volume of absorber (a
+        function of the packing), and
+          $A$
+          is the cross-sectional area.
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.2);">
+        <figure>
+         <div class="center">
+          <img src="img/balance.svg" style="width:80%"/>
+         </div>
+         <figcaption>
+          Mass balance over a segment of an absorber.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.8);">
+        \begin{align*}
+        V'{\rm d}Y_A &amp;= L'{\rm d}X_A\\
+        &amp;= N_A a A {\rm d}Z\\
+        &amp;=K_G\frac{Y_{A,e} - Y_A}{(1+Y_{A,e})(1+Y_A)} a A {\rm d}Z
+        \end{align*}
+        <ul>
+         <li>
+          Setting these rates equal, we have our differential
+        equation:
+          \begin{align*}
+          V'{\rm d}Y_A &amp;= K_G\frac{Y_{A,e} - Y_A}{(1+Y_{A,e})(1+Y_A)} a A {\rm d}Z
+          \end{align*}
+          which becomes
+          \begin{align*}
+          \frac{V'}{K_G a A} \int\frac{(1+Y_{A,e})(1+Y_A)}{Y_{A,e} - Y_A} {\rm d}Y_A &amp;= \int{\rm d}Z
+          \end{align*}
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.2);">
+        <figure>
+         <div class="center">
+          <img src="img/balance.svg" style="width:80%"/>
+         </div>
+         <figcaption>
+          Mass balance over a segment of an absorber.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.8);">
+        \begin{align*}
+        \frac{V'}{K_G a A} \int\frac{(1+Y_{A,e})(1+Y_A)}{Y_{A,e} - Y_A} {\rm d}Y_A &amp;= \int{\rm d}Z
+        \end{align*}
+        <ul>
+         <li>
+          This is the design equation for absorbers/stripping
+        columns. We can use the expression for liquid flows
+          \begin{align*}
+          \frac{L'}{K_L a A} \int\frac{(1+X_{A})(1+X_{A,e})}{X_{A} - X_{A,e}} {\rm d}Y_A &amp;= \int{\rm d}Z
+          \end{align*}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          In the limit of low concentration, both of these
+        equations become
+          \begin{align*}
+          \frac{V'}{K_G a A} \int\frac{1}{Y_{A,e} - Y_A} {\rm d}Y_A &amp;= \int{\rm d}Z\\
+          \frac{L'}{K_L a A} \int\frac{1}{X_{A} - X_{A,e}} {\rm d}Y_A &amp;= \int{\rm d}Z
+          \end{align*}
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.2);">
+        <figure>
+         <div class="center">
+          <img src="img/balance.svg" style="width:80%"/>
+         </div>
+         <figcaption>
+          Mass balance over a segment of an absorber.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="NTU method">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.8);">
+        \begin{align*}
+        \frac{V'}{K_G a A} \int\frac{1}{Y_{A,e} - Y_A} {\rm d}Y_A &amp;= \int{\rm d}Z\\
+        \frac{L'}{K_L a A} \int\frac{1}{X_{A} - X_{A,e}} {\rm d}Y_A &amp;= \int{\rm d}Z
+        \end{align*}
+        <ul>
+         <li>
+          Lets analyse these equations. The RHS becomes the
+        height of the column $\int{\rm d}Z=Z$.
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          In the LHS, we can isolate a dimensionless term:
+          \begin{align*}
+          \int\frac{1}{X_{A} - X_{A,e}}\equiv N_{OG}
+          \end{align*}
+          where
+          $N_{OG}$
+          is the number of overall gas transfer units.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          You can think of this as a dimensionless rating of the
+        column (like theoretical stages).
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.2);">
+        <figure>
+         <div class="center">
+          <img src="img/balance.svg" style="width:80%"/>
+         </div>
+         <figcaption>
+          Mass balance over a segment of an absorber.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.8);">
+        \begin{align*}
+        \frac{V'}{K_G a A} \int\frac{1}{Y_{A,e} - Y_A} {\rm d}Y_A &amp;= \int{\rm d}Z\\
+        \frac{L'}{K_L a A} \int\frac{1}{X_{A} - X_{A,e}} {\rm d}Y_A &amp;= \int{\rm d}Z
+        \end{align*}
+        <ul>
+         <li>
+          The benefit of this definition is that the
+        “efficiency”, or Height of a transfer unit, is clearly
+        defined in terms of physical properties:
+          \begin{align}
+          \frac{Z}{N_{OG}} = H_{OG} = \frac{V'}{K_G a A}
+          \end{align}
+         </li>
+         <li class="fragment" data-fragment-index="1">
+          And these physical properties are characteristic, or
+        roughly constant, for given column configurations.
+         </li>
+         <li class="fragment" data-fragment-index="2">
+          This
+          <b>Number of Transfer Units</b>, or NTU methods,
+        are popular for the design of distillation packed columns,
+        absorber/stripper columns, and
+          <b>heat exchangers</b>
+          !
+         </li>
+         <li class="fragment" data-fragment-index="3">
+          Note that the transfer units depends on if you use
+        $k_L$
+          (
+          $N_{G}$),
+          $K_L$
+          (
+          $N_{OG}$), or the gas equivalents!
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.2);">
+        <figure>
+         <div class="center">
+          <img src="img/balance.svg" style="width:80%"/>
+         </div>
+         <figcaption>
+          Mass balance over a segment of an absorber.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section data-menu-title="Application of the NTU method">
+      <div style="display:flex;align-items:center;">
+       <div style="flex: 1 1 calc(100% * 0.8);">
+        \begin{align*}
+        \frac{V'}{K_G a A} \int\frac{1}{Y_{A,e} - Y_A} {\rm d}Y_A &amp;= \int{\rm d}Z\\
+        \frac{L'}{K_L a A} \int\frac{1}{X_{A} - X_{A,e}} {\rm d}Y_A &amp;= \int{\rm d}Z
+        \end{align*}
+        <ul>
+         <li>
+          We can graphically solve the integral for the NTU:
+          \begin{align*}
+          N_{OG}=\int\frac{1}{Y_{A,e} - Y_A}
+          \end{align*}
+          using the operating line and VLE graph that we would use for a
+        stage-by-stage design…
+         </li>
+        </ul>
+       </div>
+       <div style="flex: 1 1 calc(100% * 0.2);">
+        <figure>
+         <div class="center">
+          <img src="img/balance.svg" style="width:80%"/>
+         </div>
+         <figcaption>
+          Mass balance over a segment of an absorber.
+         </figcaption>
+        </figure>
+       </div>
+      </div>
+     </section>
+     <section>
+      <figure>
+       <div class="center">
+        <img src="img/graphicalNTU.svg" style="width:70%"/>
+       </div>
+       <figcaption>
+        Taken from Fig.12.19 of C&amp;R vol. 2. The integral for
+        $N_{OG}$
+        is the integral of
+        $(Y_e-Y)^{-1}$, and for
+        $N_{OL}$
+        is
+      the integral of
+        $(X-X_e)^{-1}$. We can take samples along the
+      equilibrium line and integrate using Monte Carlo or Simpson's
+      rule.
+       </figcaption>
+      </figure>
+     </section>
+     <section>
+      <ul>
+       <li>
+        Finally, the only way to understand the method is to
+    follow through example calculations.
+       </li>
+       <li class="fragment" data-fragment-index="1">
+        These are too detailed to reproduce here, please see pages
+    688–702 of C&amp;R vol.2 (5th Ed.) for worked examples and
+    additional information.
+       </li>
+       <li class="fragment" data-fragment-index="2">
+        Congratulations, there is no additional content for
+    EX3502, just worked examples and tutorials.
+       </li>
+      </ul>
+     </section>
+    </section>
+   </div>
+   <div class="slide-menu-button" style="left:170px;cursor:pointer;">
+    <a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
+     <i class="fa fa-print"></i>
+    </a>
+   </div>
+   <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+   </script>
+   <script src="footer.js">
+   </script>
+  </div>
+ </body>
+</html>
