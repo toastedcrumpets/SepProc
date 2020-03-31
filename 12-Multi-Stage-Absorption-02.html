@@ -317,7 +317,7 @@
           As it is a linear function, we need only generate two
         points, $A=(y=0.02, x=0)$
           and
-          $B=(y=0.2, x=0.00355)$, to draw
+          $B=(y=0.2, x=0.0028)$, to draw
         it.
          </li>
          <li class="fragment" data-fragment-index="2">
@@ -512,24 +512,23 @@
         a theoretical stage needed.
          </li>
          <li class="fragment" data-fragment-index="1">
-          In this case, we need 2.33 theoretical stages to
+          In this case, we need $\approx1.9$ theoretical stages to
         perform the specified absorption.
          </li>
          <li class="fragment" data-fragment-index="2">
-          Assuming a plate efficiency of 25%, this translates
-        to $2.33/0.25=9.6$
-          real plates/stages.
+          Assuming a plate efficiency of 25%, this translates to
+          $1.9/0.25=7.6$ real plates/stages.
          </li>
          <li class="fragment" data-fragment-index="3">
           But you can only have a whole number of plates, so our
-        final design would consist of 10 real plates.
+        final design would consist of 8 real plates.
          </li>
         </ul>
        </div>
        <div style="flex: 1 1 calc(100% * 0.51);">
         <figure>
          <div class="center">
-          <img src="img/absorber_stepping_06.svg" style="width:100%"/>
+          <img src="img/absorber_stepping_05.svg" style="width:100%"/>
          </div>
         </figure>
        </div>
@@ -541,17 +540,23 @@
         <ul>
          <li>
           One mistake we made in the previous design
-        calculations is that we assumed that the concentration of
-        $SO_2$, was small.
+          calculations is that we assumed that the concentration of
+          $SO_2$, was small.
           \begin{align*}
           x_A&amp;\ll 1 &amp;  y_A &amp;\ll 1
           \end{align*}
          </li>
-         <li class="fragment" data-fragment-index="1">
-          But in the gas phase, the concentration reaches up to
-        20% at the inlet!
+         <li class="fragment">
+           But in the gas phase, the concentration reaches up to
+           20% at the inlet!
          </li>
-         <li class="fragment" data-fragment-index="2">
+         <li class="fragment">
+	   As an example of the error, the simplified operating line
+	   predicted a final liquid concentration of $x_N=0.0028$;
+	   however, the proper operating line equation (which is an
+	   exact mass balance) gives $x_N=0.00356$!
+	 </li>	 
+         <li class="fragment">
           We will need to use the full
           <span style="color:teal">
            operating line</span>
@@ -566,7 +571,7 @@
        <div style="flex: 1 1 calc(100% * 0.51);">
         <figure>
          <div class="center">
-          <img src="img/absorber_stepping_06.svg" style="width:100%"/>
+          <img src="img/absorber_stepping_05.svg" style="width:100%"/>
          </div>
         </figure>
        </div>
@@ -603,12 +608,13 @@
        <div style="flex: 1 1 calc(100% * 0.51);">
         <ul>
          <li>
-          Including a couple more points makes the curvature
-        evident and we can solve the absorber again.
+          Including a couple more points (and fixing the end point)
+          makes the curvature evident and we can solve the absorber
+          again.
          </li>
          <li class="fragment" data-fragment-index="1">
-          But despite the change, in this case the number of
-        theoretical plates has only reduced from $2.33\to2.18$.
+          With this change the number of theoretical plates has increased
+          from $\approx1.9\to2.18$.
          </li>
          <li class="fragment" data-fragment-index="2">
           We now have $2.18/0.25=8.72$
@@ -624,7 +630,7 @@
        <div style="flex: 1 1 calc(100% * 0.51);">
         <figure>
          <div class="center">
-          <img src="img/absorber_stepping_07.svg" style="width:100%"/>
+          <img src="img/absorber_stepping_06.svg" style="width:100%"/>
          </div>
         </figure>
        </div>
