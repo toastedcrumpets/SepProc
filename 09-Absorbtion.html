@@ -55,7 +55,7 @@
      <section>
       <figure>
        <div class="center">
-        <img src="img/binary_multi_distillation.svg" style="width:80%"/>
+        <img src="img/binary_multi_distillation.svg" style="width:70%"/>
        </div>
       </figure>
       <ul>
@@ -580,23 +580,28 @@
       <ul>
        <li>
         What will be the concentration of oxygen dissolved in
-    water at 298 K when the solution is in equilibrium with air at
-    1 atm total pressure?
+	water at 298 K when the solution is in equilibrium with air at
+	1 atm total pressure?
        </li>
        <li class="fragment">
-        The partial pressure of oxygen in air is given by Dalton's
-    law:
-        \begin{align*}
-        p_{O_2} = P y_{O_2} = 1\times0.21 = 0.21 \textrm{atm}
-        \end{align*}
+         The partial pressure of oxygen in air is given by Dalton's
+	 law:
+         \begin{align*}
+         p_{O_2} = P y_{O_2} = 1\times0.21 = 0.21 \textrm{atm}
+         \end{align*}
        </li>
        <li class="fragment">
         Using this in Henry's law with the coefficient of
 	$\mathcal{H}_A=4.259\times10^4$ atm at $25{}^\circ$ C (note there
 	can be many different units of pressure and concentration), we
-	have \begin{align*} p_{O_2} &amp;= \mathcal{H}_A  x_{O_2}\\
+	have
+
+	\begin{align*}
+	p_{O_2} &amp;= \mathcal{H}_A  x_{O_2}, &
 	x_{O_2} &amp;= p_{O_2}/\mathcal{H}_A = 0.21 / 4.259\times10^4 =
-	4.80\times10^{-6} \text{mol/mol} \end{align*}
+	4.80\times10^{-6} \text{mol/mol}
+	\end{align*}
+	
        </li>
        <li class="fragment">
         This is a remarkably low concentration of oxygen
@@ -896,38 +901,38 @@
      <section>
        <i>
        <p>
-	 Inserting Henry's law into the balance:
+	 Inserting Henry's law into the balance and grouping terms:
 
 	 \begin{align*}
-       (1-1420\,x_{CO_2,1})(1-x_{CO_2,1}) =
-       15\,x_{CO_2,1}(1-1420\,x_{CO_2,1})+4\times1420\,x_{CO_2,1}(1-x_{CO_2,1})
-	 \end{align*}
-
-	 Grouping terms \begin{align*}
+	 (1-1420\,x_{CO_2,1})(1-x_{CO_2,1}) =
+	 15\,x_{CO_2,1}(1-1420\,x_{CO_2,1})+4\times1420\,x_{CO_2,1}(1-x_{CO_2,1})
+	 \\
 	 1-1421\,x +1420\,x^2 = 15\,x-21300\,x^2+5680\,x-5680\,x^2\\
 	 1-7116\,x +28400\,x^2 = 0\\ \end{align*}
        </p>
        <p>
 	 Solving
-       this in the quadratic formula: \begin{align*} x &=
-       \frac{7116\pm\sqrt{7116^2-4\times28400\times1}}{2\times 28400}
-       \\ &= 0.12528169\ldots\pm 0.125141082\ldots \\ &=
-       0.2504\text{ or }1.406\times10^{-4} \end{align*}
+	 this in the quadratic formula:
+
+	 \begin{align*} x &=
+	 \frac{7116\pm\sqrt{7116^2-4\times28400\times1}}{2\times 28400}
+	 = 0.12528169\ldots\pm 0.125141082\ldots
+	 0.2504\text{ or }1.406\times10^{-4}
+	 \end{align*}
 
 
-	 The second root is the required solution. One reason for this, is that
-	 the second root is unphysical as it leads to a $y_{CO_2,1}>1$
-	 (i.e.,
+	 The smallest root is the required solution, the other root is
+	 unphysical as it leads to a $y_{CO_2,1}>1$ (i.e.,
 	 $y_{CO_2,1}=1.42\times10^3\,x_{CO_2,1}\approx355.57$). Although
 	 these liquid concentrations might be physically reached under
 	 extreme circumstances, these high liquid concentrations are
-	 outside the applicability of Henry's law.  The correct root
-	 gives
-	 $y_{CO_2,1}=1.42\times10^3\,x_{CO_2,1}\approx0.2$.
+	 outside the applicability of Henrys law.  The correct root
+	 gives $y_{CO_2,1}=1.42\times10^3\,x_{CO_2,1}\approx 0.2$.
     
 	 Calculating the exit flow rates:
+	 
 	 \begin{align*}
-	 L_1 &= \frac{300}{1-1.41\times10^{-4}} = 300&nbsp;\text{kg&nbsp;mol&nbsp;h${}^{-1}$}
+	 L_1 &= \frac{300}{1-1.41\times10^{-4}} = 300&nbsp;\text{kg&nbsp;mol&nbsp;h${}^{-1}$} &
          V_1 &= \frac{80}{1-0.2} = 100&nbsp;\text{kg&nbsp;mol&nbsp;h${}^{-1}$}
 	 \end{align*}
 	 As the liquid solution is so dilute, there is no real change in the
