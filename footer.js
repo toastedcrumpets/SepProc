@@ -21,7 +21,8 @@ loadScripts([
     "../reveal.js/plugin/search/search.js",
     "../reveal.js/plugin/notes/notes.js",
     "../reveal.js/plugin/math/math.js",
-    "../reveal.js-plugins/menu/menu.js",
+  "../reveal.js-plugins/menu/menu.js",
+  "plugins/drawer.js"
 ],
     function() {
 	var revealopts = {
@@ -45,7 +46,8 @@ loadScripts([
 		RevealMath,
 		RevealMenu,
 		RevealAudioSlideshow,
-		RevealAudioRecorder
+	        RevealAudioRecorder,
+	        RevealDrawer
 	    ],
 	    menu: {
 		titleSelector:'WILLNOTFINDTITLES',
