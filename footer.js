@@ -58,6 +58,7 @@ loadScripts([
 		custom: [
 		    { title: 'Lectures', icon: '<i class="fa fa-graduation-cap"></i>', src: 'toc.html' },
 		    { title: 'Tutorial/Labs', icon: '<i class="fa fa-flask"></i>', src: 'toc_labs.html' },
+		    { title: 'Exams', icon: '<i class="fa fa-graduation-cap"></i>', src: 'toc_exams.html' },
 		]
 	    },
 	    chalkboard: { // font-awesome.min.css must be available
