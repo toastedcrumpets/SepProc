@@ -1,523 +1,519 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <title>
-      Separation Processes 1
-    </title>
-    <meta content="Separation processes 1 notes" name="description"/>
-    <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
-    <meta content="yes" name="apple-mobile-web-app-capable"/>
-    <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
+    <meta charset="utf-8" />
+    <title>Separation Processes 1</title>
+    <meta content="Separation processes 1 notes" name="description" />
+    <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta
+      content="black-translucent"
+      name="apple-mobile-web-app-status-bar-style"
+    />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
+      name="viewport"
+    />
     <script src="header.js"></script>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
-	<section>
-	  <section>
-	    <h2>
-	      Lecture 01: Introduction
-	    </h2>
-	    <div class="center">
-	    </div>
-	  </section>
-	</section>
-	<section>
-	  <section data-menu-title="Course Information">
-	    <h3>
-	      Teaching schedule:
-	    </h3>
-	    <ul>
-	      <li>
-		<b>Three sessions (attendence recorded at one) with lecture recordings.</b>
-	      </li>
-	      <li class="fragment">
-		<b>Laboratory exercise:</b> (30% of the course mark) <br/> One
-		three hour exercise in the laboratory on one of three pieces
-		of process-scale equipment:
-		<ul>
-		  <li>
-		    Continuous distillation column.
-		  </li>
-		  <li>
-		    Gas absorber.
-		  </li>
-		</ul>
-		<b>Lab sessions are booked via MyTimetable; however, this is never straightforward and they may need to be reallocated/cancelled/etc so watch for announcements!</b>
-	      </li>
-	      <li class="fragment">
-		Distillation lab has been recorded, use for
-		preparation. Gas absorber is more straightforward to
-		operate. Follow the instructions for both pieces of
-		equipment carefully.
-	      </li>
-	      <li class="fragment">
-		<b>Revision session/office hours in revision week</b>.
-	      </li>
-	      <li class="fragment">
-		<b>Exam:</b>
-		(70% of the course mark)
-		<br/>
-		3 hours, candidates attempt ALL questions.
-	      </li>
-	    </ul>
-	  </section>
-	  <section data-menu-title="Support">
-	    <h3>
-	      Support
-	    </h3>
-	    <ul>
-	      <li data-fragment-index="2">
-		<a href="https://www.abdn.ac.uk/engineering/people/profiles/a.majumder">Dr
-		Aniruddha Majumder</a> will deliver the first half of the course: <br/> Room 283, Fraser
-		Nobel Building <br/> Email:
-		a.majumder@abdn.ac.uk <br/> Tel: 01224 272499
-	      </li>
-	      <li data-fragment-index="3">
-		<a href="https://www.abdn.ac.uk/engineering/people/profiles/m.campbellbannerman">Dr
-		Marcus Campbell Bannerman</a> is the coordinator for
-		the course and will deliver the second half. In case
-		of general course administration issues please contact
-		him: <br/> Room 266, Fraser Nobel Building <br/>
-		Email: m.campbellbannerman@abdn.ac.uk <br/> Tel: 01224
-		274480
-	      </li>
-	      <li class="fragment" >
-		Your primary support for the course content are the
-		contact hours (lectures/tutorials).
-	      </li>
-	      <li class="fragment">
-		All other support and communication is provided
-		through MyAberdeen, i.e., course announcements,
-		lecture slides, room changes, and coursework
-		submission.
-	      </li>
-	    </ul>
-	  </section>
-	  <section data-menu-title="Course Books">
-	    <h3>
-	      Course Books
-	    </h3>
-	    <ul>
-	      <li>
-		The slides, tutorial sheets, and answers available on
-		MyAberdeen.
-	      </li>
-	      <li>
-		The texts for the course are:
-		<ul>
-		  <li class="fragment" data-fragment-index="1">
-		    Coulson and Richardson's Chemical Engineering:
-		    <ul>
-		      <li>
-			<b>Volume 2,
-			  “Particle Technology &amp; Separation Processes.”</b>          <br/>
-			The course will not concern itself with the particle technology
-			or solid-fluid systems content of this book.
-			<div style="font-size:0.7em;">
-			  (Available Online)
-			</div>
-		      </li>
-		      <li class="fragment" data-fragment-index="2">
-			<b>Volume 6,
-			  “Chemical Engineering Design.”</b>          <br/>
-			The design sections for the separation process equipment (in
-			particular Chap. 11,
-			<i>“Separation Columns”</i>).
-			<div style="font-size:0.7em;">
-			  (Available Online)
-			</div>
-		      </li>
-		      <li class="fragment" data-fragment-index="3">
-			<b>“Transport Processes and Unit Operations”</b>
-			by C. J. Geankoplis <br/> This book is valuable in
-			linking EX3030 and separation processes. It is
-			used for many of the worked examples in the
-			course, and the course is laid out in the same
-			pattern as the book.
-			<div style="font-size:0.7em;">
-			  (Available in the Library)
-			</div>
-		      </li>
-		    </ul>
-		</ul>
-	      </li>
-	    </ul>
-	  </section>
-	</section>
-	<section>
-	  <section data-menu-title="Separation Processes">
-	    <ul>
-	      <li>
-		Separation processes are a fundamental
-		<i>unit-operation</i>
-		used throughout the process industry.
-	      </li>
-	      <li class="fragment" data-fragment-index="1">
-		All raw materials (e.g., ores, crude oil, foodstuffs)
-		are found in an impure state and must be separated
-		before being fed into other plant processes.
-	      </li>
-	      <li class="fragment" data-fragment-index="2">
-		Products from reactors and other unit operations (e.g.,
-		alcohol from fermentation, synthesis of drugs) usually exit the
-		process in low concentrations and must separated from the
-		feedstock elements (which can be recycled) before the final
-		product is obtained.
-	      </li>
-	      <li class="fragment">
-		Thus we can identify three general areas of
-		separation: (1) input purification, (2) reactant
-		recovery to increase yield/conversion, and (3) product
-		purification.
-		<figure>
-		  <div class="center">
-		      <object data="img/recycle.svg" type="image/svg+xml" width="70%">
-		      </object>
-		  </div>
-		  <figcaption>
-		    A representative sketch of many processes,
-		    illustrating the importance of separation at every
-		    stage.
-		  </figcaption>
-		</figure>
-	      </li>
-	    </ul>
-	  </section>
-	  <section>
-	    <ul>
-	      <li>
-		All separation processes exploit either a
-		mechanical/physical difference or a thermodynamic
-		difference between two or more components to effect a
-		separation. I.e., <a href="https://en.wikipedia.org/wiki/Mass_spectrometry">mass spectroscopy</a> (mechanical) or
-		distillation (thermodynamic).
-	      </li>
-	      <li class="fragment ">
-		The separation of multiple components is generally
-		called <b>fractionation</b> and it can be carried out
-		by repeated binary splits. In this course we focus
-		mainly on binary systems for simplicity, even lumping
-		many real components into a single "pseudo" component
-		to make the system binary! E.g., consider the binary
-		air-water system.
-	      </li>
-	      <li class="fragment ">
-		There are many terms for separation but many only
-		communicate the perspective of the engineer designing
-		the separation. For example, <b>purification</b>
-		usually indicates the designing engineer wants high
-		concentrations and may not care about recovering the
-		impurities, but it does not describe the underlying
-		method.
-	      </li>
-	      <li class="fragment">
-		There are of course more exact terms which describe
-		the actual operating principles of the separation process.
-	      </li>
-	    </ul>
-	  </section>
-	  <section data-menu-title="Classifications">
-	    <div style="font-size:90%">
-	    <p>
-	      Each of the terms below corresponds to a separation
-	      technique which uses a different underlying
-	      thermodynamic driving force to power it (aside from the
-	      mechanical approaches). The course topics are
-	      highlighted in bold.
-	    </p>
-	    <ul>
-	      <li class="fragment">
-		<b>Evaporation</b>: Removal of components which boil
-		(volatile) from components which do not (involatile).
-	      </li>
-	      <li class="fragment">
-		<b>Distillation</b>: Separation using the uneven
-		distribution of volatile components between liquid and
-		gas phases.
-	      </li>
-	      <li class="fragment">
-		<b>Absorption</b>: Similar to evaporation but for
-		gas-liquid systems, i.e., dissolution of small amounts
-		of a highly volatile gas in a relatively involatile
-		liquid.
-	      </li>
-	      <li class="fragment">
-		<b>Liquid-liquid extraction</b>: As above, but using
-		two liquid phases (i.e., oil and water).
-	      </li>
-	      <li class="fragment">
-		Crystallisation (see Separation Processes 2):
-		Precipitation of solids which typically have a
-		different concentration from the "mother" liquor
-		(i.e., see freeze distillation of alcohol). Often
-		driven by heating/evaporation rather than cooling as
-		its cheaper!
-	      </li>
-	      <li class="fragment">
-		Drying (see Separation Processes 2): Evaporation where
-		solids are separated from liquids, typically after
-		crystallisation has completed and often driven by
-		evaporation.
-	      </li>
-	      <li class="fragment">
-		Mechanical-physical separations (see Separation Processes 2): These are filtration,
-		settling, centrifuging and size reduction which use
-		mass or size difference to separate components.
-	      </li>
-	      <li class="fragment">
-		Membrane separation: Pressure-driven selection via
-		differing rates of permeability.
-	      </li>
-	      <li class="fragment">
-		Adsorption (level 5): Selective adsorbtion of gas
-		components onto a solid surface.
-	      </li>
-	      <li class="fragment">
-		Liquid-solid leaching (level 5): Dissolution of part
-		of a solid in liquid.
-	      </li>
-	      <li class="fragment">
-		Ion exchange: E.g., exchange of "hard" ions
-		Ca${}^{2+}$ and Mg${}^{2+}$ for $2\,$Na${}^+$ and
-		$2\,$K${}^+$ to "soften" the water. Typically uses
-		solid-liquid systems.
-	      </li>
-	      <li class="fragment">
-		Electrolysis: Using an electric potential to drive an
-		exchange (see aluiminium production).
-	      </li>
-	    </ul>
-	    </div>
-	  </section>
-	  <section>
-	    <ul>
-	      <li>
-		The thermodynamic (non-mechanical) approaches can be
-		classified into two major categories of separation
-		processes:
-		<ul>
-		  <li>
-		    <b>Equilibrium (limited) processes:</b>          <br/>
-		    In equilibrium processes, two phases (vapour, liquid or solid)
-		    are brought to contact with each other,
-		    <b>mixed thoroughly</b>,
-		    then separated with a redistribution of the components between
-		    phases. Multiple contacts are often made in a series of
-		    cascading steps in which the two-phases flow counter-current to
-		    each other. At each contact, the phases approach thermodynamic
-		    equilibrium. One example of an equilibrium limited process is
-		    <b>distillation</b>. Such processes are often
-		    designed through algebraic balance equations.
-		  </li>
-		  <li class="fragment" data-fragment-index="1">
-		    <b>Mass-Transfer limited processes
-		      (rate-limited):</b> <br/> In mass-transfer
-		      limited processes, one component of a feed
-		      stream is transferred from the feed phase into a
-		      second phase due to a chemical
-		      potential/pressure gradient. Although
-		      thermodynamics are again driving the separation,
-		      the limiting step upon which design is based is
-		      the rate of transfer of the particular component
-		      from the feed material to the second phase. One
-		      example of a rate-limited process is
-		    <b>membrane separation</b>. Such processes are
-		      often designed through differential balances.
-		  </li>
-		</ul>
-	      </li>
-	      <li class="fragment">
-		Its important to note that &ldquo;equilibrium&rdquo;
-		processes also have mass-transfer limitations which
-		must be modelled to determine the size of the process
-		equipment (and we will come back to this in
-		plate/packed column design) but these are small enough
-		that we can construct equipment which approaches the
-		thermodynamic limitations of the system.
-	      </li>
-	    </ul>
-	  </section>
-	  <section>
-	    <ul>
-	      <li>
-		The fundamental concepts behind these two classifications
-		were covered in the prerequisites for the course:
-		<ul>
-		  <li class="fragment" data-fragment-index="1">
-		    <b>EX3029</b>
-		    - Chemical Thermodynamics
-		    <br/>
-		    This course provided you with the understanding of the driving
-		    forces behind equilibrium separation processes. For example,
-		    <i>relative volatility, equations of state, Raoult's law,
-		      activity coefficients</i>.
-		  </li>
-		  <li class="fragment" data-fragment-index="2">
-		    <b>EX3030</b>
-		    - Heat, Mass, and Momentum Transfer
-		    <br/>
-		    This course prepared you to understand and perform the
-		    calculations behind rate-limited separation processes.
-		  </li>
-		</ul>
-	      </li>
-	    </ul>
-	  </section>
-	</section>
-	<section style="height:100%">
-	  <section data-menu-title="Example of Separation: Evaporation/Distillation" data-background="img/flash_seawater_distillation.jpg" style="height:100%; padding:0">
-	    <h3 style="background:rgba(0,0,0,.5); color:white;">Example: Seawater purification</h3>
-	    <h3 style="position:absolute; bottom:0;background:rgba(0,0,0,.5); color:white;">
-	      The “Al Khobar 2” flash distillation plant in Saudi Arabia for the
-	      desalination of sea water producing 26,700 m
-	      ${}^3$
-	    of fresh
-	      water a day.
-	    </h3>
-	  </section>
-	  <section>
-	    <figure>
-	      <div class="center">
-		<object data="img/flash_drum.svg" type="image/svg+xml" width="70%">
-		</object>
-	      </div>
-	    </figure>
-	      <p>
-		A simplified diagram of a flash distillation
-		unit. These are <b>equilibrium</b> based processes where
-		instantaneous boiling due to a sudden pressure drop
-		causes a stream to split into two. "Flash"
-		calculations have now become the name of any
-		calculation to determine if a mixture is a gas,
-		liquid, or both under specified conditions.
-	      </p>
-	  </section>
-	  <section>
-	    <figure>
-	      <div class="center">
-		<img src="img/flash_seawater_distillation_diag.jpg" style="width:80%;"/>
-	      </div>
-	      <figcaption>
-		A diagram of the three pass flash-distillation plant for
-		the desalination of sea water. This diagram highlights the
-		<b>heat-integration</b>
-		required to make the process efficient.
-	      </figcaption>
-	    </figure>
-	  </section>
-	</section>
-	<section>
-	  <section data-menu-title="Example of Separation: Reverse Osmosis">
-	    <figure>
-	      <div class="center">
-		<img src="img/Reverse_osmosis_desalination_plant.jpg" style="display:inline-block;"/>
-		<object data="img/reverse_osmosis.svg" type="image/svg+xml" width="50%" style="display:inline-block;">
-		</object>
-	      </div>
-	      <figcaption>
-		A reverse osmosis plant and a diagram of the pressure
-		driven “filtration” of pure water from sea water across a
-		semi-permeable membrane. This is a rate-limited process.
-	      </figcaption>
-	    </figure>
-	  </section>
-	</section>
-	<section>
-	  <section data-menu-title="Course Overview">
-	    <h3>
-	      Course Outline
-	    </h3>
-	    <p>
-	      The outline for the course is:
-	    </p>
-	    <ul>
-	      <li>
-		Introduction to separation processes
-		fundamentals. Single stage evaporation.
-	      </li>
-	      <li class="fragment" data-fragment-index="1">
-		Multi stage evaporation and non-ideal
-		properties (boiling point rise).
-	      </li>
-	      <li class="fragment" data-fragment-index="2">
-		Single stage absorbtion processes.
-	      </li>
-	      <li class="fragment" data-fragment-index="3">
-		Multi-stage absorbtion.
-	      </li>
-	      <li class="fragment" data-fragment-index="4">
-		Flash/single-stage distillation.
-	      </li>
-	      <li class="fragment" data-fragment-index="5">
-		Multi-stage distillation.
-	      </li>
-	      <li class="fragment" data-fragment-index="6">
-		Advanced Multi-stage distillation,
-		efficiencies, tray efficiencies, vapour velocities.
-	      </li>
-	      <li class="fragment" data-fragment-index="7">
-		Revisiting absorber design and breaking
-		azeotropes.
-	      </li>
-	    </ul>
-	  </section>
-	  <section>
-	    <div class="center">
-	      <img src="img/distillation_column.jpg" style="width:60%;"/>
-	    </div>
-	    <h3>
-	      Sneak peek at the distillation equipment
-	    </h3>
-	  </section>
-	  <section>
-	    <div class="center">
-	      <img src="img/absorber_column.jpg" style="width:37%;"/>
-	    </div>
-	    <h3>
-	      Sneak peek at the absorption equipment
-	    </h3>
-	  </section>
-	</section>
-	<section>
-	  <section data-menu-title="Learning Objectives">
-	    <h3>Learning objectives</h3>
-	    <ul>
-	      <li>
-		To understand the structure of the course.
-	      </li>
-	      <li class="fragment" data-fragment-index="1">
-		To be able to name many different separation processes
-		(e.g., distillation, membrane, evaporation, crystallisation)
-	      </li>
-	      <li class="fragment" data-fragment-index="2">
-		To know the two classes of separation processes,
-		<b>equilibrium</b>
-		and
-		<b>mass-transfer limited</b>
-		processes. You
-		should be able to name several.
-	      </li>
-	      <li class="fragment" data-fragment-index="3">
-		To understand the basic operating concept of a flash-drum
-		and a membrane reverse-osmosis plant.
-	      </li>
-	    </ul>
-	  </section>
-	</section>
+        <section>
+          <section>
+            <h2>Lecture 01: Introduction</h2>
+            <div class="center"></div>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Course Information">
+            <h3>Teaching schedule:</h3>
+            <ul>
+              <li>
+                <b
+                  >Three sessions (attendence recorded at one) with lecture
+                  recordings.</b
+                >
+              </li>
+              <li class="fragment">
+                <b>Laboratory exercise:</b> (30% of the course mark) <br />
+                One three hour exercise in the laboratory on one of three pieces
+                of process-scale equipment:
+                <ul>
+                  <li>Continuous distillation column.</li>
+                  <li>Gas absorber.</li>
+                </ul>
+                <b
+                  >Lab sessions are booked via MyTimetable; however, this is
+                  never straightforward and they may need to be
+                  reallocated/cancelled/etc so watch for announcements!</b
+                >
+              </li>
+              <li class="fragment">
+                Distillation lab and Gas absorber have videos to watch before.
+                Follow the instructions for both pieces of equipment carefully.
+              </li>
+              <li class="fragment">
+                <b>Revision session/office hours in revision week</b>.
+              </li>
+              <li class="fragment">
+                <b>Exam:</b>
+                (70% of the course mark)
+                <br />
+                3 hours, candidates attempt ALL questions.
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Support">
+            <h3>Support</h3>
+            <ul>
+              <li>
+                <a
+                  href="https://www.abdn.ac.uk/engineering/people/profiles/m.campbellbannerman"
+                  >Dr Marcus Campbell Bannerman</a
+                >: <br />
+                Room 266, Fraser Nobel Building <br />
+                Email: m.campbellbannerman@abdn.ac.uk <br />
+                Tel: 01224 274480
+              </li>
+              <li class="fragment">
+                Your primary support for the course content are the contact
+                hours (lectures/tutorials).
+              </li>
+              <li class="fragment">
+                All other support and communication is provided through
+                MyAberdeen, i.e., course announcements, lecture slides, room
+                changes, and coursework submission.
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Course Books">
+            <h3>Course Books</h3>
+            <ul>
+              <li>
+                All of my material is on this site (like Momentum, Heat, and
+                Mass Transfer). I'll show the menu to see it all.
+              </li>
+              <li>
+                The texts for the course are:
+                <ul>
+                  <li class="fragment" data-fragment-index="1">
+                    Coulson and Richardson's Chemical Engineering:
+                    <ul>
+                      <li>
+                        <b
+                          >Volume 2, “Particle Technology &amp; Separation
+                          Processes.”</b
+                        >
+                        <br />
+                        The course will not concern itself with the particle
+                        technology or solid-fluid systems content of this book.
+                        <div style="font-size: 0.7em">(Available Online)</div>
+                      </li>
+                      <li class="fragment" data-fragment-index="2">
+                        <b>Volume 6, “Chemical Engineering Design.”</b> <br />
+                        The design sections for the separation process equipment
+                        (in particular Chap. 11,
+                        <i>“Separation Columns”</i>).
+                        <div style="font-size: 0.7em">(Available Online)</div>
+                      </li>
+                      <li class="fragment" data-fragment-index="3">
+                        <b>“Transport Processes and Unit Operations”</b>
+                        by C. J. Geankoplis <br />
+                        This book is invaluable in linking my last course HMMT
+                        and separation processes. It is used for many of the
+                        worked examples in the course, and the course is laid
+                        out in the same pattern as the book.
+                        <div style="font-size: 0.7em">
+                          (Available in the Library)
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Separation Processes">
+            <ul>
+              <li>
+                Separation processes are a fundamental
+                <i>unit-operation</i>
+                used throughout the process industry.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                All raw materials (e.g., ores, crude oil, foodstuffs) are found
+                in an impure state and must be separated before being fed into
+                other plant processes.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                Products from reactors and other unit operations (e.g., alcohol
+                from fermentation, synthesis of drugs) usually exit the process
+                in low concentrations and must separated from the feedstock
+                elements (which can be recycled) before the final product is
+                obtained.
+              </li>
+              <li class="fragment">
+                Thus we can identify three general areas of separation: (1)
+                input purification, (2) reactant recovery to increase
+                yield/conversion, and (3) product purification.
+                <figure>
+                  <div class="center">
+                    <object
+                      data="img/recycle.svg"
+                      type="image/svg+xml"
+                      width="70%"
+                    ></object>
+                  </div>
+                  <figcaption>
+                    A representative sketch of many processes, illustrating the
+                    importance of separation at every stage.
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li>
+                All separation processes exploit either a mechanical/physical
+                difference or a thermodynamic difference between two or more
+                components to effect a separation. I.e.,
+                <a href="https://en.wikipedia.org/wiki/Mass_spectrometry"
+                  >mass spectroscopy</a
+                >
+                (mechanical) or distillation (thermodynamic).
+              </li>
+              <li class="fragment">
+                The separation of multiple components is generally called
+                <b>fractionation</b> and it can be carried out by repeated
+                binary splits. In this course we focus mainly on binary systems
+                for simplicity, even lumping many real components into a single
+                "pseudo" component to make the system binary! E.g., consider the
+                binary air-water system, which is actually H<sub>2</sub>O,
+                O<sub>2</sub>, N<sub>2</sub> etc.
+              </li>
+              <li class="fragment">
+                There are many terms for separation but many only communicate
+                the perspective of the engineer designing the separation. For
+                example, <b>purification</b>
+                usually indicates the designing engineer wants high
+                concentrations and may not care about recovering the impurities,
+                but it does not describe the underlying method.
+              </li>
+              <li class="fragment">
+                There are of course more exact terms which describe the actual
+                operating principles of the separation process.
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Classifications">
+            <div style="font-size: 80%">
+              <p>
+                Each separation technique below that isn't mechanical uses a
+                different underlying thermodynamic driving force to power it.
+                The topics of this course are highlighted in bold.
+              </p>
+              <ul>
+                <li class="fragment">
+                  <b>Evaporation</b>: Removal of components which boil
+                  (volatile) from components which do not (involatile).
+                </li>
+                <li class="fragment">
+                  <b>Distillation</b>: Separation using the uneven distribution
+                  of volatile components between liquid and gas phases.
+                </li>
+                <li class="fragment">
+                  <b>Absorption</b>: Similar to evaporation but for gas-liquid
+                  systems, i.e., dissolution of small amounts of a highly
+                  volatile gas in a relatively involatile liquid.
+                </li>
+                <li class="fragment">
+                  <b>Liquid-liquid extraction</b>: As above, but using two
+                  liquid phases (i.e., oil and water).
+                </li>
+                <li class="fragment">
+                  Crystallisation (see Separation Processes 2): Precipitation of
+                  solids which typically have a different concentration from the
+                  "mother" liquor (i.e., see freeze distillation of alcohol).
+                  Often driven by heating/evaporation rather than cooling as its
+                  cheaper!
+                </li>
+                <li class="fragment">
+                  Drying (see Separation Processes 2): Evaporation where solids
+                  are separated from liquids, typically after crystallisation
+                  has completed and often driven by evaporation.
+                </li>
+                <li class="fragment">
+                  Mechanical-physical separations (see Separation Processes 2):
+                  These are filtration, settling, centrifuging and size
+                  reduction which use mass or size difference to separate
+                  components.
+                </li>
+                <li class="fragment">
+                  Membrane separation (level 5): Pressure-driven selection via
+                  differing rates of permeability.
+                </li>
+                <li class="fragment">
+                  Adsorption (level 5): Selective adsorbtion of gas components
+                  onto a solid surface.
+                </li>
+                <li class="fragment">
+                  Liquid-solid leaching (level 5): Dissolution of part of a
+                  solid in liquid.
+                </li>
+                <li class="fragment">
+                  Ion exchange: E.g., exchange of "hard" ions Ca<sup>2+</sup>
+                  and Mg<sup>2+</sup> for 2Na<sup>+</sup> and 2K<sup>+</sup> to
+                  "soften" the water. Typically uses solid-liquid systems.
+                </li>
+                <li class="fragment">
+                  Electrolysis: Using an electric potential to drive an exchange
+                  (see aluiminium production).
+                </li>
+              </ul>
+            </div>
+          </section>
+          <section style="font-size: 90%">
+            <ul>
+              <li>
+                The thermodynamic (non-mechanical) approaches can be classified
+                into two major categories of separation processes:
+                <ul>
+                  <li>
+                    <b>Equilibrium (limited) processes:</b> <br />
+                    In equilibrium processes, two phases (vapour, liquid or
+                    solid) are brought to contact with each other,
+                    <b>mixed thoroughly</b>, then separated with a
+                    redistribution of the components between phases. Multiple
+                    contacts are often made in a series of cascading steps in
+                    which the two-phases flow counter-current to each other. At
+                    each contact, the phases approach thermodynamic equilibrium.
+                    One example of an equilibrium limited process is
+                    <b>distillation</b>. Such processes are often designed
+                    through algebraic balance equations.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    <b>Mass-Transfer limited processes (rate-limited):</b>
+                    <br />
+                    In mass-transfer limited processes, one component of a feed
+                    stream is transferred from the feed phase into a second
+                    phase due to a chemical potential/pressure gradient.
+                    Although thermodynamics are again driving the separation,
+                    the limiting step upon which design is based is the rate of
+                    transfer of the particular component from the feed material
+                    to the second phase. One example of a rate-limited process
+                    is <b>membrane separation</b>. Such processes are often
+                    designed through differential balances.
+                  </li>
+                </ul>
+              </li>
+              <li class="fragment">
+                Its important to note that &ldquo;equilibrium&rdquo; processes
+                also have mass-transfer limitations which must be modelled to
+                determine the size of the process equipment (and we will come
+                back to this in plate/packed column design) but these are small
+                enough that we can construct equipment which approaches the
+                thermodynamic limitations of the system.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li>
+                The fundamental concepts behind these two classifications were
+                covered in the prerequisites for the course:
+                <ul>
+                  <li class="fragment" data-fragment-index="1">
+                    <b>EX3029</b>
+                    - Chemical Thermodynamics
+                    <br />
+                    This course provided you with the understanding of the
+                    driving forces behind equilibrium separation processes. For
+                    example,
+                    <i
+                      >relative volatility, equations of state, Raoult's law,
+                      activity coefficients</i
+                    >.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    <b>EX3030</b>
+                    - Heat, Mass, and Momentum Transfer
+                    <br />
+                    This course prepared you to understand and perform the
+                    calculations behind rate-limited separation processes.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section style="height: 100%">
+          <section
+            data-menu-title="Example of Separation: Evaporation/Distillation"
+            data-background="img/flash_seawater_distillation.jpg"
+            style="height: 100%; padding: 0"
+          >
+            <h3 style="background: rgba(0, 0, 0, 0.5); color: white">
+              Example: Seawater purification
+            </h3>
+            <h3
+              style="
+                position: absolute;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                color: white;
+              "
+            >
+              The “Al Khobar 2” flash distillation plant in Saudi Arabia for the
+              desalination of sea water producing 26,700 m<sup>3</sup> of fresh
+              water a day.
+            </h3>
+          </section>
+          <section>
+            <figure>
+              <div class="center">
+                <object
+                  data="img/flash_drum.svg"
+                  type="image/svg+xml"
+                  width="70%"
+                ></object>
+              </div>
+            </figure>
+            <p>
+              A simplified diagram of a flash distillation unit. These are
+              <b>equilibrium</b> based processes where instantaneous boiling due
+              to a sudden pressure drop causes a stream to split into two.
+              "Flash" calculations is now slang for any calculation to determine
+              if a mixture is a gas, liquid, or both under specified conditions.
+            </p>
+          </section>
+          <section>
+            <figure>
+              <div class="center">
+                <img
+                  src="img/flash_seawater_distillation_diag.jpg"
+                  style="width: 80%"
+                />
+              </div>
+              <figcaption>
+                A diagram of the three pass flash-distillation plant for the
+                desalination of sea water. This diagram highlights the
+                <b>heat-integration</b>
+                required to make the process efficient.
+              </figcaption>
+            </figure>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Example of Separation: Reverse Osmosis">
+            <figure>
+              <div class="center">
+                <img
+                  src="img/Reverse_osmosis_desalination_plant.jpg"
+                  style="display: inline-block"
+                />
+                <object
+                  data="img/reverse_osmosis.svg"
+                  type="image/svg+xml"
+                  width="50%"
+                  style="display: inline-block"
+                ></object>
+              </div>
+              <figcaption>
+                A reverse osmosis plant and a diagram of the pressure driven
+                “filtration” of pure water from sea water across a
+                semi-permeable membrane. This is a rate-limited process.
+              </figcaption>
+            </figure>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Course Overview">
+            <h3>Course Outline</h3>
+            <p>The outline for the course is:</p>
+            <ul>
+              <li>
+                Introduction to separation processes fundamentals. Single stage
+                evaporation.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                Multi stage evaporation and non-ideal properties (boiling point
+                rise).
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                Single stage absorbtion processes.
+              </li>
+              <li class="fragment" data-fragment-index="3">
+                Multi-stage absorbtion.
+              </li>
+              <li class="fragment" data-fragment-index="4">
+                Flash/single-stage distillation.
+              </li>
+              <li class="fragment" data-fragment-index="5">
+                Multi-stage distillation.
+              </li>
+              <li class="fragment" data-fragment-index="6">
+                Advanced Multi-stage distillation, efficiencies, tray
+                efficiencies, vapour velocities.
+              </li>
+              <li class="fragment" data-fragment-index="7">
+                Revisiting absorber design and breaking azeotropes.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <div class="center">
+              <img src="img/distillation_column.jpg" style="width: 60%" />
+            </div>
+            <h3>Sneak peek at the distillation equipment</h3>
+          </section>
+          <section>
+            <div class="center">
+              <img src="img/absorber_column.jpg" style="width: 37%" />
+            </div>
+            <h3>Sneak peek at the absorption equipment</h3>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Learning Objectives">
+            <h3>Learning objectives</h3>
+            <ul>
+              <li>To understand the structure of the course.</li>
+              <li class="fragment" data-fragment-index="1">
+                To be able to name many different separation processes (e.g.,
+                distillation, membrane, evaporation, crystallisation)
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                To know the two classes of separation processes,
+                <b>equilibrium</b>
+                and
+                <b>mass-transfer limited</b>
+                processes. You should be able to name several.
+              </li>
+              <li class="fragment" data-fragment-index="3">
+                To understand the basic operating concept of a flash-drum and a
+                membrane reverse-osmosis plant.
+              </li>
+            </ul>
+          </section>
+        </section>
       </div>
-      <div class="slide-menu-button" style="left:170px;cursor:pointer;">
-	<a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
-	  <i class="fa fa-print"></i>
-	</a>
+      <div class="slide-menu-button" style="left: 170px; cursor: pointer">
+        <a
+          class="hide-on-pdf"
+          id="PrintButton"
+          onclick="document.location = '?print-pdf';"
+        >
+          <i class="fa fa-print"></i>
+        </a>
       </div>
       <script type="text/x-mathjax-config">
-	MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+        MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
       </script>
-      <script src="footer.js">
-      </script>
+      <script src="footer.js"></script>
     </div>
   </body>
 </html>
