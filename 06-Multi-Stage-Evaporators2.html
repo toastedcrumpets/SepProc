@@ -1,715 +1,617 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <title>
-   Separation Processes 1
-  </title>
-  <meta content="Separation processes 1 notes" name="description"/>
-  <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
-  <meta content="yes" name="apple-mobile-web-app-capable"/>
-  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
-  <script src="header.js"></script>
- </head>
- <body>
-  <div class="reveal">
-   <div class="slides">
-    <section>
-     <section>
-      <h2>
-       Multi-Stage Evaporators: Design Procedure
-      </h2>
-      <div class="center">
+  <head>
+    <meta charset="utf-8" />
+    <title>Separation Processes 1</title>
+    <meta content="Separation processes 1 notes" name="description" />
+    <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta
+      content="black-translucent"
+      name="apple-mobile-web-app-status-bar-style"
+    />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
+      name="viewport"
+    />
+    <script src="header.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <h2>Multi-Stage Evaporators: Design Procedure</h2>
+            <div class="center"></div>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Multi-Stage Evaporator Design Methodology">
+            <h3>Step 0-a: Draw A Process Flowsheet</h3>
+            <ul>
+              <li>
+                We are going to cover the example design in section 8.5D of
+                “Transport Processes and Unit Operations,” by C. J. Geankoplis.
+                As the book is not the easiest to get ahold of, it is repeated
+                here.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                There are another two examples of Multi-Stage Evaporator design
+                available in C&amp;R Volume 2, if you wish to study the topic
+                further.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                This design concerns a triple-effect evaporator in a white-sugar
+                factory.
+              </li>
+              <li class="fragment" data-fragment-index="3">
+                The design procedure, if followed correctly, will yield a valid
+                process design in all cases and satisfy the implicit mass and
+                energy equations.
+              </li>
+              <li class="fragment" data-fragment-index="4">
+                The reason for following the procedure rigorously is to ensure
+                that our calculations converge onto the solution. There are,
+                in-fact, many ways of solving this system.
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Step 0: Preparation">
+            <h3>Step 0-a: Draw A Process Flowsheet</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet1.svg" style="width: 100%" />
+              </div>
+            </figure>
+          </section>
+          <section>
+            <h3>Step 0-b: Fill Out The Known Information</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet2.svg" style="width: 75%" />
+              </div>
+            </figure>
+            \begin{align*} C_p&amp;=4.19-2.35 x\quad(\textrm{ kJ/kg K}) &amp;
+            \textrm{BPR}_3&amp;=1.78 x+6.22 x^2\quad(\textrm{${}^\circ $C/K})
+            \end{align*}
+            <ul>
+              <li>
+                We've started the design by filling out all the given
+                information (see above).
+              </li>
+              <li class="fragment">
+                In most problems you will encounter in this course, you will be
+                provided with the
+                <i>steam pressure</i>, <i>final stage pressure</i>,
+                <i>feed stream specification</i>, <i>final concentration</i>,
+                <i>overall heat transfer coefficient estimates</i>
+                and
+                <i>physical properties</i>. Below the diagram we've repeated the
+                physical data for this problem.
+              </li>
+              <li class="fragment">
+                To this, you will almost certainly need to add the data
+                contained in your steam tables.
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Step 1: Solve the Final Evaporator">
+            <h3>Step 1: Solve the Final Evaporator</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet2.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                As we know the final concentration, the boiling point rise in
+                the third evaporator is \begin{align*}
+                \textrm{BPR}&amp;=1.78\times0.5+6.22\times0.5^2\approx2.45 \textrm{${}^\circ
+                $C/K} \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                We then look up the boiling point of pure water at 0.134 bar
+                (324.82 K) and calculate the operating temperature
+                \begin{align*} T_3&amp;=324.82+2.45=327.27\textrm{K}
+                \end{align*}
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Step 1: Solve the Final Evaporator</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet3.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                Using a mass balance in the solids, we can determine the outlet
+                liquid flow-rate. \begin{align*} x_F F &amp;= x_3 L_3\\
+                0.1\times22680 &amp;= 0.5\times L_3\\ L_3 &amp;= 0.1\times22680
+                / 0.5 = 4536\textrm{ kg/hr} \end{align*}
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Step 2: Predict the Vapour Flowrates">
+            <h3>Step 2: Predict the Vapour Flowrates</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet4.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                Now we can calculate the total vapour flow-rate using the
+                overall mass balance \begin{align*} F &amp;= L_3 + V_1 + V_2 +
+                V_3\\ 22680&amp;=4536 + V_1 + V_2 + V_3\\ V_1 + V_2 + V_3 &amp;=
+                18144\textrm{ kg/hr} \end{align*}
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Step 2: Predict the Vapour Flowrates</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet5.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                Here is the start of our iterations/shooting: we assume an equal
+                amount of vapour is generated in each phase: \begin{align*}
+                V_1\approx V_2\approx V_3\approx 18144 / 3 =6048\textrm{ kg/hr}
+                \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                It is important to remember that this is an estimate, and it may
+                need to be improved upon!
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Step 3: Predict the Liquid Flowrates">
+            <h3>Step 3: Predict the Liquid Flowrates</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet6.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                Now, using the vapour flow-rate estimates, $V$, we can perform
+                mass balances on each stage to calculate the liquid flowrates.
+                \begin{align*} L_1 &amp;= F - V_1 = 22680 - 6048 = 16632
+                \textrm{ kg/hr}\\ L_2 &amp;= L_1 - V_2 = 16632 - 6048 = 10584
+                \textrm{ kg/hr} \end{align*}
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Step 4: Predict the Concentrations">
+            <h3>Step 4: Predict the Concentrations</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet7.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                With the flowrates predicted, we can estimate the concentrations
+                using solids mass balances around each stage, and validate our
+                calculations by checking the last stage's solids balance.
+                (Remember to check your calculations!) \begin{align*} x_1 &amp;=
+                x_F F/L_1 = 0.1\times22680/16632 &amp;&amp;\approx 0.136\\ x_2
+                &amp;= x_1 L_1/L_2 = 0.136\times16632/10584 &amp;&amp;\approx
+                0.214\\ x_3 &amp;= x_2 L_2/L_3 = 0.214\times10584/4536
+                &amp;&amp;\approx \color{green}{0.500 \qquad\checkmark}
+                \end{align*}
+              </li>
+            </ul>
+          </section>
+          <section
+            data-menu-title="Step 4: Calculate the Operating Temperatures"
+          >
+            <h3>Step 4: Calculate the Operating Temperatures</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet8.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                With all of the information we have so far, we are ready to
+                predict the operating temperatures.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                The concentrations allow us to determine the boiling point
+                rises, and we can use the following equation to predict the
+                temperature drops: \begin{align*} \Delta T_1 \approx
+                \frac{1}{U_1}\frac{\sum_i\Delta T_i}{\sum_i1/U_i} \end{align*}
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Step 4: Calculate the Operating Temperatures</h3>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.7)">
+                <ul>
+                  <li>
+                    There is a difficulty when using this equation when a
+                    Boiling Point Rise (BPR) occurs.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    The vapour leaving a stage, $i$, is superheated. When it is
+                    used to heat the next stage, it will actually heat at
+                    $T_i-\textrm{BPR}_i$, as the small superheat is negligible.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    Thus, when we have a BPR in a triple effect evaporator, we
+                    actually write \begin{align*} \sum_i\Delta T_i = T_{steam} -
+                    T_3 - \textrm{BPR}_1 - \textrm{BPR}_2 \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    This is the
+                    <i>actual</i>
+                    temperature difference available for heat transfer.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.3)">
+                <figure>
+                  <div class="center">
+                    <img src="img/BPR-evaporator.svg" style="width: 100%" />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h3>Step 4: Calculate the Operating Temperatures</h3>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.7)">
+                <ul>
+                  <li>
+                    We must also be careful to note that each temperature
+                    difference is defined as follows: \begin{align*} \Delta T_1
+                    &amp;= T_{steam} - T_1\\ \Delta T_2 &amp;= T_{1} -
+                    \textrm{BPR}_1 - T_2\\ \Delta T_3 &amp;= T_{2} -
+                    \textrm{BPR}_2 - T_3\\ … \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    We are ready to calculate the temperature differences…
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.3)">
+                <figure>
+                  <div class="center">
+                    <img src="img/BPR-evaporator.svg" style="width: 100%" />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h3>Step 4: Calculate the Operating Temperatures</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet8.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                The saturation temperature of the 2.055 bar steam heating the
+                first evaporator is 394.25 K (from steam tables).
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                The boiling point rises in stages 1 and 2 are \begin{align*}
+                \textrm{BPR}_1&amp;=1.78\times0.136+6.22\times0.136^2\approx0.36 \textrm{${}^\circ
+                $C/K}\\
+                \textrm{BPR}_2&amp;=1.78\times0.214+6.22\times0.214^2\approx0.65 \textrm{${}^\circ
+                $C/K} \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                We can now calculate the overall available temperature
+                difference…
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Step 4: Calculate the Operating Temperatures</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet9.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                The overall temperature difference is \begin{align*}
+                \sum_i\Delta T_i &amp;= T_{steam} - T_3 - \textrm{BPR}_1 -
+                \textrm{BPR}_2\\ &amp;= 394.25-327.27-0.36-0.65 =
+                65.97 \textrm{K} \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                We can now calculate the temperature difference in each stage…
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Step 4: Calculate the Operating Temperatures</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet9.svg" style="width: 75%" />
+              </div>
+            </figure>
+            For the first and second stages, the temperature difference is
+            \begin{align*} \Delta T_1 &amp;= T_{steam} - T_1 \approx
+            \frac{1}{U_1}\frac{\sum_i\Delta T_i}{\sum_i1/U_i} \approx 12.40 K \\
+            \Delta T_2 &amp;= T_1 - \textrm{BPR}_1 - T_2 \approx
+            \frac{1}{U_2}\frac{\sum_i\Delta T_i}{\sum_i1/U_i}\approx 19.50 K
+            \end{align*}
+          </section>
+          <section>
+            <h3>Step 4: Calculate the Operating Temperatures</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet9.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                We must note that this is an approximate expression
+                \begin{align*} \Delta T_i &amp;\approx
+                \frac{1}{U_i}\frac{\sum_i\Delta T_i}{\sum_i1/U_i} \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                The actual temperature differences will also depend on the
+                sensible heat changes in the feed and between stages.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Step 4: Calculate the Operating Temperatures</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet9.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                We note that the feed stream is quite cold and not likely to be
+                at its boiling point.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                Therefore, we make an educated guess (I admit it, I'm cheating)
+                that the temperature difference needs to be higher in the first
+                stage than predicted. \begin{align*} \Delta T_1&amp;\approx
+                12.40 K\to 15.56 K &amp; \Delta T_2&amp;\approx
+                19.50 K\to18.34 K\\ \Delta T_3&amp;\approx 34.07 K \to 32.07 K
+                \end{align*}
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Step 4: Calculate the Operating Temperatures</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet9.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                As a first estimate we've increased $\Delta T_1$ and lower
+                $\Delta T_2$ and $\Delta T_3$
+                <b>proportionately</b>.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                We must do this proportionately as the overall temperature
+                difference is an exact definition. \begin{align*} \sum_i\Delta
+                T_i = T_{steam} - T_3 - \textrm{BPR}_1 - \textrm{BPR}_2
+                \end{align*}
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Step 4: Calculate the Operating Temperatures</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet9.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                Using these temperature differences, and the BPR for each stage,
+                we can calculate the operating temperatures. \begin{align*}
+                \Delta T_1 &amp;= T_s - T_1 \approx 15.56 K &amp; T_1 \approx
+                378.69 \textrm{K}\\ \Delta T_2 &amp;= T_1 - \textrm{BPR}_1 - T_2
+                \approx 18.34 K &amp; T_2 \approx 359.99 \textrm{K} \end{align*}
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Step 5: Heat Balances on Each Effect">
+            <h3>Step 5: Heat Balances on Each Effect</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet10.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                Now that we have (estimated) temperatures for the evaporators,
+                its time to confirm our estimates for the vapour and liquid
+                flowrates (and turn those orange values black).
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                We can calculate the enthalpies for each stream using the steam
+                tables.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                As the BPR is quite small, we can probably neglect the superheat
+                of the vapour streams.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Step 5: Heat Balances on Each Effect</h3>
+            <ul>
+              <li>
+                If we create our energy balances using these assumptions, they
+                will look like this \begin{align*} h_{F} F + Q_{steam} &amp;=
+                h_{V,1} V_1 + h_{L,1} L_1\\ h_{L,1} L_1 + h_{fg,V_1} V_1 &amp;=
+                h_{V,2} V_2 + h_{L,2} L_2\\ h_{L,2} L_2 + h_{fg,V_2} V_2 &amp;=
+                h_{V,3} V_3 + h_{L,3} L_3 \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                We can substitute these general relationships for the vapour
+                flow-rates to eliminate the vapour terms \begin{align*} V_1
+                &amp;= F - L_1 &amp; V_2 &amp;= L_1 - L_2\\ V_3 &amp;= L_2 - L_3
+                \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                And we end up with three unknowns ($Q_{steam}$, $L_1$, and
+                $L_2$) with three equations: \begin{align*} h_{F} F + Q_{steam}
+                &amp;= h_{V,1} \left(F-L_1\right) + h_{L,1} L_1\\ h_{L,1} L_1 +
+                h_{fg,V_1} V_1 &amp;= h_{V,2} \left(L_1-L_2\right) +
+                h_{L,2} L_2\\ h_{L,2} L_2 + h_{fg,V_2} V_2 &amp;=
+                h_{V,3} \left(L_2-L_3\right) + h_{L,3} L_3 \end{align*}
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Step 5: Heat Balances on Each Effect</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet10.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                If we substitute in the known values, we can solve for the
+                liquid and vapour flow rates (see the
+                <a href="MultiEvapBookExcerpt.pdf">attached notes</a> for all
+                stages). \begin{align*} L_1 &amp;= 17078\textrm{ kg/hr}&amp; L_2
+                &amp;= 11068\textrm{ kg/hr}&amp; Q_{steam} &amp;=
+                19.66\textrm{ MJ/hr}\\ V_1 &amp;= 5602\textrm{ kg/hr}&amp; V_2
+                &amp;= 6010\textrm{ kg/hr}&amp; V_3 &amp;= 6532\textrm{ kg/hr}
+                \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                Comparing this to the previous calculations, we can see we're
+                within 10% of the estimated vapour flow rates.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Step 5: Heat Balances on Each Effect</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet10.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                If we were off with our initial estimates by more than 10%, then
+                we would have to take these newly calculated values and
+                recalculate the concentrations in each evaporator again.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                However, as this is within 10% we can carry on with the design
+                (using these new values for $V_1$, $V_2$, $V_3$).
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Step 5: Heat Balances on Each Effect</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet11.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                With the mass balance “solved”, we can perform an enthalpy
+                balance on each stage to calculate the heat transfer required.
+                \begin{align*} Q_1 &amp;= 5.46 \text{MW} &amp; Q_2 &amp;=
+                3.49 \text{MW} &amp; Q_3 &amp;= 3.83 \text{MW} \end{align*}
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Step 6: Confirm evaporator area">
+            <h3>Step 6: Confirm evaporator area</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet12.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                Given the overall heat transfer coefficients from a manufacturer
+                ($U_1=3123$ W m ${}^{-2}$ K ${}^{-1}$, $U_1=1987$ W m ${}^{-2}$
+                K ${}^{-1}$, $U_1=1136$ W m ${}^{-2}$ K ${}^{-1}$), we can
+                calculate the areas as \begin{align*} A_1 &amp;=
+                112.4 \text{m}^2 &amp; A_2 &amp;= 95.8 \text{m}^2 &amp; A_3
+                &amp;= 105.1 \text{m}^2 \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                The average area is $A_m=104.4\,\text{m}^2$ and, as all values
+                are within 10% of this average, our design is complete.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Step 6: Confirm evaporator area</h3>
+            <figure>
+              <div class="center">
+                <img src="img/flowsheet12.svg" style="width: 75%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                If the areas were significantly different, we would have to
+                revise our estimated temperature drops, $\Delta T_1$, $\Delta
+                T_2$, $\Delta T_3$.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                We can now go and calculate the stage pressures and, using an
+                enthalpy balance, the steam required.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                We can also calculate the
+                <b>steam economy</b>.
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <p>
+            See the
+            <a href="MultiEvapBookExcerpt.pdf"
+              >PDF for the rest of the solution</a
+            >
+            as well as a outline proceedure.
+          </p>
+          <p>
+            Note that Aspen/UniSim are carrying out almost exactly the same
+            steps as this hand calculation (they tend not to use general
+            implicit equation solvers, but actual transciptions of proceedures
+            for historical reasons). If you're having trouble with them, think
+            if you've over/underspecified the system, or placed conflicting
+            constraints on it.
+          </p>
+        </section>
       </div>
-     </section>
-    </section>
-    <section>
-     <section data-menu-title="Multi-Stage Evaporator Design Methodology">
-      <h3>
-       Step 0-a: Draw A Process Flowsheet
-      </h3>
-      <ul>
-       <li>
-        We are going to cover the example design in section 8.5D of
-    “Transport Processes and Unit Operations,” by C. J. Geankoplis. As
-    the book is not the easiest to get ahold of, it is repeated here.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-         There are another two examples of Multi-Stage Evaporator
-	 design available in C&amp;R Volume 2, if you wish to study
-	 the topic further.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-         This design concerns a triple-effect evaporator in a
-	white-sugar factory.
-       </li>
-       <li class="fragment" data-fragment-index="3">
-         The design procedure, if followed correctly, will yield a
-	 valid process design in all cases and satisfy the implicit
-	 mass and energy equations.
-       </li>
-       <li class="fragment" data-fragment-index="4">
-        The reason for following the procedure rigorously is to
-    ensure that our calculations converge onto the solution. There
-    are, in-fact, many ways of solving this system.
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Step 0: Preparation">
-      <h3>
-       Step 0-a: Draw A Process Flowsheet
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet1.svg" style="width:100%"/>
-       </div>
-      </figure>
-     </section>
-     <section>
-      <h3>
-       Step 0-b: Fill Out The Known Information
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet2.svg" style="width:75%"/>
-       </div>
-      </figure>
-      \begin{align*}
-      C_p&amp;=4.19-2.35 x\quad(\textrm{ kJ/kg K}) &amp;
-    \textrm{BPR}_3&amp;=1.78 x+6.22 x^2\quad(\textrm{${}^\circ $C/K})
-      \end{align*}
-      <ul>
-       <li>
-	 We've started the design by filling out all the given information (see above).
-       </li>
-       <li class="fragment">
-        In most problems you will encounter in this course, you will
-	be provided with the
-        <i>steam pressure</i>,
-        <i>final stage pressure</i>,
-        <i>feed stream specification</i>,
-        <i>final concentration</i>,
-        <i>overall heat transfer coefficient estimates</i>
-        and
-        <i>physical properties</i>. Below the diagram we've repeated
-      the physical data for this problem.
-       </li>
-       <li class="fragment">
-        To this, you will almost certainly need to add the data
-    contained in your steam tables.
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Step 1: Solve the Final Evaporator">
-      <h3>
-       Step 1: Solve the Final Evaporator
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet2.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-         As we know the final concentration, the boiling point rise in
-        the third evaporator is \begin{align*}
-        \textrm{BPR}&amp;=1.78\times0.5+6.22\times0.5^2\approx2.45 \textrm{${}^\circ
-        $C/K} \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        We then look up the boiling point of pure water at
-	0.134 bar (324.82 K) and calculate the operating temperature
-        \begin{align*}
-        T_3&amp;=324.82+2.45=327.27\textrm{K}
-        \end{align*}
-       </li>
-      </ul>
-     </section>
-     <section>
-      <h3>
-       Step 1: Solve the Final Evaporator
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet3.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        Using a mass balance in the solids, we can determine the
-    outlet liquid flow-rate.
-        \begin{align*}
-        x_F F &amp;= x_3 L_3\\
-      0.1\times22680 &amp;= 0.5\times L_3\\
-      L_3 &amp;= 0.1\times22680 / 0.5 = 4536\textrm{ kg/hr}
-        \end{align*}
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Step 2: Predict the Vapour Flowrates">
-      <h3>
-       Step 2: Predict the Vapour Flowrates
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet4.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        Now we can calculate the total vapour flow-rate using the
-    overall mass balance
-        \begin{align*}
-        F &amp;= L_3 + V_1 + V_2 + V_3\\
-      22680&amp;=4536 + V_1 + V_2 + V_3\\
-      V_1 + V_2 + V_3 &amp;= 18144\textrm{ kg/hr}
-        \end{align*}
-       </li>
-      </ul>
-     </section>
-     <section>
-      <h3>
-       Step 2: Predict the Vapour Flowrates
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet5.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-         Here is the start of our iterations/shooting: we assume an
-	 equal amount of vapour is generated in each phase:
-	 \begin{align*} V_1\approx V_2\approx V_3\approx 18144 / 3
-	 =6048\textrm{ kg/hr} \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        It is important to remember that this is an estimate, and
-    it may need to be improved upon!
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Step 3: Predict the Liquid Flowrates">
-      <h3>
-       Step 3: Predict the Liquid Flowrates
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet6.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        Now, using the vapour flow-rate estimates, $V$, we can
-    perform mass balances on each stage to calculate the liquid
-    flowrates.
-        \begin{align*}
-        L_1 &amp;= F - V_1 = 22680 - 6048 = 16632 \textrm{ kg/hr}\\
-      L_2 &amp;= L_1 - V_2 = 16632 - 6048 = 10584 \textrm{ kg/hr}
-        \end{align*}
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Step 4: Predict the Concentrations">
-      <h3>
-       Step 4: Predict the Concentrations
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet7.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        With the flowrates predicted, we can estimate the
-    concentrations using solids mass balances around each stage, and
-    validate our calculations by checking the last stage's solids
-    balance. (Remember to check your calculations!)
-        \begin{align*}
-        x_1 &amp;= x_F F/L_1 = 0.1\times22680/16632 &amp;&amp;\approx 0.136\\
-      x_2 &amp;= x_1 L_1/L_2 = 0.136\times16632/10584 &amp;&amp;\approx 0.214\\
-      x_3 &amp;= x_2 L_2/L_3 = 0.214\times10584/4536 &amp;&amp;\approx \color{green}{0.500 \qquad\checkmark}
-        \end{align*}
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Step 4: Calculate the Operating Temperatures">
-      <h3>
-       Step 4: Calculate the Operating Temperatures
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet8.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        With all of the information we have so far, we are ready
-    to predict the operating temperatures.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        The concentrations allow us to determine the boiling point
-    rises, and we can use the following equation to predict the
-    temperature drops:
-        \begin{align*}
-        \Delta T_1 \approx \frac{1}{U_1}\frac{\sum_i\Delta
-        T_i}{\sum_i1/U_i}
-        \end{align*}
-       </li>
-      </ul>
-     </section>
-     <section>
-      <h3>
-       Step 4: Calculate the Operating Temperatures
-      </h3>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.7);">
-        <ul>
-         <li>
-          There is a difficulty when using this equation when a
-        Boiling Point Rise (BPR) occurs.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          The vapour leaving a stage, $i$, is superheated. When
-        it is used to heat the next stage, it will actually heat at
-          $T_i-\textrm{BPR}_i$, as the small superheat is negligible.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          Thus, when we have a BPR in a triple effect
-        evaporator, we actually write
-          \begin{align*}
-          \sum_i\Delta T_i = T_{steam} - T_3 - \textrm{BPR}_1 - \textrm{BPR}_2
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          This is the
-          <i>actual</i>
-          temperature difference
-        available for heat transfer.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.3);">
-        <figure>
-         <div class="center">
-          <img src="img/BPR-evaporator.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
+      <div class="slide-menu-button" style="left: 170px; cursor: pointer">
+        <a
+          class="hide-on-pdf"
+          id="PrintButton"
+          onclick="document.location = '?print-pdf';"
+        >
+          <i class="fa fa-print"></i>
+        </a>
       </div>
-     </section>
-     <section>
-      <h3>
-       Step 4: Calculate the Operating Temperatures
-      </h3>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.7);">
-        <ul>
-         <li>
-          We must also be careful to note that each temperature
-        difference is defined as follows:
-          \begin{align*}
-          \Delta T_1 &amp;= T_{steam} - T_1\\
-          \Delta T_2 &amp;= T_{1} - \textrm{BPR}_1 - T_2\\
-          \Delta T_3 &amp;= T_{2} - \textrm{BPR}_2 - T_3\\
-          …
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          We are ready to calculate the temperature differences…
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.3);">
-        <figure>
-         <div class="center">
-          <img src="img/BPR-evaporator.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <h3>
-       Step 4: Calculate the Operating Temperatures
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet8.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        The saturation temperature of the 2.055 bar steam heating
-    the first evaporator is 394.25 K (from steam tables).
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        The boiling point rises in stages 1 and 2 are
-        \begin{align*}
-        \textrm{BPR}_1&amp;=1.78\times0.136+6.22\times0.136^2\approx0.36 \textrm{${}^\circ $C/K}\\
-      \textrm{BPR}_2&amp;=1.78\times0.214+6.22\times0.214^2\approx0.65 \textrm{${}^\circ $C/K}
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        We can now calculate the overall available temperature
-    difference…
-       </li>
-      </ul>
-     </section>
-     <section>
-      <h3>
-       Step 4: Calculate the Operating Temperatures
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet9.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        The overall temperature difference is
-        \begin{align*}
-        \sum_i\Delta T_i &amp;= T_{steam} - T_3 - \textrm{BPR}_1 - \textrm{BPR}_2\\
-      &amp;= 394.25-327.27-0.36-0.65 = 65.97 \textrm{K}
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        We can now calculate the temperature difference in each stage…
-       </li>
-      </ul>
-     </section>
-     <section>
-      <h3>
-       Step 4: Calculate the Operating Temperatures
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet9.svg" style="width:75%"/>
-       </div>
-      </figure>
-      For the first and second stages, the temperature difference is
-      \begin{align*}
-      \Delta T_1 &amp;= T_{steam} - T_1 \approx
-      \frac{1}{U_1}\frac{\sum_i\Delta T_i}{\sum_i1/U_i} \approx 12.40 K
-      \\
-      \Delta T_2 &amp;= T_1 - \textrm{BPR}_1 - T_2 \approx
-      \frac{1}{U_2}\frac{\sum_i\Delta T_i}{\sum_i1/U_i}\approx 19.50 K
-      \end{align*}
-     </section>
-     <section>
-      <h3>
-       Step 4: Calculate the Operating Temperatures
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet9.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        We must note that this is an approximate expression
-        \begin{align*}
-        \Delta T_i &amp;\approx \frac{1}{U_i}\frac{\sum_i\Delta
-        T_i}{\sum_i1/U_i}
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        The actual temperature differences will also depend on the
-    sensible heat changes in the feed and between stages.
-       </li>
-      </ul>
-     </section>
-     <section>
-      <h3>
-       Step 4: Calculate the Operating Temperatures
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet9.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        We note that the feed stream is quite cold and not likely
-    to be at its boiling point.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        Therefore, we make an educated guess (I admit it, I'm
-    cheating) that the temperature difference needs to be higher in
-    the first stage than predicted.
-        \begin{align*}
-        \Delta T_1&amp;\approx 12.40 K\to 15.56 K &amp; \Delta T_2&amp;\approx 19.50 K\to18.34 K\\
-      \Delta T_3&amp;\approx 34.07 K \to 32.07 K
-        \end{align*}
-       </li>
-      </ul>
-     </section>
-     <section>
-      <h3>
-       Step 4: Calculate the Operating Temperatures
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet9.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        As a first estimate we've increased $\Delta T_1$
-        and lower
-        $\Delta T_2$
-        and
-        $\Delta T_3$
-        <b>proportionately</b>.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        We must do this proportionately as the overall temperature
-    difference is an exact definition.
-        \begin{align*}
-        \sum_i\Delta T_i = T_{steam} - T_3 - \textrm{BPR}_1 - \textrm{BPR}_2
-        \end{align*}
-       </li>
-      </ul>
-     </section>
-     <section>
-      <h3>
-       Step 4: Calculate the Operating Temperatures
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet9.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        Using these temperature differences, and the BPR for each
-    stage, we can calculate the operating temperatures.
-        \begin{align*}
-        \Delta T_1 &amp;= T_s - T_1 \approx 15.56 K &amp;  T_1 \approx 378.69 \textrm{K}\\
-      \Delta T_2 &amp;= T_1 - \textrm{BPR}_1 - T_2 \approx 18.34 K &amp;  T_2 \approx 359.99 \textrm{K}
-        \end{align*}
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Step 5: Heat Balances on Each Effect">
-      <h3>
-       Step 5: Heat Balances on Each Effect
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet10.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        Now that we have (estimated) temperatures for the evaporators, its
-    time to confirm our estimates for the vapour and liquid flowrates
-    (and turn those orange values black).
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        We can calculate the enthalpies for each stream using the
-    steam tables.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        As the BPR is quite small, we can probably neglect the
-    superheat of the vapour streams.
-       </li>
-      </ul>
-     </section>
-     <section>
-      <h3>
-       Step 5: Heat Balances on Each Effect
-      </h3>
-      <ul>
-       <li>
-        If we create our energy balances using these assumptions,
-    they will look like this
-        \begin{align*}
-        h_{F} F + Q_{steam} &amp;= h_{V,1} V_1 + h_{L,1} L_1\\
-      h_{L,1} L_1 + h_{fg,V_1} V_1 &amp;= h_{V,2} V_2 + h_{L,2} L_2\\
-      h_{L,2} L_2 + h_{fg,V_2} V_2 &amp;= h_{V,3} V_3 + h_{L,3} L_3
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        We can substitute these general relationships for the
-    vapour flow-rates to eliminate the vapour terms
-        \begin{align*}
-        V_1 &amp;= F - L_1 &amp; V_2 &amp;= L_1 - L_2\\
-      V_3 &amp;= L_2 - L_3
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        And we end up with three unknowns ($Q_{steam}$,
-        $L_1$, and
-        $L_2$) with three equations:
-        \begin{align*}
-        h_{F} F + Q_{steam} &amp;= h_{V,1} \left(F-L_1\right) + h_{L,1} L_1\\
-      h_{L,1} L_1 + h_{fg,V_1} V_1 &amp;= h_{V,2} \left(L_1-L_2\right) + h_{L,2} L_2\\
-      h_{L,2} L_2 + h_{fg,V_2} V_2 &amp;= h_{V,3} \left(L_2-L_3\right) + h_{L,3} L_3
-        \end{align*}
-       </li>
-      </ul>
-     </section>
-     <section>
-      <h3>
-       Step 5: Heat Balances on Each Effect
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet10.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        If we substitute in the known values, we can solve for the
-    liquid and vapour flow rates (see the <a href="MultiEvapBookExcerpt.pdf">attached notes</a> for all stages).
-        \begin{align*}
-        L_1 &amp;= 17078\textrm{ kg/hr}&amp; L_2 &amp;= 11068\textrm{ kg/hr}&amp; Q_{steam} &amp;= 19.66\textrm{ MJ/hr}\\
-      V_1 &amp;= 5602\textrm{ kg/hr}&amp; V_2 &amp;= 6010\textrm{ kg/hr}&amp; V_3 &amp;= 6532\textrm{ kg/hr}
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        Comparing this to the previous calculations, we can see
-    we're within 10% of the estimated vapour flow rates.
-       </li>
-      </ul>
-     </section>
-     <section>
-      <h3>
-       Step 5: Heat Balances on Each Effect
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet10.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        If we were off with our initial estimates by more than
-    10%, then we would have to take these newly calculated values and
-    recalculate the concentrations in each evaporator again.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        However, as this is within 10% we can carry on with the
-    design (using these new values for $V_1$,
-        $V_2$,
-        $V_3$).
-       </li>
-      </ul>
-     </section>
-     <section>
-      <h3>
-       Step 5: Heat Balances on Each Effect
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet11.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        With the mass balance “solved”, we can perform an
-    enthalpy balance on each stage to calculate the heat transfer
-    required.
-        \begin{align*}
-        Q_1 &amp;= 5.46 \text{MW} &amp; Q_2 &amp;= 3.49 \text{MW} &amp; Q_3 &amp;= 3.83 \text{MW}
-        \end{align*}
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Step 6: Confirm evaporator area">
-      <h3>
-       Step 6: Confirm evaporator area
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet12.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        Given the overall heat transfer coefficients from a
-    manufacturer ($U_1=3123$
-        W m
-        ${}^{-2}$
-        K
-        ${}^{-1}$,
-        $U_1=1987$
-        W
-    m
-        ${}^{-2}$
-        K
-        ${}^{-1}$,
-        $U_1=1136$
-        W m
-        ${}^{-2}$
-        K
-        ${}^{-1}$), we can
-    calculate the areas as
-        \begin{align*}
-        A_1 &amp;= 112.4 \text{m}^2 &amp; A_2 &amp;= 95.8 \text{m}^2  &amp; A_3 &amp;= 105.1 \text{m}^2
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        The average area is $A_m=104.4\,\text{m}^2$ and, as all values
-        are within 10% of this average, our design is complete.
-       </li>
-      </ul>
-     </section>
-     <section>
-      <h3>
-       Step 6: Confirm evaporator area
-      </h3>
-      <figure>
-       <div class="center">
-        <img src="img/flowsheet12.svg" style="width:75%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        If the areas were significantly different, we would have
-    to revise our estimated temperature drops, $\Delta T_1$,
-        $\Delta
-    T_2$,
-        $\Delta T_3$.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        We can now go and calculate the stage pressures and, using
-    an enthalpy balance, the steam required.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        We can also calculate the
-        <b>steam economy</b>.
-       </li>
-      </ul>
-     </section>
-    </section>
-    <section>
-      <p>
-	See the <a href="MultiEvapBookExcerpt.pdf">PDF for the rest of
-	  the solution</a> as well as a outline proceedure.
-      </p>
-      <p>
-	Note that Aspen/UniSim are carrying out almost exactly the
-	same steps as this hand calculation (they tend not to use
-	general implicit equation solvers, but actual transciptions of
-	proceedures for historical reasons). If you're having trouble
-	with them, think if you've over/underspecified the system, or
-	placed conflicting constraints on it.
-      </p>
-    </section>
-   </div>
-   <div class="slide-menu-button" style="left:170px;cursor:pointer;">
-    <a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
-     <i class="fa fa-print"></i>
-    </a>
-   </div>
-   <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
-   </script>
-   <script src="footer.js">
-   </script>
-  </div>
- </body>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+      </script>
+      <script src="footer.js"></script>
+    </div>
+  </body>
 </html>

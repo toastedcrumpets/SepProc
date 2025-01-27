@@ -1,455 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <title>
-   Separation Processes 1
-  </title>
-  <meta content="Separation processes 1 notes" name="description"/>
-  <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
-  <meta content="yes" name="apple-mobile-web-app-capable"/>
-  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
-  <script src="header.js"></script>
- </head>
- <body>
-  <div class="reveal">
-   <div class="slides">
-    <section>
-     <section>
-      <h2>
-       Multi-Stage Absorption: Part 1
-      </h2>
-      <div class="center">
+  <head>
+    <meta charset="utf-8" />
+    <title>Separation Processes 1</title>
+    <meta content="Separation processes 1 notes" name="description" />
+    <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta
+      content="black-translucent"
+      name="apple-mobile-web-app-status-bar-style"
+    />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
+      name="viewport"
+    />
+    <script src="header.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <h2>Multi-Stage Absorption: Part 1</h2>
+            <div class="center"></div>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Multi-Stage Absorbers">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.651)">
+                <ul>
+                  <li>
+                    So far we've considered a single
+                    <b>theoretical</b>
+                    /
+                    <b>ideal</b>
+                    absorber stage…
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Two streams enter the system, $V_2$ and $L_0$, and
+                    <b>equilibrate before leaving the stage</b>
+                    (this is the definition of an ideal stage).
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    In real life, we would not use a single stage of absorption,
+                    but many stages.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    Another consideration is that no real stage is
+                    <b>ideal</b>.
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    The main limitation of real stages is the residence time of
+                    the liquid and vapour is not long enough for the two to come
+                    into full equilibrium (poor mixing).
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.31)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/absorber_theoretical_stage.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="center">
+              <img src="img/absorber_multi_stage.svg" style="width: 100%" />
+            </div>
+            <ul>
+              <li>
+                In a multi-stage absorber, the liquid and vapour from one stage
+                is passed to another stage.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                The diagram above of a counter current absorber reveals the
+                logic behind the unusual numbering of the streams in the
+                previous examples.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                Vapour flows from the next stage to the current stage, and
+                liquid flows in the opposite direction.
+              </li>
+              <li class="fragment" data-fragment-index="3">
+                We will now discuss why
+                <b
+                  >counter-current flow is the natural choice for
+                  absorption/distillation</b
+                >
+                …
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Co/Counter-Current Flow">
+            <div class="center">
+              <img src="img/Cocurrent.svg" style="width: 100%" />
+            </div>
+            <ul>
+              <li>
+                Assuming each stage does not quite reach equilibrium, we could
+                use as many real stages as needed until the fluids do reach
+                equilibrium.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                This is
+                <b>co-current</b>
+                flow, and is illustrated above with
+                <span style="color: red"> vapour</span>
+                and
+                <span style="color: blue"> liquid</span>
+                streams.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                The separation achieved by this configuration is limited by the
+                equilibrium state of the fluids (little/no mass transfer as
+                equilibrium is reached).
+              </li>
+            </ul>
+          </section>
+          <section>
+            <div class="center">
+              <img src="img/Countercurrent.svg" style="width: 90%" />
+            </div>
+            <ul>
+              <li>
+                Just like in heat transfer systems, a far more efficient
+                operation would be to operate many absorber stages in
+                <b>counter-current</b>
+                flow.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                Counter-current absorbers can achieve higher loadings of the
+                liquid stream, as the equilibrium point varies along the
+                absorber.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                We can maintain a significant equilibrium (and dynamic) driving
+                force for mass transfer along the whole length of the absorber.
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Packed Columns">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.451)">
+                <ul>
+                  <li>
+                    All real absorbers are counter current, but not only for the
+                    better mass transfer characteristics.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Counter-current flow within a vertical gas absorber column
+                    is a natural consequence of the bouyancy forces.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    The gas stream will naturally bubble up through the liquid
+                    stream.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    On the right is a diagram of a
+                    <b>packed-bed column</b>, where liquid flows down over the
+                    <b>packing</b>
+                    and gas rises, and the counter current flow is obvious.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.551)">
+                <figure>
+                  <div class="center">
+                    <img src="img/absorber.svg" style="width: 100%" />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="center">
+              <img src="img/packing.svg" style="width: 90%" />
+            </div>
+            <ul>
+              <li>
+                Packing consists of a large number of small objects with high
+                surface-to-volume ratios.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                They range from the simple Raschig ring “tubes”, to the more
+                complex Berl saddle.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                They are designed to form a self-supporting, lightweight porous
+                structure which maximises the contact between the liquid and the
+                gas passing over the bed.
+              </li>
+              <li class="fragment" data-fragment-index="3">
+                For an initial design, we could assume that a certain height of
+                packing achieves the same effect as a single ideal stage (
+                <b>height of an equivalent theoretical plate (HETP)</b>).
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Plate/Tray Columns">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <ul>
+                  <li>
+                    The other common form of absorber/distillation tower is that
+                    of a plate or tray column.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    In these columns, the liquid is held up on trays which have
+                    perforations to allow the gas/vapour phase to bubble
+                    through.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    Although this appears to have an easily identifiable
+                    “stage”, typically the
+                    <b>plate efficiency</b>
+                    is less than one.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    A single plate might only achieve 70-85% of the separation
+                    of an ideal stage (plate efficiency=70-85%).
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.451)">
+                <figure>
+                  <div class="center">
+                    <img src="img/Tray_column.svg" style="width: 100%" />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <ul>
+                  <li>
+                    Both packing and trays have their advantages and
+                    disadvantages, and their selection depends on the viscosity,
+                    flow-rates and fouling of the two phases.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    A major consideration is that we have more accurate design
+                    methods for plate columns.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    However, packing can be significantly cheaper to construct.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    But we will ignore the internal structure of the column for
+                    now, and just look at the concept of ideal stages.
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    To translate these ideal designs into real designs, we will
+                    need to consider tray efficiencies and the packing height of
+                    an equivalent theoretical plate.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.451)">
+                <figure>
+                  <div class="center">
+                    <img src="img/Tray_column.svg" style="width: 100%" />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Multi-Stage Balance Equations">
+            <div class="center">
+              <img
+                src="img/absorber_multi_stage_balance_00.svg"
+                style="width: 80%"
+              />
+            </div>
+            <ul>
+              <li>
+                When designing an absorber column, we often know the conditions
+                of the available absorbing liquid $L_0$, and the target vapour
+                outlet conditions $V_1$.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                We then need to solve from the left to the right, stage by
+                stage, to determine the outlet liquid and inlet vapour
+                conditions.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                Sometimes the problem is specified in reverse, we have a target
+                loading of the outlet liquid $L_N$, and an inlet specification
+                of the gas/vapour $V_{N+1}$.
+              </li>
+              <li class="fragment" data-fragment-index="3">
+                Here we would need to solve from right to left, but in both
+                cases we need the governing equations of the system.
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Single-Stage Balance">
+            <div class="center">
+              <img
+                src="img/absorber_multi_stage_balance_01.svg"
+                style="width: 80%"
+              />
+            </div>
+            <ul>
+              <li>
+                Just as before, around a single stage we can create a total
+                mass/molar balance… \begin{align*} L_0+V_2 = L_1+V_1
+                \end{align*} … and a component mass/molar balance.
+                \begin{align*} L_0 x_{A,0}+V_2 y_{A,2}&amp;=L_1 x_{A,1} +
+                V_1 y_{A,1} \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                We can create $N$ of these balances, where $N$ is the total
+                number of stages.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <div class="center">
+              <img
+                src="img/absorber_multi_stage_balance_01.svg"
+                style="width: 80%"
+              />
+            </div>
+            <ul>
+              <li>
+                These $N$ balances will then need to be combined with the
+                equilibrium data to close the system of equations.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                However, there are several other balances that we can create.
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Multiple-Stage Balances">
+            <div class="center">
+              <img
+                src="img/absorber_multi_stage_balance_02.svg"
+                style="width: 80%"
+              />
+            </div>
+            <ul>
+              <li>
+                A similar mass balances could be created around all $N$ stages…
+                \begin{align*} L_0+V_{N+1} &amp;= L_N+V_{1}\\
+                L_0 x_{A,0}+V_{N+1} y_{A,N+1}&amp;=L_N x_{A,N} + V_1 y_{A,1}
+                \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                But this balance alone cannot specify the outlet stream
+                conditions, as we need to examine the equilibrium state of each
+                individual stage.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <div class="center">
+              <img
+                src="img/absorber_multi_stage_balance_03.svg"
+                style="width: 80%"
+              />
+            </div>
+            <ul>
+              <li>
+                We can of course create a balance around some smaller number,
+                $n$, of the stages. \begin{align*} L_0+V_{n+1} &amp;=
+                L_n+V_{1}\\ L_0 x_{A,0}+V_{n+1} y_{A,n+1}&amp;=L_n x_{A,n} +
+                V_1 y_{A,1} \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                The key thing to note is that common to the balances we just
+                created is that the input liquid $L_0$, and output vapour $V_1$
+                are always included.
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="General Balance">
+            <div class="center">
+              <img
+                src="img/absorber_multi_stage_balance_03.svg"
+                style="width: 80%"
+              />
+            </div>
+            <ul>
+              <li>
+                If we take the last balance equation, and assume the vapour and
+                liquid streams are binary and contain inert components (as for
+                the single stage absorber example), we can transform the balance
+                equation to \begin{align*}
+                L'\frac{x_{A,0}}{1-x_{A,0}}+V'\frac{y_{A,n+1}}{1-y_{A,n+1}}&amp;=L'\frac{x_{A,n}}{1-x_{A,n}}
+                + V'\frac{y_{A,1}}{1-y_{A,1}} \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                This equation is powerful, as it relates the gas composition
+                entering any stage $n$ ( $y_{A,n+1}$), to the liquid composition
+                in that stage ( $x_{A,n}$) (assuming $x_{A,0}$ and $y_{A,1}$ are
+                known).
+              </li>
+            </ul>
+          </section>
+          <section>
+            <div class="center">
+              <img
+                src="img/absorber_multi_stage_balance_03.svg"
+                style="width: 80%"
+              />
+            </div>
+            \begin{align*}
+            V'\frac{y_{A,n+1}}{1-y_{A,n+1}}&amp;=L'\frac{x_{A,n}}{1-x_{A,n}} +
+            V'\frac{y_{A,1}}{1-y_{A,1}} - L'\frac{x_{A,0}}{1-x_{A,0}}
+            \end{align*}
+            <ul>
+              <li>
+                We only need to add the VLE data ($y_{A,n} = f(x_{A,n})$), and
+                we can solve our problem stage by stage.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                This can be done by calculator or, as will be shown in the next
+                lecture, it can be done graphically!
+              </li>
+            </ul>
+          </section>
+        </section>
       </div>
-     </section>
-    </section>
-    <section>
-     <section data-menu-title="Multi-Stage Absorbers">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.651);">
-        <ul>
-         <li>
-          So far we've considered a single
-          <b>theoretical</b>
-          /
-          <b>ideal</b>
-          absorber stage…
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Two streams enter the system, $V_2$
-          and
-          $L_0$, and
-          <b>equilibrate before leaving the stage</b>
-          (this is the
-        definition of an ideal stage).
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          In real life, we would not use a single stage of
-        absorption, but many stages.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          Another consideration is that no real stage is
-          <b>ideal</b>.
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          The main limitation of real stages is the residence
-        time of the liquid and vapour is not long enough for the two
-        to come into full equilibrium (poor mixing).
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.31);">
-        <figure>
-         <div class="center">
-          <img src="img/absorber_theoretical_stage.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
+      <div class="slide-menu-button" style="left: 170px; cursor: pointer">
+        <a
+          class="hide-on-pdf"
+          id="PrintButton"
+          onclick="document.location = '?print-pdf';"
+        >
+          <i class="fa fa-print"></i>
+        </a>
       </div>
-     </section>
-     <section>
-      <div class="center">
-       <img src="img/absorber_multi_stage.svg" style="width:100%"/>
-      </div>
-      <ul>
-       <li>
-        In a multi-stage absorber, the liquid and vapour from one
-    stage is passed to another stage.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        The diagram above of a counter current absorber reveals
-    the logic behind the unusual numbering of the streams in the
-    previous examples.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        Vapour flows from the next stage to the current stage, and
-    liquid flows in the opposite direction.
-       </li>
-       <li class="fragment" data-fragment-index="3">
-        We will now discuss why
-        <b>counter-current flow is the
-    natural choice for absorption/distillation</b>
-        …
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Co/Counter-Current Flow">
-      <div class="center">
-       <img src="img/Cocurrent.svg" style="width:100%"/>
-      </div>
-      <ul>
-       <li>
-        Assuming each stage does not quite reach equilibrium, we
-    could use as many real stages as needed until the fluids do reach
-    equilibrium.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        This is
-        <b>co-current</b>
-        flow, and is illustrated above
-    with
-        <span style="color:red">
-         vapour</span>
-        and
-        <span style="color:blue">
-         liquid</span>
-        streams.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        The separation achieved by this configuration is limited
-    by the equilibrium state of the fluids (little/no mass transfer
-    as equilibrium is reached).
-       </li>
-      </ul>
-     </section>
-     <section>
-      <div class="center">
-       <img src="img/Countercurrent.svg" style="width:90%"/>
-      </div>
-      <ul>
-       <li>
-        Just like in heat transfer systems, a far more efficient
-    operation would be to operate many absorber stages in
-        <b>counter-current</b>
-        flow.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        Counter-current absorbers can achieve higher loadings of
-    the liquid stream, as the equilibrium point varies along the
-    absorber.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        We can maintain a significant equilibrium (and dynamic)
-    driving force for mass transfer along the whole length of the
-    absorber.
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Packed Columns">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.451);">
-        <ul>
-         <li>
-          All real absorbers are counter current, but not only
-        for the better mass transfer characteristics.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Counter-current flow within a vertical gas absorber
-        column is a natural consequence of the bouyancy forces.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          The gas stream will naturally bubble up through the
-        liquid stream.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          On the right is a diagram of a
-          <b>packed-bed
-          column</b>, where liquid flows down over the
-          <b>packing</b>
-          and
-        gas rises, and the counter current flow is obvious.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.551);">
-        <figure>
-         <div class="center">
-          <img src="img/absorber.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div class="center">
-       <img src="img/packing.svg" style="width:90%"/>
-      </div>
-      <ul>
-       <li>
-        Packing consists of a large number of small objects with
-    high surface-to-volume ratios.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        They range from the simple Raschig ring “tubes”, to the
-    more complex Berl saddle.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        They are designed to form a self-supporting, lightweight
-    porous structure which maximises the contact between the liquid
-    and the gas passing over the bed.
-       </li>
-       <li class="fragment" data-fragment-index="3">
-        For an initial design, we could assume that a certain
-    height of packing achieves the same effect as a single ideal stage
-    (
-        <b>height of an equivalent theoretical plate (HETP)</b>).
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Plate/Tray Columns">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <ul>
-         <li>
-          The other common form of absorber/distillation tower
-        is that of a plate or tray column.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          In these columns, the liquid is held up on trays which
-        have perforations to allow the gas/vapour phase to bubble
-        through.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          Although this appears to have an easily identifiable
-        “stage”, typically the
-          <b>plate efficiency</b>
-          is less than
-        one.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          A single plate might only achieve 70-85% of the
-        separation of an ideal stage (plate efficiency=70-85%).
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.451);">
-        <figure>
-         <div class="center">
-          <img src="img/Tray_column.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <ul>
-         <li>
-          Both packing and trays have their advantages and
-        disadvantages, and their selection depends on the viscosity,
-        flow-rates and fouling of the two phases.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          A major consideration is that we have more accurate
-        design methods for plate columns.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          However, packing can be significantly cheaper to
-        construct.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          But we will ignore the internal structure of the
-        column for now, and just look at the concept of ideal stages.
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          To translate these ideal designs into real designs, we
-        will need to consider tray efficiencies and the packing height
-        of an equivalent theoretical plate.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.451);">
-        <figure>
-         <div class="center">
-          <img src="img/Tray_column.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-    </section>
-    <section>
-     <section data-menu-title="Multi-Stage Balance Equations">
-      <div class="center">
-       <img src="img/absorber_multi_stage_balance_00.svg" style="width:80%"/>
-      </div>
-      <ul>
-       <li>
-        When designing an absorber column, we often know the
-    conditions of the available absorbing liquid $L_0$, and the target
-    vapour outlet conditions
-        $V_1$.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        We then need to solve from the left to the right, stage by
-    stage, to determine the outlet liquid and inlet vapour conditions.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        Sometimes the problem is specified in reverse, we have a
-    target loading of the outlet liquid $L_N$, and an inlet
-    specification of the gas/vapour
-        $V_{N+1}$.
-       </li>
-       <li class="fragment" data-fragment-index="3">
-        Here we would need to solve from right to left, but in
-    both cases we need the governing equations of the system.
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Single-Stage Balance">
-      <div class="center">
-       <img src="img/absorber_multi_stage_balance_01.svg" style="width:80%"/>
-      </div>
-      <ul>
-       <li>
-        Just as before, around a single stage we can create a
-    total mass/molar balance…
-        \begin{align*}
-        L_0+V_2 = L_1+V_1
-        \end{align*}
-        … and a component mass/molar balance.
-        \begin{align*}
-        L_0 x_{A,0}+V_2 y_{A,2}&amp;=L_1 x_{A,1} + V_1 y_{A,1}
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        We can create $N$
-        of these balances, where
-        $N$
-        is the
-    total number of stages.
-       </li>
-      </ul>
-     </section>
-     <section>
-      <div class="center">
-       <img src="img/absorber_multi_stage_balance_01.svg" style="width:80%"/>
-      </div>
-      <ul>
-       <li>
-        These $N$
-        balances will then need to be combined with the
-    equilibrium data to close the system of equations.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        However, there are several other balances that we can
-    create.
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Multiple-Stage Balances">
-      <div class="center">
-       <img src="img/absorber_multi_stage_balance_02.svg" style="width:80%"/>
-      </div>
-      <ul>
-       <li>
-        A similar mass balances could be created around all $N$
-        stages…
-        \begin{align*}
-        L_0+V_{N+1} &amp;= L_N+V_{1}\\
-      L_0 x_{A,0}+V_{N+1} y_{A,N+1}&amp;=L_N x_{A,N} + V_1 y_{A,1}
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        But this balance alone cannot specify the outlet stream
-    conditions, as we need to examine the equilibrium state of each
-    individual stage.
-       </li>
-      </ul>
-     </section>
-     <section>
-      <div class="center">
-       <img src="img/absorber_multi_stage_balance_03.svg" style="width:80%"/>
-      </div>
-      <ul>
-       <li>
-        We can of course create a balance around some smaller
-    number, $n$, of the stages.
-        \begin{align*}
-        L_0+V_{n+1} &amp;= L_n+V_{1}\\
-      L_0 x_{A,0}+V_{n+1} y_{A,n+1}&amp;=L_n x_{A,n} + V_1 y_{A,1}
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        The key thing to note is that common to the balances we
-    just created is that the input liquid $L_0$, and output vapour
-        $V_1$
-        are always included.
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="General Balance">
-      <div class="center">
-       <img src="img/absorber_multi_stage_balance_03.svg" style="width:80%"/>
-      </div>
-      <ul>
-       <li>
-        If we take the last balance equation, and assume the
-    vapour and liquid streams are binary and contain inert components
-    (as for the single stage absorber example), we can transform the
-    balance equation to
-        \begin{align*}
-        L'\frac{x_{A,0}}{1-x_{A,0}}+V'\frac{y_{A,n+1}}{1-y_{A,n+1}}&amp;=L'\frac{x_{A,n}}{1-x_{A,n}}
-      + V'\frac{y_{A,1}}{1-y_{A,1}}
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        This equation is powerful, as it relates the gas
-    composition entering any stage $n$
-        (
-        $y_{A,n+1}$), to the liquid
-    composition in that stage (
-        $x_{A,n}$) (assuming
-        $x_{A,0}$
-        and
-        $y_{A,1}$
-        are known).
-       </li>
-      </ul>
-     </section>
-     <section>
-      <div class="center">
-       <img src="img/absorber_multi_stage_balance_03.svg" style="width:80%"/>
-      </div>
-      \begin{align*}
-      V'\frac{y_{A,n+1}}{1-y_{A,n+1}}&amp;=L'\frac{x_{A,n}}{1-x_{A,n}}
-    + V'\frac{y_{A,1}}{1-y_{A,1}} - L'\frac{x_{A,0}}{1-x_{A,0}}
-      \end{align*}
-      <ul>
-       <li>
-        We only need to add the VLE data ($y_{A,n} = f(x_{A,n})$),
-    and we can solve our problem stage by stage.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        This can be done by calculator or, as will be shown in the
-    next lecture, it can be done graphically!
-       </li>
-      </ul>
-     </section>
-    </section>
-   </div>
-   <div class="slide-menu-button" style="left:170px;cursor:pointer;">
-    <a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
-     <i class="fa fa-print"></i>
-    </a>
-   </div>
-   <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
-   </script>
-   <script src="footer.js">
-   </script>
-  </div>
- </body>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+      </script>
+      <script src="footer.js"></script>
+    </div>
+  </body>
 </html>
