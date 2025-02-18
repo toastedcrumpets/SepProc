@@ -26,7 +26,7 @@
           </section>
         </section>
         <section>
-          <p>Review of the Triple-effect NaOH evaporator.</p>
+          <p>Revisiting Vapour-Liquid Equilibrium (VLE).</p>
         </section>
         <section>
           <section data-menu-title="Phase Rule">
@@ -535,7 +535,10 @@
               <li class="fragment">
                 The partial pressure of oxygen in air is given by Dalton's law:
                 \begin{align*} p_{O_2} = P y_{O_2} = 1\times0.21 =
-                0.21 \textrm{atm} \end{align*}
+                0.21 \textrm{atm} \end{align*} Thus the density is \begin{align}
+                \frac{n}{V} = \frac{p}{RT} =
+                \frac{0.21\times10^5}{8.3145\times298} = 8.4755\,\text{mol/m}^3
+                \end{align}
               </li>
               <li class="fragment">
                 Using this in Henry's law with the coefficient of
@@ -548,15 +551,23 @@
               </li>
               <li class="fragment">
                 This is a remarkably low concentration of oxygen considering the
-                scale of aerobic life within the ocean.
+                scale of aerobic life within the ocean (and 40 times less than
+                air!).
               </li>
               <li class="fragment">
-                Looking by volume, there is $2.67\times10^{-4}\text{ mol
-                m}^{-3}$ in water and $9.38\times10^{-3}\text{ mol m}^{-3}$ in
-                air (oxygen is more than $35\times$ concentrated by volume in
-                air compared to water!).
+                Looking by volume, the density of water is 1000
+                kg/m<sup>3</sup>, so a molar density of
+                $1000\times10^3/18=5.56\times10^4$ mol m<sup>3</sup>.
+                Multiplying by the mole fraction of oxygen gives
+                $5.56\times10^4\times4.8\times10^{-6}=0.267$ mol/m<sup>3</sup>.
+                Oxygen is more than $30\times$ concentrated by volume in air
+                compared to water!
               </li>
-              <li class="fragment">
+            </ul>
+          </section>
+          <section>
+            <ul>
+              <li>
                 Sharks extract up to 80% of the oxygen in the water that passes
                 over their gils, whereas we only extract 25% of the oxygen in
                 the air which passes through our lungs.
@@ -572,6 +583,17 @@
                 mg/L at 0${}^\circ$ C versus 7.6 mg/L at 20 ${}^\circ$ C), hence
                 the environmental restrictions on the temperature of cooling
                 water dumped into local waterways.
+              </li>
+              <li class="fragment">
+                To be clear, you can drown fish in the sea or a river by raising
+                its temperature just a few degrees. Limits of 2-3 degrees above
+                ambient are typical now. See
+                <a
+                  href="https://www.sepa.org.uk/media/klsjqhhw/wat-sg-85-final-july-2023.pdf"
+                  >https://www.sepa.org.uk/media/klsjqhhw/wat-sg-85-final-july-2023.pdf</a
+                >
+                for a good example of chemical engineering you know right now,
+                that is used to define these regulations.
               </li>
             </ul>
           </section>
@@ -698,8 +720,8 @@
                   <li class="fragment" data-fragment-index="2">
                     This is a massive simplification, but is justified if there
                     is significant pressures of CO${}_2$, and the water was in
-                    equilibirum with 100% humidity air before coming into
-                    contact.
+                    equilibrium with 100% humidity air before coming into
+                    contact (or circulating continuously and being regenerated).
                   </li>
                 </ul>
               </div>
