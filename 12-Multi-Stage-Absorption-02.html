@@ -1,919 +1,861 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <title>
-   Separation Processes 1
-  </title>
-  <meta content="Separation processes 1 notes" name="description"/>
-  <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
-  <meta content="yes" name="apple-mobile-web-app-capable"/>
-  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
-  <script src="header.js"></script>
- </head>
- <body>
-  <div class="reveal">
-   <div class="slides">
-    <section>
-     <section>
-      <h2>
-       Multi-Stage Absorption: Part 2
-      </h2>
-      <div class="center">
+  <head>
+    <meta charset="utf-8" />
+    <title>Separation Processes 1</title>
+    <meta content="Separation processes 1 notes" name="description" />
+    <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta
+      content="black-translucent"
+      name="apple-mobile-web-app-status-bar-style"
+    />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
+      name="viewport"
+    />
+    <script src="header.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <h2>Multi-Stage Absorption: Part 2</h2>
+            <div class="center"></div>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Design Method For Multi-Stage Absorbers">
+            <div class="center">
+              <img
+                src="img/absorber_multi_stage_balance_03.svg"
+                style="width: 80%"
+              />
+            </div>
+            \begin{align*}
+            L'\frac{x_{A,0}}{1-x_{A,0}}+V'\frac{y_{A,n+1}}{1-y_{A,n+1}}&amp;=L'\frac{x_{A,n}}{1-x_{A,n}}
+            + V'\frac{y_{A,1}}{1-y_{A,1}} \end{align*}
+            <ul>
+              <li>
+                In the previous lecture, we found the general balance equation
+                for any stage $n$ in an absorber.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                The power of this equation is that it relates $y_{A,n+1}$ and
+                $x_{A,n}$, and it is known as an
+                <b>Operating Line</b>
+                equation.
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Operating Line Equation">
+            <ul>
+              <li>
+                We can rewrite this equation to make this dependence explicit.
+                \begin{align*}
+                \frac{y_{A,n+1}}{1-y_{A,n+1}}&amp;=\frac{L'}{V'}\frac{x_{A,n}}{1-x_{A,n}}
+                + \frac{y_{A,1}}{1-y_{A,1}} -
+                \frac{L'}{V'}\frac{x_{A,0}}{1-x_{A,0}} \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                If we also assume that we have only a small concentration of $A$
+                in the system, we have $x_A\ll 1$ and $y_A\ll 1$.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                This allows us to greatly simplify the equation… \begin{align*}
+                \frac{y_{A,n+1}}{\cancelto{1}{1-y_{A,n+1}}}&amp;=\frac{L'}{V'}\frac{x_{A,n}}{\cancelto{1}{1-x_{A,n}}}
+                + \frac{y_{A,1}}{\cancelto{1}{1-y_{A,1}}} -
+                \frac{L'}{V'}\frac{x_{A,0}}{\cancelto{1}{1-x_{A,0}}}\\
+                y_{A,n+1}&amp;=\frac{L'}{V'}\left(x_{A,n} - x_{A,0}\right) +
+                y_{A,1} \end{align*}
+              </li>
+            </ul>
+          </section>
+          <section>
+            <p>
+              \begin{align*} y_{A,n+1}&amp;=\frac{L'}{V'}\left(x_{A,n} -
+              x_{A,0}\right) + y_{A,1} \end{align*}
+            </p>
+            <ul>
+              <li>
+                This is the
+                <b>operating line equation for low concentrations</b>, and makes
+                the $x_{A,n} \to y_{A,n+1}$ dependence explicit.
+              </li>
+              <li class="fragment">
+                With the VLE data we have a function relating $y_{A,n} \to
+                x_{A,n}$ \begin{align*} y_{A,n} = f^{(VLE)}(x_{A,n})
+                \end{align*} This is known as the
+                <b>equilibrium line</b>.
+              </li>
+              <li class="fragment">
+                With these two relationships, we can solve a multi-stage
+                absorber stage-by-stage…
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Method">
+            <div class="center">
+              <img src="img/absorber_method_01.svg" style="width: 60%" />
+            </div>
+            <ul>
+              <li>
+                At the start of a design, we should be able to completely define
+                one end of the evaporator ($L_0$ and $V_1$).
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                As the system is binary, we only need to define the
+                concentrations to completely specify the stream, as $L_n =
+                L'/\left(1-x_{A,n}\right)$, and $V_n =
+                V'/\left(1-y_{A,n}\right)$.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                We need to solve for each unknown concentration using the
+                <span style="color: teal"> operating line</span>
+                and the
+                <span style="color: blue"> equilibrium line</span>.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <div class="center">
+              <img src="img/absorber_method_02.svg" style="width: 80%" />
+            </div>
+            <ul>
+              <li>
+                We can start by using the
+                <span style="color: blue"> equilibrium line</span>
+                to define $L_1$ from $V_1$.
+              </li>
+              <li>
+                The equilibrium line is used as the exit streams of an ideal
+                stage are in equilibrium.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <div class="center">
+              <img src="img/absorber_method_04.svg" style="width: 80%" />
+            </div>
+            <ul>
+              <li>
+                Then, by using the
+                <span style="color: teal"> operating line equation</span>, we
+                can define the vapour stream of the next stage $V_2$, from the
+                liquid product of the current stage $L_1$.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                The
+                <span style="color: teal"> operating line equation</span>
+                is simply a mass balance.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <div class="center">
+              <img src="img/absorber_method_06.svg" style="width: 60%" />
+            </div>
+            <ul>
+              <li>
+                The method then repeats itself as we move down the absorber,
+                alternating between the
+                <span style="color: blue"> VLE data</span>
+                and the
+                <span style="color: teal"> operating line equation</span>.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                This method is effective, if a little tedious. Often, we will
+                have to look up the VLE data in a graph, and if we use the
+                correct operating line equation, solving the resulting quadratic
+                for the roots (see tutorial 3) is even more boring.
+                \begin{align*}
+                \frac{y_{A,n+1}}{1-y_{A,n+1}}&amp;=\frac{L'}{V'}\frac{x_{A,n}}{1-x_{A,n}}
+                + \frac{y_{A,1}}{1-y_{A,1}} -
+                \frac{L'}{V'}\frac{x_{A,0}}{1-x_{A,0}} \end{align*}
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Graphical Method">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.8)">
+                <ul>
+                  <li>
+                    Let's consider an example absorption of $SO_2$ from air. The
+                    gas stream enters the absorber at $y_{SO_2,N+1}=0.2$ and
+                    leaves at $y_{SO_2,1}=0.02$. The inert air flow-rate is
+                    $V'=5.18$ kmol/hr.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Pure water ($x_{SO_2,0}=0$) enters at the top at a flow-rate
+                    of $L'=L_0=333$ kmol/hr.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    We note that this completely specifies one end of the
+                    absorber (and half specifies the other).
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    Assuming that the molar concentrations of $SO_2$ are small
+                    (they're not), we can use the
+                    <span style="color: teal">
+                      operating line equation for low concentrations</span
+                    >
+                    and it becomes \begin{align*}
+                    y_{A,SO_2}&amp;=\frac{L'}{V'}\left(x_{SO_2,n} -
+                    x_{SO_2,0}\right) + y_{SO_2,1}\\
+                    &amp;=\frac{333}{5.18} x_{A,n} + 0.02 \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    With the
+                    <span style="color: teal"> operating line</span>
+                    ready, let us take a look at the
+                    <span style="color: blue"> equilibrium line</span>.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.2)">
+                <figure>
+                  <div class="center">
+                    <img src="img/stripper_overview.svg" style="width: 100%" />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <ul>
+                  <li>
+                    Often, we even obtain the Vapour-Liquid Equilibrium (VLE)
+                    data in the form of a plot of the
+                    <span style="color: blue"> equilibrium line</span>
+                    (see right). \begin{align*} y_{A,n} = f^{(VLE)}(x_{A,n})
+                    \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    This is common where we are outside of the range of
+                    validility of Henry's or Raoult's law, and must resort to
+                    experimental data.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    We can now solve the problem stage by stage as illustrated
+                    before, but to avoid the tedious task of calculation, we'll
+                    do this graphically…
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <figure>
+                  <div class="center">
+                    <img src="img/SO2_xy.svg" style="width: 100%" />
+                    <figcaption>
+                      Equilibrium $x$-$y$ plot for $SO_2$ at $20^\circ$ C.
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <ul>
+                  <li>
+                    To the $x$ - $y$ graph on the right, we will add the
+                    <span style="color: teal"> operating line</span>.
+                    \begin{align*} y_{SO_2,n+1}
+                    &amp;=\frac{333}{5.18} x_{SO_2,n} + 0.02 \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    As it is a linear function, we need only generate two
+                    points, $A=(y=0.02, x=0)$ and $B=(y=0.2, x=0.0028)$, to draw
+                    it.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    We choose to plot at $y=0.02$ and $y=0.2$ as these are the
+                    entry and exit concentrations (upper and lower bounds) of
+                    the gas phase.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/absorber_stepping_01.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <ul>
+                  <li>
+                    As this equation \begin{align*} y_{SO_2,n+1}
+                    &amp;=\frac{333}{5.18} x_{SO_2,n} + 0.02 \end{align*}
+                    applies for any stage, $n$, all pairs of
+                    $(y_{SO_2,n+1},x_{SO_2,n})$ values must lie on the
+                    <span style="color: teal"> operating line</span>.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Just as all pairs $(y_{SO_2,n},x_{SO_2,n})$ must lie on the
+                    <span style="color: blue"> equilibrium line</span>
+                    !
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/absorber_stepping_01.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section data-menu-title="Running The Method">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <ul>
+                  <li>
+                    Starting at the outlet of the gas, we have a vapour
+                    concentration of $y_{SO_2,1}=0.02$.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Just as outlined before, we use the
+                    <span style="color: blue"> equilibrium line</span>
+                    to calculate the liquid concentration in that stage,
+                    $x_{SO_2,1}$ \begin{align*} y_{A,n} = f^{(VLE)}(x_{A,n})
+                    \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    This is found by reading the graph along the dotted lines.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/absorber_stepping_02.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <ul>
+                  <li>
+                    Next, we use this liquid concentration to calculate the
+                    vapour composition in the next stage using the
+                    <span style="color: teal"> operating line</span>.
+                    \begin{align*} y_{SO_2,n+1}
+                    &amp;=\frac{333}{5.18} x_{SO_2,n} + 0.02 \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Instead of using the equation, we can just follow the value
+                    $x_{SO_2,1}$ up until it intersects with the
+                    <span style="color: teal"> operating line</span>.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    And now we can just repeat the process.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/absorber_stepping_03.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <ul>
+                  <li>Each horizontal step is a single theoretical stage.</li>
+                  <li class="fragment" data-fragment-index="1">
+                    Where the horizontal step intersects the
+                    <span style="color: teal"> operating line</span>
+                    it gives $y_{SO_2,n}$.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    Where the horizontal step intersects the
+                    <span style="color: blue"> equilibrium line</span>
+                    it gives $x_{SO_2,n}$.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/absorber_stepping_04.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <ul>
+                  <li>
+                    The stepping process is repeated until the desired
+                    concentration is reached.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    In this case, we are looking for how many stages are needed
+                    to reach the inlet concentration of the gas
+                    $y_{SO_2,N+1}=0.2$.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    But this will not end on a whole number of plates…
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/absorber_stepping_05.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <ul>
+                  <li>
+                    Whenever the outlet concentration is passed, the fraction of
+                    horizontal line is proportional to the fraction of a
+                    theoretical stage needed.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    In this case, we need $\approx1.9$ theoretical stages to
+                    perform the specified absorption.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    Assuming a plate efficiency of 25%, this translates to
+                    $1.9/0.25=7.6$ real plates/stages.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    But you can only have a whole number of plates, so our final
+                    design would consist of 8 real plates.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/absorber_stepping_05.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section data-menu-title="Improving The Design">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <ul>
+                  <li>
+                    One mistake we made in the previous design calculations is
+                    that we assumed that the concentration of $SO_2$, was small.
+                    \begin{align*} x_A&amp;\ll 1 &amp; y_A &amp;\ll 1
+                    \end{align*}
+                  </li>
+                  <li class="fragment">
+                    But in the gas phase, the concentration reaches up to 20% at
+                    the inlet!
+                  </li>
+                  <li class="fragment">
+                    As an example of the error, the simplified operating line
+                    predicted a final liquid concentration of $x_N=0.0028$;
+                    however, the proper operating line equation (which is an
+                    exact mass balance) gives $x_N=0.00356$!
+                  </li>
+                  <li class="fragment">
+                    We will need to use the full
+                    <span style="color: teal"> operating line</span>
+                    equation. \begin{align*} \frac{y_{A,n+1}}{1-y_{A,n+1}}=
+                    \frac{L'}{V'}\frac{x_{A,n}}{1-x_{A,n}} +
+                    \frac{y_{A,1}}{1-y_{A,1}} -
+                    \frac{L'}{V'}\frac{x_{A,0}}{1-x_{A,0}} \end{align*}
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/absorber_stepping_05.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            \begin{align*} \frac{y_{A,n+1}}{1-y_{A,n+1}}=
+            \frac{L'}{V'}\frac{x_{A,n}}{1-x_{A,n}} + \frac{y_{A,1}}{1-y_{A,1}} -
+            \frac{L'}{V'}\frac{x_{A,0}}{1-x_{A,0}} \end{align*}
+            <ul>
+              <li>
+                The only complication of the full
+                <span style="color: teal"> operating line</span>
+                equation is that it is not a straight line.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                Instead of plotting only two points for the
+                <span style="color: teal"> operating line</span>, we will need
+                to plot several to ensure we capture any curvature of the line
+                over the studied range.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                These extra points should be equi-spaced between the two
+                limiting concentrations of the gas stream…
+              </li>
+            </ul>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <ul>
+                  <li>
+                    Including a couple more points (and fixing the end point)
+                    makes the curvature evident and we can solve the absorber
+                    again.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    With this change the number of theoretical plates has
+                    increased from $\approx1.9\to2.18$.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    We now have $2.18/0.25=8.72$ real stages, or 9 actual
+                    plates.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    Now that the technique has been made clear, we will consider
+                    some other interesting limits of the design.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/absorber_stepping_06.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Liquid Flow-Rates">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.8)">
+                <ul>
+                  <li>
+                    In the previous example, it appears like we used a seemingly
+                    arbitrary amount of pure water ($L'=L_0=333$ kmol/hr) to
+                    achieve our separation.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    But what is the optimal amount to use? Is it the minimum
+                    possible?
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    We cannot concentrate the $SO_2$ in the liquid phase any
+                    further than the equilibrium liquid concentration for the
+                    most concentrated gas stream in the absorber.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    In this case, the most concentrated stream is the inlet gas,
+                    $y_{SO_2,N+1}=0.2$.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.2)">
+                <figure>
+                  <div class="center">
+                    <img src="img/stripper_overview.svg" style="width: 100%" />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <ul>
+                  <li>
+                    We can find out the maximum possible concentration of the
+                    liquid stream using the
+                    <span style="color: blue"> equilibrium line</span>.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Reading the corresponding value of $x^{(max)}_{SO_2,N} =
+                    0.0066$ at $y_{SO_2,N+1}=0.2$, we find the maximum
+                    physically-possible concentration of the liquid stream.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    The flow-rate of liquid this corresponds to is the minimum
+                    theoretical flowrate which is still capable of achieving the
+                    desired separation.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/absorber_stepping_08.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section data-menu-title="Minimum-Liquid Flow-rate">
+            <ul>
+              <li>
+                We can calculate the minimum liquid flowrate from the general
+                operating equation, as we have $y_{SO_2,1}=0.02$,
+                $y_{SO_2,N+1}=0.2$, and $V'=5.18$ kmol/hr from the design
+                specification, and we just calculated the maximum liquid
+                concentration $x^{(max)}_{SO_2,N}=0.0066$ \begin{align*}
+                L'_{min}\frac{x_{SO_2,0}}{1-x_{SO_2,0}}+V'\frac{y_{SO_2,N+1}}{1-y_{SO_2,N+1}}&amp;=L'_{min}\frac{x^{(max)}_{SO_2,N}}{1-x^{(max)}_{SO_2,N}}
+                + V'\frac{y_{SO_2,1}}{1-y_{SO_2,1}}\\
+                \cancelto{0}{L'_{min}\frac{0}{1-0}}+5.18\frac{0.2}{1-0.2}&amp;=L'_{min}\frac{0.0066}{1-0.0066}
+                + 5.18\frac{0.02}{1-0.02}\\ L'_{min} &amp; \approx
+                179 \textrm{kmol/hr} \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                Thus, for the previous design we were running at
+                $L'/L'_{min}=333/179\approx 1.86$ times the minimum liquid
+                flowrate.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                As a very-rough rule-of-thumb, it is most economical to operate
+                at an operating line with an average slope 1.5 times the average
+                of the equilibrium line.
+              </li>
+              <li class="fragment" data-fragment-index="3">
+                But why not at $L'=L_{min}$? Surely this is the most efficient
+                use of water?
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Minimum-Liquid-Flow Plate Count">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <ul>
+                  <li>
+                    If we try to design at the minimum liquid flowrate, we
+                    proceed as before.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    For a rough calculation, we will neglect the curvature of
+                    the
+                    <span style="color: teal"> operating line</span>, and just
+                    plot two points.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    The first point is the same as before, defined by the top of
+                    the absorber, $A=(y=0.02, x=0)$.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    The second point is the bottom of the absorber, given by
+                    $B=(y=0.2, x^{(max)}=0.0066)$.
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    This lies on both the
+                    <span style="color: blue"> equilibrium line</span>
+                    and the
+                    <span style="color: teal"> operating line</span>! Which is
+                    not surprising given how it was calculated.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/absorber_stepping_09.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.551)">
+                <ul>
+                  <li>
+                    If we try to find out how many theoretical stages are
+                    required to perform the absorption, we find that we need a
+                    very large number.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    In fact, we need an infinite number of stages to reach the
+                    outlet condition.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    This highlights that the design of absorbers is a trade off
+                    between liquid flow-rates, and equipment cost.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    Lower flow-rates (cheaper running costs) = more
+                    stages/bigger columns (more expensive capital costs).
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    The recommendation regarding the relative slopes of the
+                    <span style="color: teal"> operating</span>
+                    and
+                    <span style="color: blue"> equilibrium lines</span>
+                    is a rough rule of thumb as to what the most economical
+                    choice is, but the true optimum greatly depends on the
+                    system studied.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.451)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/absorber_stepping_10.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Stripping/Absorbing">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <ul>
+                  <li>
+                    So far, we have considered the absorption of a single
+                    component from the gas phase to the liquid phase.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    In such a system, the design looks similar to the $SO_2$
+                    absorber we just designed (see right).
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    But what about
+                    <b>desorption</b>
+                    of a component from the liquid phase into the gas phase?
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/absorber_stepping_11.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <ul>
+                  <li>
+                    This is called
+                    <b>stripping</b>, as a component is
+                    <i>stripped</i>
+                    from the liquid phase into the gas phase.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    In stripping, the
+                    <span style="color: teal"> operating line</span>
+                    appears
+                    <i>below</i>
+                    the
+                    <span style="color: blue"> equilibrium line</span>.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    Despite this, the design procedure is identical to an
+                    absorber column.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    We can now design multi-stage absorbers and strippers, now
+                    we can move onto
+                    <i>distillation</i>
+                    …
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.51)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/absorber_stepping_12.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+        </section>
       </div>
-     </section>
-    </section>
-    <section>
-     <section data-menu-title="Design Method For Multi-Stage Absorbers">
-      <div class="center">
-       <img src="img/absorber_multi_stage_balance_03.svg" style="width:80%"/>
+      <div class="slide-menu-button" style="left: 170px; cursor: pointer">
+        <a
+          class="hide-on-pdf"
+          id="PrintButton"
+          onclick="document.location = '?print-pdf';"
+        >
+          <i class="fa fa-print"></i>
+        </a>
       </div>
-      \begin{align*}
-      L'\frac{x_{A,0}}{1-x_{A,0}}+V'\frac{y_{A,n+1}}{1-y_{A,n+1}}&amp;=L'\frac{x_{A,n}}{1-x_{A,n}}
-    + V'\frac{y_{A,1}}{1-y_{A,1}}
-      \end{align*}
-      <ul>
-       <li>
-        In the previous lecture, we found the general balance
-    equation for any stage $n$
-        in an absorber.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        The power of this equation is that it relates $y_{A,n+1}$
-        and
-        $x_{A,n}$, and it is known as an
-        <b>Operating Line</b>
-        equation.
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Operating Line Equation">
-      <ul>
-       <li>
-        We can rewrite this equation to make this dependence
-    explicit.
-        \begin{align*}
-        \frac{y_{A,n+1}}{1-y_{A,n+1}}&amp;=\frac{L'}{V'}\frac{x_{A,n}}{1-x_{A,n}}
-      + \frac{y_{A,1}}{1-y_{A,1}} - \frac{L'}{V'}\frac{x_{A,0}}{1-x_{A,0}}
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        If we also assume that we have only a small concentration
-    of $A$
-        in the system, we have
-        $x_A\ll 1$
-        and
-        $y_A\ll 1$.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        This allows us to greatly simplify the equation…
-        \begin{align*}
-        \frac{y_{A,n+1}}{\cancelto{1}{1-y_{A,n+1}}}&amp;=\frac{L'}{V'}\frac{x_{A,n}}{\cancelto{1}{1-x_{A,n}}}
-      + \frac{y_{A,1}}{\cancelto{1}{1-y_{A,1}}} -
-      \frac{L'}{V'}\frac{x_{A,0}}{\cancelto{1}{1-x_{A,0}}}\\
-      y_{A,n+1}&amp;=\frac{L'}{V'}\left(x_{A,n} - x_{A,0}\right) + y_{A,1}
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="3">
-        This is the
-        <b>operating line equation
-      for low concentrations</b>, and makes the
-        $x_{A,n} \to y_{A,n+1}$
-        dependence explicit.
-       </li>
-       <li class="fragment" data-fragment-index="4">
-        With the VLE data we have a function relating $y_{A,n} \to x_{A,n}$
-        \begin{align*}
-        y_{A,n} = f^{(VLE)}(x_{A,n})
-        \end{align*}
-        This is known as the
-        <b>equilibrium line</b>.
-       </li>
-       <li class="fragment" data-fragment-index="5">
-        With these two relationships, we can solve a multi-stage
-    absorber stage-by-stage…
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Method">
-      <div class="center">
-       <img src="img/absorber_method_01.svg" style="width:80%"/>
-      </div>
-      <ul>
-       <li>
-        At the start of a design, we should be able to completely
-    define one end of the evaporator ($L_0$
-        and
-        $V_1$).
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        As the system is binary, we only need to define the
-    concentrations to completely specify the stream, as $L_n =
-    L'/\left(1-x_{A,n}\right)$, and
-        $V_n =
-    V'/\left(1-y_{A,n}\right)$.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        We need to solve for each unknown concentration using the
-        <span style="color:teal">
-         operating line</span>
-        and the
-        <span style="color:blue">
-         equilibrium line</span>.
-       </li>
-      </ul>
-     </section>
-     <section>
-      <div class="center">
-       <img src="img/absorber_method_02.svg" style="width:80%"/>
-      </div>
-      <ul>
-	<li>
-        We can start by using the
-        <span style="color:blue">
-         equilibrium line</span>
-        to
-    define
-        $L_1$
-        from
-        $V_1$.
-       </li>
-       <li>
-        The equilibrium line is used as the exit streams of an
-    ideal stage are in equilibrium.
-       </li>
-      </ul>
-     </section>
-     <section>
-      <div class="center">
-       <img src="img/absorber_method_04.svg" style="width:80%"/>
-      </div>
-      <ul>
-       <li>
-        Then, by using the
-        <span style="color:teal">
-         operating line
-      equation</span>, we can define the vapour stream of the next stage
-        $V_2$, from the liquid product of the current stage
-        $L_1$.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        The
-        <span style="color:teal">
-         operating line equation</span>
-        is simply a
-    mass balance.
-       </li>
-      </ul>
-     </section>
-     <section>
-      <div class="center">
-       <img src="img/absorber_method_06.svg" style="width:65%"/>
-      </div>
-      <ul>
-       <li>
-        The method then repeats itself as we move down the
-    absorber, alternating between the
-        <span style="color:blue">
-         VLE data</span>
-        and
-    the
-        <span style="color:teal">
-         operating line equation</span>.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-         This method is effective, if a little tedious. Often, we
-	 will have to look up the VLE data in a graph, and if we use the
-	 correct operating line equation, solving the resulting quadratic
-	 for the roots (see tutorial 3) is even more boring.
-        \begin{align*}
-        \frac{y_{A,n+1}}{1-y_{A,n+1}}&amp;=\frac{L'}{V'}\frac{x_{A,n}}{1-x_{A,n}}
-      + \frac{y_{A,1}}{1-y_{A,1}} - \frac{L'}{V'}\frac{x_{A,0}}{1-x_{A,0}}
-        \end{align*}
-       </li>
-      </ul>
-     </section>
-    </section>
-    <section>
-     <section data-menu-title="Graphical Method">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.8);">
-        <ul>
-         <li>
-          Let's consider an example absorption of $SO_2$
-          from
-        air. The gas stream enters the absorber at
-          $y_{SO_2,N+1}=0.2$
-          and leaves at
-          $y_{SO_2,1}=0.02$. The inert air flow-rate is
-          $V'=5.18$
-          kmol/hr.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Pure water ($x_{SO_2,0}=0$) enters at the top at a
-        flow-rate of
-          $L'=L_0=333$
-          kmol/hr.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          We note that this completely specifies one end of the
-        absorber (and half specifies the other).
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          Assuming that the molar concentrations of $SO_2$
-          are
-        small (they're not), we can use the
-          <span style="color:teal">
-           operating line
-          equation for low concentrations</span>
-          and it becomes
-          \begin{align*}
-          y_{A,SO_2}&amp;=\frac{L'}{V'}\left(x_{SO_2,n} - x_{SO_2,0}\right) + y_{SO_2,1}\\
-          &amp;=\frac{333}{5.18} x_{A,n} + 0.02
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          With the
-          <span style="color:teal">
-           operating line</span>
-          ready, let
-        us take a look at the
-          <span style="color:blue">
-           equilibrium line</span>.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.2);">
-        <figure>
-         <div class="center">
-          <img src="img/stripper_overview.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <ul>
-         <li>
-          Often, we even obtain the Vapour-Liquid Equilibrium
-        (VLE) data in the form of a plot of the
-          <span style="color:blue">
-           equilibrium line</span>
-          (see right).
-          \begin{align*}
-          y_{A,n} = f^{(VLE)}(x_{A,n})
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          This is common where we are outside of the range of
-        validility of Henry's or Raoult's law, and must resort to
-        experimental data.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          We can now solve the problem stage by stage as
-        illustrated before, but to avoid the tedious task of
-        calculation, we'll do this graphically…
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <figure>
-         <div class="center">
-          <img src="img/SO2_xy.svg" style="width:100%"/>
-          <figcaption>
-           Equilibrium
-           $x$-$y$
-           plot for
-           $SO_2$
-           at
-           $20^\circ$
-           C.
-          </figcaption>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <ul>
-         <li>
-          To the $x$
-          -
-          $y$
-          graph on the right, we will add the
-          <span style="color:teal">
-           operating line</span>.
-          \begin{align*}
-          y_{SO_2,n+1} &amp;=\frac{333}{5.18} x_{SO_2,n} + 0.02
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          As it is a linear function, we need only generate two
-        points, $A=(y=0.02, x=0)$
-          and
-          $B=(y=0.2, x=0.0028)$, to draw
-        it.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          We choose to plot at $y=0.02$
-          and
-          $y=0.2$
-          as these are
-        the entry and exit concentrations (upper and lower bounds) of
-        the gas phase.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <figure>
-         <div class="center">
-          <img src="img/absorber_stepping_01.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <ul>
-         <li>
-          As this equation
-          \begin{align*}
-          y_{SO_2,n+1} &amp;=\frac{333}{5.18} x_{SO_2,n} + 0.02
-          \end{align*}
-          applies for any stage,
-          $n$, all pairs of
-          $(y_{SO_2,n+1},x_{SO_2,n})$
-          values must lie on the
-          <span style="color:teal">
-           operating line</span>.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Just as all pairs $(y_{SO_2,n},x_{SO_2,n})$
-          must lie
-        on the
-          <span style="color:blue">
-           equilibrium line</span>
-          !
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <figure>
-         <div class="center">
-          <img src="img/absorber_stepping_01.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section data-menu-title="Running The Method">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <ul>
-         <li>
-          Starting at the outlet of the gas, we have a vapour
-        concentration of $y_{SO_2,1}=0.02$.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Just as outlined before, we use the
-          <span style="color:blue">
-           equilibrium line</span>
-          to calculate the liquid
-        concentration in that stage,
-          $x_{SO_2,1}$
-          \begin{align*}
-          y_{A,n} = f^{(VLE)}(x_{A,n})
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          This is found by reading the graph along the dotted
-        lines.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <figure>
-         <div class="center">
-          <img src="img/absorber_stepping_02.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <ul>
-         <li>
-          Next, we use this liquid concentration to calculate
-        the vapour composition in the next stage using the
-          <span style="color:teal">
-           operating line</span>.
-          \begin{align*}
-          y_{SO_2,n+1} &amp;=\frac{333}{5.18} x_{SO_2,n} + 0.02
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Instead of using the equation, we can just follow the
-        value $x_{SO_2,1}$
-          up until it intersects with the
-          <span style="color:teal">
-           operating line</span>.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          And now we can just repeat the process.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <figure>
-         <div class="center">
-          <img src="img/absorber_stepping_03.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <ul>
-         <li>
-          Each horizontal step is a single theoretical stage.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Where the horizontal step intersects the
-          <span style="color:teal">
-           operating line</span>
-          it gives
-          $y_{SO_2,n}$.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          Where the horizontal step intersects the
-          <span style="color:blue">
-           equilibrium line</span>
-          it gives
-          $x_{SO_2,n}$.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <figure>
-         <div class="center">
-          <img src="img/absorber_stepping_04.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <ul>
-         <li>
-          The stepping process is repeated until the desired
-        concentration is reached.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          In this case, we are looking for how many stages are
-        needed to reach the inlet concentration of the gas
-        $y_{SO_2,N+1}=0.2$.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          But this will not end on a whole number of
-        plates…
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <figure>
-         <div class="center">
-          <img src="img/absorber_stepping_05.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <ul>
-         <li>
-          Whenever the outlet concentration is passed, the
-        fraction of horizontal line is proportional to the fraction of
-        a theoretical stage needed.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          In this case, we need $\approx1.9$ theoretical stages to
-        perform the specified absorption.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          Assuming a plate efficiency of 25%, this translates to
-          $1.9/0.25=7.6$ real plates/stages.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          But you can only have a whole number of plates, so our
-        final design would consist of 8 real plates.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <figure>
-         <div class="center">
-          <img src="img/absorber_stepping_05.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section data-menu-title="Improving The Design">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <ul>
-         <li>
-          One mistake we made in the previous design
-          calculations is that we assumed that the concentration of
-          $SO_2$, was small.
-          \begin{align*}
-          x_A&amp;\ll 1 &amp;  y_A &amp;\ll 1
-          \end{align*}
-         </li>
-         <li class="fragment">
-           But in the gas phase, the concentration reaches up to
-           20% at the inlet!
-         </li>
-         <li class="fragment">
-	   As an example of the error, the simplified operating line
-	   predicted a final liquid concentration of $x_N=0.0028$;
-	   however, the proper operating line equation (which is an
-	   exact mass balance) gives $x_N=0.00356$!
-	 </li>	 
-         <li class="fragment">
-          We will need to use the full
-          <span style="color:teal">
-           operating line</span>
-          equation.
-       \begin{align*}
-       \frac{y_{A,n+1}}{1-y_{A,n+1}}= \frac{L'}{V'}\frac{x_{A,n}}{1-x_{A,n}}
-      + \frac{y_{A,1}}{1-y_{A,1}} - \frac{L'}{V'}\frac{x_{A,0}}{1-x_{A,0}}
-       \end{align*}
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <figure>
-         <div class="center">
-          <img src="img/absorber_stepping_05.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      \begin{align*}
-      \frac{y_{A,n+1}}{1-y_{A,n+1}}= \frac{L'}{V'}\frac{x_{A,n}}{1-x_{A,n}}
-    + \frac{y_{A,1}}{1-y_{A,1}} - \frac{L'}{V'}\frac{x_{A,0}}{1-x_{A,0}}
-      \end{align*}
-      <ul>
-       <li>
-        The only complication of the full
-        <span style="color:teal">
-         operating line</span>
-        equation is that it is not a
-    straight line.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        Instead of plotting only two points for the
-        <span style="color:teal">
-         operating line</span>, we will need to plot several to
-    ensure we capture any curvature of the line over the studied
-    range.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        These extra points should be equi-spaced between the two
-    limiting concentrations of the gas stream…
-       </li>
-      </ul>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <ul>
-         <li>
-          Including a couple more points (and fixing the end point)
-          makes the curvature evident and we can solve the absorber
-          again.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          With this change the number of theoretical plates has increased
-          from $\approx1.9\to2.18$.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          We now have $2.18/0.25=8.72$
-          real stages, or 9 actual
-        plates.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          Now that the technique has been made clear, we will
-        consider some other interesting limits of the design.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <figure>
-         <div class="center">
-          <img src="img/absorber_stepping_06.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-    </section>
-    <section>
-     <section data-menu-title="Liquid Flow-Rates">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.8);">
-        <ul>
-         <li>
-          In the previous example, it appears like we used a
-        seemingly arbitrary amount of pure water
-        ($L'=L_0=333$
-          kmol/hr) to achieve our separation.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          But what is the optimal amount to use? Is it the
-        minimum possible?
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          We cannot concentrate the $SO_2$
-          in the liquid phase
-        any further than the equilibrium liquid concentration for the
-        most concentrated gas stream in the absorber.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          In this case, the most concentrated stream is the
-        inlet gas, $y_{SO_2,N+1}=0.2$.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.2);">
-        <figure>
-         <div class="center">
-          <img src="img/stripper_overview.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <ul>
-         <li>
-          We can find out the maximum possible concentration of
-        the liquid stream using the
-          <span style="color:blue">
-           equilibrium line</span>.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Reading the corresponding value of $x^{(max)}_{SO_2,N} =
-        0.0066$
-          at
-          $y_{SO_2,N+1}=0.2$, we find the maximum
-        physically-possible concentration of the liquid stream.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          The flow-rate of liquid this corresponds to is the
-        minimum theoretical flowrate which is still capable of
-        achieving the desired separation.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <figure>
-         <div class="center">
-          <img src="img/absorber_stepping_08.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section data-menu-title="Minimum-Liquid Flow-rate">
-      <ul>
-       <li>
-        We can calculate the minimum liquid flowrate from the
-    general operating equation, as we have $y_{SO_2,1}=0.02$,
-        $y_{SO_2,N+1}=0.2$, and
-        $V'=5.18$
-        kmol/hr from the design
-    specification, and we just calculated the maximum liquid
-    concentration
-        $x^{(max)}_{SO_2,N}=0.0066$
-        \begin{align*}
-        L'_{min}\frac{x_{SO_2,0}}{1-x_{SO_2,0}}+V'\frac{y_{SO_2,N+1}}{1-y_{SO_2,N+1}}&amp;=L'_{min}\frac{x^{(max)}_{SO_2,N}}{1-x^{(max)}_{SO_2,N}}
-      + V'\frac{y_{SO_2,1}}{1-y_{SO_2,1}}\\
-      \cancelto{0}{L'_{min}\frac{0}{1-0}}+5.18\frac{0.2}{1-0.2}&amp;=L'_{min}\frac{0.0066}{1-0.0066}
-      + 5.18\frac{0.02}{1-0.02}\\
-      L'_{min} &amp; \approx 179 \textrm{kmol/hr}
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        Thus, for the previous design we were running at
-    $L'/L'_{min}=333/179\approx 1.86$
-        times the minimum liquid
-    flowrate.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        As a very-rough rule-of-thumb, it is most economical to
-    operate at an operating line with an average slope 1.5 times the
-    average of the equilibrium line.
-       </li>
-       <li class="fragment" data-fragment-index="3">
-        But why not at $L'=L_{min}$? Surely this is the most
-    efficient use of water?
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Minimum-Liquid-Flow Plate Count">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <ul>
-         <li>
-          If we try to design at the minimum liquid flowrate, we
-        proceed as before.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          For a rough calculation, we will neglect the curvature
-        of the
-          <span style="color:teal">
-           operating line</span>, and just plot two
-        points.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          The first point is the same as before, defined by the
-        top of the absorber, $A=(y=0.02, x=0)$.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          The second point is the bottom of the absorber, given
-        by $B=(y=0.2, x^{(max)}=0.0066)$.
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          This lies on both the
-          <span style="color:blue">
-           equilibrium
-          line</span>
-          and the
-          <span style="color:teal">
-           operating line</span>! Which is not
-        surprising given how it was calculated.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <figure>
-         <div class="center">
-          <img src="img/absorber_stepping_09.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.551);">
-        <ul>
-         <li>
-          If we try to find out how many theoretical stages are
-        required to perform the absorption, we find that we need a
-        very large number.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          In fact, we need an infinite number of stages to reach
-        the outlet condition.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          This highlights that the design of absorbers is a
-        trade off between liquid flow-rates, and equipment cost.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          Lower flow-rates (cheaper running costs) = more
-        stages/bigger columns (more expensive capital costs).
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          The recommendation regarding the relative slopes of
-        the
-          <span style="color:teal">
-           operating</span>
-          and
-          <span style="color:blue">
-           equilibrium lines</span>
-          is a rough rule of thumb
-        as to what the most economical choice is, but the true optimum
-        greatly depends on the system studied.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.451);">
-        <figure>
-         <div class="center">
-          <img src="img/absorber_stepping_10.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-    </section>
-    <section>
-     <section data-menu-title="Stripping/Absorbing">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <ul>
-         <li>
-          So far, we have considered the absorption of a single
-        component from the gas phase to the liquid phase.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          In such a system, the design looks similar to the
-        $SO_2$
-          absorber we just designed (see right).
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          But what about
-          <b>desorption</b>
-          of a component from
-        the liquid phase into the gas phase?
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <figure>
-         <div class="center">
-          <img src="img/absorber_stepping_11.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <ul>
-         <li>
-          This is called
-          <b>stripping</b>, as a component is
-          <i>stripped</i>
-          from the liquid phase into the gas phase.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          In stripping, the
-          <span style="color:teal">
-           operating line</span>
-          appears
-          <i>below</i>
-          the
-          <span style="color:blue">
-           equilibrium line</span>.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          Despite this, the design procedure is identical to an
-        absorber column.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          We can now design multi-stage absorbers and strippers,
-        now we can move onto
-          <i>distillation</i>
-          …
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.51);">
-        <figure>
-         <div class="center">
-          <img src="img/absorber_stepping_12.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-    </section>
-   </div>
-   <div class="slide-menu-button" style="left:170px;cursor:pointer;">
-    <a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
-     <i class="fa fa-print"></i>
-    </a>
-   </div>
-   <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
-   </script>
-   <script src="footer.js">
-   </script>
-  </div>
- </body>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+      </script>
+      <script src="footer.js"></script>
+    </div>
+  </body>
 </html>
