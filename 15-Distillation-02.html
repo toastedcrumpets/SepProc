@@ -1,738 +1,672 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <title>
-   Separation Processes 1
-  </title>
-  <meta content="Separation processes 1 notes" name="description"/>
-  <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
-  <meta content="yes" name="apple-mobile-web-app-capable"/>
-  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
-  <script src="header.js"></script>
- </head>
- <body>
-  <div class="reveal">
-   <div class="slides">
-    <section>
-     <section>
-      <h2>
-       Distillation: Part 02
-      </h2>
-      <div class="center">
+  <head>
+    <meta charset="utf-8" />
+    <title>Separation Processes 1</title>
+    <meta content="Separation processes 1 notes" name="description" />
+    <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta
+      content="black-translucent"
+      name="apple-mobile-web-app-status-bar-style"
+    />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
+      name="viewport"
+    />
+    <script src="header.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <h2>Distillation: Part 02</h2>
+            <div class="center"></div>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Differential/Batch Distillation">
+            <figure>
+              <div class="center">
+                <img src="img/flash_drum.svg" style="width: 50%" />
+              </div>
+            </figure>
+            <ul>
+              <li>
+                In the previous lecture we covered
+                <b>flash drums</b>.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                The design process for these distillation units is very similar
+                to a single stage absorber.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                But this time, we continued to use the concept of an
+                <span style="color: teal"> operating line</span>, and to use
+                this along with the VLE data to solve the design graphically.
+              </li>
+              <li class="fragment" data-fragment-index="3">
+                A numerical solution was also possible using the relative
+                volatility.
+              </li>
+              <li class="fragment" data-fragment-index="4">
+                We will consider a difficult system to solve graphically, known
+                as
+                <b>differential distillation</b>
+                or
+                <b>stills</b>
+                or
+                <b>batch distillation</b>.
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Case Study: Whiskey">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.61)">
+                <ul>
+                  <li>
+                    Batch distillation is used whenever batch processes are
+                    viable.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Usually these are for small-scale, high-value, and/or highly
+                    controlled (i.e., <i>medical or edible</i>) or “traditional”
+                    products.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    An example product which meets all of the above conditions
+                    as a small-scale high-value traditional native scottish
+                    medicine is in the distillation of whiskey in
+                    <b>pot stills</b> (see right).
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    In this process, a volume of slightly alcoholic
+                    <i>“mash”</i>
+                    is boiled and the ethanol-rich vapour separated,
+                    <b>without any fresh feed being added to the still</b>.
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    Only a limited amount of vapour is collected, leaving the
+                    majority of the undesired products in the liquid phase.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.41)">
+                <figure>
+                  <img src="img/pot_stills.jpg" style="width: 100%" />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.7)">
+                <ul>
+                  <li>
+                    The first vapour produced from the still (the
+                    <i>“head cut”</i>) is discarded as this contains lighter
+                    alcohols (including small amounts of methanol which may make
+                    you blind). These are more volatile than ethanol and so the
+                    mixture boils at a low temperature while they are present
+                    (&lt;78 ${}^\circ$C)
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Once the lighter alcohols have been evaporated and the
+                    vapour temperature reaches around 78 ${}^\circ$C, the
+                    so-called
+                    <i>“Heart of the run”</i>
+                    vapour is collected.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    This vapour may get up to 70% in ethanol and is either
+                    passed to another stage of batch distillation (typical) or
+                    is collected for maturation in oak casks.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    Once a significant amount of the ethanol in the original
+                    liquid (and flavours) has been collected, the temperature
+                    begins to rise as heavier alcohols begin to boil.
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    These alcohols are the so-called
+                    <i>fusel alcohols</i>, which is German for bad-liquor
+                    alcohols (English equivalents are rotgut or hooch).
+                  </li>
+                  <li class="fragment">
+                    The idea that temperature is related to
+                    concentration/composition is essential in distillation
+                    (think about your lab!).
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.3)">
+                <figure>
+                  <img src="img/pot_stills.jpg" style="width: 100%" />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.7)">
+                <ul>
+                  <li>
+                    The distillation is stopped at this point and the remaining
+                    <i>“tail cut”</i>
+                    liquid may be combined with the
+                    <i>“head cut”</i> and recycled to the next distillation (as
+                    there is still ethanol in there) or discarded. If it is
+                    recycled, there must be at least some discard (see your
+                    reactors course!).
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    As process engineers, this is an interesting example of a
+                    batch multicomponent distillation, where vapour is only
+                    collected at the certain temperature range where a desirable
+                    component boils.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    As process engineers, we are also interested in how we might
+                    model this process.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    The main complication is the dynamic nature of the process
+                    (i.e., how it changes in time).
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.41)">
+                <figure>
+                  <img src="img/pot_stills.jpg" style="width: 100%" />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section data-menu-title="Process Model">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.751)">
+                <ul>
+                  <li>
+                    Initially, $L_{initial}$ moles of feed liquid are charged to
+                    the still.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    This is then boiled until a desired number of moles, $V$,
+                    has vapourised, leaving $L_{final}$ moles of liquid
+                    remaining in the still.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    Just as for the
+                    <b>flash drum</b>, we can create two balance equations, one
+                    in the total mass and one in the mass of the most volatile
+                    component. \begin{align*} L_{initial}&amp;=L_{final}+V\\
+                    x_{initial} L_{initial} &amp;= x_{final} L_{final}+y_{avg} V
+                    \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    But it is key to note that the average vapour concentration
+                    $y_{avg}$ is
+                    <b>not</b>
+                    in equilibrium with the remaining liquid!
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    We cannot use this equation as an
+                    <span style="color: teal"> operating line</span>
+                    as $y_{avg}$ bears no direct relation to $y$.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.231)">
+                <figure>
+                  <img src="img/pot_still_01.svg" style="width: 100%" />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.751)">
+                <ul>
+                  <li>
+                    At first, the liquid has a high concentration of volatile
+                    component $A$, and so it produces a high concentration
+                    vapour.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    This high concentration vapour is removed and collected
+                    using a condenser so that more liquid is allowed to boil.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    By the end of the distillation, the concentration of the
+                    volatile component in the liquid has dropped.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    This is because the volatile component has boiled away
+                    faster than the less volatile components.
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    Thus, the average vapour concentration, $y_{avg}$ is higher
+                    than the equilibrium vapour concentration $y$ at the end of
+                    the distillation.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.231)">
+                <figure>
+                  <img src="img/pot_still_01.svg" style="width: 100%" />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section data-menu-title="Rayleigh's Equation">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.81)">
+                <ul>
+                  <li>
+                    If we want to determine actual concentration at any point in
+                    time, we will need to look at a
+                    <i>differential balance</i>
+                    (See EX3030).
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Assume the still is in operation. We have $L$ moles of
+                    liquid in the still with a concentration of $x$.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    In a small instant of time, ${\rm d}L$ moles of liquid boil
+                    to vapour of concentration $y$.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    This reduces the amount of liquid by ${\rm d}L$, and the
+                    concentration of the liquid by ${\rm d}x$
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    Performing a mass balance between these two instants of
+                    time, we have \begin{align*} x L &amp;= \left(x-{\rm
+                    d}x\right)\left(L-{\rm d}L\right) + y {\rm d}L \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="5">
+                    We can cancel the ${\rm d}x {\rm d}L$ term as it is small,
+                    and we have \begin{align*} x L &amp;= x L-L {\rm d}x -
+                    x {\rm d}L + y {\rm d}L \end{align*}
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.21)">
+                <figure>
+                  <img src="img/pot_still_02.svg" style="width: 100%" />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.81)">
+                <ul>
+                  <li>
+                    With some rearrangement, we have \begin{align*} \frac{{\rm
+                    d}L}{L}&amp;= \frac{{\rm d}x}{y-x} \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Integrating both sides, we have \begin{align*}
+                    \int_{L_{initial}}^{L_{final}}\frac{{\rm d} L}{L}&amp;=
+                    \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x}\\
+                    \ln\left(\frac{L_{final}}{L_{initial}}\right)&amp;=
+                    \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x}
+                    \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    This final equation is known as
+                    <b>Rayleigh's equation</b>
+                    for batch or differential distillation, and is our
+                    <span style="color: teal"> operating balance equation</span
+                    >.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    It should be no surprise that
+                    <i>differential distillation</i>
+                    requires differential equations to solve it!
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    But the right hand side is not in a usable form… yet.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.21)">
+                <figure>
+                  <img src="img/pot_still_02.svg" style="width: 100%" />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section data-menu-title="Rayleigh's Equation: Relative Volatility">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.81)">
+                \begin{align*}
+                \ln\left(\frac{L_{final}}{L_{initial}}\right)&amp;=
+                \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x} \end{align*}
+                <ul>
+                  <li>
+                    To solve this equation, we need to perform the integration
+                    on the right hand side.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    To complete this term, we need a relation between $y$ and
+                    $x$, which are in equilibrium
+                    <div class="fragment" data-fragment-index="2">
+                      <span style="color: blue"> $\to$ VLE data!</span>
+                    </div>
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    We can actually do this if we assume an approximately
+                    constant relative volatility and use the following equation.
+                    \begin{align*} y &amp;= \frac{\alpha x}{1 + x (\alpha - 1)}
+                    \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    The solution is \begin{align*}
+                    \ln\left(\frac{L_{final}}{L_{initial}}\right) =
+                    \left(\alpha-1\right)^{-1}\ln\left(\frac{x_{final}(1-x_{initial})}{x_{initial}(1-x_{final})}\right)
+                    + \ln\left(\frac{1-x_{initial}}{1-x_{final}}\right)
+                    \end{align*}
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.21)">
+                <figure>
+                  <img src="img/pot_still_02.svg" style="width: 100%" />
+                </figure>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Solving Rayleigh's Equation">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.81)">
+                \begin{align*}
+                \ln\left(\frac{L_{final}}{L_{initial}}\right)&amp;=
+                \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x} \end{align*}
+                <ul>
+                  <li>
+                    But graphical methods are all the rage! Can we solve this
+                    graphically for any $x$-$y$ data?
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Let's try and batch distill a 100 kmol Benzene-Tolulene
+                    mixture of $x_{initial}=0.6$.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    We will boil the liquid until it reaches a concentration of
+                    $x_{final}=0.1$.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    How much liquid is remaining in the still, and what is the
+                    average concentration of the collected vapour?
+                    <div class="mathblock">
+                      \begin{align*} L_{initial} &amp;=100 \text{kmol} &amp;
+                      L_{final} &amp;=? &amp; V&amp;=?\\ x_{initial}&amp;=0.6
+                      &amp; x_{final}&amp;=0.1 &amp; y_{avg}&amp;=? \end{align*}
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.21)">
+                <figure>
+                  <img src="img/pot_still_02.svg" style="width: 100%" />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section data-menu-title="Counting Squares">
+            <div class="mathblock">
+              \begin{align*} L_{initial} &amp;=100 \text{kmol} &amp; L_{final}
+              &amp;=? &amp; V&amp;=?\\ x_{initial}&amp;=0.6 &amp;
+              x_{final}&amp;=0.1 &amp; y_{avg}&amp;=? \end{align*}
+            </div>
+            <ul>
+              <li>
+                First, we will try to determine $L_{final}$ using the Rayleigh
+                equation. \begin{align*}
+                \ln\left(\frac{L_{final}}{L_{initial}}\right)&amp;=
+                \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x} \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                We want to determine the right hand side of the equation so that
+                we can calculate $L_{final}$.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                We will look at two graphical methods of doing this.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <div class="mathblock">
+              \begin{align*} L_{initial} &amp;=100 \text{kmol} &amp; L_{final}
+              &amp;=? &amp; V&amp;=?\\ x_{initial}&amp;=0.6 &amp;
+              x_{final}&amp;=0.1 &amp; y_{avg}&amp;=? \end{align*}
+            </div>
+            \begin{align*} \ln\left(\frac{L_{final}}{L_{initial}}\right)&amp;=
+            \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x} \end{align*}
+            <ul>
+              <li>
+                Introducing, The Brute Force Method:
+                <ul>
+                  <li class="fragment" data-fragment-index="1">
+                    Use the $x$ - $y$ VLE data to plot another graph on graph
+                    paper, but plot $(y-x)^{-1}$ versus $x$.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    The right hand side of the above equation is then equal to
+                    the area under the curve between $x=x_{initial}$ and
+                    $x=x_{final}$.
+                  </li>
+                </ul>
+              </li>
+              <li class="fragment" data-fragment-index="3">
+                Let's see that in action…
+              </li>
+            </ul>
+          </section>
+          <section>
+            <figure>
+              <img
+                src="img/Benzene_Tolulene_invyminusx.svg"
+                style="width: 50%"
+              />
+              <figcaption>
+                A plot of $(y-x)^{-1}$ versus $x$ for a
+                Benzene($x$)-Toluene($1-x$) liquid mixture.
+              </figcaption>
+            </figure>
+          </section>
+          <section>
+            <figure>
+              <img
+                src="img/Benzene_Tolulene_invyminusx_soln.svg"
+                style="width: 50%"
+              />
+              <figcaption>
+                A plot of $(y-x)^{-1}$ versus $x$ for a Benzene(x)-Toluene(1-x)
+                liquid mixture, integrated by counting the squares.
+              </figcaption>
+            </figure>
+          </section>
+          <section>
+            <div class="mathblock">
+              \begin{align*} L_{initial} &amp;=100 \text{kmol} &amp; L_{final}
+              &amp;=? &amp; V&amp;=?\\ x_{initial}&amp;=0.6 &amp;
+              x_{final}&amp;=0.1 &amp; y_{avg}&amp;=? \end{align*}
+            </div>
+            \begin{align*} \ln\left(\frac{L_{final}}{L_{initial}}\right)&amp;=
+            \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x} \end{align*}
+            <ul>
+              <li>
+                659 red squares, each with an area of $0.02\times0.2$, giving a
+                total area of \begin{align*}
+                \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x} \approx
+                -0.02\times0.2\times659 \approx -2.636 \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                The area is negative as $x_{final}&lt;x_{initial}$ (we're
+                integrating backwards).
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                This was very tedious to count, and is a very ancient, noble,
+                and tedious way of graphically calculating the integral of an
+                unknown function.
+              </li>
+              <li class="fragment" data-fragment-index="3">
+                We now use numerical techniques such as Trapezoidal/Simpson's
+                rule (see your reactors course) to calculate integrals which we
+                cannot solve analytically.
+              </li>
+              <li class="fragment" data-fragment-index="4">
+                Once we've done this, can we plot something easier to use
+                instead?
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Pre-Integrated Function">
+            <div class="mathblock">
+              \begin{align*} L_{initial} &amp;=100 \text{kmol} &amp; L_{final}
+              &amp;=? &amp; V&amp;=?\\ x_{initial}&amp;=0.6 &amp;
+              x_{final}&amp;=0.1 &amp; y_{avg}&amp;=? \end{align*}
+            </div>
+            \begin{align*} \ln\left(\frac{L_{final}}{L_{initial}}\right)&amp;=
+            \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x} \end{align*}
+            <ul>
+              <li>
+                We note that \begin{align*} \int_{x_1}^{x_2} f(x){\rm d}x =
+                \int_{0}^{x_2} f(x){\rm d}x -\int_{0}^{x_1} f(x){\rm d}x
+                \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                So we could just plot $\int_{0}^{x}\left(y-x\right)^{-1}{\rm
+                d}x$ versus $x$, once, for a set of VLE data and use the above
+                identity to design any differential distillation of that
+                mixture.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <figure>
+              <img
+                src="img/Benzene_Tolulene_invyminusx_int.svg"
+                style="width: 50%"
+              />
+              <figcaption>
+                A plot of $\int_0^x(y-x)^{-1}{\rm d}x$ versus $x$ for a
+                Benzene(x)-Toluene(1-x) liquid mixture.
+              </figcaption>
+            </figure>
+          </section>
+          <section>
+            <figure>
+              <img
+                src="img/Benzene_Tolulene_invyminusx_int_soln.svg"
+                style="width: 50%"
+              />
+              <figcaption>
+                A plot of $\int_0^x(y-x)^{-1}{\rm d}x$ versus $x$ for a
+                Benzene(x)-Toluene(1-x) liquid mixture. Integrals from zero are
+                simply read off the graph.
+              </figcaption>
+            </figure>
+          </section>
+          <section>
+            <div class="mathblock">
+              \begin{align*} L_{initial} &amp;=100 \text{kmol} &amp; L_{final}
+              &amp;=? &amp; V&amp;=?\\ x_{initial}&amp;=0.6 &amp;
+              x_{final}&amp;=0.1 &amp; y_{avg}&amp;=? \end{align*}
+            </div>
+            <ul>
+              <li>
+                From counting the squares underneath the graph, we obtained
+                \begin{align*} \int_{x_{initial}}^{x_{final}}\frac{{\rm
+                d}x}{y-x}\approx -2.636 \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                Using the pre-integrated equation plot, we obtained
+                \begin{align*} \int_{x_{initial}}^{x_{final}}\frac{{\rm
+                d}x}{y-x}\approx -2.62 \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                Both methods give nearly the same answer, but the second method
+                is far easier (if the graph is available), and potentially more
+                accurate.
+              </li>
+            </ul>
+          </section>
+          <section data-menu-title="Other Process Calculations">
+            <div class="mathblock">
+              \begin{align*} L_{initial} &amp;=100 \text{kmol} &amp; L_{final}
+              &amp;=? &amp; V&amp;=?\\ x_{initial}&amp;=0.6 &amp;
+              x_{final}&amp;=0.1 &amp; y_{avg}&amp;=? \end{align*}
+            </div>
+            <ul>
+              <li>
+                We can now solve this equation for $L_{final}$ \begin{align*}
+                \ln\left(\frac{L_{final}}{L_{initial}}\right)&amp;=
+                \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x}\\
+                \ln\left(\frac{L_{final}}{100}\right)&amp;\approx -2.62\\
+                L_{final} &amp;\approx 100 e^{-2.62} \approx 7.28 \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                This means the amount of vapour produced is \begin{align*} V =
+                L_{initial}-L_{final} = 100 - 7.28 = 92.72 \end{align*}
+              </li>
+            </ul>
+          </section>
+          <section>
+            <div class="mathblock">
+              \begin{align*} L_{initial} &amp;=100 \text{kmol} &amp; L_{final}
+              &amp;= 7.28 &amp; V&amp;=92.72\\ x_{initial}&amp;=0.6 &amp;
+              x_{final}&amp;=0.1 &amp; y_{avg}&amp;=? \end{align*}
+            </div>
+            <ul>
+              <li>
+                We can calculate $y_{avg}$ from the benzene mass balance
+                \begin{align*} x_{initial} L_{initial} &amp;=
+                x_{final} L_{final}+y_{avg} V\\ 0.6\times100 &amp;= 0.1 \times
+                7.28 + 92.72 y_{avg}\\ y_{avg} \approx 0.64 \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                This highlights that when using
+                <i>batch distillation</i>
+                to achieve a high separation, only a small volume of liquid
+                should be boiled, otherwise we don't achieve a significant
+                separation.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                In whisky distillation, only 10-15% of the wash is actually
+                vapourised in the still for each batch.
+              </li>
+              <li class="fragment" data-fragment-index="3">
+                Here, we boiled 92.72% of the initial charge of the still.
+              </li>
+              <li class="fragment" data-fragment-index="4">
+                Perhaps multi-stage distillation will be more efficient at
+                achieving high purities AND high recovery?
+              </li>
+            </ul>
+          </section>
+        </section>
       </div>
-     </section>
-    </section>
-    <section>
-     <section data-menu-title="Differential/Batch Distillation">
-      <figure>
-       <div class="center">
-        <img src="img/flash_drum.svg" style="width:50%"/>
-       </div>
-      </figure>
-      <ul>
-       <li>
-        In the previous lecture we covered
-        <b>flash drums</b>.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        The design process for these distillation units is very
-    similar to a single stage absorber.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        But this time, we continued to use the concept of an
-        <span style="color:teal">
-         operating line</span>, and to use this along with the
-    VLE data to solve the design graphically.
-       </li>
-       <li class="fragment" data-fragment-index="3">
-        A numerical solution was also possible using the relative
-    volatility.
-       </li>
-       <li class="fragment" data-fragment-index="4">
-        We will consider a difficult system to solve graphically,
-    known as
-        <b>differential distillation</b>
-        or
-        <b>stills</b>
-        or
-        <b>batch distillation</b>.
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Case Study: Whiskey">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.61);">
-        <ul>
-         <li>
-          Batch distillation is used whenever batch processes
-        are viable.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Usually these are for small-scale, high-value, and/or
-          highly controlled (i.e., <i>medical or edible</i>) or
-          “traditional” products.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-           An example product which meets all of the above conditions
-           as a small-scale high-value traditional native scottish
-           medicine is in the distillation of whiskey in
-          <b>pot stills</b> (see right).
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          In this process, a volume of slightly alcoholic “
-          <i>mash</i>
-          ” is boiled and the ethanol-rich vapour separated,
-          <b>without any fresh feed being added to the still</b>.
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          Only a limited amount of vapour is collected, leaving
-        the majority of the undesired products in the liquid phase.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.41);">
-        <figure>
-         <img src="img/pot_stills.jpg" style="width:100%;"/>
-        </figure>
-       </div>
+      <div class="slide-menu-button" style="left: 170px; cursor: pointer">
+        <a
+          class="hide-on-pdf"
+          id="PrintButton"
+          onclick="document.location = '?print-pdf';"
+        >
+          <i class="fa fa-print"></i>
+        </a>
       </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.651);">
-        <ul>
-         <li>
-          The first vapour produced from the still (the
-          <i>“head cut”</i>) is discarded as this contains lighter alcohols
-          (including small amounts of methanol which may make you
-          blind). These are more volatile than ethanol and so the mixture boils at a low temperature while they are present (&lt;78 ${}^\circ$C)
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Once the lighter alcohols have been evaporated and the
-        vapour temperature reaches around 78 ${}^\circ$C, the
-        so-called
-          <i>“Heart of the run”</i>
-          vapour is collected.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          This vapour may get up to 70% in ethanol and is either
-          passed to another stage of batch distillation (typical) or
-          is collected for maturation in oak casks.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          Once a significant amount of the ethanol in the
-        original liquid (and flavours) has been collected, the
-        temperature begins to rise as heavier alcohols begin to boil.
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          These alcohols are the so-called
-          <i>fusel alcohols</i>,
-          which is German for bad-liquor alcohols (English equivalents
-          are rotgut or hooch).
-         </li>
-	 <li class="fragment">
-	   The idea that temperature is related to
-	   concentration/composition is essential in distillation
-	   (think about your upcoming lab!).
-	 </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.351);">
-        <figure>
-         <img src="img/pot_stills.jpg" style="width:100%;"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.61);">
-        <ul>
-         <li>
-          The distillation is stopped at this point and the
-          remaining
-          <i>“tail cut”</i>
-          liquid may be combined with the
-          <i>“head cut”</i> and recycled to the next distillation (as
-          there is still ethanol in there) or discarded. If it is
-          recycled, there must be at least some discard (see your
-          reactors course!).
-         </li>
-         <li class="fragment" data-fragment-index="1">
-           As process engineers, this is an interesting example
-           of a batch multicomponent distillation, where vapour is only
-           collected at the certain temperature range where a desirable
-           component boils.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          As process engineers, we are also interested in how we
-        might model this process.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          The main complication is the dynamic nature of the
-        process (i.e., how it changes in time).
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.41);">
-        <figure>
-         <img src="img/pot_stills.jpg" style="width:100%;"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section data-menu-title="Process Model">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.751);">
-        <ul>
-         <li>
-          Initially, $L_{initial}$
-          moles of feed liquid are
-        charged to the still.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          This is then boiled until a desired number of moles,
-        $V$, has vapourised, leaving
-          $L_{final}$
-          moles of liquid remaining in
-        the still.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          Just as for the
-          <b>flash drum</b>, we can create two
-        balance equations, one in the total mass and one in the mass
-        of the most volatile component.
-          \begin{align*}
-          L_{initial}&amp;=L_{final}+V\\
-          x_{initial} L_{initial} &amp;= x_{final} L_{final}+y_{avg} V
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          But it is key to note that the average vapour
-        concentration $y_{avg}$
-          is
-          <b>not</b>
-          in equilibrium with the
-        remaining liquid!
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          We cannot use this equation as an
-          <span style="color:teal">
-           operating line</span>
-          as
-          $y_{avg}$
-          bears no
-        direct relation to
-          $y$.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.231);">
-        <figure>
-         <img src="img/pot_still_01.svg" style="width:100%"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.751);">
-        <ul>
-         <li>
-          At first, the liquid has a high concentration of
-        volatile component $A$, and so it produces a high
-        concentration vapour.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          This high concentration vapour is removed and
-        collected using a condenser so that more liquid is allowed to
-        boil.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          By the end of the distillation, the concentration of
-        the volatile component in the liquid has dropped.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          This is because the volatile component has boiled away
-        faster than the less volatile components.
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          Thus, the average vapour concentration, $y_{avg}$
-          is
-        higher than the equilibrium vapour concentration
-          $y$
-          at the end of
-        the distillation.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.231);">
-        <figure>
-         <img src="img/pot_still_01.svg" style="width:100%"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section data-menu-title="Rayleigh's Equation">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.81);">
-        <ul>
-         <li>
-          If we want to determine actual concentration at any
-        point in time, we will need to look at a
-          <i>differential
-          balance</i>
-          (See EX3030).
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Assume the still is in operation. We have $L$
-          moles of
-        liquid in the still with a concentration of
-          $x$.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          In a small instant of time, ${\rm d}L$
-          moles of liquid
-        boil to vapour of concentration
-          $y$.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          This reduces the amount of liquid by ${\rm d}L$, and
-        the concentration of the liquid by
-          ${\rm d}x$
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          Performing a mass balance between these two instants
-        of time, we have
-          \begin{align*}
-          x L &amp;= \left(x-{\rm d}x\right)\left(L-{\rm d}L\right) + y {\rm d}L
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="5">
-          We can cancel the ${\rm d}x {\rm d}L$
-          term as it is
-        small, and we have
-          \begin{align*}
-          x L &amp;= x L-L {\rm d}x - x {\rm d}L + y {\rm d}L
-          \end{align*}
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.21);">
-        <figure>
-         <img src="img/pot_still_02.svg" style="width:100%"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.81);">
-        <ul>
-         <li>
-          With some rearrangement, we have
-          \begin{align*}
-          \frac{{\rm d}L}{L}&amp;= \frac{{\rm d}x}{y-x}
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Integrating both sides, we have
-          \begin{align*}
-          \int_{L_{initial}}^{L_{final}}\frac{{\rm d} L}{L}&amp;= \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x}\\
-          \ln\left(\frac{L_{final}}{L_{initial}}\right)&amp;= \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x}
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          This final equation is known as
-          <b>Rayleigh's
-          equation</b>
-          for batch or differential distillation, and is our
-          <span style="color:teal">
-           operating balance equation</span>.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          It should be no surprise that
-          <i>differential
-          distillation</i>
-          requires differential equations to solve it!
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          But the right hand side is not in a usable form… yet.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.21);">
-        <figure>
-         <img src="img/pot_still_02.svg" style="width:100%"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section data-menu-title="Rayleigh's Equation: Relative Volatility">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.81);">
-        \begin{align*}
-        \ln\left(\frac{L_{final}}{L_{initial}}\right)&amp;= \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x}
-        \end{align*}
-        <ul>
-         <li>
-          To solve this equation, we need to perform the
-        integration on the right hand side.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          To complete this term, we need a relation between $y$
-          and
-          $x$, which are in equilibrium
-          <div class="fragment " data-fragment-index="2">
-           <span style="color:blue">
-            $\to$
-            VLE data!</span>
-          </div>
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          We can actually do this if we assume an approximately
-        constant relative volatility and use the following equation.
-          \begin{align*}
-          y &amp;= \frac{\alpha x}{1 + x (\alpha - 1)}
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          The solution is
-	  \begin{align*}
-	  \ln\left(\frac{L_{final}}{L_{initial}}\right) =
-	  \left(\alpha-1\right)^{-1}\ln\left(\frac{x_{final}(1-x_{initial})}{x_{initial}(1-x_{final})}\right)
-	  + \ln\left(\frac{1-x_{initial}}{1-x_{final}}\right)
-	  \end{align*}
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.21);">
-        <figure>
-         <img src="img/pot_still_02.svg" style="width:100%"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-    </section>
-    <section>
-     <section data-menu-title="Solving Rayleigh's Equation">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.81);">
-        \begin{align*}
-        \ln\left(\frac{L_{final}}{L_{initial}}\right)&amp;= \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x}
-        \end{align*}
-        <ul>
-         <li>
-          But graphical methods are all the rage! Can we solve
-        this graphically for any $x$-$y$
-          data?
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Let's try and batch distill a 100 kmol Benzene-Tolulene
-        mixture of $x_{initial}=0.6$.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          We will boil the liquid until it reaches a
-        concentration of $x_{final}=0.1$.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          How much liquid is remaining
-        in the still, and what is the average concentration of the
-        collected vapour?
-          <div class="mathblock">
-           \begin{align*}
-           L_{initial} &amp;=100 \text{kmol} &amp; L_{final} &amp;=? &amp; V&amp;=?\\
-            x_{initial}&amp;=0.6 &amp; x_{final}&amp;=0.1 &amp; y_{avg}&amp;=?
-           \end{align*}
-          </div>
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.21);">
-        <figure>
-         <img src="img/pot_still_02.svg" style="width:100%"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section data-menu-title="Counting Squares">
-      <div class="mathblock">
-       \begin{align*}
-       L_{initial} &amp;=100 \text{kmol} &amp; L_{final} &amp;=? &amp; V&amp;=?\\
-      x_{initial}&amp;=0.6 &amp; x_{final}&amp;=0.1 &amp; y_{avg}&amp;=?
-       \end{align*}
-      </div>
-      <ul>
-       <li>
-        First, we will try to determine $L_{final}$
-        using the
-    Rayleigh equation.
-        \begin{align*}
-        \ln\left(\frac{L_{final}}{L_{initial}}\right)&amp;= \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x}
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        We want to determine the right hand side of the
-      equation so that we can calculate $L_{final}$.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        We will look at two graphical methods of doing this.
-       </li>
-      </ul>
-     </section>
-     <section>
-      <div class="mathblock">
-       \begin{align*}
-       L_{initial} &amp;=100 \text{kmol} &amp; L_{final} &amp;=? &amp; V&amp;=?\\
-      x_{initial}&amp;=0.6 &amp; x_{final}&amp;=0.1 &amp; y_{avg}&amp;=?
-       \end{align*}
-      </div>
-      \begin{align*}
-      \ln\left(\frac{L_{final}}{L_{initial}}\right)&amp;= \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x}
-      \end{align*}
-      <ul>
-       <li>
-        Introducing, The Brute Force Method:
-        <ul>
-         <li class="fragment" data-fragment-index="1">
-          Use the $x$
-          -
-          $y$
-          VLE data to plot another graph on graph
-      paper, but plot
-          $(y-x)^{-1}$
-          versus
-          $x$.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          The right hand side of the above equation is then equal
-      to the area under the curve between $x=x_{initial}$
-          and
-          $x=x_{final}$.
-         </li>
-        </ul>
-       </li>
-       <li class="fragment" data-fragment-index="3">
-        Let's see that in action…
-       </li>
-      </ul>
-     </section>
-     <section>
-       <figure>
-	 <img src="img/Benzene_Tolulene_invyminusx.svg" style="width:50%">
-	 <figcaption>
-           A plot of
-           $(y-x)^{-1}$
-           versus
-           $x$
-           for a
-	   Benzene($x$)-Toluene($1-x$) liquid mixture.
-       </figcaption>
-      </figure>
-     </section>
-     <section>
-      <figure>
-       <img src="img/Benzene_Tolulene_invyminusx_soln.svg" style="width:50%"/>
-       <figcaption>
-        A plot of $(y-x)^{-1}$ versus $x$ for a
-        Benzene(x)-Toluene(1-x) liquid mixture, integrated by counting
-        the squares.
-       </figcaption>
-      </figure>
-     </section>
-     <section>
-      <div class="mathblock">
-       \begin{align*}
-       L_{initial} &amp;=100 \text{kmol} &amp; L_{final} &amp;=? &amp; V&amp;=?\\
-      x_{initial}&amp;=0.6 &amp; x_{final}&amp;=0.1 &amp; y_{avg}&amp;=?
-       \end{align*}
-      </div>
-      \begin{align*}
-      \ln\left(\frac{L_{final}}{L_{initial}}\right)&amp;= \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x}
-      \end{align*}
-      <ul>
-       <li>
-        659 red squares, each with an area of $0.02\times0.2$,
-    giving a total area of
-        \begin{align*}
-        \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x} \approx
-      -0.02\times0.2\times659 \approx -2.636
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        The area is negative as $x_{final}&lt;x_{initial}$
-        (we're
-    integrating backwards).
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        This was very tedious to count, and is a very ancient,
-    noble, and tedious way of graphically calculating the integral of
-    an unknown function.
-       </li>
-       <li class="fragment" data-fragment-index="3">
-        We now use numerical techniques such as Trapezoidal/Simpson's
-	rule (see your reactors course) to calculate integrals which we
-	cannot solve analytically.
-       </li>
-       <li class="fragment" data-fragment-index="4">
-        Once we've done this, can we plot something easier to use
-    instead?
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Pre-Integrated Function">
-      <div class="mathblock">
-       \begin{align*}
-       L_{initial} &amp;=100 \text{kmol} &amp; L_{final} &amp;=? &amp; V&amp;=?\\
-      x_{initial}&amp;=0.6 &amp; x_{final}&amp;=0.1 &amp; y_{avg}&amp;=?
-       \end{align*}
-      </div>
-      \begin{align*}
-      \ln\left(\frac{L_{final}}{L_{initial}}\right)&amp;= \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x}
-      \end{align*}
-      <ul>
-       <li>
-        We note that
-        \begin{align*}
-        \int_{x_1}^{x_2} f(x){\rm d}x = \int_{0}^{x_2} f(x){\rm d}x -\int_{0}^{x_1} f(x){\rm d}x
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        So we could just plot
-    $\int_{0}^{x}\left(y-x\right)^{-1}{\rm d}x$
-        versus
-        $x$, once, for
-    a set of VLE data and use the above identity to design any
-    differential distillation of that mixture.
-       </li>
-      </ul>
-     </section>
-     <section>
-       <figure>
-	 <img src="img/Benzene_Tolulene_invyminusx_int.svg" style="width:50%">
-       <figcaption>
-        A plot of
-        $\int_0^x(y-x)^{-1}{\rm d}x$
-        versus
-        $x$
-        for a
-      Benzene(x)-Toluene(1-x) liquid mixture.
-       </figcaption>
-      </figure>
-     </section>
-     <section>
-      <figure>
-       <img src="img/Benzene_Tolulene_invyminusx_int_soln.svg" style="width:50%"/>
-       <figcaption>
-        A plot of $\int_0^x(y-x)^{-1}{\rm d}x$ versus $x$ for a
-        Benzene(x)-Toluene(1-x) liquid mixture. Integrals from zero
-        are simply read off the graph.
-       </figcaption>
-      </figure>
-     </section>
-     <section>
-      <div class="mathblock">
-       \begin{align*}
-       L_{initial} &amp;=100 \text{kmol} &amp; L_{final} &amp;=? &amp; V&amp;=?\\
-      x_{initial}&amp;=0.6 &amp; x_{final}&amp;=0.1 &amp; y_{avg}&amp;=?
-       \end{align*}
-      </div>
-      <ul>
-       <li>
-        From counting the squares underneath the graph, we
-    obtained
-        \begin{align*}
-        \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x}\approx -2.636
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        Using the pre-integrated equation plot, we obtained
-        \begin{align*}
-        \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x}\approx -2.62
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        Both methods give nearly the same answer, but the second
-	method is far easier (if the graph is available), and
-	potentially more accurate.
-       </li>
-      </ul>
-     </section>
-     <section data-menu-title="Other Process Calculations">
-      <div class="mathblock">
-       \begin{align*}
-       L_{initial} &amp;=100 \text{kmol} &amp; L_{final} &amp;=? &amp; V&amp;=?\\
-      x_{initial}&amp;=0.6 &amp; x_{final}&amp;=0.1 &amp; y_{avg}&amp;=?
-       \end{align*}
-      </div>
-      <ul>
-       <li>
-        We can now solve this equation for $L_{final}$
-        \begin{align*}
-        \ln\left(\frac{L_{final}}{L_{initial}}\right)&amp;= \int_{x_{initial}}^{x_{final}}\frac{{\rm d}x}{y-x}\\
-      \ln\left(\frac{L_{final}}{100}\right)&amp;\approx -2.62\\
-      L_{final} &amp;\approx 100 e^{-2.62} \approx 7.28
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        This means the amount of vapour produced is
-        \begin{align*}
-        V = L_{initial}-L_{final} = 100 - 7.28 = 92.72
-        \end{align*}
-       </li>
-      </ul>
-     </section>
-     <section>
-      <div class="mathblock">
-       \begin{align*}
-       L_{initial} &amp;=100 \text{kmol} &amp; L_{final} &amp;= 7.28 &amp; V&amp;=92.72\\
-      x_{initial}&amp;=0.6 &amp; x_{final}&amp;=0.1 &amp; y_{avg}&amp;=?
-       \end{align*}
-      </div>
-      <ul>
-       <li>
-        We can calculate $y_{avg}$
-        from the benzene mass balance
-        \begin{align*}
-        x_{initial} L_{initial} &amp;= x_{final} L_{final}+y_{avg} V\\
-      0.6\times100 &amp;= 0.1 \times 7.28 + 92.72 y_{avg}\\
-      y_{avg} \approx 0.64
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        This highlights that when using
-        <i>batch distillation</i>
-        to achieve a high separation, only a small volume of liquid should
-    be boiled, otherwise we don't achieve a significant separation.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        In whisky distillation, only 10-15% of the wash is
-    actually vapourised in the still for each batch.
-       </li>
-       <li class="fragment" data-fragment-index="3">
-        Here, we boiled 92.72% of the initial charge of the
-    still.
-       </li>
-       <li class="fragment" data-fragment-index="4">
-        Perhaps multi-stage distillation will be more efficient at
-	achieving high purities AND high recovery?
-       </li>
-      </ul>
-     </section>
-    </section>
-   </div>
-   <div class="slide-menu-button" style="left:170px;cursor:pointer;">
-    <a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
-     <i class="fa fa-print"></i>
-    </a>
-   </div>
-   <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
-   </script>
-   <script src="footer.js">
-   </script>
-  </div>
- </body>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+      </script>
+      <script src="footer.js"></script>
+    </div>
+  </body>
 </html>
