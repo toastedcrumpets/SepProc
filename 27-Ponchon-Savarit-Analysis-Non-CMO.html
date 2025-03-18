@@ -1,1277 +1,1167 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <title>
-   Separation Processes 1
-  </title>
-  <meta content="Separation processes 1 notes" name="description"/>
-  <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
-  <meta content="yes" name="apple-mobile-web-app-capable"/>
-  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
-  <script src="header.js"></script>
- </head>
- <body>
-  <div class="reveal">
-   <div class="slides">
-    <section>
-     <section>
-      <h2>
-       Ponchon-Savarit Analysis (Non-CMO Distillation)
-      </h2>
-      <div class="center">
+  <head>
+    <meta charset="utf-8" />
+    <title>Separation Processes 1</title>
+    <meta content="Separation processes 1 notes" name="description" />
+    <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta
+      content="black-translucent"
+      name="apple-mobile-web-app-status-bar-style"
+    />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
+      name="viewport"
+    />
+    <script src="header.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <h2>Ponchon-Savarit Analysis (Non-CMO Distillation)</h2>
+            <div class="center"></div>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Recap on multi-stage distillation design">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.75)">
+                <ul>
+                  <li>
+                    To size our
+                    <b>multi-stage distillation columns</b>, we
+                    <ul>
+                      <li>
+                        Calculate the
+                        <b>number of theoretical trays</b>
+                        required.
+                      </li>
+                      <li>
+                        Convert this into a number of
+                        <b>real stages</b>
+                        using
+                        <b>efficiencies</b>.
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    At the moment, we do this using the
+                    <b>McCabe-Thiele method</b>. This is a
+                    <b>graphical method</b>
+                    for solving simultaneous
+                    <b>mass</b>
+                    balances and
+                    <b>VLE data</b>.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    These are:
+                    <ul>
+                      <li>
+                        The
+                        <b>enrichment</b>
+                        section
+                        <span style="color: teal">operating line</span>: $ y_n
+                        x_{n+1}\frac{L_{n}}{V_n} + x_D\frac{D}{V_n} $
+                      </li>
+                      <li>
+                        The
+                        <b>stripping</b>
+                        section
+                        <span style="color: teal">operating line</span>
+                        : $ y_{m} = x_{m+1}\frac{L_m}{V_m} - x_{W}\frac{W}{V_m}
+                        $
+                      </li>
+                      <li>
+                        The
+                        <b>feed</b>
+                        section
+                        <span style="color: red">q line</span>: $ y =
+                        x\frac{q}{q-1} - \frac{x_{W} W + x_D D}{F (q-1)} $
+                      </li>
+                      <li>
+                        The <b style="color: blue">VLE</b>
+                        data: $y = f(x)$
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.25)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/fractionation_column.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            \begin{align*} y_n &amp;= x_{n+1}\frac{L_{n}}{V_n} +
+            x_D\frac{D}{V_n} &amp; &amp; \text{Enrichment section operating
+            line}\\ y_{m} &amp;= x_{m+1}\frac{L_m}{V_m} - x_{W}\frac{W}{V_m}
+            &amp; &amp; \text{Stripping section operating line}\\ y &amp;=
+            x\frac{q}{q-1} - \frac{x_{W} W + x_D D}{F (q-1)} &amp; &amp;
+            \text{Feed section q line}\\ y &amp;= f(x) &amp; &amp; \text{VLE
+            data} \end{align*}
+            <ul>
+              <li>
+                The above equations (with the exception of the VLE data)
+                required the assumption of
+                <b>Constant Molar Overflow</b>.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                This assumes that the flow rates in the top/enrichment section
+                ($L_n$, $V_n$), and the bottom/stripping section ( $L_m$, $V_m$)
+                remain constant over the length of the section.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                This allows us to conveniently ignore
+                <b>energy</b>
+                but what does this really mean…
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Constant-molar-overflow assumption">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.651)">
+                <ul>
+                  <li>
+                    To understand the
+                    <b>constant molar overflow</b>
+                    approximation, we must look at a balance over a single stage
+                    (right).
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    A vapour stream $V_{n-1}$ and a liquid stream $L_{n+1}$ mix
+                    to produce a liquid stream $L_n$ and a vapour stream $V_n$
+                    which are in
+                    <b>equilibrium</b>.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    Constant molar overflow assumes that $V_{n-1}=V_{n}$ and
+                    $L_{n+1}=L_{n}$!
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    But if the input streams are not in equilibrium, there must
+                    be some mass and/or heat transfer.
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    When exactly is the CMO assumption true?
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.31)">
+                <figure>
+                  <div class="center">
+                    <img src="img/tray_balance.svg" style="width: 100%" />
+                    <figcaption>
+                      Mass balance over a single tray/stage.
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.651)">
+                <ul>
+                  <li>Let us take the simplest system, pure water/steam.</li>
+                  <li class="fragment" data-fragment-index="1">
+                    For constant molar overflow to be true:
+                    <ul>
+                      <li>
+                        All streams must be exactly at their boiling/dew point
+                        at the pressure of the tray.
+                      </li>
+                      <li>
+                        No heat can be transferred in or out of the tray (the
+                        tray is adiabatic).
+                      </li>
+                    </ul>
+                    <b>Or</b>
+                    <ul>
+                      <li>
+                        The vapour stream is superheated and/or the liquid
+                        stream is subcooled and/or there are heat losses;
+                        however, these all cancel out.
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    Even for this simple system, there are a number of ways CMO
+                    might be satisfied, but they are likely to be broken in a
+                    real system.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.31)">
+                <figure>
+                  <div class="center">
+                    <img src="img/tray_balance.svg" style="width: 100%" />
+                    <figcaption>
+                      Mass balance over a single tray/stage.
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.651)">
+                <ul>
+                  <li>
+                    Let us take a more complex system such as a mixture of two
+                    components (i.e., Benzene-Toluene). Performing an energy
+                    balance, we have \begin{align*} h_{V,n-1} V_{n-1} +
+                    h_{L,n+1} L_{n+1} = h_{V,n} V_{n} +h_{L,n} L_{n} + Q
+                    \end{align*} where $Q$ is any heat gain or loss from
+                    surroundings.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    If constant molar overflow is true, then we can write:
+                    \begin{align*} \left(h_{V,n-1}-h_{V,n}\right) V_{n} +
+                    \left(h_{L,n+1}-h_{L,n}\right) L_{n} = Q \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    Proving this equation is true is equivalent to proving that
+                    CMO is exact.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.31)">
+                <figure>
+                  <div class="center">
+                    <img src="img/tray_balance.svg" style="width: 100%" />
+                    <figcaption>
+                      Mass balance over a single tray/stage.
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.651)">
+                \begin{align*} \left(h_{V,n-1}-h_{V,n}\right) V_{n} +
+                \left(h_{L,n+1}-h_{L,n}\right) L_{n} = Q \end{align*}
+                <ul>
+                  <li>
+                    Assuming no heat losses $Q=0$ and that $L_n$ and $V_n$ may
+                    take arbitrary values, the equation requires that the
+                    specific enthalpy of the vapour and liquid streams must not
+                    change ( $h_{V,n-1}=h_{V,n}$ and $h_{L,n+1}=h_{L,n}$).
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    But this isn't true in general, enthalpy is a function of
+                    temperature (think heat capacity) and as the concentration
+                    of the streams change so does the boiling point/temperature
+                    of the stage.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    There are also other effects causing the enthalpy to change,
+                    such as enthalpy of mixing/solution (see evaporator design).
+                    As concentration changes on each stage these effects can be
+                    significant making the CMO assumption invalid.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.31)">
+                <figure>
+                  <div class="center">
+                    <img src="img/tray_balance.svg" style="width: 100%" />
+                    <figcaption>
+                      Mass balance over a single tray/stage.
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.651)">
+                \begin{align*} \left(h_{V,n-1}-h_{V,n}\right) V_{n} +
+                \left(h_{L,n+1}-h_{L,n}\right) L_{n} = Q \end{align*}
+                <ul>
+                  <li>
+                    Sometimes, as process engineers, we even
+                    <i>introduce</i>
+                    heat losses $Q\neq0$ to give us extra stages of distillation
+                    (see right).
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    In this case we clearly violate CMO, for the purpose of
+                    keeping our process “traditional” yet increasing its
+                    effectiveness.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    In practice, the CMO assumption is valid for a range of
+                    ideal systems where the latent heat of vaporisation does not
+                    vary significantly for all concentrations of the mixture,
+                    and effects such as latent heat changes, enthalpy of
+                    solution, and energy losses can be ignored.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    But there are a large number of systems where CMO does not
+                    hold, and we must include a full enthalpy balance in our
+                    calculations!
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.25)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/multistage_copper_still.svg"
+                      style="width: 100%"
+                    />
+                    <figcaption>
+                      Multi-stage batch distillation brought about through
+                      enhanced heat loss.
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Enthalpy-concentration diagrams">
+            <ul>
+              <li>
+                The enthalpy of a binary stream can be calculated using an
+                appropriate thermodynamic path, and heat capacity data combined
+                with appropriate latent heats: \begin{align*} h_{mixture}(T) =
+                x_A h_{\textrm{A}}(T=T_{ref}) +
+                (1-x_A)\,h_{\textrm{B}}(T=T_{ref}) \\ +
+                x_A h_{sol.,AB}(T=T_{ref}) + \int_{T_{ref}}^T
+                C_{p,mixture}(T') {\rm d}T' \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                The modern approach is to take these equations for the enthalpy
+                and solve them simultaneously with the energy and mass balances
+                to determine the design of a non-CMO column.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                However, here we will use graphical methods to perform the
+                design as these are useful teaching tools to illustrate how
+                these methods proceed.
+              </li>
+              <li class="fragment" data-fragment-index="3">
+                Lets reconsider
+                <b>enthalpy-concentration</b>
+                diagrams which we first saw when we were designing evaporators.
+                These will form the basis of the
+                <b>Ponchon-Savarit</b>
+                method we will cover later.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <figure>
+              <div class="center">
+                <img src="img/enthalpy_NaOH.svg" style="width: 50%" />
+                <figcaption>
+                  An enthalpy-concentration diagram for NaOH solutions. We have
+                  only used this figure for calculation of the enthalpy of
+                  liquid NaOH solutions. For distillation, we require enthalpy
+                  information on mixtures near/at their boiling/dew points.
+                </figcaption>
+              </div>
+            </figure>
+          </section>
+          <section>
+            <figure>
+              <div class="center">
+                <img
+                  src="img/HxyOctaneHexane_small_no_ties.svg"
+                  style="width: 35%"
+                />
+                <figcaption>
+                  An enthalpy-$xy$ diagram for hexane-octane mixtures near the
+                  vapour-liquid transition at atmospheric pressure. Many
+                  $H$-$xy$ diagrams consist of just the saturated vapour and
+                  liquid lines as that is all that is needed for the
+                  Ponchon-Savarit method.
+                </figcaption>
+              </div>
+            </figure>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.6)">
+                <ul>
+                  <li>
+                    We also need to solve the VLE data for the design. This may
+                    be in the form of a separate $x$-$y$ graph, or we might draw
+                    additional
+                    <b>tie-lines</b>
+                    on the $H$-$xy$ diagram which indicate the equilibrium
+                    vapour and liquid concentrations.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    In this graph, its easy to see that these tie-lines connect
+                    the corresponding isothermal lines on either side of the
+                    two-phase region, but when you construct a $H$-$xy$ diagram
+                    you will probably not generate these, so they may be
+                    missing.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.4)">
+                <figure>
+                  <div class="center">
+                    <img src="img/HxyOctaneHexane_small.svg" />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.6)">
+                <ul>
+                  <li>
+                    Enthalpy-concentration diagrams have a number of interesting
+                    properties. Consider a collection of points, each of which
+                    represents a certain mixture of hexane and octane.
+                  </li>
+                  <li>
+                    The <span style="color: green">height difference</span>
+                    between two points is actually the difference in energy per
+                    unit mass. For example, if we were considering the heating
+                    of $A\to B$, we have $h_A + \frac{Q}{m} = h_B$. Using this
+                    chart we can quickly calculate how much energy is needed to
+                    heat a mixture up.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    If we choose a boiling point (i.e., $T=90^\circ$ C), the
+                    <span style="color: teal">height difference</span> between
+                    the two points on the co-existence lines is the latent heat
+                    of vaporisation.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.4)">
+                <figure>
+                  <div class="center">
+                    <img src="img/HxyOctaneHexane_small_no_ties_heat.svg" />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.6)">
+                <ul>
+                  <li>
+                    Assuming we take two mixtures $A$ and $B$ with $m_A$ and
+                    $m_B$ moles/mass respectively. If we mix them to form $C$,
+                    we have: \begin{align*} m_A + m_B &amp;= m_C\\ m_A x_A
+                    +m_B x_B &amp;= m_C x_C\\ m_A h_A + m_B h_B &amp;= m_C h_C
+                    \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    It is easy to see that the enthalpy of two mixtures combines
+                    linearly, just like the mass and the concentration (and
+                    unlike the temperature).
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    This implies that any mixture of $A$ and $B$ must lie on the
+                    line $AB$ ! For example, the point $C$.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    Where it lies on the line depends on the amount of $A$
+                    versus $B$.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.4)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/HxyOctaneHexane_small_no_ties_mixing.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.6)">
+                <ul>
+                  <li>
+                    It is clear that lines on $H$-$xy$ diagrams are in-fact
+                    simultaneous mass and enthalpy balances.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    For example, if a mixture $C$ is created, it will split to
+                    form two phases $A$ and $B$, these points will lie on the
+                    equilibrium tie-line passing through $C$. This is a
+                    <b>flash calculation</b>
+                    on a $H$-$xy$ diagram!
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    If we draw
+                    <span style="color: teal">operating lines</span>
+                    (simultaneous mass and energy balances in the column) on
+                    this diagram, they are always straight lines (McCabe Thiele
+                    <span style="color: teal">operating lines</span> are curved
+                    when CMO is violated).
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    We can now begin to design a distillation column
+                    <b>without</b>
+                    making the constant molar overflow assumption.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.4)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/HxyOctaneHexane_small_no_ties_mixing.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Ponchon-Savarit construction">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.6)">
+                <ul>
+                  <li>
+                    The graphical method we're about to derive is known as the
+                    Ponchon-Savarit method, and was named after its discoverers.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    It is very similar to the McCabe-Thiele method, but is more
+                    rigorous and complex as it considers enthalpy changes within
+                    the column.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    The first step is to derive
+                    <span style="color: teal">operating line</span> equations
+                    for the design.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.4)">
+                <figure>
+                  <div class="center">
+                    <img src="img/HxyOctaneHexane_small.svg" />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section data-menu-title="Top column section">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.71)">
+                <ul>
+                  <li>
+                    Performing overall and component mass balances over the top
+                    (enrichment) section of the column we have: \begin{align*}
+                    V_n&amp;=L_{n+1}+D \\ y_n V_n&amp;=x_{n+1} L_{n+1}+x_D D
+                    \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Eliminating $V_n$, we have: \begin{align*}
+                    \frac{L_{n+1}}{D}&amp;=\frac{x_D-y_n}{y_n-x_{n+1}}
+                    \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    We can also perform an enthalpy balance \begin{align*}
+                    h_{v,n} V_n&amp;=h_{l,n+1} L_{n+1}+h_{l,D} D + Q_c
+                    \end{align*} where $Q_{c}$ is the condenser duty.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.31)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/fractionation_column_01_top.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.8)">
+                \begin{align*} V_n&amp;=L_{n+1}+D \\
+                h_{v,n} V_n&amp;=h_{l,n+1} L_{n+1}+h_{l,D} D + Q_c \end{align*}
+                <ul>
+                  <li>
+                    Let $h_D'=h_{l,D}+Q_{c}/D$ and we can rewrite our enthalpy
+                    balance: $h_{v,n} V_n-h_{l,n+1} L_{n+1}=h_{D}' D$ and it is
+                    clear that $h_{D}' D$ is the (constant) enthalpy difference
+                    between the vapour stream emerging from the column and the
+                    reflux stream returned to top section of the column.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Eliminating $V_n$ using the overall mass balance we have
+                    \begin{align*}
+                    h_{v,n}(L_{n+1}+D)-h_{l,n+1} L_{n+1}&amp;=h_{D}' D\\
+                    \frac{L_{n+1}}{D}
+                    &amp;=\frac{h_{D}'-h_{v,n}}{h_{v,n}-h_{l,n+1}} \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    Setting the two expressions for $L_{n+1}/D$ to be equal, we
+                    have: \begin{align*}
+                    \frac{h_{D}'-h_{v,n}}{h_{v,n}-h_{l,n+1}} =
+                    \frac{x_D-y_n}{y_n-x_{n+1}} \end{align*}
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.2)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/fractionation_column_01_top.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.71)">
+                \begin{align*} \frac{h_{D}'-h_{v,n}}{h_{v,n}-h_{l,n+1}} &amp;=
+                \frac{x_D-y_n}{y_n-x_{n+1}} \\ h_D'&amp;=h_{l,D}+Q_{c}/D
+                \end{align*}
+                <ul>
+                  <li>
+                    This is our <span style="color: teal">operating line</span>
+                    for the top section of the column.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    $h_{D}'$ and $x_D$ can be worked out at the start of a
+                    design (after selecting a reflux ratio) and the
+                    <span style="color: teal">operating line</span>
+                    gives us a relationship between $(x_{n+1}, h_{l,n+1})$ and
+                    $(y_{n}, h_{v,n})$.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    Provided we have a $H$-$xy$ diagram we can solve for one
+                    pair given the other (but there is now a different
+                    <span style="color: teal">operating line</span> for each
+                    stage in the top section).
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    But, if we set either $(x_{n+1}, h_{l,n+1})$ OR $(y_{n},
+                    h_{v,n})$ to $(x_d,h'_d)$, the equation is satisfied for any
+                    value of the other: i.e. $(x_d,h'_d)$ is a
+                    <b>pole</b>
+                    point.
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    All <span style="color: teal">operating lines</span> for
+                    stages in the top of the column must pass through this pole
+                    point, which we denote $P_C$.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.31)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/fractionation_column_01_top.svg"
+                      style="width: 100%"
+                    />
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.65)">
+                <ul>
+                  <li>This is what a design of the top-section looks like.</li>
+                  <li class="fragment" data-fragment-index="1">
+                    We calculate the location of $P_C=(x_d,h'_d)$, then all
+                    <span style="color: teal">operating line</span> must pass
+                    through this point.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    The first location in the column is the distillate vapour
+                    concentration $y_N$ or $x_D$, so we start the stepping
+                    there.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    The tie-lines/VLE data allows us to calculate $x_N$, which
+                    allows us to draw the next
+                    <span style="color: teal">operating line</span>.
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    We can then progress down the column, alternately solving
+                    mass/energy balances and the VLE data for the compositions
+                    on each stage!
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.35)">
+                <img src="img/HxyOctaneHexane-top.svg" style="width: 100%" />
+              </div>
+            </div>
+          </section>
+          <section data-menu-title="Bottom column section">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.61)">
+                <ul>
+                  <li>
+                    The exact same analysis for the bottom section yields the
+                    following equation: \begin{align*}
+                    \frac{h_w'-h_{v,m}}{h_{v,m}-h_{l,m+1}}&amp;=\frac{x_w-y_m}{y_m-x_{m+1}}
+                    \end{align*} where $h_w'=h_{l,w}-Q_R/W$, and $Q_R$ is the
+                    reboiler duty.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    We can calculate $Q_R$ using an enthalpy balance over the
+                    whole column.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    Here it is clear that there is a pole for this equation at
+                    $(x_w,h_w')$, which we denote $P_R$.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    We can perform the same construction as before to calculate
+                    the stage-by-stage concentrations within the column (see
+                    right).
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.41)">
+                <figure>
+                  <img
+                    src="img/HxyOctaneHexane-bottom.svg"
+                    style="width: 100%"
+                  />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section data-menu-title="Feed section">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.751)">
+                <ul>
+                  <li>
+                    These constructions allow the top and bottom section of the
+                    column to be designed, but these processes must meet at the
+                    <b>feed tray</b>.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    We need to find a relationship to locate the feed tray
+                    relative to the top and bottom sections.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    Taking an overall balance we have: \begin{align*} F &amp;= W
+                    + D &amp; x_F F &amp;= x_W W + x_D D \end{align*} And
+                    eliminating $F$ gives: \begin{align*}
+                    \frac{W}{D}=\frac{x_D-x_F}{x_F-x_W} \end{align*}
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.251)">
+                <figure>
+                  <img src="img/fractionation_column.svg" style="width: 100%" />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.751)">
+                \begin{align*} F &amp;= W + D &amp; x_F F &amp;= x_W W + x_D D
+                \end{align*}
+                <ul>
+                  <li>
+                    We can also perform an overall enthalpy balance:
+                    \begin{align*} Q_B + h_F F = h_{l,W} W+h_{l,D} D+Q_c
+                    \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Introducing $h_w'=h_{l,w}-\frac{Q_B}{W}$ and
+                    $h_D'=h_{l,D}+Q_{c}/D$ into the energy balance we have
+                    \begin{align*} h_F F &amp;= h_W' W+h_D' D+Q_c\\
+                    \frac{W}{D}&amp;=\frac{h_D'-h_F}{h_F-h_W'} \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    Combining these two expressions for $W/D$ gives:
+                    \begin{align*}
+                    \frac{h_D'-h_F}{h_F-h_W'}&amp;=\frac{x_D-x_F}{x_F-x_W}
+                    \end{align*}
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.251)">
+                <figure>
+                  <img src="img/fractionation_column.svg" style="width: 100%" />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.75)">
+                \begin{align*}
+                \frac{h_D'-h_F}{h_F-h_W'}&amp;=\frac{x_D-x_F}{x_F-x_W}
+                \end{align*}
+                <ul>
+                  <li>
+                    If $h_F$ and $x_F$ are our free variables, then it is clear
+                    to see that this equation has a solution at
+                    $(x_F,h_F)=(x_D,h'_D)$ and $(x_F,h_F)=(x_W,h'_W)$.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Therefore, the feed point $P_F=(x_F, h_F)$, condenser pole
+                    point $P_C=(x_D,h'_D)$, and reboiler point $P_W=(x_W,h'_W)$,
+                    all lie on the same (straight) line on a $H$-$x$ diagram!
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    Performing a flash from the feed location $P_F$ gives us the
+                    starting points for the top and bottom feed sections.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    From here we proceed to determine how many stages it takes
+                    to reach the bottoms and top product concentrations.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.25)">
+                <figure>
+                  <img src="img/HxyOctaneHexane-feed.svg" style="width: 100%" />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section data-menu-title="Effects of the reflux ratio">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.75)">
+                <ul>
+                  <li>
+                    At this point it is easy to talk about the reflux ratio.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    The height of the point $P_C$, given by
+                    $h_D'=h_{L,D}+Q_{c}/D$ is set by the reflux ratio which
+                    controls the duty of the condenser.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    From an overall energy balance over the column we know that
+                    as the duty increases on the condenser, so does the reboiler
+                    duty. Higher reflux ratios lower the height of point $P_W$,
+                    given by $h_W'=h_{L,w}-Q_R/W$.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    As the reflux ratio increases, the slope of the
+                    <span style="color: teal">operating lines</span> increase,
+                    eventually leading to vertical lines at infinite reflux
+                    ratio…
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.25)">
+                <figure>
+                  <img src="img/HxyOctaneHexane-feed.svg" style="width: 100%" />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <figure>
+              <div class="center">
+                <img src="img/HxyOctaneHexane-infR.svg" style="width: 25%" />
+                <figcaption>
+                  A Ponchon-Savarit calculation at infinte reflux ratio. This
+                  yields the minimum number of theoretical stages required to
+                  perform the separation.
+                </figcaption>
+              </div>
+            </figure>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.7)">
+                <ul>
+                  <li>
+                    What about the other limit (infinite trays/minimum reflux
+                    ratio)?
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    Here, the same rule applies as for McCabe-Thiele design,
+                    <b
+                      ><span style="color: teal">operating lines</span> must not
+                      cross equilibrium lines!</b
+                    >
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    As the reflux ratio is lowered, the points $P_C$ and $P_R$
+                    approach the saturation lines, lowering the gradient of the
+                    <span style="color: teal">operating lines</span>.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    Eventually, one of the
+                    <span style="color: teal">operating lines</span> coincides
+                    with its VLE tie-line, meaning that there is no separation
+                    over that stage.
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    This typically happens at the feed tray (see the pinch
+                    right), so we can just extend the tie line at this location
+                    to calculate the minimum reflux ratio (but we must also
+                    check for crosses at any other stage to determine if there
+                    is another pinch point elsewhere).
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.3)">
+                <figure>
+                  <img src="img/HxyOctaneHexane-minR.svg" style="width: 100%" />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.7)">
+                <ul>
+                  <li>
+                    From here, we can use an energy balance to calculate
+                    $R_{min}$. For example: \begin{align*} \frac{Q_c}{D} &amp;=
+                    h'_D-h_{L,D}\\ \left(h_{V,D}-h_{L,D}\right)\frac{V}{D}
+                    &amp;= h'_D-h_{L,D}\\
+                    \left(h_{V,D}-h_{L,D}\right)\frac{L+D}{D} &amp;=
+                    h'_D-h_{L,D}\\ R = \frac{h'_D-h_{L,D}}{h_{V,D}-h_{L,D}}-1
+                    \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    These values can be directly measured from the enthalpy
+                    graph.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.3)">
+                <figure>
+                  <img src="img/HxyOctaneHexane-minR.svg" style="width: 100%" />
+                </figure>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Worked example">
+            <ul>
+              <li>
+                We're going to perform a distillation design of a
+                Benzene-Toluene mixture using the Ponchon-Savarit method.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                We need to construct an enthalpy diagram. There is a worked
+                example for Benzene-Toluene in Ex.11.6-1 (pg 670–672) of
+                <i>“Transport Processes and Unit Operations”</i>
+                by C. J. Geankoplis.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                We also need equilibrium data/VLE data. To revise how to
+                generate this, see your solutions to Tutorial 5, the design
+                course, or Ex.11.1-1 (pg 641–642) of
+                <i>“Transport Processes and Unit Operations”</i>
+                by C. J. Geankoplis.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <figure>
+              <div class="center">
+                <img src="img/Hxy-Benzene-Toluene.svg" style="width: 35%" />
+                <figcaption>
+                  This data is calculated using heat capacity and formation
+                  enthalpy data from “NASA Glenn Coefficients for Calculating
+                  Thermodynamic Properties of Individual Species” by McBride,
+                  B.J., M. J. Zehe, Dr.and Gordon, S. NASA TP-2002-211556, 2002.
+                </figcaption>
+              </div>
+            </figure>
+          </section>
+          <section>
+            <figure>
+              <div class="center">
+                <img src="img/Txy-Benzene-Toluene.svg" style="width: 65%" />
+                <figcaption>
+                  This data is calculated using Raoult's law and vapour pressure
+                  data (Antoine coefficients) taken from Perry's.
+                </figcaption>
+              </div>
+            </figure>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.5)">
+                <ul>
+                  <li>
+                    We can combine this data by reading pairs of $x$-$y$ values
+                    from the $T$-$xy$ diagram and plotting these lines on the
+                    $H$-$xy$ diagram. We could also just use the figures
+                    directly.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    For the worked example, we're going to distill a 50 mole%
+                    Benzene saturated liquid feed to two product streams at 20
+                    mole% and 90 mole% purity.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    The optimum reflux ratio is known to be $1.5 R_{min}$ from
+                    experience.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    It is well-known that Benzene-Toluene systems are good
+                    candidates for assuming CMO, but this is just to illustrate
+                    the method.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.5)">
+                <figure>
+                  <img src="img/Txy-Benzene-Toluene.svg" style="width: 100%" />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.61)">
+                <ul>
+                  <li>
+                    We can determine the minimum reflux ratio by checking for
+                    pinches in the column design.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    These usually occur near the feed, so we'll start there and
+                    use it to predict the minimum $P_C$ position.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    We can then calculate the minimum reflux ratio using the
+                    expression derived before. \begin{align*} R =
+                    \frac{h'_D-h_{L,D}}{h_{V,D}-h_{L,D}} - 1 \approx 0.91
+                    \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    The optimum reflux ratio is then $R=1.5\times0.91=1.092$,
+                    and we can use the expression above to plot the actual
+                    condenser pole point $P_C$.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.41)">
+                <figure>
+                  <img
+                    src="img/Hxy-Benzene-Toluene-tied-minreflux.svg"
+                    style="width: 100%"
+                  />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.61)">
+                <ul>
+                  <li>
+                    We know that $P_{C}$, $P_{F}$, and $P_{R}$ must lie on the
+                    same line, therefore we can now determine $P_R$.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    From here, we can start our distillation design. We will
+                    start at the feed tray and solve each section from there.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.41)">
+                <figure>
+                  <img
+                    src="img/Hxy-Benzene-Toluene-tied-design1.svg"
+                    style="width: 100%"
+                  />
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.61)">
+                <ul>
+                  <li>
+                    In this case, we require a reboiler and almost exactly 7
+                    theoretical stages.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    We can still have fractional stages which we compute using
+                    the distance along the equilibrium lines, but it is not
+                    needed in this case.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    We could also include Murphree efficiencies, although this
+                    would be simpler to implement with a separate $x$-$y$
+                    diagram rather than the tie-lines on the $H$-$xy$ diagram.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    Finally, we can immediately calculate the reboiler and
+                    condenser duties from the graph using the following
+                    expressions: \begin{align*} h_D'&amp;=h_{l,D}+Q_{c}/D\\
+                    h_w'&amp;=h_{l,w}-Q_R/W \end{align*}
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.41)">
+                <figure>
+                  <img
+                    src="img/Hxy-Benzene-Toluene-tied-design2.svg"
+                    style="width: 100%"
+                  />
+                </figure>
+              </div>
+            </div>
+          </section>
+        </section>
       </div>
-     </section>
-    </section>
-    <section>
-     <section data-menu-title="Recap on multi-stage distillation design">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.75);">
-        <ul>
-         <li>
-          To size our
-          <b>multi-stage distillation columns</b>, we
-          <ul>
-           <li>
-            Calculate the
-            <b>number of theoretical trays</b>
-            required.
-           </li>
-           <li>
-            Convert this into a number of
-            <b>real stages</b>
-            using
-            <b>efficiencies</b>.
-           </li>
-          </ul>
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          At the moment, we do this using the
-          <b>McCabe-Thiele method</b>. This is a
-          <b>graphical method</b>
-          for solving simultaneous
-          <b>mass</b>
-          balances and
-          <b>VLE data</b>.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          These are:
-          <ul>
-           <li>
-            The
-            <b>enrichment</b>
-            section
-            <span style="color:teal;">operating line</span>:
-            \begin{align*}
-            y_n &amp;= x_{n+1}\frac{L_{n}}{V_n} + x_D\frac{D}{V_n}
-            \end{align*}
-           </li>
-           <li>
-            The
-            <b>stripping</b>
-            section
-            <span style="color:teal;">operating line</span>
-            :
-            \begin{align*}
-            y_{m} = x_{m+1}\frac{L_m}{V_m} - x_{W}\frac{W}{V_m}
-            \end{align*}
-           </li>
-           <li>
-            The
-            <b>feed</b>
-            section
-            <span style="color:red;">q line</span>:
-            \begin{align*}
-            y &amp;= x\frac{q}{q-1} - \frac{x_{W} W + x_D D}{F (q-1)}
-            \end{align*}
-           </li>
-           <li>
-            The <b style="color:blue;">VLE</b>
-            data: $y = f(x)$
-           </li>
-          </ul>
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.25);">
-        <figure>
-         <div class="center">
-          <img src="img/fractionation_column.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
+      <div class="slide-menu-button" style="left: 170px; cursor: pointer">
+        <a
+          class="hide-on-pdf"
+          id="PrintButton"
+          onclick="document.location = '?print-pdf';"
+        >
+          <i class="fa fa-print"></i>
+        </a>
       </div>
-     </section>
-     <section>
-      \begin{align*}
-      y_n &amp;= x_{n+1}\frac{L_{n}}{V_n} + x_D\frac{D}{V_n} &amp; &amp;
-    \text{Enrichment section operating line}\\
-    y_{m} &amp;= x_{m+1}\frac{L_m}{V_m} - x_{W}\frac{W}{V_m} &amp; &amp;
-    \text{Stripping section operating line}\\
-    y &amp;= x\frac{q}{q-1} - \frac{x_{W} W + x_D D}{F (q-1)} 
-    &amp; &amp; \text{Feed section q line}\\
-    y &amp;= f(x) &amp; &amp; \text{VLE data}
-      \end{align*}
-      <ul>
-       <li>
-        The above equations (with the exception of the VLE data)
-    required the assumption of
-        <b>Constant Molar Overflow</b>.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        This assumes that the flow rates in the top/enrichment
-    section ($L_n$,
-        $V_n$), and the bottom/stripping section (
-        $L_m$,
-        $V_m$) remain constant over the length of the section.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        This allows us to conveniently ignore
-        <b>energy</b>
-        but
-	what does this really mean…
-       </li>
-      </ul>
-     </section>
-    </section>
-    <section>
-     <section data-menu-title="Constant-molar-overflow assumption">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.651);">
-        <ul>
-         <li>
-          To understand the
-          <b>constant molar overflow</b>
-          approximation, we must look at a balance over a single stage
-          (right).
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          A vapour stream $V_{n-1}$
-          and a liquid stream
-          $L_{n+1}$
-          mix to produce a liquid stream
-          $L_n$
-          and a vapour stream
-          $V_n$
-          which are in
-          <b>equilibrium</b>.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          Constant molar overflow assumes that $V_{n-1}=V_{n}$ and
-          $L_{n+1}=L_{n}$!
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          But if the input streams are not in equilibrium, there
-        must be some mass and/or heat transfer.
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          When exactly is the CMO assumption true?
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.31);">
-        <figure>
-         <div class="center">
-          <img src="img/tray_balance.svg" style="width:100%"/>
-          <figcaption>
-           Mass balance over a single tray/stage.
-          </figcaption>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.651);">
-        <ul>
-         <li>
-          Let us take the simplest system, pure water/steam.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          For constant molar overflow to be true:
-          <ul>
-           <li>
-            All streams must be exactly at their boiling/dew point
-          at the pressure of the tray.
-           </li>
-           <li>
-            No heat can be transferred in or out of the tray (the
-          tray is adiabatic).
-           </li>
-          </ul>
-          <b>Or</b>
-          <ul>
-           <li>
-            The vapour stream is superheated and/or the liquid
-          stream is subcooled and/or there are heat losses; however,
-          these all cancel out.
-           </li>
-          </ul>
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          Even for this simple system, there are a number of
-        ways CMO might be satisfied, but they are likely to be broken
-        in a real system.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.31);">
-        <figure>
-         <div class="center">
-          <img src="img/tray_balance.svg" style="width:100%"/>
-          <figcaption>
-           Mass balance over a single tray/stage.
-          </figcaption>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.651);">
-        <ul>
-         <li>
-          Let us take a more complex system such as a mixture of
-        two components (i.e., Benzene-Toluene). Performing an energy
-        balance, we have
-          \begin{align*}
-          h_{V,n-1} V_{n-1} + h_{L,n+1} L_{n+1} = h_{V,n} V_{n}
-          +h_{L,n} L_{n} + Q
-          \end{align*}
-          where
-          $Q$
-          is any heat gain or loss from surroundings.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          If constant molar overflow is true, then we can write:
-          \begin{align*}
-          \left(h_{V,n-1}-h_{V,n}\right) V_{n} + \left(h_{L,n+1}-h_{L,n}\right) L_{n} = Q
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          Proving this equation is true is equivalent to proving
-        that CMO is exact.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.31);">
-        <figure>
-         <div class="center">
-          <img src="img/tray_balance.svg" style="width:100%"/>
-          <figcaption>
-           Mass balance over a single tray/stage.
-          </figcaption>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.651);">
-        \begin{align*}
-        \left(h_{V,n-1}-h_{V,n}\right) V_{n} + \left(h_{L,n+1}-h_{L,n}\right) L_{n} = Q
-        \end{align*}
-        <ul>
-         <li>
-          Assuming no heat losses $Q=0$
-          and that
-          $L_n$
-          and
-          $V_n$
-          may take arbitrary values, the equation requires that the
-        specific enthalpy of the vapour and liquid streams must not
-        change (
-          $h_{V,n-1}=h_{V,n}$
-          and
-          $h_{L,n+1}=h_{L,n}$).
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          But this isn't true in general, enthalpy is a function
-        of temperature (think heat capacity) and as the concentration
-        of the streams change so does the boiling point/temperature of
-        the stage.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          There are also other effects causing the enthalpy to
-        change, such as enthalpy of mixing/solution (see evaporator
-        design). As concentration changes on each stage these effects
-        can be significant making the CMO assumption invalid.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.31);">
-        <figure>
-         <div class="center">
-          <img src="img/tray_balance.svg" style="width:100%"/>
-          <figcaption>
-           Mass balance over a single tray/stage.
-          </figcaption>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.651);">
-        \begin{align*}
-        \left(h_{V,n-1}-h_{V,n}\right) V_{n} + \left(h_{L,n+1}-h_{L,n}\right) L_{n} = Q
-        \end{align*}
-        <ul>
-         <li>
-          Sometimes, as process engineers, we even
-          <i>introduce</i>
-          heat losses
-          $Q\neq0$
-          to give us extra stages of
-        distillation (see right).
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          In this case we clearly violate CMO, for the purpose
-        of keeping our process “traditional” yet increasing its
-        effectiveness.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          In practice, the CMO assumption is valid for a range
-        of ideal systems where the latent heat of vaporisation does
-        not vary significantly for all concentrations of the mixture,
-        and effects such as latent heat changes, enthalpy of solution,
-        and energy losses can be ignored.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          But there are a large number of systems where CMO does
-        not hold, and we must include a full enthalpy balance in our
-        calculations!
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.25);">
-        <figure>
-         <div class="center">
-          <img src="img/multistage_copper_still.svg" style="width:100%"/>
-          <figcaption>
-           Multi-stage batch distillation brought
-            about through enhanced heat loss.
-          </figcaption>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-    </section>
-    <section>
-     <section data-menu-title="Enthalpy-concentration diagrams">
-      <ul>
-       <li>
-         The enthalpy of a binary stream can be calculated using an
-	 appropriate thermodynamic path, and heat capacity data combined
-	 with appropriate latent heats:
-	 
-        \begin{align*}
-        h_{mixture}(T) = x_A h_{\textrm{A}}(T=T_{ref}) + (1-x_A)\,h_{\textrm{B}}(T=T_{ref}) \\
-      + x_A h_{sol.,AB}(T=T_{ref})
-      + \int_{T_{ref}}^T C_{p,mixture}(T') {\rm d}T'
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        The modern approach is to take these equations for the
-    enthalpy and solve them simultaneously with the energy and mass
-    balances to determine the design of a non-CMO column.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        However, here we will use graphical methods to perform the
-    design as these are useful teaching tools to illustrate how these
-    methods proceed.
-       </li>
-       <li class="fragment" data-fragment-index="3">
-        Lets reconsider
-        <b>enthalpy-concentration</b>
-        diagrams
-    which we first saw when we were designing evaporators. These will
-    form the basis of the
-        <b>Ponchon-Savarit</b>
-        method we will cover
-    later.
-       </li>
-      </ul>
-     </section>
-     <section>
-      <figure>
-       <div class="center">
-        <img src="img/enthalpy_NaOH.svg" style="width:50%"/>
-        <figcaption>
-         An enthalpy-concentration diagram for NaOH
-        solutions. We have only used this figure for calculation of
-        the enthalpy of liquid NaOH solutions. For distillation, we
-        require enthalpy information on mixtures near/at their
-        boiling/dew points.
-        </figcaption>
-       </div>
-      </figure>
-     </section>
-     <section>
-      <figure>
-       <div class="center">
-        <img src="img/HxyOctaneHexane_small_no_ties.svg" style="width:35%"/>
-        <figcaption>
-         An enthalpy-$xy$
-         diagram for hexane-octane mixtures
-         near the vapour-liquid transition at atmospheric
-         pressure. Many
-         $H$-$xy$
-         diagrams consist of just the saturated
-         vapour and liquid lines as that is all that is needed for the
-         Ponchon-Savarit method.
-        </figcaption>
-       </div>
-      </figure>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.6);">
-        <ul>
-         <li>
-           We also need to solve the VLE data for the
-           design. This may be in the form of a separate $x$-$y$
-           graph,
-           or we might draw additional
-           <b>tie-lines</b>
-           on the $H$-$xy$
-           diagram which indicate the equilibrium vapour and liquid
-           concentrations.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          In this graph, its easy to see that these tie-lines
-          connect the corresponding isothermal lines on either side of
-          the two-phase region, but when you construct a $H$-$xy$
-          diagram you will probably not generate these, so they may be
-          missing.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.4);">
-        <figure>
-         <div class="center">
-          <img src="img/HxyOctaneHexane_small.svg"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.6);">
-        <ul>
-         <li>
-          Enthalpy-concentration diagrams have a number of
-        interesting properties. Consider a collection of points, each
-        of which represents a certain mixture of hexane and octane.
-         </li>
-         <li>
-           The <span style="color:green">height difference</span>
-           between two points is actually the difference in energy per
-           unit mass. For example, if we were considering the heating
-           of $A\to B$, we have $h_A + \frac{Q}{m} = h_B$.  Using this
-           chart we can quickly calculate how much energy is needed to
-           heat a mixture up.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          If we choose a boiling point (i.e., $T=90^\circ$ C), the
-          <span style="color:teal">height difference</span> between
-          the two points on the co-existence lines is the latent heat
-          of vaporisation.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.4);">
-        <figure>
-         <div class="center">
-          <img src="img/HxyOctaneHexane_small_no_ties_heat.svg"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.6);">
-        <ul>
-         <li>
-          Assuming we take two mixtures $A$
-          and
-          $B$
-          with
-          $m_A$
-          and
-          $m_B$
-          moles/mass respectively. If we mix them to form
-          $C$,
-        we have:
-          \begin{align*}
-          m_A + m_B &amp;= m_C\\
-          m_A x_A +m_B x_B &amp;= m_C x_C\\
-          m_A h_A + m_B h_B &amp;= m_C h_C
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          It is easy to see that the enthalpy of two mixtures
-        combines linearly, just like the mass and the concentration
-        (and unlike the temperature).
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          This implies that any mixture of $A$
-          and
-          $B$
-          must lie
-        on the line
-          $AB$
-          ! For example, the point
-          $C$.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          Where it lies on the line depends on the amount of $A$
-          versus
-          $B$.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.4);">
-        <figure>
-         <div class="center">
-          <img src="img/HxyOctaneHexane_small_no_ties_mixing.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.6);">
-        <ul>
-         <li>
-          It is clear that lines on $H$-$xy$
-          diagrams are
-        in-fact simultaneous mass and enthalpy balances.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          For example, if a mixture $C$
-          is created, it will
-        split to form two phases
-          $A$
-          and
-          $B$, these points will lie on
-        the equilibrium tie-line passing through
-          $C$. This is a
-          <b>flash calculation</b>
-          on a
-          $H$-$xy$
-          diagram!
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          If we draw <span style="color:teal;">operating lines</span> (simultaneous mass and
-        energy balances in the column) on this diagram, they are
-        always straight lines (McCabe Thiele <span style="color:teal;">operating lines</span> are
-        curved when CMO is violated).
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          We can now begin to design a distillation column
-          <b>without</b>
-          making the constant molar overflow assumption.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.4);">
-        <figure>
-         <div class="center">
-          <img src="img/HxyOctaneHexane_small_no_ties_mixing.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-    </section>
-    <section>
-     <section data-menu-title="Ponchon-Savarit construction">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.6);">
-        <ul>
-         <li>
-          The graphical method we're about to derive is known as
-        the Ponchon-Savarit method, and was named after its
-        discoverers.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          It is very similar to the McCabe-Thiele method, but is
-        more rigorous and complex as it considers enthalpy changes
-        within the column.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-           The first step is to derive <span style="color:teal;">operating line</span> equations for
-           the design.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.4);">
-        <figure>
-         <div class="center">
-          <img src="img/HxyOctaneHexane_small.svg"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section data-menu-title="Top column section">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.71);">
-        <ul>
-         <li>
-          Performing overall and component mass balances over the top
-        (enrichment) section of the column we have:
-          \begin{align*}
-          V_n&amp;=L_{n+1}+D \\
-          y_n V_n&amp;=x_{n+1} L_{n+1}+x_D D
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Eliminating $V_n$, we have:
-          \begin{align*}
-          \frac{L_{n+1}}{D}&amp;=\frac{x_D-y_n}{y_n-x_{n+1}}
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          We can also perform an enthalpy balance
-          \begin{align*}
-          h_{v,n} V_n&amp;=h_{l,n+1} L_{n+1}+h_{l,D} D + Q_c
-          \end{align*}
-          where
-          $Q_{c}$
-          is the condenser duty.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.31);">
-        <figure>
-         <div class="center">
-          <img src="img/fractionation_column_01_top.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.71);">
-        \begin{align*}
-        V_n&amp;=L_{n+1}+D \\
-        h_{v,n} V_n&amp;=h_{l,n+1} L_{n+1}+h_{l,D} D + Q_c
-        \end{align*}
-        <ul>
-         <li>
-          Let $h_D'=h_{l,D}+Q_{c}/D$
-          and we can rewrite our
-        enthalpy balance:
-          \begin{align*}
-          h_{v,n} V_n-h_{l,n+1} L_{n+1}&amp;=h_{D}' D
-          \end{align*}
-          and it is clear that
-          $h_{D}' D$
-          is the (constant) enthalpy
-        difference between the vapour stream emerging from the column
-        and the reflux stream returned to top section of the column.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Eliminating $V_n$
-          using the overall
-          mass balance we have
-          \begin{align*}
-          h_{v,n}(L_{n+1}+D)-h_{l,n+1} L_{n+1}&amp;=h_{D}' D\\
-            \frac{L_{n+1}}{D} &amp;=\frac{h_{D}'-h_{v,n}}{h_{v,n}-h_{l,n+1}}
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          Setting the two expressions for $L_{n+1}/D$
-          to be equal, we have:
-          \begin{align*}
-          \frac{h_{D}'-h_{v,n}}{h_{v,n}-h_{l,n+1}} = \frac{x_D-y_n}{y_n-x_{n+1}}
-          \end{align*}
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.31);">
-        <figure>
-         <div class="center">
-          <img src="img/fractionation_column_01_top.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.71);">
-        \begin{align*}
-        \frac{h_{D}'-h_{v,n}}{h_{v,n}-h_{l,n+1}} &amp;= \frac{x_D-y_n}{y_n-x_{n+1}}
-        \\
-        h_D'&amp;=h_{l,D}+Q_{c}/D
-        \end{align*}
-        <ul>
-         <li>
-           This is our <span style="color:teal;">operating line</span>
-           for the top
-           section of the column.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          $h_{D}'$
-          and
-          $x_D$
-          can be worked out at the start of a
-        design (after selecting a reflux ratio) and the <span style="color:teal;">operating line</span>
-        gives us a relationship between
-          $(x_{n+1}, h_{l,n+1})$
-          and
-          $(y_{n}, h_{v,n})$.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          Provided we have a $H$-$xy$
-          diagram we can solve for
-        one pair given the other (but there is now a different
-        <span style="color:teal;">operating line</span> for each stage in the top section).
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          But, if we set either $(x_{n+1}, h_{l,n+1})$
-          OR
-          $(y_{n}, h_{v,n})$
-          to
-          $(x_d,h'_d)$, the equation is satisfied
-        for any value of the other: i.e.
-          $(x_d,h'_d)$
-          is a
-          <b>pole</b>
-          point.
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          All <span style="color:teal;">operating lines</span> for stages in the top of the column must
-          pass through this pole point, which we denote $P_C$.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.31);">
-        <figure>
-         <div class="center">
-          <img src="img/fractionation_column_01_top.svg" style="width:100%"/>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.65);">
-        <ul>
-         <li>
-          This is what a design of the top-section looks like.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          We calculate the location of $P_C=(x_d,h'_d)$, then all
-        <span style="color:teal;">operating line</span> must pass through this point.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          The first location in the column is the distillate
-        vapour concentration $y_N$
-          or
-          $x_D$, so we start the stepping
-        there.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          The tie-lines/VLE data allows us to calculate $x_N$,
-        which allows us to draw the next <span style="color:teal;">operating line</span>.
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          We can then progress down the column, alternately solving
-        mass/energy balances and the VLE data for the compositions on
-        each stage!
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.35);">
-        <img src="img/HxyOctaneHexane-top.svg" style="width:100%"/>
-       </div>
-      </div>
-     </section>
-     <section data-menu-title="Bottom column section">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.61);">
-        <ul>
-         <li>
-          The exact same analysis for the bottom section yields the
-        following equation:
-          \begin{align*}
-          \frac{h_w'-h_{v,m}}{h_{v,m}-h_{l,m+1}}&amp;=\frac{x_w-y_m}{y_m-x_{m+1}}
-          \end{align*}
-          where
-          $h_w'=h_{l,w}-Q_R/W$, and
-          $Q_R$
-          is the reboiler duty.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          We can calculate $Q_R$
-          using an enthalpy balance over
-        the whole column.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          Here it is clear that there is a pole for this equation at
-        $(x_w,h_w')$, which we denote
-          $P_R$.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          We can perform the same construction as before to
-        calculate the stage-by-stage concentrations within the column
-        (see right).
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.41);">
-        <figure>
-         <img src="img/HxyOctaneHexane-bottom.svg" style="width:100%"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section data-menu-title="Feed section">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.751);">
-        <ul>
-         <li>
-          These constructions allow the top and bottom section of
-        the column to be designed, but these processes must meet at
-        the
-          <b>feed tray</b>.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          We need to find a relationship to locate the feed tray
-        relative to the top and bottom sections.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          Taking an overall balance we have:
-          \begin{align*}
-          F &amp;= W + D &amp; x_F F &amp;= x_W W + x_D D
-          \end{align*}
-          And eliminating
-          $F$
-          gives:
-          \begin{align*}
-          \frac{W}{D}=\frac{x_D-x_F}{x_F-x_W}
-          \end{align*}
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.251);">
-        <figure>
-         <img src="img/fractionation_column.svg" style="width:100%"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.751);">
-        \begin{align*}
-        F &amp;= W + D &amp; x_F F &amp;= x_W W + x_D D
-        \end{align*}
-        <ul>
-         <li>
-          We can also perform an overall enthalpy balance:
-          \begin{align*}
-          Q_B + h_F F = h_{l,W} W+h_{l,D} D+Q_c
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Introducing $h_w'=h_{l,w}-\frac{Q_B}{W}$
-          and
-          $h_D'=h_{l,D}+Q_{c}/D$
-          into the energy balance we have
-          \begin{align*}
-          h_F F &amp;= h_W' W+h_D' D+Q_c\\
-          \frac{W}{D}&amp;=\frac{h_D'-h_F}{h_F-h_W'}
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          Combining these two expressions for $W/D$
-          gives:
-          \begin{align*}
-          \frac{h_D'-h_F}{h_F-h_W'}&amp;=\frac{x_D-x_F}{x_F-x_W}
-          \end{align*}
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.251);">
-        <figure>
-         <img src="img/fractionation_column.svg" style="width:100%"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.75);">
-        \begin{align*}
-        \frac{h_D'-h_F}{h_F-h_W'}&amp;=\frac{x_D-x_F}{x_F-x_W}
-        \end{align*}
-        <ul>
-         <li>
-          If $h_F$
-          and
-          $x_F$
-          are our free variables, then it is
-        clear to see that this equation has a solution at
-          $(x_F,h_F)=(x_D,h'_D)$
-          and
-          $(x_F,h_F)=(x_W,h'_W)$.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Therefore, the feed point $P_F=(x_F, h_F)$, condenser pole
-        point
-          $P_C=(x_D,h'_D)$, and reboiler point
-          $P_W=(x_W,h'_W)$,
-        all lie on the same (straight) line on a
-          $H$-$x$
-          diagram!
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          Performing a flash from the feed location $P_F$
-          gives
-        us the starting points for the top and bottom feed sections.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          From here we proceed to determine how many stages it
-        takes to reach the bottoms and top product concentrations.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.25);">
-        <figure>
-         <img src="img/HxyOctaneHexane-feed.svg" style="width:100%"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section data-menu-title="Effects of the reflux ratio">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.75);">
-        <ul>
-         <li>
-          At this point it is easy to talk about the reflux
-        ratio.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          The height of the point $P_C$, given by
-          $h_D'=h_{L,D}+Q_{c}/D$
-          is set by the reflux ratio which
-        controls the duty of the condenser.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          From an overall energy balance over the column we know
-        that as the duty increases on the condenser, so does the
-        reboiler duty. Higher reflux ratios lower the height of point
-        $P_W$, given by
-          $h_W'=h_{L,w}-Q_R/W$.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          As the reflux ratio increases, the slope of the
-        <span style="color:teal;">operating lines</span> increase, eventually leading to vertical lines
-        at infinite reflux ratio…
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.25);">
-        <figure>
-         <img src="img/HxyOctaneHexane-feed.svg" style="width:100%"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <figure>
-       <div class="center">
-        <img src="img/HxyOctaneHexane-infR.svg" style="width:25%;"/>
-        <figcaption>
-         A Ponchon-Savarit calculation at infinte reflux
-        ratio. This yields the minimum number of theoretical stages
-        required to perform the separation.
-        </figcaption>
-       </div>
-      </figure>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.7);">
-        <ul>
-         <li>
-          What about the other limit (infinite trays/minimum
-        reflux ratio)?
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          Here, the same rule applies as for McCabe-Thiele
-        design,
-          <b><span style="color:teal;">operating lines</span> must not cross equilibrium lines!</b>
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          As the reflux ratio is lowered, the points $P_C$
-          and
-          $P_R$
-          approach the saturation lines, lowering the gradient of
-        the
-          <span style="color:teal;">operating lines</span>.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          Eventually, one of the <span style="color:teal;">operating lines</span> coincides with
-        its VLE tie-line, meaning that there is no separation over
-        that stage.
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          This typically happens at the feed tray (see the pinch
-        right), so we can just extend the tie line at this location to
-        calculate the minimum reflux ratio (but we must also check for
-        crosses at any other stage to determine if there is another
-        pinch point elsewhere).
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.3);">
-        <figure>
-         <img src="img/HxyOctaneHexane-minR.svg" style="width:100%"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.7);">
-        <ul>
-         <li>
-          From here, we can use an energy balance to calculate
-        $R_{min}$. For example:
-          \begin{align*}
-          \frac{Q_c}{D} &amp;= h'_D-h_{L,D}\\
-          \left(h_{V,D}-h_{L,D}\right)\frac{V}{D} &amp;= h'_D-h_{L,D}\\
-          \left(h_{V,D}-h_{L,D}\right)\frac{L+D}{D} &amp;= h'_D-h_{L,D}\\
-          R = \frac{h'_D-h_{L,D}}{h_{V,D}-h_{L,D}}-1
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          These values can be directly measured from the
-        enthalpy graph.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.3);">
-        <figure>
-         <img src="img/HxyOctaneHexane-minR.svg" style="width:100%"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-    </section>
-    <section>
-     <section data-menu-title="Worked example">
-      <ul>
-       <li>
-        We're going to perform a distillation design of a
-    Benzene-Toluene mixture using the Ponchon-Savarit method.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        We need to construct an enthalpy diagram. There is a
-    worked example for Benzene-Toluene in Ex.11.6-1 (pg 670–672) of
-        <i>“Transport Processes and Unit Operations”</i>
-        by
-    C. J. Geankoplis.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        We also need equilibrium data/VLE data. To revise how to
-    generate this, see your solutions to Tutorial 5, the design
-    course, or Ex.11.1-1 (pg 641–642) of
-        <i>“Transport Processes
-      and Unit Operations”</i>
-        by C. J. Geankoplis.
-       </li>
-      </ul>
-     </section>
-     <section>
-      <figure>
-	<div class="center">
-	  <img src="img/Hxy-Benzene-Toluene.svg" style="width:35%;">
-        <figcaption>
-         This data is calculated using heat capacity and
-        formation enthalpy data from “NASA Glenn Coefficients for
-        Calculating Thermodynamic Properties of Individual Species”
-        by McBride, B.J., M. J. Zehe, Dr.and Gordon, S. NASA
-        TP-2002-211556, 2002.
-        </figcaption>
-       </div>
-      </figure>
-     </section>
-     <section>
-      <figure>
-       <div class="center">
-	 <img src="img/Txy-Benzene-Toluene.svg" style="width:65%;">
-        <figcaption>
-         This data is calculated using Raoult's law and vapour
-        pressure data (Antoine coefficients) taken from Perry's.
-        </figcaption>
-       </div>
-      </figure>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.5);">
-        <ul>
-         <li>
-           We can combine this data by reading pairs of $x$-$y$
-           values from the
-           $T$-$xy$
-           diagram and plotting these lines on
-           the
-           $H$-$xy$
-           diagram. We could also just use the figures
-           directly.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          For the worked example, we're going to distill a 50
-        mole% Benzene saturated liquid feed to two product streams at
-        20 mole% and 90 mole% purity.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          The optimum reflux ratio is known to be $1.5 R_{min}$
-          from experience.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          It is well-known that Benzene-Toluene systems are good
-        candidates for assuming CMO, but this is just to illustrate
-        the method.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.5);">
-        <figure>
-	  <img src="img/Txy-Benzene-Toluene.svg" style="width:100%;">
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.61);">
-        <ul>
-         <li>
-          We can determine the minimum reflux ratio by checking
-        for pinches in the column design.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          These usually occur near the feed, so we'll start
-        there and use it to predict the minimum $P_C$
-          position.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          We can then calculate the minimum reflux ratio using
-        the expression derived before.
-          \begin{align*}
-          R = \frac{h'_D-h_{L,D}}{h_{V,D}-h_{L,D}} - 1 \approx 0.91
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          The optimum reflux ratio is then
-        $R=1.5\times0.91=1.092$, and we can use the expression above
-        to plot the actual condenser pole point
-          $P_C$.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.41);">
-        <figure>
-         <img src="img/Hxy-Benzene-Toluene-tied-minreflux.svg" style="width:100%"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.61);">
-        <ul>
-         <li>
-          We know that $P_{C}$,
-          $P_{F}$, and
-          $P_{R}$
-          must lie on
-        the same line, therefore we can now determine
-          $P_R$.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          From here, we can start our distillation design. We
-        will start at the feed tray and solve each section from there.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.41);">
-        <figure>
-         <img src="img/Hxy-Benzene-Toluene-tied-design1.svg" style="width:100%"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.61);">
-        <ul>
-         <li>
-          In this case, we require a reboiler and almost exactly
-        7 theoretical stages.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          We can still have fractional stages which we compute
-        using the distance along the equilibrium lines, but it is not
-        needed in this case.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          We could also include Murphree efficiencies, although
-        this would be simpler to implement with a separate $x$-$y$
-          diagram rather than the tie-lines on the
-          $H$-$xy$
-          diagram.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          Finally, we can immediately calculate the reboiler and
-        condenser duties from the graph using the following
-        expressions:
-          \begin{align*}
-          h_D'&amp;=h_{l,D}+Q_{c}/D\\
-         h_w'&amp;=h_{l,w}-Q_R/W
-          \end{align*}
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.41);">
-        <figure>
-         <img src="img/Hxy-Benzene-Toluene-tied-design2.svg" style="width:100%"/>
-        </figure>
-       </div>
-      </div>
-     </section>
-    </section>
-   </div>
-   <div class="slide-menu-button" style="left:170px;cursor:pointer;">
-    <a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
-     <i class="fa fa-print"></i>
-    </a>
-   </div>
-   <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
-   </script>
-   <script src="footer.js">
-   </script>
-  </div>
- </body>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+      </script>
+      <script src="footer.js"></script>
+    </div>
+  </body>
 </html>

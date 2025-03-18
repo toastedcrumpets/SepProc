@@ -1,501 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <title>
-   Separation Processes 1
-  </title>
-  <meta content="Separation processes 1 notes" name="description"/>
-  <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author"/>
-  <meta content="yes" name="apple-mobile-web-app-capable"/>
-  <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"/>
-  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"/>
-  <script src="header.js"></script>
- </head>
- <body>
-  <div class="reveal">
-   <div class="slides">
-    <section>
-     <section>
-      <h2>
-       Partial Column Designs and Batch Columns
-      </h2>
-      <div class="center">
+  <head>
+    <meta charset="utf-8" />
+    <title>Separation Processes 1</title>
+    <meta content="Separation processes 1 notes" name="description" />
+    <meta content="Marcus Bannerman &lt;m.bannerman@gmail.com" name="author" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta
+      content="black-translucent"
+      name="apple-mobile-web-app-status-bar-style"
+    />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
+      name="viewport"
+    />
+    <script src="header.js"></script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <section>
+            <h2>Partial Column Designs and Batch Columns</h2>
+            <div class="center"></div>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Partial distillation column designs">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.551)">
+                <ul>
+                  <li>
+                    We have studied standard distillation columns where the feed
+                    tray is located within the middle of the column.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    The feed tray may instead be located at the very top or
+                    bottom of the column to create either an
+                    <b>enrichment/rectification</b>
+                    column or a
+                    <b>stripping</b>
+                    column.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    These configurations can be extremely useful if the
+                    feed-conditions or operating-modes are favourable.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.41)">
+                <figure>
+                  <div class="center">
+                    <img src="img/fractionation_column_01.svg" />
+                    <figcaption>
+                      A typical multistage distillation column.
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section data-menu-title="Enrichment columns">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.551)">
+                <ul>
+                  <li>
+                    <b>Enrichment columns</b>
+                    have the feed tray located at the bottom of the column.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    This allows a low-concentration volatile component to be
+                    extracted at high purity from the feed stream.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    This design is also key to the understanding of
+                    <b>multi-stage batch distillation</b>, as the large
+                    reboiler/still volume allows it to be approximated as an
+                    enrichment column with a slowly-varying bottoms
+                    concentration.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.41)">
+                <figure>
+                  <div class="center">
+                    <img src="img/enrichment_column_wboiler.svg" />
+                    <figcaption>
+                      A enrichment distillation column with reboiler.
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.551)">
+                <ul>
+                  <li>
+                    <b>Enrichment columns</b>
+                    may also be designed without a reboiler if the feed stream
+                    partially/fully vapourises on entry to the column.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    This is an efficient (but rare) configuration if the feed
+                    stream is to be condensed anyway as part of the overall
+                    plant design.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    However, the reflux ratio is no-longer an adjustable
+                    parameter but is set by the ratio of the two product
+                    flow-rates, $R=W/D.$
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    The design of enrichment columns is relatively
+                    straightforward, requiring only the enrichment
+                    <span style="color: teal"> operating line equation</span>.
+                    \begin{align*} y_n &amp;= x_{n+1}\frac{R}{R+1} +
+                    \frac{x_D}{R+1} \end{align*}
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.41)">
+                <figure>
+                  <div class="center">
+                    <img src="img/enrichment_column_woboiler.svg" />
+                    <figcaption>
+                      A enrichment distillation column without re-boiler.
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section data-menu-title="Enrichment column design">
+            <figure>
+              <div class="center">
+                <img
+                  src="img/enrichment_column_design.svg"
+                  style="width: 50%"
+                />
+                <figcaption>
+                  The design of an enrichment column with no reboiler (vapour
+                  feed at $y_F$ entering at the bottom).
+                </figcaption>
+              </div>
+            </figure>
+          </section>
+          <section data-menu-title="Stripping column">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.551)">
+                <ul>
+                  <li>
+                    <b>Stripping columns</b>
+                    are handled similarly to enrichment column design and may be
+                    designed without a condenser if the feed stream is liquid.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    This condenser-less design is useful when separating
+                    highly-volatile compounds which would otherwise require a
+                    cryogenic condenser (e.g., separation of air or natural gas
+                    as propane boils at -42${}^\circ$ C, ethane at -89
+                    ${}^\circ$ C).
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    Its design only requires the use of the stripping section
+                    equation, which we can rewrite: \begin{align*} y_{m} &amp;=
+                    x_{m+1}\frac{L_m}{V_m} - x_{W}\frac{W}{V_m} \\
+                    &amp;=x_{m+1}\frac{F}{F-W} - x_{W}\frac{W}{F-W} \end{align*}
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.41)">
+                <figure>
+                  <div class="center">
+                    <img src="img/stripping_column_wocondenser.svg" />
+                    <figcaption>
+                      A stripping distillation column without condenser.
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <figure>
+              <div class="center">
+                <img src="img/stripping_column_design.svg" style="width: 50%" />
+                <figcaption>
+                  The design of a stripping column without a condenser (liquid
+                  feed $x_F$ entering at the top).
+                </figcaption>
+              </div>
+            </figure>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.551)">
+                <ul>
+                  <li>
+                    One important example of this design is in the
+                    <b>SAGE gas terminal</b>.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    High-pressure gas passes through an expansion turbine
+                    (turbo-expander), which causes it to cool and condense (
+                    <b>Joule-Thomson effect</b>).
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    This liquid is fed to a
+                    <b>stripping column</b>
+                    which is used to separate off a variable fraction of NGLs,
+                    allowing the plant to control its gas composition (and
+                    recover NGLs which are sold on).
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    The product vapour/gas is then re-compressed using a
+                    compressor which is partially powered by the expansion
+                    turbine (turbo-expander) for efficiency.
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    At no point is a condenser required to liquefy the light
+                    fractions of the gas (methane, ethane, propane, …).
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.41)">
+                <figure>
+                  <div class="center">
+                    <img src="img/stripping_column_wocondenser.svg" />
+                    <figcaption>
+                      A stripping distillation column without condenser.
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+        </section>
+        <section>
+          <section data-menu-title="Batch multi-stage distillation">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.551)">
+                <ul>
+                  <li>
+                    <b>Batch distillation</b>
+                    is a technique to carry out small scale or controlled
+                    separations on a fixed volume.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    The design of
+                    <b>single-stage</b>
+                    batch distillation systems follows Rayleigh's equation:
+                    \begin{align*} \ln\left(\frac{L_{final}}{L_{initial}}\right)
+                    = \int_{x_{initial}}^{x_{final}} \frac{{\rm d}x}{y-x}
+                    \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    This single-stage approach is limited to either low recovery
+                    or highly volatile systems.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    <b>Multi-stage</b>
+                    batch distillation, such as the column on the right, enables
+                    high purities to collected while still running in batch
+                    operation.
+                  </li>
+                  <li class="fragment" data-fragment-index="4">
+                    Most batch stills are in-fact multi-stage systems…
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.41)">
+                <figure>
+                  <div class="center">
+                    <img src="img/batch_multistage.svg" style="width: 70%" />
+                    <figcaption>
+                      A multi-stage batch distillation column.
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.551)">
+                <ul>
+                  <li>
+                    The copper stills used in the whisky industry contain more
+                    than one stage of distillation.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    No insulation is deliberately used to allow condensation to
+                    form inside the still causing a small reflux stream to form.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    This counter-current flow of liquid and vapour results in
+                    more than one stage of distillation overall.
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    But how can we design multi-stage distillation columns like
+                    this one?
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.41)">
+                <figure>
+                  <div class="center">
+                    <img
+                      src="img/multistage_copper_still.svg"
+                      style="width: 70%"
+                    />
+                    <figcaption>
+                      A multi-stage batch distillation column.
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.551)">
+                <ul>
+                  <li>
+                    The first step is to realise that Rayleigh's equation still
+                    holds for this system: \begin{align*}
+                    \ln\left(\frac{L_{final}}{L_{initial}}\right) =
+                    \int_{x_{initial}}^{x_{final}} \frac{{\rm d}x}{y-x}
+                    \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    $y$ is the “produced” concentration given a liquid
+                    concentration of $x$ in the still.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    If we can calculate the top product concentration $x_D$
+                    which will be produced from a multi-stage still given the
+                    still concentration $x$, we can write \begin{align*}
+                    \ln\left(\frac{L_{final}}{L_{initial}}\right) =
+                    \int_{x_{initial}}^{x_{final}} \frac{{\rm d}x}{x_D-x}
+                    \end{align*}
+                  </li>
+                  <li class="fragment" data-fragment-index="3">
+                    All we need is some relationship between $x_D$ and $x$ for
+                    the column, then we can integrate it.
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.41)">
+                <figure>
+                  <div class="center">
+                    <img src="img/pot_still_03.svg" style="width: 60%" />
+                    <figcaption>
+                      A simplified diagram of a pot still.
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section data-menu-title="Fixed reflux ratio">
+            <div style="display: flex; align-items: center">
+              <div style="flex: 1 1 calc(100% * 0.551)">
+                <ul>
+                  <li>
+                    If we can
+                    <b>assume that we have a fixed reflux ratio</b>, then
+                    multi-stage batch distillation columns can be assumed to be
+                    an enrichment distillation column with a slowly varying
+                    bottoms product concentration.
+                  </li>
+                  <li class="fragment" data-fragment-index="1">
+                    The bottoms product varies slowly as there is a large volume
+                    of liquid in the reboiler, acting as “feed” to the column.
+                  </li>
+                  <li class="fragment" data-fragment-index="2">
+                    We can then find the relationship $x_D-x$ by performing
+                    repeated distillation column designs for the range
+                    $x\in\left[x_{initial},x_{final}\right]$ …
+                  </li>
+                </ul>
+              </div>
+              <div style="flex: 1 1 calc(100% * 0.41)">
+                <figure>
+                  <div class="center">
+                    <img src="img/batch_multistage.svg" style="width: 70%" />
+                    <figcaption>
+                      A multi-stage batch distillation column.
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
+          </section>
+          <section>
+            <figure>
+              <div class="center">
+                <img
+                  src="img/multistage_batch_column_design_fixedR.svg"
+                  style="width: 50%"
+                />
+                <figcaption>
+                  As the bottoms product concentration drops over time, so does
+                  the top product concentration. The slope of the operating line
+                  remains constant as the reflux ratio doesn't change.
+                </figcaption>
+              </div>
+            </figure>
+          </section>
+          <section>
+            <figure>
+              <div class="center">
+                <img
+                  src="img/multistage_batch_column_design_fixedR_int.svg"
+                  style="width: 65%"
+                />
+                <figcaption>
+                  Plotting these differences, we can perform the integration
+                  using the trapezium rule (note that this integral is negative
+                  as we're integrating backwards). The area of a trapezium is
+                  $(Y_1+Y_2) * (X_2-X_1)/2$.
+                </figcaption>
+              </div>
+            </figure>
+          </section>
+          <section data-menu-title="Fixed top-product composition">
+            <ul>
+              <li>
+                An alternative batch distillation operating mode to fixed
+                reflux-ratio is
+                <b>fixed top-product concentration</b>.
+              </li>
+              <li class="fragment" data-fragment-index="1">
+                This assumes that the reflux ratio of the batch column is varied
+                to keep the top-product concentration fixed.
+              </li>
+              <li class="fragment" data-fragment-index="2">
+                This piece of process control can be done by altering the reflux
+                ratio depending on the temperature at the top of the column
+                (temperature is concentration at fixed pressure).
+              </li>
+              <li class="fragment" data-fragment-index="3">
+                As the distillation continues, the reflux ratio must increase
+                exponentially to maintain the top product concentration.
+              </li>
+              <li class="fragment" data-fragment-index="4">
+                In this case, $x_D$ is constant and we have \begin{align*}
+                \ln\left(\frac{L_{final}}{L_{initial}}\right) &amp;=
+                \int_{x_{initial}}^{x_{final}} \frac{{\rm d}x}{x_D-x}
+                =\left[-\ln(x_D-x)\right]_{x_{initial}}^{x_{final}} \\
+                x_D(L_{initial}-L_{final})&amp;=x_{initial} L_{initial}-x_{final} L_{final}
+                \end{align*}
+              </li>
+              <li class="fragment" data-fragment-index="5">
+                This can be obtained directly from a mass balance.
+              </li>
+              <li class="fragment" data-fragment-index="6">
+                Fixed reflux ratio and fixed top-product concentration methods
+                can both achieve identical separations; however, fixed reflux
+                ratio is the simplest to perform operationally.
+              </li>
+            </ul>
+          </section>
+        </section>
       </div>
-     </section>
-    </section>
-    <section>
-     <section data-menu-title="Partial distillation column designs">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.551);">
-        <ul>
-         <li>
-          We have studied standard distillation columns where
-        the feed tray is located within the middle of the column.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          The feed tray may instead be located at the very top
-        or bottom of the column to create either an
-          <b>enrichment/rectification</b>
-          column or a
-          <b>stripping</b>
-          column.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          These configurations can be extremely useful if the
-        feed-conditions or operating-modes are favourable.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.41);">
-        <figure>
-         <div class="center">
-          <img src="img/fractionation_column_01.svg"/>
-          <figcaption>
-           A typical multistage distillation column.
-          </figcaption>
-         </div>
-        </figure>
-       </div>
+      <div class="slide-menu-button" style="left: 170px; cursor: pointer">
+        <a
+          class="hide-on-pdf"
+          id="PrintButton"
+          onclick="document.location = '?print-pdf';"
+        >
+          <i class="fa fa-print"></i>
+        </a>
       </div>
-     </section>
-     <section data-menu-title="Enrichment columns">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.551);">
-        <ul>
-         <li>
-          <b>Enrichment columns</b>
-          have the feed tray located at
-        the bottom of the column.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          This allows a low-concentration volatile component to
-        be extracted at high purity from the feed stream.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          This design is also key to the understanding of
-          <b>multi-stage batch distillation</b>, as the large reboiler/still
-        volume allows it to be approximated as an enrichment column
-        with a slowly-varying bottoms concentration.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.41);">
-        <figure>
-         <div class="center">
-          <img src="img/enrichment_column_wboiler.svg"/>
-          <figcaption>
-           A enrichment distillation column with reboiler.
-          </figcaption>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.551);">
-        <ul>
-         <li>
-          <b>Enrichment columns</b>
-          may also be designed without
-        a reboiler if the feed stream partially/fully vapourises on
-        entry to the column.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          This is an efficient (but rare) configuration if the
-        feed stream is to be condensed anyway as part of the overall
-        plant design.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          However, the reflux ratio is no-longer an adjustable
-          parameter but is set by the ratio of the two product
-          flow-rates, $R=W/D.$
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          The design of enrichment columns is relatively
-        straightforward, requiring only the enrichment
-          <span style="color:teal">
-           operating line equation</span>.
-          \begin{align*}
-          y_n &amp;= x_{n+1}\frac{R}{R+1} + \frac{x_D}{R+1}
-          \end{align*}
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.41);">
-        <figure>
-         <div class="center">
-          <img src="img/enrichment_column_woboiler.svg"/>
-          <figcaption>
-           A enrichment distillation column without re-boiler.
-          </figcaption>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section data-menu-title="Enrichment column design">
-      <figure>
-       <div class="center">
-        <img src="img/enrichment_column_design.svg" style="width:50%;"/>
-        <figcaption>
-         The design of an enrichment column with no reboiler
-        (vapour feed at
-         $y_F$
-         entering at the bottom).
-        </figcaption>
-       </div>
-      </figure>
-     </section>
-     <section data-menu-title="Stripping column">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.551);">
-        <ul>
-         <li>
-          <b>Stripping columns</b>
-          are handled similarly to
-        enrichment column design and may be designed without a
-        condenser if the feed stream is liquid.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          This condenser-less design is useful when separating
-        highly-volatile compounds which would otherwise require a
-        cryogenic condenser (e.g., separation of air or natural gas as
-        propane boils at -42${}^\circ$
-          C, ethane at -89
-          ${}^\circ$
-          C).
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          Its design only requires the use of the stripping
-        section equation, which we can rewrite:
-          \begin{align*}
-          y_{m} &amp;= x_{m+1}\frac{L_m}{V_m} - x_{W}\frac{W}{V_m} \\
-          &amp;=x_{m+1}\frac{F}{F-W} - x_{W}\frac{W}{F-W}
-          \end{align*}
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.41);">
-        <figure>
-         <div class="center">
-          <img src="img/stripping_column_wocondenser.svg"/>
-          <figcaption>
-           A stripping distillation column without condenser.
-          </figcaption>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <figure>
-       <div class="center">
-        <img src="img/stripping_column_design.svg"  style="width:50%;"/>
-        <figcaption>
-         The design of a stripping column without a condenser
-      (liquid feed
-         $x_F$
-         entering at the top).
-        </figcaption>
-       </div>
-      </figure>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.551);">
-        <ul>
-         <li>
-          One important example of this design is in the
-          <b>SAGE gas terminal</b>.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          High-pressure gas passes through an expansion turbine
-        (turbo-expander), which causes it to cool and condense (
-          <b>Joule-Thomson effect</b>).
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          This liquid is fed to a
-          <b>stripping column</b>
-          which
-        is used to separate off a variable fraction of NGLs, allowing
-        the plant to control its gas composition (and recover NGLs
-        which are sold on).
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          The product vapour/gas is then re-compressed using a
-        compressor which is partially powered by the expansion turbine
-        (turbo-expander) for efficiency.
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          At no point is a condenser required to liquefy the
-        light fractions of the gas (methane, ethane, propane, …).
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.41);">
-        <figure>
-         <div class="center">
-          <img src="img/stripping_column_wocondenser.svg"/>
-          <figcaption>
-           A stripping distillation column without condenser.
-          </figcaption>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-    </section>
-    <section>
-     <section data-menu-title="Batch multi-stage distillation">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.551);">
-        <ul>
-         <li>
-          <b>Batch distillation</b>
-          is a technique to carry out
-        small scale or controlled separations on a fixed volume.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          The design of
-          <b>single-stage</b>
-          batch distillation
-        systems follows Rayleigh's equation:
-          \begin{align*}
-          \ln\left(\frac{L_{final}}{L_{initial}}\right) =
-          \int_{x_{initial}}^{x_{final}} \frac{{\rm d}x}{y-x}
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          This single-stage approach is limited to either low
-        recovery or highly volatile systems.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          <b>Multi-stage</b>
-          batch distillation, such as the
-        column on the right, enables high purities to collected while
-        still running in batch operation.
-         </li>
-         <li class="fragment" data-fragment-index="4">
-          Most batch stills are in-fact multi-stage
-        systems…
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.41);">
-        <figure>
-         <div class="center">
-          <img src="img/batch_multistage.svg"  style="width:70%;"/>
-          <figcaption>
-           A multi-stage batch distillation column.
-          </figcaption>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.551);">
-        <ul>
-         <li>
-          The copper stills used in the whisky industry contain
-        more than one stage of distillation.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          No insulation is deliberately used to allow
-        condensation to form inside the still causing a small reflux
-        stream to form.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          This counter-current flow of liquid and vapour results
-        in more than one stage of distillation overall.
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          But how can we design multi-stage distillation columns
-        like this one?
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.41);">
-        <figure>
-         <div class="center">
-          <img src="img/multistage_copper_still.svg" style="width:70%;"/>
-          <figcaption>
-           A multi-stage batch distillation column.
-          </figcaption>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.551);">
-        <ul>
-         <li>
-          The first step is to realise that Rayleigh's equation
-        still holds for this system:
-          \begin{align*}
-          \ln\left(\frac{L_{final}}{L_{initial}}\right) =
-          \int_{x_{initial}}^{x_{final}} \frac{{\rm d}x}{y-x}
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          $y$
-          is the “produced” concentration given a liquid
-        concentration of
-          $x$
-          in the still.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          If we can calculate the top product concentration
-        $x_D$
-          which will be produced from a multi-stage still given
-        the still concentration
-          $x$, we can write
-          \begin{align*}
-          \ln\left(\frac{L_{final}}{L_{initial}}\right) =
-          \int_{x_{initial}}^{x_{final}} \frac{{\rm d}x}{x_D-x}
-          \end{align*}
-         </li>
-         <li class="fragment" data-fragment-index="3">
-          All we need is some relationship between $x_D$
-          and
-          $x$
-          for the column, then we can integrate it.
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.41);">
-        <figure>
-         <div class="center">
-          <img src="img/pot_still_03.svg" style="width:60%;"/>
-          <figcaption>
-           A simplified diagram of a pot still.
-          </figcaption>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section data-menu-title="Fixed reflux ratio">
-      <div style="display:flex;align-items:center;">
-       <div style="flex: 1 1 calc(100% * 0.551);">
-        <ul>
-         <li>
-          If we can
-          <b>assume that we have a fixed reflux
-          ratio</b>, then multi-stage batch distillation columns can be
-        assumed to be an enrichment distillation column with a slowly
-        varying bottoms product concentration.
-         </li>
-         <li class="fragment" data-fragment-index="1">
-          The bottoms product varies slowly as there is a large
-        volume of liquid in the reboiler, acting as “feed” to the
-        column.
-         </li>
-         <li class="fragment" data-fragment-index="2">
-          We can then find the relationship $x_D-x$
-          by
-        performing repeated distillation column designs for the range
-          $x\in\left[x_{initial},x_{final}\right]$
-          …
-         </li>
-        </ul>
-       </div>
-       <div style="flex: 1 1 calc(100% * 0.41);">
-        <figure>
-         <div class="center">
-          <img src="img/batch_multistage.svg" style="width:70%;"/>
-          <figcaption>
-           A multi-stage batch distillation column.
-          </figcaption>
-         </div>
-        </figure>
-       </div>
-      </div>
-     </section>
-     <section>
-      <figure>
-       <div class="center">
-        <img src="img/multistage_batch_column_design_fixedR.svg" style="width:50%;"/>
-        <figcaption>
-         As the bottoms product concentration drops over time,
-        so does the top product concentration. The slope of the
-        operating line remains constant as the reflux ratio doesn't
-        change.
-        </figcaption>
-       </div>
-      </figure>
-     </section>
-     <section>
-      <figure>
-       <div class="center">
-        <img src="img/multistage_batch_column_design_fixedR_int.svg" style="width:65%;"/>
-        <figcaption>
-         Plotting these differences, we can perform the
-        integration using the trapezium rule (note that this integral
-        is negative as we're integrating backwards). The area of a
-        trapezium is
-         $(Y_1+Y_2) * (X_2-X_1)/2$.
-        </figcaption>
-       </div>
-      </figure>
-     </section>
-     <section data-menu-title="Fixed top-product composition">
-      <ul>
-       <li>
-        An alternative batch distillation operating mode to fixed
-    reflux-ratio is
-        <b>fixed top-product concentration</b>.
-       </li>
-       <li class="fragment" data-fragment-index="1">
-        This assumes that the reflux ratio of the batch column is
-    varied to keep the top-product concentration fixed.
-       </li>
-       <li class="fragment" data-fragment-index="2">
-        This piece of process control can be done by altering the
-    reflux ratio depending on the temperature at the top of the column
-    (temperature is concentration at fixed pressure).
-       </li>
-       <li class="fragment" data-fragment-index="3">
-        As the distillation continues, the reflux ratio must
-    increase exponentially to maintain the top product concentration.
-       </li>
-       <li class="fragment" data-fragment-index="4">
-        In this case, $x_D$
-        is constant and we have
-        \begin{align*}
-        \ln\left(\frac{L_{final}}{L_{initial}}\right) &amp;=
-      \int_{x_{initial}}^{x_{final}} \frac{{\rm d}x}{x_D-x}\\
-      &amp;=\left[-\ln(x_D-x)\right]_{x_{initial}}^{x_{final}} \\
-      x_D(L_{initial}-L_{final})&amp;=x_{initial} L_{initial}-x_{final} L_{final}
-        \end{align*}
-       </li>
-       <li class="fragment" data-fragment-index="5">
-        This can be obtained directly from a mass balance.
-       </li>
-       <li class="fragment" data-fragment-index="6">
-        Fixed reflux ratio and fixed top-product concentration
-    methods can both achieve identical separations; however, fixed
-    reflux ratio is the simplest to perform operationally.
-       </li>
-      </ul>
-     </section>
-    </section>
-   </div>
-   <div class="slide-menu-button" style="left:170px;cursor:pointer;">
-    <a class="hide-on-pdf" id="PrintButton" onclick="document.location = '?print-pdf';">
-     <i class="fa fa-print"></i>
-    </a>
-   </div>
-   <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
-   </script>
-   <script src="footer.js">
-   </script>
-  </div>
- </body>
+      <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+      </script>
+      <script src="footer.js"></script>
+    </div>
+  </body>
 </html>
