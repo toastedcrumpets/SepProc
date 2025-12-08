@@ -48,7 +48,7 @@ loadScripts(
       },
       math: {
           config: "TeX-AMS_SVG-full",
-	  mathjax: "/MathJax/MathJax.js",
+	  mathjax: "/MathJax/MathJax.js",	  
         tex2jax: {
           inlineMath: [
             ["$", "$"],
