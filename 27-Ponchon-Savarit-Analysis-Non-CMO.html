@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -103,12 +103,13 @@
           </section>
           <section>
             \begin{align*} y_n &amp;= x_{n+1}\frac{L_{n}}{V_n} +
-            x_D\frac{D}{V_n} &amp; &amp; \text{Enrichment section operating
-            line}\\ y_{m} &amp;= x_{m+1}\frac{L_m}{V_m} - x_{W}\frac{W}{V_m}
-            &amp; &amp; \text{Stripping section operating line}\\ y &amp;=
+            x_D\frac{D}{V_n} &amp; &amp;
+            \text{Enrichment&#32;section&#32;operating&#32;line} \\ y_{m} &amp;=
+            x_{m+1}\frac{L_m}{V_m} - x_{W}\frac{W}{V_m} &amp; &amp;
+            \text{Stripping&#32;section&#32;operating&#32;line}\\ y &amp;=
             x\frac{q}{q-1} - \frac{x_{W} W + x_D D}{F (q-1)} &amp; &amp;
-            \text{Feed section q line}\\ y &amp;= f(x) &amp; &amp; \text{VLE
-            data} \end{align*}
+            \text{Feed&#32;section&#32;q-line}\\ y &amp;= f(x) &amp; &amp;
+            \text{VLE&#32;data} \end{align*}
             <ul>
               <li>
                 The above equations (with the exception of the VLE data)
@@ -458,6 +459,11 @@
                   <div class="center">
                     <img src="img/HxyOctaneHexane_small_no_ties_heat.svg" />
                   </div>
+                  <figcaption>
+                    Note, this height is the latent heat during a continuous
+                    distillation. If no separation is occurring (total boiling)
+                    then the line should be vertical.
+                  </figcaption>
                 </figure>
               </div>
             </div>
@@ -746,7 +752,7 @@
                   </li>
                   <li class="fragment" data-fragment-index="2">
                     Here it is clear that there is a pole for this equation at
-                    $(x_w,h_w')$, which we denote $P_R$.
+                    $(x_w,h_w'),$ which we denote $P_R$.
                   </li>
                   <li class="fragment" data-fragment-index="3">
                     We can perform the same construction as before to calculate
@@ -1153,7 +1159,7 @@
         <a
           class="hide-on-pdf"
           id="PrintButton"
-          onclick="document.location = '?print-pdf';"
+          onclick="document.location = '?print-pdf'"
         >
           <i class="fa fa-print"></i>
         </a>
